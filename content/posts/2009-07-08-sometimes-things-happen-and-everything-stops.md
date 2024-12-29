@@ -1,0 +1,14 @@
+---
+id: 133346
+title: Sometimes things happen, and everything stops
+date: 2009-07-08T07:06:32+01:00
+author: terje
+layout: post
+guid: http://terje.wpengine.com/?p=133346
+permalink: /sometimes-things-happen-and-everything-stops/
+dsq_thread_id:
+  - "5090560380"
+categories:
+  - Uncategorized
+---
+<p>When I started blogging I made a decision to concentrate on technical stuff.  I would not write about personal things, not about what happened in my everyday life, not about my social life, not about personal trivia, but just keep it technical - write about software and software technology.  And keeping my personal life and my technical life separated seemed like a good idea, and shouldn't pose any problem what so ever.  </p>  <p>But, as everything in life, things doesn't work out quite the way one thinks.  My mother  got a cancer diagnostic last summer, she was operated - which went very well, or so it seemed just afterwards.  At the end of last year the cancer came back, and this time the doctors could not do anything more.  She was not at all prepared to die, but understood very well what was going to happen - that this was the end.  She just got weaker and weaker, and on the 29th of March she died.  </p>  <p>I hadn't expected to be so affected by my mother's death, but it surely hit me hard.  I just stopped blogging, twittering, and mostly everything came to a dead stop.  It has taken me a couple of months now to recover.  I knew that I would react to her death, but didn't expect it that hard. </p>  <p>I learned quite a lot more about myself during the process, and I learned what is important and not.  I stayed with my mother continusly during her last days - a week in fact, when she was almost all the time in coma, and I would never have done otherwise.  It was a good way of saying farewell. Just the moment when she woke up for some seconds, looked at me and said "I'm dreaming of you" and smiled....just that was worth more than anything.  </p>  <p>When I got back to work afterwards, which really had piled up too, most of it seemed unreal, and uninteresting.  It was really hard to get anything done. Now I'm starting to get out of it, and back to normal.  And summer holiday now will probably do me good too, get away from the rush of everyday life, and getting back more slowly.   I plan to write up a few blog entries now during summer, about things that have been turning around in my head during the last few months.  Especially the TFS 2010, and the beta which we have been playing with for some time now.  We also ran a seminar on the TFS 2010 now in June, which went very well. There are a lot of new goodies coming with the TFS 2010 release - I'm really looking forward to that release. </p>  <p>So, to sum it all up, "Hello World !   I'm back,  I think....."</p>

@@ -1,0 +1,13 @@
+/* Expand horizontal space for single posts */
+.single-post-container {
+    max-width: 1200px; /* Adjust width as needed */
+    margin: 0 auto;    /* Center the content */
+    padding: 0 20px;   /* Add some padding */
+}
+
+/* Optional: Adjust for larger screens */
+@media (min-width: 1024px) {
+    .single-post-container {
+        padding: 0 40px;
+    }
+}

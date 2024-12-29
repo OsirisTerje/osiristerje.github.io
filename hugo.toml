@@ -1,0 +1,52 @@
+baseURL = 'https://example.org/'
+languageCode = 'en-us'
+title = 'Hermit Blog'
+theme = 'ananke'
+
+[menu]
+  [[menu.main]]
+    name = "Home"
+    url = "/"
+    weight = 1
+  [[menu.main]]
+    name = "About"
+    url = "/about/"
+    weight = 20
+  [[menu.main]]
+    name = "How to"
+    url = "/how-to/"
+    weight = 3
+  [[menu.main]]
+    name = "NUnit"
+    url = "/nunit/"
+    weight = 3
+  [[menu.main]]
+    name = "Git"
+    url = "/git/"
+    weight = 3
+  [[menu.main]]
+    name = "Course"
+    url = "/git/course"
+    weight = 3
+    parent = "Git"
+  [[menu.main]]
+    name = "Blogposts"
+    url = "/posts/"
+    weight = 3
+  [[menu.main]]
+    name = "Tricks"
+    url = "/tricks/"
+    weight = 3
+  [[menu.main]]
+    name = "Principles"
+    url = "/principles/"
+    weight = 3
+
+
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true
+
+[params]
+  date_format = "2006-01-02"

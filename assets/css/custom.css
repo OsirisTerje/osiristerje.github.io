@@ -11,3 +11,35 @@
         padding: 0 40px;
     }
 }
+
+.center-expanded {
+    max-width: 1200px; /* Adjust as needed */
+    margin: 0 auto;    /* Ensures centering */
+    padding: 0 20px;   /* Optional inner spacing */
+}
+
+.flex-l {
+    display: flex;
+    justify-content: center; /* Ensures content stays centered */
+    align-items: center;     /* Optional: vertically aligns content */
+}
+
+.flex-l.expanded {
+    max-width: 1200px;       /* Adjust width as needed */
+    margin: 0 auto;          /* Centers horizontally */
+    justify-content: center; /* Override "justify-between" */
+}
+
+body {
+    max-width: none; /* Removes the maximum width constraint */
+}
+
+article {
+    max-width: 100%; /* Use the full width of the parent container */
+    margin: 0 auto;  /* Center the content if needed */
+}
+
+p {
+    text-align: left !important; /* Left-align the text */
+}
+

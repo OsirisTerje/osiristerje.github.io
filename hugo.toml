@@ -50,3 +50,5 @@ theme = 'ananke'
 
 [params]
   date_format = "2006-01-02"
+  contentWidth = "max-w-16x1"
+

@@ -1,0 +1,19 @@
+{
+    "frontMatter.framework.id": "hugo",
+    "frontMatter.content.publicFolder": "static",
+    "frontMatter.preview.host": "http://localhost:1313",
+    "frontMatter.content.pageFolders": [
+        {
+            "path": "[[workspace]]/content/tricks",
+            "title": "tricks"
+        },
+        {
+            "path": "[[workspace]]/content/principles"
+        },
+        {
+            "title": "content",
+            "path": "[[workspace]]/content"
+        }
+    ],
+    "frontMatter.git.enabled": true
+}

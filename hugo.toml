@@ -2,6 +2,7 @@ baseURL = 'https://example.org/'
 languageCode = 'en-us'
 title = 'Hermit Blog'
 theme = 'ananke'
+relativeURLs = true
 
 [menu]
   [[menu.main]]
@@ -47,8 +48,12 @@ theme = 'ananke'
   [markup.goldmark]
     [markup.goldmark.renderer]
       unsafe = true
+  [markup.highlight]
+    noClasses = false
+    style = "dracula"
 
 [params]
   date_format = "2006-01-02"
   contentWidth = "max-w-16x1"
+  custom_css = ["custom.css","syntax.css","chroma.css"]
 

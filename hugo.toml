@@ -50,7 +50,7 @@ relativeURLs = true
       unsafe = true
   [markup.highlight]
     noClasses = false
-    style = "dracula"
+    style = "github"
 
 [params]
   date_format = "2006-01-02"

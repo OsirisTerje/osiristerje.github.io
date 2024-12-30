@@ -43,3 +43,13 @@ p {
     text-align: left !important; /* Left-align the text */
 }
 
+.submenu {
+    list-style: none;
+    padding-left: 1rem;
+  }
+  
+.submenu li {
+    margin-top: 0.5rem;
+  }
+  
+

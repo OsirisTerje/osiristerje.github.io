@@ -1,8 +1,9 @@
 baseURL = 'https://example.org/'
 languageCode = 'en-us'
-title = 'Hermit Blog'
+title = ' '
 theme = 'ananke'
 relativeURLs = true
+
 
 [menu]
   [[menu.main]]
@@ -27,8 +28,8 @@ relativeURLs = true
     weight = 3
   [[menu.main]]
     name = "Course"
-    url = "/git/course"
-    weight = 3
+    url = "/git/course/"
+    weight = 4
     parent = "Git"
   [[menu.main]]
     name = "Blogposts"
@@ -56,4 +57,5 @@ relativeURLs = true
   date_format = "2006-01-02"
   contentWidth = "max-w-16x1"
   custom_css = ["custom.css","syntax.css","chroma.css"]
+  toc = true
 

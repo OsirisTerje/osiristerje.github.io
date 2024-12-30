@@ -1,5 +1,6 @@
 ---
 layout: post
+draft: true
 ---
 
 # Pull Requests best practices

@@ -4,9 +4,6 @@ title: About
 date: 2018-02-17T12:18:33+01:00
 author: terje
 layout: page
-guid: http://hermit.no/?page_id=160526
-catchevolution-sidebarlayout:
-  - default
 ---
 
 I am a Microsoft Visual Studio and Development Technologies MVP, Head of the **NUnit** core development team, and a model railroad enthusiast.
@@ -50,32 +47,50 @@ I am also a keen unit testing enthusiast, and as head of the NUnit team, I have 
 
 I can be contacted through mail at terje at hermit.no, or through any of the social media links below.
 
-<a href="https://mvp.microsoft.com/en-us/PublicProfile/4025028" target="_blank" rel="noopener noreferrer">MVP profile</a>
+[MVP profile](https://mvp.microsoft.com/en-us/PublicProfile/4025028)
 
-<a href="https://www.facebook.com/Terje.Sandstrom" target="_blank" rel="noopener noreferrer">My facebook profile, which is more techie than dinners</a>
+[My facebook profile, which is more techie than dinners](https://www.facebook.com/Terje.Sandstrom)
 
-<a href="https://www.linkedin.com/in/terjesandstrom/" target="_blank" rel="noopener noreferrer">Linkedin profile</a>
+[Linkedin profile](https://www.linkedin.com/in/terjesandstrom/)
 
-<a href="https://twitter.com/OsirisTerje" target="_blank" rel="noopener noreferrer">Twitter handle is @Osiristerje</a>
+[Twitter handle is @Osiristerje](https://twitter.com/OsirisTerje)
 
-<a href="https://about.me/terjes" target="_blank" rel="noopener noreferrer">About-me/terjes : Currently stuff from there are moved over here</a>
+[About-me/terjes: Currently stuff from there are moved over here](https://about.me/terjes)
 
-<a href="https://github.com/osiristerje" target="_blank" rel="noopener noreferrer">My profile on Github    </a><a href="https://gist.github.com/OsirisTerje/" target="_blank" rel="noopener noreferrer">My Gists on github</a>
+[My profile on Github](https://github.com/osiristerje)
 
-<a href="http://terjesandstrom.github.io/git" target="_blank" rel="noopener noreferrer">Github IO - Wiki for git</a>
+[My Gists on github](https://gist.github.com/OsirisTerje/)
 
-<a href="https://www.slideshare.net/TerjeSandstrm" target="_blank" rel="noopener noreferrer">Git presentations on SlideShare</a>
+[Github IO - Wiki for git](http://terjesandstrom.github.io/git)
+
+[Git presentations on SlideShare](https://www.slideshare.net/TerjeSandstrm)
+
+--------------
 
 <strong>NUnit stuff</strong>
 
-<a href="https://github.com/nunit" target="_blank" rel="noopener noreferrer">NUnit   </a>(In particular <a href="https://github.com/nunit/nunit3-vs-adapter" target="_blank" rel="noopener noreferrer">NUnit3TestAdapter</a>  , <a href="https://github.com/nunit/nunit-vs-adapter" target="_blank" rel="noopener noreferrer">NUnitTestAdapter</a> (for the 2.X versions), and <a href="https://github.com/nunit/nunit-vs-testgenerator" target="_blank" rel="noopener noreferrer">NUnitTestGenerator</a>)
+[NUnit Github organisation](https://github.com/nunit)  
 
-<a href="https://github.com/AzureDevOpsTools" target="_blank" rel="noopener noreferrer">Azure DevOps Tools</a>
-<a href="https://github.com/kdisim" target="_blank" rel="noopener noreferrer">KDISim tools on github</a>
-<a href="http://terjesandstrom.github.io/wiki.html" target="_blank" rel="noopener noreferrer">My Github work in progress, wiki and more</a>
+[NUnit Framework](https://github.com/nunit/nunit) 
 
-<a href="https://stackoverflow.com/users/1203904/terje-sandstr%C3%B8m?tab=profile" target="_blank" rel="noopener noreferrer">Stackoverflow profile</a>
+[NUnit3TestAdapter](https://github.com/nunit/nunit3-vs-adapter) 
+
+[NUnitTestGenerator](https://github.com/nunit/nunit-vs-testgenerator)
+
+-------------
+
+[Azure DevOps Tools](https://github.com/AzureDevOpsTools)
+
+[KDISim tools on GitHub](https://github.com/kdisim)
+
+[My GitHub work in progress, wiki and more](http://terjesandstrom.github.io/wiki.html)
+
+[Stack Overflow profile](https://stackoverflow.com/users/1203904/terje-sandstr%C3%B8m?tab=profile)
+
 
 <strong>Videos</strong>
-<a href="https://www.youtube.com/watch?v=vRvtvRMq1vI" target="_blank" rel="noopener noreferrer">Better Architecture and Code Review with Marcel and Terje</a>
-<a href="https://www.youtube.com/watch?v=ANg1Nol6UvU" target="_blank" rel="noopener noreferrer">New unit testing features in Visual Studio 2015 -Terje Sandstrom</a>
+
+[Better Architecture and Code Review with Marcel and Terje](https://www.youtube.com/watch?v=vRvtvRMq1vI)
+
+[New unit testing features in Visual Studio 2015 - Terje Sandstrom](https://www.youtube.com/watch?v=ANg1Nol6UvU)
+

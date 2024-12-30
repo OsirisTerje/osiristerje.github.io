@@ -1,12 +1,11 @@
 ---
-id: 160522
 title: How to get NUnit3TestAdapter pre-release packages
 date: 2018-02-06T21:59:50+01:00
 author: terje
 layout: post
-guid: http://hermit.no/?page_id=160522
-
 ---
+
+## Adapter pre-releases
 
 We publish pre-release packages for every pull request merge to the master branch in the <a href="https://github.com/nunit/nunit3-vs-adapter" target="_blank" rel="noopener">NUnit3TestAdapter</a> project.    They are published to our <a href="https://www.myget.org/F/nunit/api/v3/index.json" target="_blank" rel="noopener">NUnit MyGet feed</a>,
 <pre>Feed:      <span style="font-family: Georgia, 'Bitstream Charter', serif; font-weight: normal;">https://www.myget.org/F/nunit/api/v3/index.json</span></pre>
@@ -28,3 +27,28 @@ For Nuget (PackageReference in csproj)
      &lt;add key="NUnit.Myget.org" value="https://www.myget.org/F/nunit/api/v3/index.json" /&gt;
  &lt;/packageSources&gt;</pre>
 <strong>Tip 2:</strong>  You can also get the NUnit proper pre-release packages from the same feed.
+
+## Analyzer alpha releases
+
+You get the Analyzer package from our alpha feed at MyGet
+
+The feed is located at :
+
+```text
+https://www.myget.org/F/nunit-analyzers/api/v3/index.json 
+```
+
+You can add this into your VS Nuget package settings, sources.
+
+Or
+
+You can add it to a repo nuget.config file, it should look like:
+
+```xml
+<?xml version="1.0" encoding="utf-8"?>
+<configuration>
+    <packageSources>
+        <add key="NUnit alpha feed at MyGet" value="https://www.myget.org/F/nunit-analyzers/api/v3/index.json" />
+  </packageSources>
+</configuration>
+```

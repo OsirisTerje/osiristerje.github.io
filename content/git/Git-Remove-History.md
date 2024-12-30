@@ -6,13 +6,11 @@ url: "/git/course/"
 
 # Removing history from a git repo
 
-When you have something in your repo that you want to get rid of.
+If your repository contains files you want to remove, such as files accidentally committed before setting up a proper .gitignore, sensitive information, or unnecessary clutter, you can clean it up effectively.
 
-This can happen if you commit before you had the proper .gitignore there, or you committed security info you should not have, or just got a lot of rubbish in there.  
+Even if you've deleted these files from your branch, they remain in the repository's history. The following commands will help you completely remove them from all history.
 
-Even if you have removed them from your branch, they will still exist in history, so these commands will remove the files from all history.
-
-It also means, that once you have pushed this up to the cloud storage, then everyone else will have to do a new clone (and remove their old clones first) to get the new cleaned repo.
+Keep in mind that after pushing these changes to your remote repository, anyone else using the repo will need to delete their existing clones and perform a fresh clone to access the cleaned version.
 
 ## Introducing `git-filter-repo`
 

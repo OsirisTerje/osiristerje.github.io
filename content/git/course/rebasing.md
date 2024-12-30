@@ -1,5 +1,6 @@
 ---
-layout: page
+layout: post
+url: "/git/course/"
 ---
 
 # Rebasing

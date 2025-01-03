@@ -4,6 +4,7 @@
 {{ end }}
 
 {{ define "main" }}
+{{/*  <div style="background-color: red; height: 50px;">TESTING single.html from layout</div>  */}}
   {{ $section := .Site.GetPage "section" .Section }}
   <article class="flex-l expanded flex-wrap justify-between mw12 center ph3">
     <header class="mt4 w-100">
@@ -47,7 +48,7 @@
         <span class="f6 mv4 dib tracked"> - {{ i18n "wordCount" .WordCount }} </span>
       {{ end }}
     </header>
-    {{/*  <div style="background-color: red; height: 50px;">TESTING SINGLE from root.HTML</div>  */}}
+    {{/*  <div style="background-color: red; height: 50px;">TESTING SINGLE from layouts/default </div>  */}}
     <div class="nested-copy-line-height lh-copy {{ $.Param "post_content_classes"  | default "serif"}} f4 nested-links {{ $.Param "text_color" | default "mid-gray" }} {{ cond (eq $.Site.Language.LanguageDirection "rtl") "pl4-l" "pr4-l" }} w-100">
       {{- .Content -}}
       {{- partial "tags.html" . -}}

@@ -63,4 +63,6 @@ relativeURLs = true
   contentWidth = "max-w-16x1"
   custom_css = ["custom.css","syntax.css","chroma.css"]
   toc = true
+  copyright-year = 2009
+
 

@@ -12,4 +12,231 @@ categories:
   - Azure DevOps
   - Visual Studio
 ---
-<p><font size="2"><font color="#ff0000"><font color="#000000">Looking for <a href="http://geekswithblogs.net/terje/archive/2013/12/14/visual-studio-amp-tfs-2013-ndash-list-of-extensions-and.aspx" target="_blank"><u>List of VS 2013 Extensions (Part 2)</u></a> </font></font></font></p>  <p><font size="2"></font></p>  <p><font size="2"><font color="#ff0000">Updated Oct 17th 2014:</font> <font size="2"><a href="http://go.microsoft.com/fwlink/?LinkId=510314" target="_blank">Visual Studio and TFS 2013 Update 4 RC</a></font></font><font size="2"><font size="2"></font> </font></p>  <p><font size="2"><font color="#ff0000"><font color="#000000">Looking for the VS 2012 product info and extensions?  Go to <u><a href="http://geekswithblogs.net/terje/archive/2013/08/18/visual-studio-and-tfs-2012-product-installations-upgrades-and-patches.aspx" target="_blank">Visual Studio 2012 Product and updates (Part 1)</a></u>  and <u><a href="http://geekswithblogs.net/terje/archive/2013/04/02/visual-studio-amp-tfs-2012-ndash-list-of-extensions-and.aspx" target="_blank">Visual Studio 2012 extensions (Part 2)</a></u></font></font></font></p>  <p><font size="2"><font color="#ff0000"><font color="#000000">Looking for the VS 2010 extensions ? Go to </font><a href="http://geekswithblogs.net/terje/archive/2010/12/05/visual-studio-amp-tfs-ndash-list-of-addins-extensions-patches.aspx" target="_blank"><u>Visual Studio 2010 - List of Product Updates (Part 1) + Extensions (Part 2)</u></a></font><font color="#000000"><u>.</u> </font></font></p>  <p><font size="2"><font color="#000000"><font color="#000000">Looking for links to the <a href="http://blogs.msdn.com/b/visualstudioalm/archive/2012/03/02/visual-studio-11-beta-unit-testing-plugins-list.aspx" target="_blank">Test Adapters</a>.</font></font></font></p>  <p> </p>  <p><font size="2"></font></p> <font size="2">The information contains the download links to all versions and updates where applicable, links to information about each version, the version number for each, update time (for later ones) and the release dates. I have also added prerequisites, like the SQL server version necessary.</font>   <p><font size="2">This is the major </font><u><a href="http://www.visualstudio.com/downloads/download-visual-studio-vs" target="_blank"><font size="2">download link</font></a><font size="2"> for all official Visual Studio products</font>.</u> </p>  <p> </p>  <table cellspacing="0" cellpadding="2" width="1077" border="1"><tbody>     <tr>       <td valign="top" width="194"><strong><font size="2">Product</font></strong></td>        <td valign="top" width="479"><strong><font size="2">Notes</font></strong></td>        <td valign="top" width="135"><strong><font size="2">Version number</font></strong></td>        <td valign="top" width="109"><strong><font size="2">Date</font></strong></td>        <td valign="top" width="158"><strong><font size="2">Applicable to</font></strong></td>     </tr>      <tr>       <td style="text-decoration: underline" valign="top" width="200"><font size="2"><a href="http://go.microsoft.com/fwlink/?LinkId=510314" target="_blank">Visual Studio and TFS 2013 Update 4 RC</a></font></td>        <td valign="top" width="481"><font size="2">See   </font><a href="http://support2.microsoft.com/kb/2994375" target="_blank"><font size="2">KB2994375</font></a><font size="2">, </font><a href="http://blogs.msdn.com/b/bharry/archive/2014/10/16/visual-studio-and-tfs-2013-4-update-4-release-candidate.aspx" target="_blank"><font size="2">Brian Harry blogpost</font></a><font size="2">, </font><a href="http://blogs.msdn.com/b/visualstudio/archive/2014/10/16/visual-studio-2013-update-4-rc-now-available.aspx" target="_blank"><font size="2">John Montgomery blogpost</font></a><font size="2">, </font><a href="http://blogs.msdn.com/b/webdev/archive/2014/10/16/announcing-new-web-features-in-visual-studio-2013-update-4-rc.aspx" target="_blank"><font size="2">web features pos</font></a><font size="2">t,  <a href="http://www.visualstudio.com/news/vs2013-update4-rc-vs" target="_blank">release notes</a>.</font></td>        <td valign="top" width="140"><font size="2">12.0.31010.00</font></td>        <td valign="top" width="114"><font size="2">Oct 16th 2014</font></td>        <td valign="top" width="162"><font size="2">Visual Studio &amp; TFS</font></td>     </tr>      <tr>       <td style="text-decoration: underline" valign="top" width="200"><font size="2"><a href="http://www.visualstudio.com/en-us/downloads/download-visual-studio-vs#d-visual-studio-2013-update" target="_blank">Visual Studio</a>             <br />            <br /><a href="http://www.microsoft.com/en-us/download/details.aspx?id=43728" target="_blank">TFS 2013 Update 3</a>             <br />            <br />Update 3</font></td>        <td valign="top" width="481"><font size="2">See <a title="http://support.microsoft.com/kb/2933779" href="http://support.microsoft.com/kb/2933779">kb2933779</a> and <a href="http://blogs.msdn.com/b/bharry/archive/2014/08/04/vs-tfs-2013-3-update-3-released.aspx" target="_blank">Brian Harry blogpost</a></font></td>        <td valign="top" width="140"><font size="2">12.0.30723.0</font></td>        <td valign="top" width="114"><font size="2">Aug 4th 2014</font></td>        <td valign="top" width="162"><font size="2">Visual Studio &amp; TFS</font></td>     </tr>      <tr>       <td style="text-decoration: underline" valign="top" width="202"><font size="2"><a href="http://www.microsoft.com/en-us/download/details.aspx?id=42308" target="_blank">Visual Studio and TFS 2013 Update 2</a></font></td>        <td valign="top" width="473"><font size="2">See <a href="http://support.microsoft.com/kb/2927432" target="_blank">KB 29227432</a>, <a href="http://www.visualstudio.com/en-us/news/2014-may-12-vs" target="_blank">news</a> and <a href="http://blogs.msdn.com/b/bharry/archive/2014/05/12/vs-2013-update-2-and-other-teched-news.aspx" target="_blank">Brian Harry’s blogpost</a></font></td>        <td valign="top" width="144"><font size="2">12.0.30501.00</font></td>        <td valign="top" width="117"><font size="2">May 12th, 2014</font></td>        <td valign="top" width="164"><font size="2">Visual Studio &amp; TFS</font></td>     </tr>      <tr>       <td valign="top" width="202"><font size="2"><a href="http://www.microsoft.com/en-us/download/details.aspx?id=41650" target="_blank">Visual Studio 2013 Update 1</a></font></td>        <td valign="top" width="468"><font size="2">See info : <a href="http://support.microsoft.com/kb/2911573/en" target="_blank">KB 2911573</a>, </font></td>        <td valign="top" width="148"><font size="2">12.0.30110.0</font></td>        <td valign="top" width="119"><font size="2">Jan 20th 2014</font></td>        <td valign="top" width="165"><font size="2">Visual Studio</font></td>     </tr>      <tr>       <td valign="top" width="200"><font size="2">Visual Studio and TFS 2013            <br /><u><a href="http://www.visualstudio.com/downloads/download-visual-studio-vs" target="_blank">download link</a></u></font></td>        <td valign="top" width="465"><font size="2">The RTM version of Visual Studio 2013  (Note 3)</font></td>        <td valign="top" width="151">         <p><font size="2">12.0.21005.1</font></p>       </td>        <td valign="top" width="120"><font size="2">Nov 18th 2013</font></td>        <td valign="top" width="166"><font size="2">Visual Studio and TFS</font></td>     </tr>      <tr>       <td valign="top" width="200"><font size="2"><u><a href="http://www.microsoft.com/en-us/download/details.aspx?id=35575" target="_blank">SQL Server 2012 SP1</a>               <br />or               <br /><a href="http://www.microsoft.com/en-us/download/details.aspx?id=43340">SQL Server 2012 SP2</a>  <br />or               <br />SQL Server 2014               <br /></u></font></td>        <td valign="top" width="462"><font size="2">The TFS 2013 require minimum the SQL 2012 server, SP1            <br />Also see <u><a href="http://msdn.microsoft.com/en-us/library/dd578652.aspx" target="_blank">Manually Install SQL Server for TFS 2013</a></u></font></td>        <td valign="top" width="154"><font size="2">2012 SP1: 11.0.3000.0            <br />2012 SP2:             <br />11.0.5058.0</font></td>        <td valign="top" width="121"> </td>        <td valign="top" width="166"><font size="2">SQL Server 2012 SP1</font></td>     </tr>   </tbody></table>  <p> </p>  <div class="earlierUpdatesToggle"><a href="javascript:toggleUpdates('Earlier')"><u><font size="2">Past Updates</font></u></a></div>  <div id="Earlier" class="earlierUpdatesToggle" style="display: none">   <div><font size="2"><font color="#ff0000">Updated Aug 8th 2014:</font> </font><font size="2"><a href="http://www.visualstudio.com/en-us/downloads/download-visual-studio-vs#d-visual-studio-2013-update" target="_blank">Visual Studio</a> </font><font size="2"> and <font size="2"><a href="http://www.microsoft.com/en-us/download/details.aspx?id=43728" target="_blank">TFS 2013 Update 3</a></font> , added information on SQL Server version compatibility</font></div>    <div><font size="2"><font color="#ff0000">Updated July 7th 2014:</font>  <a href="http://www.microsoft.com/en-us/download/details.aspx?id=43398" target="_blank">Visual Studio</a> and <a href="http://www.microsoft.com/en-us/download/details.aspx?id=43405" target="_blank">TFS 2013</a> Update 3 RC,  added info on Update Time.</font> </div>    <div><font color="#ff0000"><font color="#000000"><font color="#ff0000"><font size="2">Updated April 12th 2014:</font>  <a href="http://www.visualstudio.com/en-us/downloads/prerelease-software-downloads-vs" target="_blank"><font size="2">Visual Studio 2013 Update 2 RC</font></a><font size="2"> <font color="#000000">&amp;</font>  </font><a href="http://www.visualstudio.com/downloads/download-visual-studio-vs" target="_blank"><font size="2">TFS Server 2013 Update 2</font></a></font><font size="2"></font></font></font> </div>    <div><font size="2"><font color="#ff0000"><font color="#000000"><font color="#ff0000">Updated March 5th 2014:   <a href="http://www.microsoft.com/en-us/download/details.aspx?id=42023" target="_blank"><font size="2">Visual Studio 2013 Update 2 CTP 2</font></a></font>  <br /></font></font></font><font size="2"><font color="#ff0000"><font color="#000000"><font color="#ff0000">Updated Feb 8th 2014:   </font><font size="2"><a href="http://www.microsoft.com/en-us/download/details.aspx?id=41650">Visual Studio 2013 Update 1</a>,  <font size="2"><a href="http://www.microsoft.com/en-us/download/details.aspx?id=41699" target="_blank">Visual Studio 2013 Update 2 CTP 1</a></font> </font></font></font></font>       <br />      <br /></div>    <div>     <table cellspacing="0" cellpadding="2" width="1105" border="1"><tbody>         <tr>           <td valign="top" width="164"><strong><font size="2">Product</font></strong></td>            <td valign="top" width="546"><strong><font size="2">Notes</font></strong></td>            <td valign="top" width="122"><strong><font size="2">Version number</font></strong></td>            <td valign="top" width="122"><strong><font size="2">Date</font></strong></td>            <td valign="top" width="149"><strong><font size="2">Applicable to</font></strong></td>         </tr>          <tr>           <td valign="top" width="164"><a href="http://www.microsoft.com/en-us/download/details.aspx?id=43398" target="_blank"><font size="2">Visual Studio</font></a>               <br />              <br /><a href="http://www.microsoft.com/en-us/download/details.aspx?id=43405" target="_blank"><font size="2">TFS 2013</font></a>               <br /><font size="2">               <br />Update 3 RC</font></td>            <td valign="top" width="546"><font size="2">See <a href="http://support.microsoft.com/kb/2933779" target="_blank">KB 2933779</a>,  <a href="http://www.visualstudio.com/news/2014-jul-2-vs" target="_blank">news</a> and <a href="http://blogs.msdn.com/b/bharry/archive/2014/07/02/vs-tfs-2013-3-update-3-rc.aspx" target="_blank">Brian Harry’s blogpost</a>. </font></td>            <td valign="top" width="122"><font size="2">VS: 15 minutes</font></td>            <td valign="top" width="122"><font size="2">12.0.30626.00</font></td>            <td valign="top" width="149"><font size="2">Visual Studio &amp; TFS</font></td>         </tr>          <tr>           <td valign="top" width="164"><a href="http://www.visualstudio.com/en-us/downloads/prerelease-software-downloads-vs" target="_blank"><font size="2">Visual Studio 2013 Update 2 RC</font></a><font size="2"> &amp;  </font><a href="http://www.visualstudio.com/downloads/download-visual-studio-vs" target="_blank"><font size="2">TFS Server 2013 Update 2</font></a></td>            <td valign="top" width="546"><font size="2">See info:  </font><a href="http://www.visualstudio.com/en-us/news/2014-apr-2-vs" target="_blank"><font style="text-decoration: underline" size="2">Release notes</font></a><font size="2">,  </font><a href="http://blogs.msdn.com/b/bharry/archive/2014/04/03/visual-studio-online-general-availability.aspx" target="_blank"><font size="2">Brian Harry blog on General Availability</font></a><font size="2">,  <a href="http://blogs.msdn.com/b/bharry/archive/2014/04/02/tfs-2013-2-update-2-released.aspx" target="_blank">Brian Harry on TFS 2013 U2</a>, <a href="http://support.microsoft.com/kb/2927432" target="_blank">KB 2927432</a></font></td>            <td valign="top" width="122"><font size="2">12.0.30324.0</font></td>            <td valign="top" width="122"><font size="2">Apr 3rd, 2014</font></td>            <td valign="top" width="149"><font size="2">Visual </font></td>         </tr>          <tr>           <td valign="top" width="164"><a href="http://www.microsoft.com/en-us/download/details.aspx?id=42023" target="_blank"><font size="2">Visual Studio 2013 Update 2 CTP 2</font></a></td>            <td valign="top" width="546"><font size="2">See Info:  </font><a href="http://support.microsoft.com/kb/2927432" target="_blank"><font size="2">KB 2927432</font></a><font size="2">, and </font><a href="http://blogs.msdn.com/b/bharry/archive/2014/03/05/vs-tfs-2013-2-ctp-2-available.aspx" target="_blank"><font size="2">Brian Harry’s blogpost</font></a><font size="2">.</font> </td>            <td valign="top" width="122"><font size="2">12.0.30219.0</font></td>            <td valign="top" width="122"><font size="2">Feb 24th, 2014</font></td>            <td valign="top" width="149"><font size="2">Visual Studio &amp; TFS</font></td>         </tr>          <tr>           <td valign="top" width="164"><font size="2"><a href="http://www.microsoft.com/en-us/download/details.aspx?id=41699" target="_blank">Visual Studio 2013 Update 2 CTP 1</a></font></td>            <td valign="top" width="546"><font size="2">See info: <a href="http://support.microsoft.com/kb/2927432" target="_blank">KB 2927432</a></font></td>            <td valign="top" width="122"><font size="2">12.0.30129.0</font></td>            <td valign="top" width="122"><font size="2">Feb 5th, 2014</font></td>            <td valign="top" width="149"><font size="2">Visual Studio &amp; TFS</font></td>         </tr>          <tr>           <td valign="top" width="164"><u><a href="http://www.microsoft.com/en-us/download/details.aspx?id=41204" target="_blank"><font size="2">Visual Studio 2013 Update 1 RC</font></a></u></td>            <td valign="top" width="546"><font size="2">See info :  </font><u><a href="http://blogs.msdn.com/b/bharry/archive/2013/12/09/visual-studio-2013-1-rc-is-available.aspx" target="_blank"><font size="2">Brian Harry’s blog</font></a></u><font size="2">, and  </font><u><a href="http://support.microsoft.com/kb/2911573/en-gb" target="_blank"><font size="2">KB 2911573</font></a></u><font size="2">   (Note 2)</font></td>            <td valign="top" width="122"><font size="2">12.0.21126.0</font></td>            <td valign="top" width="122"><font size="2">Dec 9th 2013</font></td>            <td valign="top" width="149"><font size="2">Visual Studio</font></td>         </tr>          <tr>           <td valign="top" width="164"><u><a href="http://download.microsoft.com/download/6/C/D/6CD8507E-E11A-46DC-AE13-663ECAB66E18/VS12-KB2898341.exe" target="_blank"><font size="2">Visual Studio Patch</font></a></u></td>            <td valign="top" width="546"><font size="2">A patch for fixing the Queue Build dialog, see </font><u><a href="http://support.microsoft.com/kb/2898341/en-gb" target="_blank"><font size="2">KB 2898341</font></a></u><font size="2"> and </font><u><a href="http://blogs.msdn.com/b/buckh/archive/2013/11/13/patch-for-issue-with-visual-studio-2013-queue-build-dialog.aspx" target="_blank"><font size="2">Buck Hodges post</font></a></u><font size="2">.</font></td>            <td valign="top" width="122"><font size="2">12.0.21031 (Note 1) </font></td>            <td valign="top" width="122"><font size="2">Nov 13th 2013</font></td>            <td valign="top" width="149"><font size="2">Visual Studio</font></td>         </tr>       </tbody></table>   </div> </div>  <p><strong><font size="3"></font></strong></p>  <p><strong><font size="3"></font></strong></p>  <p><strong><font size="3">Note 1</font></strong></p>  <p><strong><font size="3"></font></strong></p>  <p><font size="2">The version number of Visual Studio is not changed when installing this patch.  The only place you see it is in the Installed Updates list</font></p>  <p><a href="https://gwb.blob.core.windows.net/terje/WindowsLiveWriter/VisualStudioandTFS2013ListofProductUpdat_E10D/image_2.png"><img title="image" style="border-left-width: 0px; border-right-width: 0px; border-bottom-width: 0px; display: inline; border-top-width: 0px" border="0" alt="image" src="http://hermit.no/wp-content/uploads/2015/08/GWB-WindowsLiveWriter-VisualStudioandTFS2013ListofProductUpdat_E10D-image_thumb.png" width="730" height="161" /></a> </p>  <p><strong><font size="3">Note 2</font></strong></p>  <p><font size="2">The Update 1 RC doesn’t include the Queue Build patch.</font></p>  <p><font size="2"></font></p>  <p><strong><font size="3">Note 3</font></strong></p>  <p><font size="2">There was a rerelease of TFS 2013.  The first release had a bug which appeared in the Web UI, Code section, History.  If you get a red cross there, you got the first release.  You then need to reinstall. </font></p>  <p><font size="2"></font></p>  <p><strong><font size="3"></font></strong></p>  <p><strong><font size="3"></font></strong></p>  <p><strong><font size="3">Unsure which version and update you have  ?</font></strong></p>  <p><font size="2"><strong>Visual Studio:</strong></font></p>  <p><font size="2">Go to the top menu, choose Help | About</font></p>  <p><a href="https://gwb.blob.core.windows.net/terje/Windows-Live-Writer/Visual-Studio-and-TFS-2012-product-insta_F68B/image_2.png"><img title="image" style="border-left-width: 0px; border-right-width: 0px; background-image: none; border-bottom-width: 0px; padding-top: 0px; padding-left: 0px; margin: 0px; display: inline; padding-right: 0px; border-top-width: 0px" border="0" alt="image" src="http://hermit.no/wp-content/uploads/2015/08/GWB-Windows-Live-Writer-Visual-Studio-and-TFS-2012-product-insta_F68B-image_thumb.png" width="244" height="142" /></a></p>  <p><font size="2">Note that both the name of the update and the corresponding version number is given.</font></p>  <p><font size="2">Go to the top menu, select Tools | Extensions and Updates. Under the Updates | Product Updates section you will see if there is a new update ready for you. Note that pre-releases and hotfixes don’t arrive here. </font></p>  <p><a href="https://gwb.blob.core.windows.net/terje/Windows-Live-Writer/Visual-Studio-and-TFS-2012-product-insta_F68B/image_6.png"><img title="image" style="border-left-width: 0px; border-right-width: 0px; background-image: none; border-bottom-width: 0px; padding-top: 0px; padding-left: 0px; display: inline; padding-right: 0px; border-top-width: 0px" border="0" alt="image" src="http://hermit.no/wp-content/uploads/2015/08/GWB-Windows-Live-Writer-Visual-Studio-and-TFS-2012-product-insta_F68B-image_thumb_2.png" width="566" height="133" /></a></p>  <p>(Image from VS 2013 preview, but it is the same in VS 2013)</p>  <p><font size="2">To the far right you see the version number you have, and what version to update to.  Since the updates are cumulative, you don’t need to worry about those in between.</font> </p>  <p> </p>  <p><font size="2"><strong>Team Foundation Server (on premise):</strong></font></p>  <p><font size="2">Use the web access for the TFS. Go to the Help Icon to the far right, and choose “About” from the menu:</font></p>  <p><a href="https://gwb.blob.core.windows.net/terje/Windows-Live-Writer/Visual-Studio-and-TFS-2012-product-insta_F68B/image_4.png"><img title="image" style="border-left-width: 0px; border-right-width: 0px; background-image: none; border-bottom-width: 0px; padding-top: 0px; padding-left: 0px; display: inline; padding-right: 0px; border-top-width: 0px" border="0" alt="image" src="http://hermit.no/wp-content/uploads/2015/08/GWB-Windows-Live-Writer-Visual-Studio-and-TFS-2012-product-insta_F68B-image_thumb_1.png" width="569" height="124" /></a></p>  <p><font size="2">In this case I have a TFS 2013 preview server.</font> </p>  <p><font size="2"><strong>Team Foundation Service:</strong></font></p>  <p><font size="2">If you are connected to the  Team Foundation Service you will not find any version number.  It is also always updated to the latest version.  You could check the <a href="http://tfs.visualstudio.com/en-us/support/current-service-status/" target="_blank"><u>service status page</u></a> to see if all is working, and to see what has been done at </font><font size="2">the </font><a href="http://tfs.visualstudio.com/news/" target="_blank"><font size="2"><u>updates and release notes listed here</u></font></a><font size="2">.</font></p>  <p> </p>  <p><strong><font size="2">Thanks</font></strong></p>  <p><font size="2">Thanks to <a href="http://www.adamcogan.com" target="_blank"><u>Adam Cogan</u></a> for valuable help in structuring these posts</font></p>
+Looking for [List of VS 2013 Extensions (Part 2)](http://geekswithblogs.net/terje/archive/2013/12/14/visual-studio-amp-tfs-2013-ndash-list-of-extensions-and.aspx)
+
+Updated Oct 17th 2014: [Visual Studio and TFS 2013 Update 4 RC](http://go.microsoft.com/fwlink/?LinkId=510314)
+
+Looking for the VS 2012 product info and extensions?  Go to [Visual Studio 2012 Product and updates (Part 1)](http://geekswithblogs.net/terje/archive/2013/08/18/visual-studio-and-tfs-2012-product-installations-upgrades-and-patches.aspx)  and [Visual Studio 2012 extensions (Part 2)](http://geekswithblogs.net/terje/archive/2013/04/02/visual-studio-amp-tfs-2012-ndash-list-of-extensions-and.aspx)
+
+Looking for the VS 2010 extensions ? Go to [Visual Studio 2010 - List of Product Updates (Part 1) + Extensions (Part 2)](http://geekswithblogs.net/terje/archive/2010/12/05/visual-studio-amp-tfs-ndash-list-of-addins-extensions-patches.aspx).
+
+Looking for links to the [Test Adapters](http://blogs.msdn.com/b/visualstudioalm/archive/2012/03/02/visual-studio-11-beta-unit-testing-plugins-list.aspx).
+
+The information contains the download links to all versions and updates where applicable, links to information about each version, the version number for each, update time (for later ones) and the release dates. I have also added prerequisites, like the SQL server version necessary.
+
+This is the major [download link](http://www.visualstudio.com/downloads/download-visual-studio-vs) for all official Visual Studio products.
+
+**Product**
+
+**Notes**
+
+**Version number**
+
+**Date**
+
+**Applicable to**
+
+[Visual Studio and TFS 2013 Update 4 RC](http://go.microsoft.com/fwlink/?LinkId=510314)
+
+See   [KB2994375](http://support2.microsoft.com/kb/2994375), [Brian Harry blogpost](http://blogs.msdn.com/b/bharry/archive/2014/10/16/visual-studio-and-tfs-2013-4-update-4-release-candidate.aspx), [John Montgomery blogpost](http://blogs.msdn.com/b/visualstudio/archive/2014/10/16/visual-studio-2013-update-4-rc-now-available.aspx), [web features pos](http://blogs.msdn.com/b/webdev/archive/2014/10/16/announcing-new-web-features-in-visual-studio-2013-update-4-rc.aspx)t,  [release notes](http://www.visualstudio.com/news/vs2013-update4-rc-vs).
+
+12.0.31010.00
+
+Oct 16th 2014
+
+Visual Studio & TFS
+
+[Visual Studio](http://www.visualstudio.com/en-us/downloads/download-visual-studio-vs#d-visual-studio-2013-update)  
+  
+[TFS 2013 Update 3](http://www.microsoft.com/en-us/download/details.aspx?id=43728)  
+  
+Update 3
+
+See [kb2933779](http://support.microsoft.com/kb/2933779 "http://support.microsoft.com/kb/2933779") and [Brian Harry blogpost](http://blogs.msdn.com/b/bharry/archive/2014/08/04/vs-tfs-2013-3-update-3-released.aspx)
+
+12.0.30723.0
+
+Aug 4th 2014
+
+Visual Studio & TFS
+
+[Visual Studio and TFS 2013 Update 2](http://www.microsoft.com/en-us/download/details.aspx?id=42308)
+
+See [KB 29227432](http://support.microsoft.com/kb/2927432), [news](http://www.visualstudio.com/en-us/news/2014-may-12-vs) and [Brian Harry’s blogpost](http://blogs.msdn.com/b/bharry/archive/2014/05/12/vs-2013-update-2-and-other-teched-news.aspx)
+
+12.0.30501.00
+
+May 12th, 2014
+
+Visual Studio & TFS
+
+[Visual Studio 2013 Update 1](http://www.microsoft.com/en-us/download/details.aspx?id=41650)
+
+See info : [KB 2911573](http://support.microsoft.com/kb/2911573/en),
+
+12.0.30110.0
+
+Jan 20th 2014
+
+Visual Studio
+
+Visual Studio and TFS 2013  
+[download link](http://www.visualstudio.com/downloads/download-visual-studio-vs)
+
+The RTM version of Visual Studio 2013  (Note 3)
+
+12.0.21005.1
+
+Nov 18th 2013
+
+Visual Studio and TFS
+
+[SQL Server 2012 SP1](http://www.microsoft.com/en-us/download/details.aspx?id=35575)  
+or  
+[SQL Server 2012 SP2](http://www.microsoft.com/en-us/download/details.aspx?id=43340)   
+or  
+SQL Server 2014  
+
+The TFS 2013 require minimum the SQL 2012 server, SP1  
+Also see [Manually Install SQL Server for TFS 2013](http://msdn.microsoft.com/en-us/library/dd578652.aspx)
+
+2012 SP1: 11.0.3000.0  
+2012 SP2:  
+11.0.5058.0
+
+ 
+
+SQL Server 2012 SP1
+
+[Past Updates](javascript:toggleUpdates('Earlier'))
+
+Updated Aug 8th 2014: [Visual Studio](http://www.visualstudio.com/en-us/downloads/download-visual-studio-vs#d-visual-studio-2013-update)  and [TFS 2013 Update 3](http://www.microsoft.com/en-us/download/details.aspx?id=43728) , added information on SQL Server version compatibility
+
+Updated July 7th 2014:  [Visual Studio](http://www.microsoft.com/en-us/download/details.aspx?id=43398) and [TFS 2013](http://www.microsoft.com/en-us/download/details.aspx?id=43405) Update 3 RC,  added info on Update Time.
+
+Updated April 12th 2014:  [Visual Studio 2013 Update 2 RC](http://www.visualstudio.com/en-us/downloads/prerelease-software-downloads-vs) &  [TFS Server 2013 Update 2](http://www.visualstudio.com/downloads/download-visual-studio-vs)
+
+Updated March 5th 2014:   [Visual Studio 2013 Update 2 CTP 2](http://www.microsoft.com/en-us/download/details.aspx?id=42023) Updated Feb 8th 2014:   [Visual Studio 2013 Update 1](http://www.microsoft.com/en-us/download/details.aspx?id=41650),  [Visual Studio 2013 Update 2 CTP 1](http://www.microsoft.com/en-us/download/details.aspx?id=41699)   
+  
+
+**Product**
+
+**Notes**
+
+**Version number**
+
+**Date**
+
+**Applicable to**
+
+[Visual Studio](http://www.microsoft.com/en-us/download/details.aspx?id=43398)  
+  
+[TFS 2013](http://www.microsoft.com/en-us/download/details.aspx?id=43405)  
+  
+Update 3 RC
+
+See [KB 2933779](http://support.microsoft.com/kb/2933779),  [news](http://www.visualstudio.com/news/2014-jul-2-vs) and [Brian Harry’s blogpost](http://blogs.msdn.com/b/bharry/archive/2014/07/02/vs-tfs-2013-3-update-3-rc.aspx).
+
+VS: 15 minutes
+
+12.0.30626.00
+
+Visual Studio & TFS
+
+[Visual Studio 2013 Update 2 RC](http://www.visualstudio.com/en-us/downloads/prerelease-software-downloads-vs) &  [TFS Server 2013 Update 2](http://www.visualstudio.com/downloads/download-visual-studio-vs)
+
+See info:  [Release notes](http://www.visualstudio.com/en-us/news/2014-apr-2-vs),  [Brian Harry blog on General Availability](http://blogs.msdn.com/b/bharry/archive/2014/04/03/visual-studio-online-general-availability.aspx),  [Brian Harry on TFS 2013 U2](http://blogs.msdn.com/b/bharry/archive/2014/04/02/tfs-2013-2-update-2-released.aspx), [KB 2927432](http://support.microsoft.com/kb/2927432)
+
+12.0.30324.0
+
+Apr 3rd, 2014
+
+Visual
+
+[Visual Studio 2013 Update 2 CTP 2](http://www.microsoft.com/en-us/download/details.aspx?id=42023)
+
+See Info:  [KB 2927432](http://support.microsoft.com/kb/2927432), and [Brian Harry’s blogpost](http://blogs.msdn.com/b/bharry/archive/2014/03/05/vs-tfs-2013-2-ctp-2-available.aspx).
+
+12.0.30219.0
+
+Feb 24th, 2014
+
+Visual Studio & TFS
+
+[Visual Studio 2013 Update 2 CTP 1](http://www.microsoft.com/en-us/download/details.aspx?id=41699)
+
+See info: [KB 2927432](http://support.microsoft.com/kb/2927432)
+
+12.0.30129.0
+
+Feb 5th, 2014
+
+Visual Studio & TFS
+
+[Visual Studio 2013 Update 1 RC](http://www.microsoft.com/en-us/download/details.aspx?id=41204)
+
+See info :  [Brian Harry’s blog](http://blogs.msdn.com/b/bharry/archive/2013/12/09/visual-studio-2013-1-rc-is-available.aspx), and  [KB 2911573](http://support.microsoft.com/kb/2911573/en-gb)   (Note 2)
+
+12.0.21126.0
+
+Dec 9th 2013
+
+Visual Studio
+
+[Visual Studio Patch](http://download.microsoft.com/download/6/C/D/6CD8507E-E11A-46DC-AE13-663ECAB66E18/VS12-KB2898341.exe)
+
+A patch for fixing the Queue Build dialog, see [KB 2898341](http://support.microsoft.com/kb/2898341/en-gb) and [Buck Hodges post](http://blogs.msdn.com/b/buckh/archive/2013/11/13/patch-for-issue-with-visual-studio-2013-queue-build-dialog.aspx).
+
+12.0.21031 (Note 1)
+
+Nov 13th 2013
+
+Visual Studio
+
+**Note 1**
+
+The version number of Visual Studio is not changed when installing this patch.  The only place you see it is in the Installed Updates list
+
+[![image](http://hermit.no/wp-content/uploads/2015/08/GWB-WindowsLiveWriter-VisualStudioandTFS2013ListofProductUpdat_E10D-image_thumb.png "image")](https://gwb.blob.core.windows.net/terje/WindowsLiveWriter/VisualStudioandTFS2013ListofProductUpdat_E10D/image_2.png)
+
+**Note 2**
+
+The Update 1 RC doesn’t include the Queue Build patch.
+
+**Note 3**
+
+There was a rerelease of TFS 2013.  The first release had a bug which appeared in the Web UI, Code section, History.  If you get a red cross there, you got the first release.  You then need to reinstall.
+
+**Unsure which version and update you have  ?**
+
+**Visual Studio:**
+
+Go to the top menu, choose Help | About
+
+[![image](http://hermit.no/wp-content/uploads/2015/08/GWB-Windows-Live-Writer-Visual-Studio-and-TFS-2012-product-insta_F68B-image_thumb.png "image")](https://gwb.blob.core.windows.net/terje/Windows-Live-Writer/Visual-Studio-and-TFS-2012-product-insta_F68B/image_2.png)
+
+Note that both the name of the update and the corresponding version number is given.
+
+Go to the top menu, select Tools | Extensions and Updates. Under the Updates | Product Updates section you will see if there is a new update ready for you. Note that pre-releases and hotfixes don’t arrive here.
+
+[![image](http://hermit.no/wp-content/uploads/2015/08/GWB-Windows-Live-Writer-Visual-Studio-and-TFS-2012-product-insta_F68B-image_thumb_2.png "image")](https://gwb.blob.core.windows.net/terje/Windows-Live-Writer/Visual-Studio-and-TFS-2012-product-insta_F68B/image_6.png)
+
+(Image from VS 2013 preview, but it is the same in VS 2013)
+
+To the far right you see the version number you have, and what version to update to.  Since the updates are cumulative, you don’t need to worry about those in between.
+
+**Team Foundation Server (on premise):**
+
+Use the web access for the TFS. Go to the Help Icon to the far right, and choose “About” from the menu:
+
+[![image](http://hermit.no/wp-content/uploads/2015/08/GWB-Windows-Live-Writer-Visual-Studio-and-TFS-2012-product-insta_F68B-image_thumb_1.png "image")](https://gwb.blob.core.windows.net/terje/Windows-Live-Writer/Visual-Studio-and-TFS-2012-product-insta_F68B/image_4.png)
+
+In this case I have a TFS 2013 preview server.
+
+**Team Foundation Service:**
+
+If you are connected to the  Team Foundation Service you will not find any version number.  It is also always updated to the latest version.  You could check the [service status page](http://tfs.visualstudio.com/en-us/support/current-service-status/) to see if all is working, and to see what has been done at the [updates and release notes listed here](http://tfs.visualstudio.com/news/).
+
+**Thanks**
+
+Thanks to [Adam Cogan](http://www.adamcogan.com) for valuable help in structuring these posts

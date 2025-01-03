@@ -13,19 +13,19 @@ relativeURLs = true
   [[menu.main]]
     name = "About"
     url = "/about/"
-    weight = 20
+    weight = 200
   [[menu.main]]
     name = "How to"
     url = "/how-to/"
-    weight = 3
+    weight = 35
   [[menu.main]]
     name = "NUnit"
     url = "/nunit/"
-    weight = 3
+    weight = 10
   [[menu.main]]
     name = "Git"
     url = "/git/"
-    weight = 3
+    weight = 20
   [[menu.main]]
     name = "Course"
     url = "/git/course/"
@@ -34,19 +34,19 @@ relativeURLs = true
   [[menu.main]]
     name = "Blogposts"
     url = "/posts/"
-    weight = 3
+    weight = 50
   [[menu.main]]
     name = "Tricks"
     url = "/tricks/"
-    weight = 3
+    weight = 40
   [[menu.main]]
     name = "Principles"
     url = "/principles/"
-    weight = 3
+    weight = 30
   [[menu.main]]
     name = "Archive"
     url = "/archive/"
-    weight = 3
+    weight = 60
 
 
 

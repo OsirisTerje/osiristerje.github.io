@@ -12,4 +12,100 @@ categories:
   - IFix
   - NuGet
 ---
-<p><a href="http://visualstudiogallery.msdn.microsoft.com/b8ba97b0-bb89-4c21-a1e2-53ef335fd9cb" target="_blank">Download tool</a></p>  <p>In version 2.7 of NuGet automatic nuget restore was introduced, meaning you no longer need to distort your msbuild project files with nuget target information.   Visual Studio and TFS 2013 build have this enabled by default.  </p>  <p>However, if your project was created before this was introduced, and/or if you have used the “Enable NuGet Package Restore” afterwards, you now have a series of unwanted things in your projects, and a series of project files that have been modified – and – you no longer neither want nor need this !  You might also get into some unwanted issues due to these modifications.  This is a MSBuild modification that was needed only before NuGet 2.7 !</p>  <p>So: <strong>DON’T USE THIS FUNCTION !!!</strong></p>  <p><a href="https://gwb.blob.core.windows.net/terje/Windows-Live-Writer/IFix_1349F/image_6.png"><img title="image" style="border-left-width: 0px; border-right-width: 0px; background-image: none; border-bottom-width: 0px; padding-top: 0px; padding-left: 0px; display: inline; padding-right: 0px; border-top-width: 0px" border="0" alt="image" src="http://hermit.no/wp-content/uploads/2015/08/GWB-Windows-Live-Writer-IFix_1349F-image_thumb_2.png" width="373" height="155" /></a></p>  <p>There is an issue <a title="https://nuget.codeplex.com/workitem/4019" href="https://nuget.codeplex.com/workitem/4019">https://nuget.codeplex.com/workitem/4019</a>  on the NuGet project site to get this function removed, renamed or at least moved farther away from the top level (please help vote it up!).  The response seems to be that it WILL BE removed, around version 3.0. </p>  <p>This function does nothing you need after the introduction of NuGet 2.7.  What is also unfortunate is the naming of it – it implies that it is needed, it is not, and what is worse, there is no corresponding function to remove what it does !</p>  <p>So to fix this use the tool named IFix,  - all free of course, and the code is <a href="https://github.com/OsirisTerje/IFix" target="_blank">open source</a>.  Also report issues at:  <a title="https://github.com/OsirisTerje/IFix" href="https://github.com/OsirisTerje/IFix">https://github.com/OsirisTerje/IFix</a> </p>  <h1> </h1>  <h1>IFix information</h1>  <p><strong><a href="http://visualstudiogallery.msdn.microsoft.com/b8ba97b0-bb89-4c21-a1e2-53ef335fd9cb" target="_blank">DOWNLOAD HERE</a></strong></p>  <p>This command line tool installs using an MSI, and add itself to the system path.  </p>  <p>If you work in a team, you will probably need to use the  tool multiple times.  Anyone in the team may at any time use the “Enable NuGet Package Restore” function and mess up your project again.  </p>  <p>The IFix program can be run either in a  check mode, where it does not write anything back – it only checks if you have any issues, or in a Fix mode, where it will also perform the necessary fixes for you. </p>  <p>The IFix program is used like this:</p>  <p><strong>IFix &lt;command&gt; [-c/--check] [-f/--fix]  [-v/--verbose]</strong></p>  <p>The command in this case is “nugetrestore”.  </p>  <p>It will do a check <u>from the location</u> where it is being called, and run through all subfolders from that location. </p>  <p>So  “IFix nugetrestore  --check” , will do the check ,  and “IFix nugetrestore  --fix”  will perform the changes, <b>for all files and folders below the current working directory</b>. </p>  <p>(Note that --check  can be replaced with only –c, and --fix with –f, and so on. )</p>  <p><strong>BEWARE: When you run the fix option, all solutions to be affected must be closed in Visual Studio !</strong></p>  <p><strong></strong></p>  <p><strong><br /></strong></p><p><strong>So, if you just want to DO it, then:</strong></p>  <p><strong>IFix nugetrestore --check</strong></p>  <p>to see if you have issues</p>  <p>then</p>  <p><strong></strong></p>  <p><strong>IFix nugetrestore  --fix</strong></p>  <p>to fix them.</p>  <p><strong></strong></p>  <h3>How does it work</h3>  <p><strong>IFix nugetrestore  </strong>checks and optionally fixes four issues that the older enabling of nuget restore created.  The issues are related to the MSBuild projess, and are:</p>  <ol>   <li>Deleting the nuget.targets file. </li>    <li>Deleting the nuget.exe that is located under the .nuget folder </li>    <li>Removing all references to nuget.targets in the solution file </li>    <li>Removing all properties and target imports of nuget.targets inside the csproj files. </li> </ol>  <p>IFix will fix these issues in the same sequence. </p>  <p>The first step, removing the nuget.targets file is the most critical one, and all instances of the nuget.targets file within the scope of a solution has to be removed, and in addition it has to be done with the solution closed in Visual Studio.  If Visual Studio finds a nuget.targets file, the csproj files will be automatically messed up again.</p>  <p>This means the removal process above might need to be done multiple times, specially when you’re working with a team, and as long as the solution context menu has the “Enable NuGet Package Restore” function.  Someone on the team might inadvertently use that function at any time. </p>  <p>It can be a good idea to add this check to a checkin policy – if you run TFS standard version control, but that will have no effect if you use TFS Git version control of course. </p>  <p>So, better be prepared to run the IFix check from time to time. </p>  <p>Or, even better, install IFix on your build servers, and add a call to IFix nugetrestore --check in the TFS Build script.  </p>  <p> </p>  <p><strong>How does it look</strong></p>  <p>As a first example I have run the IFix program from the top of a set of git repositories, so it spans multiple repositories with multiple solutions.</p>  <p>The result from the check option is as follows:</p>  <p><a href="https://gwb.blob.core.windows.net/terje/Windows-Live-Writer/IFix_1349F/SNAGHTML1218b841.png"><img title="SNAGHTML1218b841" style="border-left-width: 0px; border-right-width: 0px; background-image: none; border-bottom-width: 0px; padding-top: 0px; padding-left: 0px; display: inline; padding-right: 0px; border-top-width: 0px" border="0" alt="SNAGHTML1218b841" src="http://hermit.no/wp-content/uploads/2015/08/GWB-Windows-Live-Writer-IFix_1349F-SNAGHTML1218b841_thumb.png" width="773" height="361" /></a></p>  <p>We see the four red lines, there is one for each of the four checks we talked about in the previous section. The fact that they are red, means we have that particular issue. </p>  <p>The first section (above the first red text line) is the nuget targets section.  Notice  No.1, it says it has found no paths to copy.  What IFix does here is to check if there are any defined paths to other nuget galleries.  If there are, then those are copied over to the nuget.config file, where is where it should be in version 2.7 and above.   No.2 says it has found the particular nuget.targets file,  No.3  states it HAS found some other nuget galleries defines in the targets file, which then it would like to copy to the config.file. </p>  <p>No.4 is the section for nuget.exe files, and list those it has found, and which it would like to delete.</p>  <p>No 5 states it has found a reference to nuget.targets in the solution file.  This reference comes from the fact that the .nuget folder is a solution folder, and the items within are described in the solution file. </p>  <p>It then checks the csproj files, and as can be seen from the last red line, it ha found issues in 96 out of 198 csproj files.  There are two possible issues in a csproj files.  No.6 is the first one, and the most common and most important one, an “Import project” section.  This is the section that calls the nuget.targets files.  No.7 is another issue, which seems to sometimes be there, sometimes not, it is a RestorePackages property, which also should go away.</p>  <p>Now, if we run the IFix nugetrestore –fix command, and then the check again after that, the result is:</p>  <p><a href="https://gwb.blob.core.windows.net/terje/Windows-Live-Writer/IFix_1349F/image_3.png"><img title="image" style="border-left-width: 0px; border-right-width: 0px; background-image: none; border-bottom-width: 0px; padding-top: 0px; padding-left: 0px; display: inline; padding-right: 0px; border-top-width: 0px" border="0" alt="image" src="http://hermit.no/wp-content/uploads/2015/08/GWB-Windows-Live-Writer-IFix_1349F-image_thumb.png" width="448" height="165" /></a></p>  <p>All green !</p>
+[Download tool](http://visualstudiogallery.msdn.microsoft.com/b8ba97b0-bb89-4c21-a1e2-53ef335fd9cb)
+
+In version 2.7 of NuGet automatic nuget restore was introduced, meaning you no longer need to distort your msbuild project files with nuget target information.   Visual Studio and TFS 2013 build have this enabled by default. 
+
+However, if your project was created before this was introduced, and/or if you have used the “Enable NuGet Package Restore” afterwards, you now have a series of unwanted things in your projects, and a series of project files that have been modified – and – you no longer neither want nor need this !  You might also get into some unwanted issues due to these modifications.  This is a MSBuild modification that was needed only before NuGet 2.7 !
+
+So: **DON’T USE THIS FUNCTION !!!**
+
+[![image](http://hermit.no/wp-content/uploads/2015/08/GWB-Windows-Live-Writer-IFix_1349F-image_thumb_2.png "image")](https://gwb.blob.core.windows.net/terje/Windows-Live-Writer/IFix_1349F/image_6.png)
+
+There is an issue [https://nuget.codeplex.com/workitem/4019](https://nuget.codeplex.com/workitem/4019 "https://nuget.codeplex.com/workitem/4019")  on the NuGet project site to get this function removed, renamed or at least moved farther away from the top level (please help vote it up!).  The response seems to be that it WILL BE removed, around version 3.0.
+
+This function does nothing you need after the introduction of NuGet 2.7.  What is also unfortunate is the naming of it – it implies that it is needed, it is not, and what is worse, there is no corresponding function to remove what it does !
+
+So to fix this use the tool named IFix,  - all free of course, and the code is [open source](https://github.com/OsirisTerje/IFix).  Also report issues at:  [https://github.com/OsirisTerje/IFix](https://github.com/OsirisTerje/IFix "https://github.com/OsirisTerje/IFix") 
+
+IFix information
+================
+
+**[DOWNLOAD HERE](http://visualstudiogallery.msdn.microsoft.com/b8ba97b0-bb89-4c21-a1e2-53ef335fd9cb)**
+
+This command line tool installs using an MSI, and add itself to the system path. 
+
+If you work in a team, you will probably need to use the  tool multiple times.  Anyone in the team may at any time use the “Enable NuGet Package Restore” function and mess up your project again. 
+
+The IFix program can be run either in a  check mode, where it does not write anything back – it only checks if you have any issues, or in a Fix mode, where it will also perform the necessary fixes for you.
+
+The IFix program is used like this:
+
+**IFix <command> \[-c/--check\] \[-f/--fix\]  \[-v/--verbose\]**
+
+The command in this case is “nugetrestore”. 
+
+It will do a check from the location where it is being called, and run through all subfolders from that location.
+
+So  “IFix nugetrestore  --check” , will do the check ,  and “IFix nugetrestore  --fix”  will perform the changes, **for all files and folders below the current working directory**.
+
+(Note that --check  can be replaced with only –c, and --fix with –f, and so on. )
+
+**BEWARE: When you run the fix option, all solutions to be affected must be closed in Visual Studio !**
+
+**So, if you just want to DO it, then:**
+
+**IFix nugetrestore --check**
+
+to see if you have issues
+
+then
+
+**IFix nugetrestore  --fix**
+
+to fix them.
+
+### How does it work
+
+**IFix nugetrestore**  checks and optionally fixes four issues that the older enabling of nuget restore created.  The issues are related to the MSBuild projess, and are:
+
+1.  Deleting the nuget.targets file.
+2.  Deleting the nuget.exe that is located under the .nuget folder
+3.  Removing all references to nuget.targets in the solution file
+4.  Removing all properties and target imports of nuget.targets inside the csproj files.
+
+IFix will fix these issues in the same sequence.
+
+The first step, removing the nuget.targets file is the most critical one, and all instances of the nuget.targets file within the scope of a solution has to be removed, and in addition it has to be done with the solution closed in Visual Studio.  If Visual Studio finds a nuget.targets file, the csproj files will be automatically messed up again.
+
+This means the removal process above might need to be done multiple times, specially when you’re working with a team, and as long as the solution context menu has the “Enable NuGet Package Restore” function.  Someone on the team might inadvertently use that function at any time.
+
+It can be a good idea to add this check to a checkin policy – if you run TFS standard version control, but that will have no effect if you use TFS Git version control of course.
+
+So, better be prepared to run the IFix check from time to time.
+
+Or, even better, install IFix on your build servers, and add a call to IFix nugetrestore --check in the TFS Build script. 
+
+**How does it look**
+
+As a first example I have run the IFix program from the top of a set of git repositories, so it spans multiple repositories with multiple solutions.
+
+The result from the check option is as follows:
+
+[![SNAGHTML1218b841](http://hermit.no/wp-content/uploads/2015/08/GWB-Windows-Live-Writer-IFix_1349F-SNAGHTML1218b841_thumb.png "SNAGHTML1218b841")](https://gwb.blob.core.windows.net/terje/Windows-Live-Writer/IFix_1349F/SNAGHTML1218b841.png)
+
+We see the four red lines, there is one for each of the four checks we talked about in the previous section. The fact that they are red, means we have that particular issue.
+
+The first section (above the first red text line) is the nuget targets section.  Notice  No.1, it says it has found no paths to copy.  What IFix does here is to check if there are any defined paths to other nuget galleries.  If there are, then those are copied over to the nuget.config file, where is where it should be in version 2.7 and above.   No.2 says it has found the particular nuget.targets file,  No.3  states it HAS found some other nuget galleries defines in the targets file, which then it would like to copy to the config.file.
+
+No.4 is the section for nuget.exe files, and list those it has found, and which it would like to delete.
+
+No 5 states it has found a reference to nuget.targets in the solution file.  This reference comes from the fact that the .nuget folder is a solution folder, and the items within are described in the solution file.
+
+It then checks the csproj files, and as can be seen from the last red line, it ha found issues in 96 out of 198 csproj files.  There are two possible issues in a csproj files.  No.6 is the first one, and the most common and most important one, an “Import project” section.  This is the section that calls the nuget.targets files.  No.7 is another issue, which seems to sometimes be there, sometimes not, it is a RestorePackages property, which also should go away.
+
+Now, if we run the IFix nugetrestore –fix command, and then the check again after that, the result is:
+
+[![image](http://hermit.no/wp-content/uploads/2015/08/GWB-Windows-Live-Writer-IFix_1349F-image_thumb.png "image")](https://gwb.blob.core.windows.net/terje/Windows-Live-Writer/IFix_1349F/image_3.png)
+
+All green !

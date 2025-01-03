@@ -43,6 +43,11 @@ relativeURLs = true
     name = "Principles"
     url = "/principles/"
     weight = 3
+  [[menu.main]]
+    name = "Archive"
+    url = "/archive/"
+    weight = 3
+
 
 
 [markup]

@@ -1,5 +1,6 @@
 ---
 layout: post
+date: 2024-12-29
 ---
 
 # Starting up with C# and .Net Core

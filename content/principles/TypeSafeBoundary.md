@@ -1,5 +1,6 @@
 ---
 layout: post
+date: 2024-07-01
 ---
 
 # The Type-Safe-Boundary, what it is and how to use it to prevent bugs

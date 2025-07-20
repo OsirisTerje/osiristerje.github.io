@@ -1,5 +1,6 @@
 ---
 layout: post
+date: 2019-11-06
 ---
 
 # Beware of the end-of-life for .Net Framework and .Net Core versions

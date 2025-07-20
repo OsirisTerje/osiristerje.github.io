@@ -1,5 +1,7 @@
 ---
 layout: post
+date: 2024-12-29
+
 ---
 
 # Setting up Visual Studio Code

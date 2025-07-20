@@ -1,3 +1,11 @@
+---
+date: 2024-12-29
+author: terje
+layout: post
+---
+
+
+
 [NUnit](http://nunit.org/) has a very rich and readable constraint set.  Normally you don’t need to do anything. But, there are some cases where it would be nice to be able to tweak these constraints.  You can always wrap them and extend them that way, but then you lose all the other good stuff, like chaining.  What is not so well known is that you can extend the existing constraints, they are \*\*designed\** to be extendable!   In this post I will show how you can do that easily.
 
 You can also use this approach to build your own custom test "language" for your own domain testing. Doing that this way means you build on top of NUnit instead of inventing everything from scratch.

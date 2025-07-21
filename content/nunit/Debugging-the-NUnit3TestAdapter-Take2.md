@@ -13,6 +13,8 @@ In version 4.2 of the NUnit3TestAdapter debugging has been made a bit simpler.  
 
 A test adapter sits between a TestHost and the test framework.  If you use Visual Studio or dotnet, both starts up a TestHost as a separate process.  The testhost is responsible for locating the adapters, and then invoke them to run the test frameworks on the test code.  Debugging an adapter is hard, because it sits between these two processes, of which you have no control.  The way to handle this is to enable launching the adapter in debug mode.  This post details how you do that.
 
+<!--more-->
+
 First, debugging the adapter require you to compile and consume a debug version of the adapter.  The package you debug is the nuget package.
 
 

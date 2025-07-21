@@ -11,6 +11,8 @@ I've been writing code for some decades now.  Over that time there is one thing 
 
 The concept I am describing below is something I have been using for well over 20 years now, but never got around writing about.  So, here it is!!
 
+<!--more-->
+
 ## Strong or weak typing
 
 There has been many discussions pro and con, and I am not opposed to using different kinds of weakly/duck-typed typed languages (or dynamic languages which is a more precise term), but through these discussions there was never a clear distinction on why one way was better than another.  That observation, that when people can argue back and forth, all with good arguments, there is something else going on here.  

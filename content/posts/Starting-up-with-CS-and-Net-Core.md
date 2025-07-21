@@ -1,6 +1,6 @@
 ---
 layout: post
-date: 2024-12-29
+date: 2021-12-29
 ---
 
 # Starting up with C# and .Net Core
@@ -14,11 +14,13 @@ Ensure you have the .net core sdk installed.
 
 The run the following command to ensure you got it all right:
 
-```
+```cmd
 dotnet
+```
 
-(then)
+then
 
+```cmd
 dotnet --list-sdks
 ```
 

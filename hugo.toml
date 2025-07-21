@@ -3,7 +3,7 @@ languageCode = 'en-us'
 title = ' '
 theme = 'ananke'
 relativeURLs = true
-
+SectionPagesMenu = ""
 
 [menu]
   [[menu.main]]
@@ -16,21 +16,23 @@ relativeURLs = true
     weight = 200
   [[menu.main]]
     name = "How to"
-    url = "/how-to/"
+    identifier = "howto"
+    url = "/categories/howto/"
     weight = 35
   [[menu.main]]
     name = "NUnit"
-    url = "/nunit/"
+    url = "/categories/nunit/"
     weight = 10
   [[menu.main]]
     name = "Git"
-    url = "/git/"
+    identifier = "git"
+    url = "/categories/git/"
     weight = 20
   [[menu.main]]
     name = "Course"
     url = "/git/course/"
     weight = 4
-    parent = "Git"
+    parent = "git"
   [[menu.main]]
     name = "Blogposts"
     url = "/posts/"
@@ -41,12 +43,17 @@ relativeURLs = true
     weight = 40
   [[menu.main]]
     name = "Principles"
-    url = "/principles/"
+    identifier = "principles"
+    url = "/categories/principles/"
     weight = 30
   [[menu.main]]
     name = "Archive"
     url = "/archive/"
     weight = 60
+  [[menu.main]]
+    name = "Categories"
+    url = "/categories/"
+    weight = 70
 
 
 
@@ -64,5 +71,38 @@ relativeURLs = true
   custom_css = ["custom.css","syntax.css","chroma.css"]
   toc = true
   copyright-year = 2009
+  mainSections = []
 
+[taxonomies]
+  category = "categories"
+  tag      = "tags"
 
+[[cascade]]
+  [cascade.scope]
+    path = "content/git/**"
+  [cascade.frontmatter]
+    categories = ["git"]
+
+[[cascade]]
+  [cascade.scope]
+    path = "content/nunit/**"
+  [cascade.frontmatter]
+    categories = ["nunit"]
+
+[[cascade]]
+  [cascade.scope]
+    path = "content/how-to/**"
+  [cascade.frontmatter]
+    categories = ["howto"]
+
+[[cascade]]
+  [cascade.scope]
+    path = "content/principles/**"
+  [cascade.frontmatter]
+    categories = ["principles"]
+
+[[cascade]]
+  [cascade.scope]
+    path = "content/archive/**"
+  [cascade.frontmatter]
+    categories = ["archive"]

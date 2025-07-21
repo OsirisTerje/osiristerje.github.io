@@ -5,8 +5,7 @@ date: 2019-11-04T16:01:13+01:00
 author: terje
 layout: post
 permalink: /moving-to-sdk-style-projects-and-package-references-in-visual-studio-part-2/
-catchevolution-sidebarlayout:
-  - default
+
 categories:
   - Azure DevOps
   - Build

@@ -13,6 +13,8 @@ Setting a single test task to fail could be done, but that only works well if yo
 
 You can achieve this by adding a standard command line task that fails given these conditions.
 
+<!--more-->
+
 In the build shown below, there are seven tasks that may give rise to warnings (green checkmarks).&nbsp; They are checked using the red circled command line task below them.
 
 <a href="http://hermit.no/wp-content/uploads/2018/02/conditionallyfails.jpg"><img class="alignnone size-full wp-image-160519" src="http://hermit.no/wp-content/uploads/2018/02/conditionallyfails.jpg" alt="" width="1740" height="824"></a>

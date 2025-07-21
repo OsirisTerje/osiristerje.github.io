@@ -1,0 +1,27 @@
+<div class="relative w-100 mb4 bg-white nested-copy-line-height">
+  <div class="bg-white mb3 pa4 gray overflow-hidden">
+    <span class="f6 db">{{ humanize .Section }}</span>
+
+    <!-- Added date below -->
+    <time datetime="{{ .Date.Format "2006-01-02" }}" class="f6 db mid-gray">
+      {{ .Date.Format "02 January 2006" }}
+    </time>
+
+    <h1 class="f3 near-black">
+      <a href="{{ .RelPermalink }}" class="link black dim">
+        {{ .Title }}
+      </a>
+    </h1>
+    <div class="nested-links f5 lh-copy nested-copy-line-height">
+      {{ .Summary }}
+    </div>
+
+     <p class="mt3">
+    <a href="{{ .RelPermalink }}" 
+      
+      class="link br2 ph3 pv2 ba b--mid-gray bg-light-gray blue hover-bg-silver">
+      {{ .Param "read_more_copy" | default (i18n "readMore") }}
+    </a>
+  </p>
+  </div>
+</div>

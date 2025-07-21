@@ -1,14 +1,17 @@
 ---
 layout: post
 date: 2020-09-20
-
+categories:
+  - git
+tags:
+  - githubActions
 ---
 
 # Github Actions released, and some specifics for .Net Framework
 
 ## Summary
 
-Github Actions has been released for public use, and announced at the [Github Universe conferense](https://githubuniverse.com/) in San Franciso Nov. 13th. And, because Github loves open source - it is fully free for all public repositories!
+Github Actions has been released for public use, and announced at the [Github Universe conference](https://githubuniverse.com/) in San Francisco Nov. 13th. And, because Github loves open source - it is fully free for all public repositories!
 
 [Github Actions](https://github.com/features/actions) can be used for automating a series of processes, as it can utilize most of the [events](https://help.github.com/en/actions/automating-your-workflow-with-github-actions/events-that-trigger-workflows) in the github system.  The most typical use will still be to trigger CI/CD builds.  The whole system is yaml based, and it can run on different environments, Linux, Windows and MacOS.
 
@@ -18,7 +21,6 @@ You can also find a series of starter workflows which you can use for your first
 When you press New Workflow on the Actions page ((1) in screenshot below), you get a list of proposals, or you can start out blank ((2) in screenshot below)
 
 ![](https://github.com/OsirisTerje/osiristerje.github.io/blob/master/images/2019-11-15_10-20-37.jpg)
-
 
 ## Locations of the yaml files
 
@@ -58,7 +60,7 @@ and the results look like:
 
 ### Building .Net Framework projects
 
-To build .net framework projects we must check out whether it uses the old legacy project format, or the new SDK based format.  Many projects, or most now, can use the new SDK format.  See [this blogpost](http://hermit.no/moving-to-sdk-style-projects-and-package-references-in-visual-studio-part-2/) for how to convert your project automatically to the new SDK format from the old legacy format.
+To build .net framework projects we must check out whether it uses the old legacy project format, or the new SDK based format.  Many projects, or most now, can use the new SDK format.  See [this blogpost](https://hermit.no/moving-to-sdk-style-projects-and-package-references-in-visual-studio-part-2/) for how to convert your project automatically to the new SDK format from the old legacy format.
 
 Using the new SDK project format makes it much simpler to build, because you can then use the dotnet system, which encapsulates all the other stuff you need.  
 

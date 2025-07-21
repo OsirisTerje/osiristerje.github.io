@@ -15,13 +15,16 @@ categories:
 ---
 This post came about as a result of a an interesting question raised by my good friend <a href="https://www.scrum.org/richard-hundhausen">Richard Hundhausen</a> in <a href="http://accentient.com/">Accentient</a>.  It turned out into some very interesting observations, and a few ways of handling this. 
 
-<strong>Background</strong>
+## Background
+
 When you're starting up a new git repository for a Visual Studio project, you need a .gitignore file that matches.  The gitignore file ensures that working files and folders that are not to go into source control are kept out.  As Visual Studio and its extensions are growing, this list of files and folders are increasing.  You need to have a gitignore file that at least matches the version of Visual Studio you're using.
-Most developers notice files that they don't think should be in source control, and exclude those (and then adds them to the gitignore file they have), but in many cases they don't even know what that file is for, and it is inadvertently added in.  Normally not causing any problem locally for that single developer, but then it may fail for the next developer down the line, or it may fail during CI builds. 
+Most developers notice files that they don't think should be in source control, and exclude those (and then adds them to the gitignore file they have), but in many cases they don't even know what that file is for, and it is inadvertently added in.  Normally not causing any problem locally for that single developer, but then it may fail for the next developer down the line, or it may fail during CI builds.
 So it is much better to get the correct and full gitignore file when you start up your project.  Less work later!
 And what could possibly go wrong?
 
-<strong>The multiple ways of creating a gitignore file</strong>
+<!--more-->
+
+## The multiple ways of creating a gitignore file
 
 a) Start by creating a new Visual Studio project, either VS 2017 or VS 2019, select to add it to source control.  You then get a .gitignore file from Visual Studio
 b) Start by creating a new Azure DevOps git repository, and select to add a gitignore file.  (You can also do the same if you create a new GitHub repository, it has the same functionality)
@@ -46,7 +49,8 @@ The reasons for these being "off", is that the tools don't download from the ori
 
 This means that you must either update the gitignore file yourself, and ensure it is sufficient, or even better, just use another tool to get it down.  Fortunately that is not so hard. 
 
-<strong>Gitignore locations</strong>
+## Gitignore locations
+
 The gitignore file is given as an option, or a result, in several different places. The issue is that very few of these are really updated to the latest.  We'll have a look at that, but first - there IS an originating site, holding the one and only true gitignore file.
 The site is at [https://github.com/github/gitignore](https://github.com/github/gitignore).  Whenever someone need to add something to the file, they can raise a pull request here, and the maintainers ensures that it is properly checked and then merged in.  This is what allows for a lot of 3rd party suppliers to add to this file and keep it properly updated.
 If you wonder why it is placed here, and not at some Visual Studio site, it is because there are a lot of other gitignore files, for a ton of other tools, also kept at the same repository.  
@@ -57,14 +61,18 @@ What is also interesting by this system, is that they expose a website, [gitigno
 
 Currently (January 2019), the Visual Studio gitignore file and the one from gitignore.io are identical.  
 
-<strong>Tools for downloading gitignore</strong>
+## Tools for downloading gitignore
 
 1. First option you have is to simply copy the raw content from the originator source, using this <a href="https://raw.githubusercontent.com/github/gitignore/master/VisualStudio.gitignore" rel="noopener" target="_blank">link</a>. 
 2. Second option you have is to simply copy the raw content from the gitignore.io site, using this <a href="https://www.gitignore.io/api/visualstudio" rel="noopener" target="_blank">link</a>. 
 3. Third option is to install the <a href="https://marketplace.visualstudio.com/items?itemName=OsirisTerje.IFix" rel="noopener" target="_blank">IFix </a>command line tool, and use the command 
-<code>IFix gitignore -r -f </code>
+```
+IFix gitignore -r -f
+```
 to get a fresh latest copy down.  Alternatively, if you already have one, using 
-<code>IFix -m -f</code>
+```
+IFix -m -f
+```
 to merge your own existing gitignore with the latest from the originator source.
 Using IFix to merge is a pretty good way of handling existing ones, as you may have entered ignores that you want to keep, but still need to update. 
 4. Fourth option is to use the gitignore.io REST Api
@@ -75,15 +83,21 @@ We can add the curl command with it's parameters as a git alias, like I have sho
 
 So, add the following lineinto your git config file:
 
-<code>ignore = "!gi() { curl -L -s https://www.gitignore.io/api/$@ ;}; gi"</code>
+```
+ignore = "!gi() { curl -L -s https://www.gitignore.io/api/$@ ;}; gi"
+```
 
 You can then add a gitignore file doing:
 
-<code>git ignore visualstudio > .gitignore</code>
+```
+git ignore visualstudio > .gitignore
+```
 
 And of course you can simplify this further by adding the following alias:
 
-<code>ignorevs = !git ignore visualstudio > .gitignore</code>
+```
+ignorevs = !git ignore visualstudio > .gitignore
+```
 
  Then all you need to write is as shown below:
 
@@ -91,7 +105,9 @@ And of course you can simplify this further by adding the following alias:
 
 And for being able to update it, you can add the following IFix command as another alias to your gitconfig
 
-<code>updategitignore = "!f() { exec ifix gitignore -m -f;}; f"</code>
+```
+updategitignore = "!f() { exec ifix gitignore -m -f;}; f"
+```
 
 resulting in the following when there is an update available
 

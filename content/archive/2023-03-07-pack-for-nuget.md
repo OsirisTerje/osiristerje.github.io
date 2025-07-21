@@ -1,6 +1,16 @@
+---
+date: 2023-03-07
+author: terje
+layout: post
+---
+
+
+
 # How to set up your project for Nuget packaging
 
 You can create Nuget packages in two ways, either making a package directly from a csproj project, or by using a nuspec file.  The first option is the easiest, but the second option gives you more control over the package.
+
+<!--more-->
 
 I will start out by showing the first option.
 

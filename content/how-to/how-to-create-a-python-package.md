@@ -7,8 +7,9 @@ date: 2019-12-05
 
 This recipe describes how to create a package containing executable code.  
 
+<!--more-->
 
-## Set up 
+## Set up
 
 ### Prepare your source code
 

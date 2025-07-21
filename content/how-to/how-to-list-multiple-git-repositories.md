@@ -17,6 +17,8 @@ Over time it becomes hard to get an overview over all of it.  Not to speak of ho
 In my case I have nearly all my local repos under a folder D:\repos.  I got 48 top level folders, and many of those contain multiple repos below.  
 I got rather frustrated, and could not find any really suitable tools out there to handle it, so only one thing to do:  Roll your own!
 
+<!-- more -->
+
 ## Listgits coming to help
 
 The tool should preferably be able to run on machines with different operating systems.  It would use git under the hood, and would mostly be a wrapper around that, combined with the ability to scan multiple directories.  It then seemed like a good idea to use Python for this purpose, and package it as a tool.  

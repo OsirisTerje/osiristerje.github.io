@@ -6,8 +6,7 @@ author: terje
 layout: post
 guid: http://hermit.no/?p=160617
 permalink: /new-version-of-the-nunit-2-adapter-supporting-visual-studio-2019/
-catchevolution-sidebarlayout:
-  - default
+
 categories:
   - Uncategorized
 ---

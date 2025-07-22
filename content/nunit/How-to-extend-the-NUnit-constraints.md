@@ -3,6 +3,9 @@ title: How to extend the NUnit constraints
 date: 2024-12-29
 author: terje
 layout: post
+categories:
+ - nunit
+ - howto
 ---
 
 [NUnit](http://nunit.org/) has a very rich and readable constraint set.  Normally you don’t need to do anything. But, there are some cases where it would be nice to be able to tweak these constraints.  You can always wrap them and extend them that way, but then you lose all the other good stuff, like chaining.  What is not so well known is that you can extend the existing constraints, they are \*\*designed\** to be extendable!   In this post I will show how you can do that easily.

@@ -18,13 +18,15 @@ The run the following command to ensure you got it all right:
 dotnet
 ```
 
-then
+It should be found and display the help page.
+
+then run
 
 ```cmd
 dotnet --list-sdks
 ```
 
-The first should just show you itself.  The second lists the sdks you have installed with their version numbers.
+This should list the sdks you have installed with their version numbers.
 
 ### IDEs
 
@@ -41,27 +43,27 @@ Optionally you can also install [Visual Studio (large IDE)](https://visualstudio
 
 Create a basic application, Add a folder Test and then there:
 
-```
+```cmd
 dotnet new nunit
 ```
 
-This is a scaffolding operation for a unit test project, the code generated is the csproj project files, and then the UnitTest1.cs file which contains the unit test itself in C# code. 
+This is a scaffolding operation for a unit test project, the code generated is the csproj project files, and then the UnitTest1.cs file which contains the unit test itself in C# code.
 
 You can build and run test tests simply by:
 
-```
+```cmd
 dotnet test
 ```
 
 If you just wanted to build, without running the test, it is just
 
-```
+```cmd
 dotnet build
 ```
 
 The start code by writing:
 
-```
+```cmd
 code .
 ```
 
@@ -85,7 +87,7 @@ Now change the name from Class1 to Math
 
 Add a method like:
 
-```
+```csharp
 public double Add (double a, double b)
 {
     return a + b;
@@ -97,7 +99,7 @@ The project is called mylib (as the file mylib.csproj).  You rename this to e.g.
 
 Now, go back to the root folder for these three projects and run:
 
-```
+```cmd
 dotnet new sln
 ```
 
@@ -105,7 +107,7 @@ It will create a file named after the folder you're in, in my case `examples.sln
 
 Assuming you have installed VS Community edition, start it up doing:
 
-```
+```cmd
 devenv examples.sln
 ```
 
@@ -116,7 +118,6 @@ Now from the context menu on that node, select Add/Existing projects, and locate
 When finished, it should look like:
 
 ![](https://github.com/OsirisTerje/osiristerje.github.io/blob/master/images/sln-example.jpg)
-
 
 Select the top level Build menu, and do Build solution
 
@@ -129,8 +130,8 @@ Now, click the Dependency node on Cons and select Add Project Reference. and the
 
 Now, take a look inside the csproj files and see that it has now added a ProjectReference node.  Now you know how it looks, and you can add these in the editor later, if you prefer that.
 
-```
-<ItemGroup>
+```xml
+  <ItemGroup>
     <ProjectReference Include="..\mylib\MyMath.csproj" />
   </ItemGroup>
 ```
@@ -184,10 +185,11 @@ namespace cons
 
 And you can try to run it doing :
 
-```
+```cmd
 dotnet run 45.5  45
 Result is 90.50
 ```
+
 or without arguments or whatever, to check the error handling.
 
 Notice in the code the use of string interpolation, using the `$" {somevar}"` syntax.
@@ -198,7 +200,7 @@ And notice the use of the `var` keyword, which says that the variable should be 
 
 Now, the code is a bit duplicated, and the static Main is a bit big, so let us rearrange it a bit.
 
-```
+```csharp
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -270,7 +272,7 @@ We have now introduced a few more concepts:
 * Tuples as results from a method
 * Private function
 
-```
+```cmd
 dotnet run 45.5  45
 Result is 91.00
 ```
@@ -305,7 +307,7 @@ Notice the Within constraint added.  Doubles are never exact, so we put a range 
 
 Now do a Test All again, and it should go green. 
 
-#### Testing the program
+### Testing the program
 
 The program itself seems to have the error, but it is not that easy to test.  So let us make the program itself more testable.
 
@@ -355,7 +357,7 @@ namespace examples
 }
 ```
 
-This is a parameterized tests, and we can add more cases if we like.  Add a few more to check. 
+This is a parameterized tests, and we can add more cases if we like.  Add a few more to check.
 
 Running this test, will show it as red.  We sort of knew that already, so we have to dig deeper.  We know that the Math test is green, this is sort of integrating the two.  Let us see if we can remove the Math class from the equation first.
 

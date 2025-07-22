@@ -4,7 +4,7 @@ title: Fixing missing project.json error in old csproj format
 date: 2017-11-25T15:55:15+01:00
 author: terje
 layout: post
-guid: http://hermit.no/?page_id=160474
+
 ---
 When moving between old and new csproj formats, and back again when it doesn't work, I have several times ended with a project.json error looking like this:
 

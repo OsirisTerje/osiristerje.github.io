@@ -3,13 +3,16 @@ title: 'How to convert NUnit Assert.AreEqual to fluent  Assert.That syntax easil
 date: 2018-11-03T22:44:25+01:00
 author: terje
 layout: post
+categories:
+ - nunit
+ - howto
 ---
 
 Once upon a time it was declared that an Assert statement should have constraints given as AreEqual and AreNotEqual.  
 Further it was declared that it should be written in the opposite way of how a developer will think, that is with the expected value first and the actual value last.  
-Why this was made so, is still unclear.
+Why this was made so, is still unknown.
 
-And then we end up with tons of code like:
+But we end up with tons of code like:
 
 ```cs
 Assert.AreEqual("Zulu", zulu.Name);
@@ -31,6 +34,8 @@ This is the *new* fluent notation in NUnit (new and new.... it has been around f
 But - converting from one to another is not fun.  Doing this manually is a very boring task.  
 
 Enter the [NUnit.Analyzers](https://github.com/nunit/nunit.analyzers), a new set of Roslyn based analyzers with refactoring.  
+
+<!--more-->
 
 If you created your NUnit project using Visual Studio *Add New Project* and selected *NUnit*, or you used the command line with `dotnet new nunit`, you will already have the analyzer present.
 If not, you can add it to your solution as a nuget package, like any [Roslyn analyzer](https://docs.microsoft.com/en-us/visualstudio/code-quality/roslyn-analyzers-overview).

@@ -2,6 +2,9 @@
 date: 2023-03-07
 author: terje
 layout: post
+draft: true
+categories:
+  - howto
 ---
 
 

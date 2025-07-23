@@ -43,3 +43,8 @@ p {
     text-align: left !important; /* Left-align the text */
 }
 
+/* widen only the homepage text block */
+body.home .container {
+  max-width: 90%;    /* or whatever width you prefer */
+  margin: 0 auto;    /* center it */
+}

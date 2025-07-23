@@ -10,7 +10,13 @@ date: 2021-12-29
 ### .Net core
 Ensure you have the .net core sdk installed.
 
-[Download and install it from here](https://dotnet.microsoft.com/download/dotnet-core/thank-you/sdk-3.1.301-windows-x64-installer)
+Run 
+
+```cmd
+dotnet
+```
+
+If you get a "not found" message, then [Download and install .net 9 from here](hthttps://dotnet.microsoft.com/en-us/download/dotnet/thank-you/sdk-9.0.303-windows-x64-installer)
 
 The run the following command to ensure you got it all right:
 
@@ -37,7 +43,7 @@ Start it up and from the Extensions icon (on the left side, 5th down probably) a
 * C#  (from Microsoft)
 * GitLens
 
-Optionally you can also install [Visual Studio (large IDE)](https://visualstudio.microsoft.com/downloads/) which is superb for debugging.  Can come in handy. Select Community Edition, which is free. 
+Optionally you can also install [Visual Studio (large IDE)](https://visualstudio.microsoft.com/downloads/) which is superb for debugging.  Can come in handy. Select Community Edition, which is free.
 
 ## Basic c# .net core command line application
 

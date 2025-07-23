@@ -1,0 +1,5 @@
+/* only on the homepage */
+body.home .container {
+  max-width: 90%;   /* or whatever width you want */
+  margin: 0 auto;   /* center it */
+}

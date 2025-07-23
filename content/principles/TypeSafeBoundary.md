@@ -1,6 +1,8 @@
 ---
 layout: post
 date: 2024-07-01
+categories:
+  - principles
 ---
 
 # The Type-Safe-Boundary, what it is and how to use it to prevent bugs

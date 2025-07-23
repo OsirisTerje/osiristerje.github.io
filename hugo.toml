@@ -1,6 +1,6 @@
 baseURL = 'https://example.org/'
 languageCode = 'en-us'
-title = ' '
+title = 'Hermit Blog'
 theme = 'ananke'
 relativeURLs = true
 SectionPagesMenu = ""

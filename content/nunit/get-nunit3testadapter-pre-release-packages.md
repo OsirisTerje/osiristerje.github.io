@@ -3,6 +3,8 @@ title: How to get NUnit3TestAdapter pre-release packages
 date: 2018-02-06T21:59:50+01:00
 author: terje
 layout: post
+categories:
+ - nunit
 ---
 
 ## Adapter pre-releases

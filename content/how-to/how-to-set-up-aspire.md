@@ -13,7 +13,7 @@ categories:
 2. dotnet sdk
 
 Check that you have the latest SDK, currently 9.0.304
-![alt text](./images/dotnet_version.png)
+![alt text](./images/dotnet-version.png)
 
 If not, [Install sdk](https://dotnet.microsoft.com/en-us/download/dotnet)
 

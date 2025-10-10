@@ -4,42 +4,46 @@ title: NUnit testing using the new project format
 date: 2018-06-10T16:38:00+01:00
 author: terje
 layout: page
-guid: http://hermit.no/?page_id=160538
-catchevolution-sidebarlayout:
-  - default
+
+categories:
+ - nunit
 ---
-This is a short recipe for how to set up your project for NUnit testing usign the new project format
+
+# NUnit testing using the SDK project format
+
+This is a short recipe for how to set up your project for NUnit testing usign the SDK project format
 
 Microsoft Visual Studio supports two project formats. The new format uses package references and are much simpler than the old one. It will also pick up any C# file in your folder, so you don't need to add them explicitly.
 
-All you need to do to use NUnit with the new format is as shown in the example csproj below. The target framework can be any of the .net framework ones. For information on using .net core, see <a href="http://hermit.no/net-core-setup/">a short recipe for that</a>
+All you need to do to use NUnit with the new format is as shown in the example csproj below. The target framework can be any of the .net framework ones. For information on using .net core, see [a short recipe for that](http://hermit.no/net-core-setup/)
 
-<pre>&lt;Project Sdk="Microsoft.NET.Sdk"&gt;
+```xml
+<Project Sdk="Microsoft.NET.Sdk">
 
-&lt;PropertyGroup&gt;
- &lt;TargetFramework&gt;net472&lt;/TargetFramework&gt;
- &lt;LangVersion&gt;latest&lt;/LangVersion&gt;
- &lt;/PropertyGroup&gt;
+    <PropertyGroup>
+        <TargetFramework>net472</TargetFramework>
+        <LangVersion>latest</LangVersion>
+    </PropertyGroup>
 
-&lt;ItemGroup&gt;
- &lt;PackageReference Include="NUnit" Version="3.12.0" /&gt;
- &lt;PackageReference Include="NUnit3TestAdapter" Version="3.15.1" /&gt;
- &lt;PackageReference Include="Microsoft.NET.Test.Sdk" Version="16.3.0" /&gt;
-&lt;/ItemGroup&gt;
+    <ItemGroup>
+        <PackageReference Include="NUnit" Version="3.12.0" />
+        <PackageReference Include="NUnit3TestAdapter" Version="3.15.1" />
+        <PackageReference Include="Microsoft.NET.Test.Sdk" Version="16.3.0" />
+    </ItemGroup>
 
-&lt;/Project&gt;
-</pre>
+</Project>
+```
 
 That's all!
 
 Tips:
+
 1. You don't really need the LangVersion, but this is the way to ensure you have the latest minor version of C# enabled.
 2. It can be wise to add the following two attributes to the first propertygroup, to set the assembly and namespace to something specific, and not rely on the default mapping:
 
-<pre>&lt;RootNamespace&gt;MyCompany.MyApp.MyComponent&lt;/RootNamespace&gt;
-&lt;AssemblyName&gt;MyCompany.MyApp.MyComponent&lt;/AssemblyName&gt;
-</pre>
+```xml
+<RootNamespace>MyCompany.MyApp.MyComponent</RootNamespace>
+<AssemblyName>MyCompany.MyApp.MyComponent</AssemblyName>
+```
 
-<ol>
-    <li>For more details on .net framework versions, see <a href="https://docs.microsoft.com/en-us/dotnet/framework/migration-guide/versions-and-dependencies">this</a> and <a href="https://docs.microsoft.com/en-us/dotnet/framework/">this</a></li>
-</ol>
+For more details on .NET Framework versions, see [this migration guide](https://docs.microsoft.com/en-us/dotnet/framework/migration-guide/versions-and-dependencies) and the [framework overview](https://docs.microsoft.com/en-us/dotnet/framework/).

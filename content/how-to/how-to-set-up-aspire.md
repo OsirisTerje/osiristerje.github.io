@@ -21,13 +21,13 @@ If not, [Install sdk](https://dotnet.microsoft.com/en-us/download/dotnet)
 
 For windows:
 
-![alt text](./github_cli.png)
+![alt text](github_cli.png)
 
 Note:  This will also upgrade existing installations of the `gh cli*`.
 
 You can also install using choco:
 
-![alt text](./githubcli_choco.png)
+![alt text](githubcli_choco.png)
 
 4. Remove older Aspire
 

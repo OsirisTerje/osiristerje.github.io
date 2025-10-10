@@ -7,7 +7,7 @@ categories:
   - aspire
 ---
 
-# Installing tools
+# How to set up Aspire
 
 1. Visual Studio 17.14.* or greater
 2. dotnet sdk

@@ -1,8 +1,16 @@
 {{- $u := "https://dotnetcli.blob.core.windows.net/dotnet/Sdk/9.0/latest.version" -}}
-{{- $r := resources.GetRemote $u -}}
-{{- if $r.Err -}}
+{{- $resp := try (resources.GetRemote $u) -}}
+{{- with $resp.Err -}}
 (error fetching .NET SDK version)
 {{- else -}}
-{{ $r.Content | strings.TrimSpace }}
+  {{- $r := $resp.Value -}}
+  {{- $v := $r.Content | strings.TrimSpace -}}
+  {{- if $v -}}
+{{ $v }}
+  {{- else -}}
+(empty response from upstream)
+  {{- end -}}
 {{- end -}}
+
+
 

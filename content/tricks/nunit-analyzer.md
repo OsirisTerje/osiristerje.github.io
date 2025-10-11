@@ -1,6 +1,8 @@
 ---
 layout: post
 draft: true
+categories:
+ - nunit
 ---
 
 # Some useful NUnitAnalyzer information

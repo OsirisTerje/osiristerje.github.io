@@ -1,0 +1,3 @@
+{{ $url := "https://dotnetcli.blob.core.windows.net/dotnet/Sdk/10.0/latest.version" }}
+{{ $version := getURL $url }}
+{{ $version | plainify }}

@@ -14,7 +14,7 @@ A test adapter sits between a TestHost and the test framework.  If you use Visua
 
 <!--more-->
 
-Debugging the adapter require you to compile and consume a debug version of the adapter.  The package you debug is the nuget package. 
+Debugging the adapter require you to compile and consume a debug version of the adapter.  The package you debug is the nuget package.
 
 (Earlier we used the VSIX for debugging, but it is now simpler to use the nuget package.  It is still possible to use the VSIX, it follows the normal way for debugging VSIX packages, but this description will concentrate on the nuget package.)
 
@@ -28,19 +28,20 @@ We suggest you use the folder C:\nuget
 
 
 Clone the adapter repository:
-```
+
+```cmd
 git clone https://github.com/nunit/nunit3-vs-adapter.git
 ```
 
-Create a local branch,  e.g. debug
+Create a local branch, e.g. debug
 
-```
+```cmd
 git checkout -b debug
 ```
 
 You will debug the adapter in Visual Studio 2019, so start up visual studio:
 
-```
+```cmd
 devenv NUnit3TestAdapter.sln
 ```
 
@@ -49,11 +50,12 @@ You will then need a repro project, where you have the code you want to debug.  
 In the folder for the repro/project to be debugged, create (or modify, if it exist already) a nuget.config file.
 
 The content of the nuget.config should be like:
-```
+
+```xml
 <?xml version="1.0" encoding="utf-8"?>
-<configuration>    
-    <packageSources>    
-        <add key="local" value="c:\nuget" />
+<configuration>
+    <packageSources>
+        <add key="local" value="c:\\nuget" />
     </packageSources>
 </configuration>
 ```
@@ -62,17 +64,20 @@ The content of the nuget.config should be like:
 (PS 2: You can also add this key/value set to your global nuget.config, if you need to debug multiple projects. You can do this from inside Visual Studio, or just modify the file itself, which is located at %appdata%\nuget )
 
 Now create the repro project:
-```
+
+```cmd
 dotnet new nunit
 ```
 
 You can now start Visual Studio proper :
-```
+
+```cmd
 devenv Whatever.csproj
 ```
+
 or use Visual Studio Code
 
-```
+```cmd
 code .
 ```
 
@@ -92,23 +97,23 @@ Now, let's assume you want to debug the execution phase.  This is the most used 
 At line 24, there is a commented out line, which define the symbol LAUNCHDEBUGGER.
 Uncomment this line.
 
-When the adapter is fired up from the testhost, it will call either the method RunTests(IEnumerable<string> source.....  or the method RunTests(IEnumerable<TestCase> tests .....
+When the adapter is fired up from the testhost, it will call either the method `RunTests(IEnumerable<string> source...)` or the method `RunTests(IEnumerable<TestCase> tests...)`.
 The symbol we uncommented will ensure that the debugger will be launched at this particular place.
 
 ## Building a debug version
 
 Build a debug version is a two-step process, first compile it, then package it.
 
-```
+```cmd
 build -c debug
 build -t package -c debug
 ```
 Notice the version number created for the package, underlined red below:
-![](https://github.com/OsirisTerje/osiristerje.github.io/blob/master/images/packageAdapter.jpg)
+![Package adapter package version highlighted](https://github.com/OsirisTerje/osiristerje.github.io/blob/master/images/packageAdapter.jpg)
 
 Given that your nuget folder is in c:\nuget, you can now just run the command 'copynp', replacing the argument with your particular package version.
 
-```
+```cmd
 copynp 3.16.0-d01-dbg
 ```
 
@@ -122,11 +127,11 @@ Notice that if you use the old legacy project format, then you better use Visual
 
 Remember to check the box for "Include prereleases", otherwise you will not see it, AND of course, switch your source to Local or use All.  You may have later versions, so it might look like this:
 
-![](https://github.com/OsirisTerje/osiristerje.github.io/blob/master/images/UpdatePackage.jpg)
+![NuGet update package dialog](https://github.com/OsirisTerje/osiristerje.github.io/blob/master/images/UpdatePackage.jpg)
 
 If you use the new SDK format, you can go straight into the csproj file and modify that one, although, if you have multiple files, the method above could be faster.
 
-![](https://github.com/OsirisTerje/osiristerje.github.io/blob/master/images/csproj.jpg)
+![Example csproj showing package reference](https://github.com/OsirisTerje/osiristerje.github.io/blob/master/images/csproj.jpg)
 
 ## Starting a debug session
 
@@ -134,11 +139,11 @@ It doesn't matter **how** you start a test session.  YOu can use Visual Studio T
 
 Ensure you choose the red marked instance!
 
-![](https://github.com/OsirisTerje/osiristerje.github.io/blob/master/images/debuglaunch.jpg)
+![Visual Studio debug launcher selection dialog](https://github.com/OsirisTerje/osiristerje.github.io/blob/master/images/debuglaunch.jpg)
 
-You are then inside the adapter, and the breakpoint at the Debugger.Launch  statement. You can now set your other breakpoint, single step or whatever you need to do to figure what is going on!.
+You are then inside the adapter, and the breakpoint at the Debugger.Launch statement. You can now set your other breakpoint, single step or whatever you need to do to figure what is going on!.
 
-![](https://github.com/OsirisTerje/osiristerje.github.io/blob/master/images/Debugcode.jpg)
+![Debugging code screenshot](https://github.com/OsirisTerje/osiristerje.github.io/blob/master/images/Debugcode.jpg)
 
 
 
@@ -147,7 +152,7 @@ You are then inside the adapter, and the breakpoint at the Debugger.Launch  stat
 ## Some tricks and traps
 
 * Don't run this with parallell execution, it will just fire up multiple instances of Visual Studio debuggers, and you will drown in them.  You can use the runsettings file to disable parallell execution if you have that issue.
-* Limit the number of test cases you're working on. Having too many can get you stuck in the internal loops in the adapter. 
+* Limit the number of test cases you're working on. Having too many can get you stuck in the internal loops in the adapter.
 * Remember to use the Dump facility (enable it through runsettings, see [Adapter Tips and Tricks](https://github.com/nunit/docs/wiki/Tips-And-Tricks). It shows what happens in the interface between Adapter and Framework/Engine.
 * Use the Visual Studio 2019  Tools/Options/Test logging set to Trace to see what happens in the interface between the TestHost and the Adapter.
 

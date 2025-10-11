@@ -9,10 +9,15 @@ categories:
 
 # How to set up Aspire
 
-1. Visual Studio 17.14.* or greater
-2. dotnet sdk
+A step-by-step procedure to set up Aspire
 
-Check that you have the latest SDK, currently 9.0.304
+<!--more-->
+
+1. Use Visual Studio 17.14.* or greater
+2. Set up latest dotnet sdk
+
+Check that you have the latest SDK, currently for .net 9 {{< dotnet9_latest >}} and for .net 10 {{< dotnet10_latest >}}.
+
 ![alt text](./images/dotnet-version.png)
 
 If not, [Install sdk](https://dotnet.microsoft.com/en-us/download/dotnet)

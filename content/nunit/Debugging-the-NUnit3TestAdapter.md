@@ -145,16 +145,11 @@ You are then inside the adapter, and the breakpoint at the Debugger.Launch state
 
 ![Debugging code screenshot](https://github.com/OsirisTerje/osiristerje.github.io/blob/master/images/Debugcode.jpg)
 
-
-
-
-
 ## Some tricks and traps
 
 * Don't run this with parallell execution, it will just fire up multiple instances of Visual Studio debuggers, and you will drown in them.  You can use the runsettings file to disable parallell execution if you have that issue.
 * Limit the number of test cases you're working on. Having too many can get you stuck in the internal loops in the adapter.
-* Remember to use the Dump facility (enable it through runsettings, see [Adapter Tips and Tricks](https://github.com/nunit/docs/wiki/Tips-And-Tricks). It shows what happens in the interface between Adapter and Framework/Engine.
+* Remember to use the Dump facility (enable it through runsettings, see [Adapter Tips and Tricks](https://github.com/nunit/docs/wiki/Tips-And-Tricks). It shows what happens in the interface between Adapter and Framework/Engine.)
 * Use the Visual Studio 2019  Tools/Options/Test logging set to Trace to see what happens in the interface between the TestHost and the Adapter.
-
 
 Happy debugging!

@@ -105,7 +105,7 @@ build -t package -c debug
 ```
 
 Notice the version number created for the package, underlined red below:
-![Package adapter package version highlighted](./images/packageAdapter.jpg)
+![Package adapter package version highlighted](/images/packageAdapter.jpg)
 
 Given that your nuget folder is in c:\nuget, you can now just run the command 'copynp', replacing the argument with your particular package version.
 
@@ -123,11 +123,11 @@ Notice that if you use the old legacy project format, then you better use Visual
 
 Remember to check the box for "Include prereleases", otherwise you will not see it, AND of course, switch your source to Local or use All.  You may have later versions, so it might look like this:
 
-![NuGet update package dialog](./images/UpdatePackage.jpg)
+![NuGet update package dialog](/images/UpdatePackage.jpg)
 
 If you use the new SDK format, you can go straight into the csproj file and modify that one, although, if you have multiple files, the method above could be faster.
 
-![Example csproj showing package reference](./images/csproj.jpg)
+![Example csproj showing package reference](/images/csproj.jpg)
 
 ## Starting a debug session
 
@@ -156,15 +156,15 @@ Add a runsettings file, or a minimum one like:
 ```
 
 Then run your test, and a debug launcher will be started:
-![Visual Studio debug launcher selection dialog](./images/debuglaunch.jpg)
+![Visual Studio debug launcher selection dialog](/images/debuglaunch.jpg)
 
 Choose the NUnitAdapter (red arrow), and off you go into the adapter code
 
-![Breakpoint hit inside adapter code](./images/debugpoint.png)
+![Breakpoint hit inside adapter code](/images/debugpoint.png)
 
 You are then inside the adapter, and the breakpoint at a Debugger.Launch  statement. Step out of this method, and then you're at the top of the Execution process, just after initialization:
 
-![Execution start inside adapter](./images/Executionstart.png)
+![Execution start inside adapter](/images/Executionstart.png)
 
 You can now set your other breakpoint, single step or whatever you need to do to figure what is going on!.
 

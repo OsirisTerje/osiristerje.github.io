@@ -18,7 +18,7 @@ A step-by-step procedure to set up Aspire
 
 Check that you have the latest SDK, currently for .net 9 {{< dotnet9_latest >}} and for .net 10 {{< dotnet10_latest >}}.
 
-![alt text](./images/dotnet-version.png)
+![alt text](/images/dotnet-version.png)
 
 If not, [Install sdk](https://dotnet.microsoft.com/en-us/download/dotnet)
 
@@ -26,13 +26,13 @@ If not, [Install sdk](https://dotnet.microsoft.com/en-us/download/dotnet)
 
 For windows:
 
-![alt text](./images/github_cli.png)
+![alt text](/images/github_cli.png)
 
 Note:  This will also upgrade existing installations of the `gh cli*`.
 
 You can also install using choco:
 
-![alt text](./images/githubcli_choco.png)
+![alt text](/images/githubcli_choco.png)
 
 4. Remove older Aspire
 
@@ -40,7 +40,7 @@ See [Upgrade your development environment](https://learn.microsoft.com/en-us/dot
 
 Check for workloads:
 
-![alt text](./images/check_workloads.png)
+![alt text](/images/check_workloads.png)
 
 Following these [instructions](https://learn.microsoft.com/en-us/dotnet/aspire/get-started/upgrade-to-aspire-9?pivots=vscode#net-aspire-workload)
 
@@ -50,11 +50,11 @@ Use Windows Search to find the Visual Studio Installer. Choose Modify on the cur
 
 Install the Aspire project templates:
 
-![alt text](./images/aspire_templates.png)
+![alt text](/images/aspire_templates.png)
 
 6. Install the Aspire CLI
 
-![alt text](./images/aspire_cli.png)
+![alt text](/images/aspire_cli.png)
 
 7. Install container
 
@@ -62,7 +62,7 @@ Use either [Docker Desktop or Podman](https://learn.microsoft.com/en-us/dotnet/a
 
 If you already have Docker Desktop installed, you should upgrade to the latest.  If you don't rmember how you installed it, which I didn't, use the following to check for winget:
 
-![alt text](./images/docker_install.png)
+![alt text](/images/docker_install.png)
 
 And, as you can see, I have it there, and it is an older version, so I use
 

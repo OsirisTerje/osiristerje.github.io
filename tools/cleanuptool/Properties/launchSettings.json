@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "CleanupTool": {
+      "commandName": "Project",
+      "commandLineArgs": "C:\\repos\\blog\\oct25blog\\content\\archive\\2019-11-04-moving-to-sdk-style-projects-and-package-references-in-visual-studio-part-2.md\r\n"
+    }
+  }
+}

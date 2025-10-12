@@ -8,8 +8,7 @@ Aliases are best put into the Global section, or even System section if you have
 
 Open up the global section in your editor:
 
-```
-
+```cmd
 git config --global -e
 ```
 
@@ -24,8 +23,7 @@ You use git status a lot, so I would like to just use git s as a shortcut for th
 Also, I often go to main, so I would like to shorten that one done, so instead of writing  git switch main,  I'll just write git m
 I also often like to check all my branches, so bl for git branch --all sounds good.
 
-```
-
+```cmd
 [alias]
     s = !git status
     m = !git switch main
@@ -34,8 +32,7 @@ I also often like to check all my branches, so bl for git branch --all sounds go
 
 Usage:
 
-```
-
+```cmd
     git s
     git m
     git bl
@@ -45,16 +42,14 @@ Usage:
 
 When at this, having to write all the stuff for creating a new branch and going to it....  It is called `switch`'ing, so lets make the shortcut  'sw' to mean ``go to a branch` and `swc` to mean `create a new branch and go to it`
 
-```
-
+```cmd
     sw = !git switch
     swc = !git switch -c
 ```
 
 Wait ....  now how do you use this ?
 
-```
-
+```cmd
     git swc mybranch
 ```
 
@@ -64,8 +59,7 @@ You can add parameters to your shortcuts, they are just being expanded to the fu
 
 One thing that also annoys me, is when I want to push a non-tracked branch to the remote.  In order to do that, I need to know the name of the branch I am on.  Then I can use that when pushing, and call that 'git pub' (short for publish)
 
-```
-
+```cmd
    branchname = !git rev-parse --abbrev-ref HEAD
    pub = !git push -u origin $(git branchname)
 ```
@@ -80,8 +74,7 @@ Earlier we have seen how we can remove dangling objects.  We needed to call two 
 
 Since the word clean is taken, and this is for the repo, I'll go for rclean (repoclean).  Note, I could also make a command, and then a shortcut for that, having both.  What about repoclean as the command, and rc as the shortcut ?
 
-```
-
+```cmd
    repoclean = !git reflog expire --expire-unreachable=now --all &&  git gc --prune=now
    rc = !git repoclean
 ```
@@ -91,15 +84,13 @@ Since the word clean is taken, and this is for the repo, I'll go for rclean (rep
 Another thing that is annoying, is to always look for the remote, fire up the browser, and going to that remote repo.  Too much work.  And, the repo already know the remote url, so...
 
 Lets first find the url of the origin remote:
-```
-
+```cmd
     url = !git config --get remote.origin.url
 ```
 
 Then we start our favourite browser, in this case Microsoft Edge, using the function syntax for git aliases:
 
-```
-
+```csharp
     execurl = "!f() { exec start msedge \"$@\"; } ; f"
 ```
 
@@ -107,15 +98,13 @@ Note here that we also use the upcoming parameter.  We need now to have the para
 
 And finally we combine the two above
 
-```
-
+```cmd
     web = !git execurl $(git url)
 ```
 
 Now running
 
-```
-
+```cmd
     git web
 ```
 
@@ -130,15 +119,13 @@ It turns out gitignore.io has an api just under there, which we can use.
 
 This function call the gitignore.io api using curl, with the selected language as a parameter
 
-```
-
+```csharp
     ignore =  "!f() { curl -L -s https://www.gitignore.io/api/$@ ;}; f"
 ```
 
 We then add one specific for Visual Studio (or C#), and appends that to the .gitignore file !   We also add one for Python
 
-```
-
+```cmd
     ignorevs = !git ignore visualstudio >> .gitignore
     ignorepy = !git ignore python >> .gitignore
 ```
@@ -159,8 +146,7 @@ Parameters can be used as positional parameters too, like ${1}.  They can also h
 
 Variables can be defined inside the function:
 
-```
-
+```csharp
 !f() { msg = ${1}; echo $msg;}; f
 ```
 

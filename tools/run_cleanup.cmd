@@ -3,7 +3,7 @@ REM Run CleanupTool on every Markdown file under the repository's content\\ fold
 REM Usage: open a Command Prompt, cd to the repo root (where this script lives), then run this script.
 
 SETLOCAL
-SET PROJECT=tools\CleanupTool.csproj
+SET PROJECT=tools\CleanupTool\CleanupTool.csproj
 
 dotnet build "%PROJECT%"
 

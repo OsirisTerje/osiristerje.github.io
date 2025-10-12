@@ -35,8 +35,7 @@ The color of the build will then be red, not yellow, but that is how the Azure P
 
 If you need a yml snippet for this, the above was converted by [Edward Bordin](https://github.com/ed-alertedh) - see [this issue comment](https://github.com/microsoft/azure-pipelines-tasks/issues/1268#issuecomment-430501012), into the following:
 
-```
-
+```csharp
 - script: 'echo 1>&2'
   failOnStderr: true
   displayName: 'If above is partially succeeded, then fail'

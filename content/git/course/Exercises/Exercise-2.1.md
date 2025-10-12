@@ -8,8 +8,7 @@ Create a new repo
 
 Point Gitviz to it
 
-```
-
+```cmd
 echo C1 >> c1.md
 git add *
 git commit -m "C1"
@@ -23,8 +22,7 @@ Run git-sizer and note the values:
 
 Now, create a new branch:
 
-```
-
+```cmd
 git switch -c experiment
 ```
 
@@ -50,8 +48,7 @@ You can use HEAD to work down (to the parents) of your current commit.
 
 Run
 
-```
-
+```cmd
 echo C2 >> c2.md
 git add *
 git commit -m "C2"
@@ -65,14 +62,12 @@ Notice what happened in GitViz with the branch and the head
 Go back to master
 
 Either
-```
-
+```cmd
 git switch -
 ```
 
 or
-```
-
+```cmd
 git switch master
 ```
 
@@ -80,8 +75,7 @@ What does the first one mean?
 
 Check your workspace.  What happened ?
 
-```
-
+```cmd
 echo C4 >> c4.md
 git add *
 git commit -m "C4"
@@ -91,8 +85,7 @@ Now, your GitViz should show that the two branches have **diverged**.  They have
 
 We now merge these two together:
 
-```
-
+```cmd
 git merge experiment
 ```
 
@@ -108,15 +101,13 @@ Let us assume you want the release the code at this stage
 
 You can add a release branch here, but it is better to use a tag
 
-```
-
+```cmd
 git tag V1.1
 ```
 
 Now add another commit:
 
-```
-
+```cmd
 echo C5 >> c5.md
 git add *
 git commit -m "C5"
@@ -204,8 +195,7 @@ What does it mean?
 
 Add/Commit a new file
 
-```
-
+```cmd
 echo >> detached.md
 git add *
 git commit -m"Added detached.md"
@@ -223,8 +213,7 @@ You can checkout/switch to any commit, based on their SHA.
 
 So, see the SHA of the commit you want to keep, in my case it is b844cf4 (the seven first shown is normally enough).  Then create a branch at that commit.
 
-```
-
+```cmd
 git switch --detach b844cf4
 git branch keepthis
 git switch keepthis
@@ -241,8 +230,7 @@ There is another command , checkout.   Explain the difference between checkout a
 
 List the tags you have:
 
-```
-
+```cmd
 git tag
 
 or
@@ -252,8 +240,7 @@ git tag --list <search params>
 
 Run the following:
 
-```
-
+```cmd
   git tag V1.0
   git tag V2.0
   git tag V3.0
@@ -264,8 +251,7 @@ Run the following:
 
 Now to only see issue tags:
 
-```
-
+```cmd
     git tag -l "Issue*"
 ```
 
@@ -277,8 +263,7 @@ You realize you don't need the tag named 'whatever', so delete it.
 
 Now connect this repo with a remote
 
-```
-
+```cmd
     git switch master
     git push -u origin master
     git switch -c release1
@@ -290,8 +275,7 @@ Check the remote - is the tag there ?
 
 In order to push the tags up to the remote, you need to explicitly push the tags
 
-```
-
+```cmd
     git push origin V1.0
 ```
 

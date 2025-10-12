@@ -4,8 +4,7 @@
 
 You can reuse one of the former repos, or just create a new repo, add a first commit like:
 
-```
-
+```cmd
 echo C1 > C1.md
 git add *
 git commit -m"C1"
@@ -13,8 +12,7 @@ git commit -m"C1"
 
 Stay on master
 
-```
-
+```csharp
 echo stuff > stuff.md
 echo otherstuff >> C1.md
 ```
@@ -27,8 +25,7 @@ Run git status and see first, keep a watch on GitViz too.
 
 Then
 
-```
-
+```cmd
 git stash
 ```
 
@@ -38,8 +35,7 @@ What did **not** happen ?
 
 Since you have untracked files, you need to state that explicitly.  Stash with no options doesn't stash untracked files.
 
-```
-
+```cmd
 git stash -u
 ```
 
@@ -54,8 +50,7 @@ How does your workspace look like now?
 ## Stash is a stack
 
 Run
-```
-
+```cmd
 git stash list
 ```
 
@@ -68,8 +63,7 @@ You should now see that you have two stashes there.  To get things out again, yo
 First
 
 Run
-```
-
+```cmd
 git stash apply
 ```
 
@@ -82,8 +76,7 @@ As you still have the stash in the stack, you can retrieve it again.
 This time use
 
 Run
-```
-
+```cmd
 git stash pop
 ```
 
@@ -93,23 +86,20 @@ Notice the change in GitViz
 
 Do
 
-```
-
+```cmd
 echo C1234 >> c1.md
 git stash
 ```
 
 No you can see what this stash is about by:
 
-```
-
+```cmd
 git stash show
 ```
 
 This gives  list of the changes,  for more details:
 
-```
-
+```cmd
 git stash show -p
 ```
 
@@ -122,8 +112,7 @@ Now, stage and commit the changes you have in now
 
 You now remember that you  forgot the next stash.  But no problem, you can pop into any branch.
 
-```
-
+```cmd
 git stash pop
 ```
 
@@ -133,16 +122,14 @@ How does it look in GitViz?
 
 Now run the commands below:
 
-```
-
+```cmd
 echo C12 >> c1.md
 git stash
 ```
 
 Now, let us assume you want to work on this change (stash), but in a branch for itself.
 
-```
-
+```cmd
 git stash branch st1
 ```
 
@@ -154,16 +141,14 @@ Ensure the changes are committed.
 
 Now go back to master
 
-```
-
+```cmd
 echo C12 >> c1.md
 git stash
 ```
 
 Go back to the ex branch
 
-```
-
+```cmd
 git stash branch st2
 ```
 
@@ -173,8 +158,7 @@ Now what happened this time?
 
 Do
 
-```
-
+```cmd
 echo C12 >> c1.md
 git stash
 echo C13 >> c1.md
@@ -191,15 +175,13 @@ List out the stashes.  You decide to start with the middle one.
 
 To get that one out of the list, run:
 
-```
-
+```cmd
 git stash branch s1 stash@{1}
 ```
 
 This way of referring to a particular stash can also be used when pop'ing, or apply'ing:
 
-```
-
+```cmd
 git stash pop stash@{2}
 ```
 
@@ -209,8 +191,7 @@ When you see you don't need the stashes anymore, or a particular stash, you can 
 
 Do
 
-```
-
+```cmd
 echo C12 >> c1.md
 git stash
 echo C13 >> c1.md
@@ -222,8 +203,7 @@ git stash list
 
 Now, you can drop one of these:
 
-```
-
+```cmd
 git stash drop stash@{2}
 git stash list
 ```
@@ -232,8 +212,7 @@ Check GitViz !
 
 Or you can get rid of them all:
 
-```
-
+```cmd
 git stash clear
 git stash list
 ```

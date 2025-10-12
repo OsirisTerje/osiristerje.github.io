@@ -42,15 +42,13 @@ If you just want to see the actual value of a given config value, you can use `g
 
 Example:
 
-```
-
+```cmd
 git config --show-origin user.name
 ```
 
 will give you something like:
 
-```
-
+```csharp
 file:C:/Users/TerjeSandstrom/.gitconfig Terje Sandstrom
 ```
 

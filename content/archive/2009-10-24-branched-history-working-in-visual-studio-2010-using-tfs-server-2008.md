@@ -13,7 +13,7 @@ History across branches:  You can now see the history of a versioned item even 
 
 [![Branched history screenshot](/images/2015/08/GWB-WindowsLiveWriter-BranchedHistory_5775-image_thumb.png)](http://gwb.blob.core.windows.net/terje/WindowsLiveWriter/BranchedHistory_5775/image.png)
 
-You can see that this item started out in a Development (Feature) branch, changeset 33008, but in changeset 34502 it was merged into the Main. 
+You can see that this item started out in a Development (Feature) branch, changeset 33008, but in changeset 34502 it was merged into the Main.
 
 If you use branched history you will probably also want to change your workspace mappings so the branch is mapped into a folder location that more closely matches the real folder structure of the branch. This makes it easier to navigate between branches when sharing a workspace between branches. For example, you may map the root of the branch into a folder with the same name as the branch. You do this by editing your workspace mappings and changing the server path mapping to the appropriate branch path.
 

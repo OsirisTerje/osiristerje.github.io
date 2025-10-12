@@ -22,8 +22,7 @@ Lets just assume that someone else did the change in the master branch.  You rea
 
 The rebase let you do that:
 
-```
-
+```cmd
 git rebase master
 ```
 
@@ -41,8 +40,7 @@ Go to master
 
 Run the follwing commands:
 
-```
-
+```cmd
 echo C4 > C4.md
 git add *
 git commit -m"C4"
@@ -56,8 +54,7 @@ Create a new branch here, Experiment2
 
 Run the same commands again:
 
-```
-
+```cmd
 echo C4 > C4.md
 git add *
 git commit -m"C4"
@@ -65,8 +62,7 @@ git commit -m"C4"
 
 Then rebase this branch onto master
 
-```
-
+```cmd
 git rebase master
 ```
 
@@ -90,8 +86,7 @@ You can run git status to see the options you have:
 
 Then run:
 
-```
-
+```cmd
 git rebase --continue
 ```
 

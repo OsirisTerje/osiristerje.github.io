@@ -12,15 +12,13 @@ This short guide explains how you get the Azure CLI to show up properly with the
 
 You might have the Azure CLI installed even if it doesn't show up in your bash shell.  Check first using either Cmd or Powershell, by running e.g.
 
-```
-
+```csharp
 az --version
 ```
 
 You can run this from the bash shell, but using the full name of the cmd file:
 
-```
-
+```csharp
 az.cmd --version
 ```
 
@@ -43,8 +41,7 @@ The full installation instructions can be found [here](https://docs.microsoft.co
 1. If not installed, install [the MSI](https://aka.ms/installazurecliwindows)
 2. Check where it is installed by using the command :
 
-```
-
+```csharp
 where az.cmd
 ```
 
@@ -58,8 +55,7 @@ Go to your %userprofile% directory
 
 Edit the file .bashrc to include
 
-```
-
+```csharp
 alias az='az.cmd'
 ```
 
@@ -76,8 +72,7 @@ If all you want to do is to run some Azure CLI commands, this should be sufficie
 If you want to use the Azure CLI from scripts, you can add a small script for that.  My script is named 'azb', but you could also just override the 'az' itself.  Place the file (without any extension) somewhere which can be reached through the defined Path.  You could place it in the same folder as the az.cmd itself, which you find using the Where command as described above.
 The file should look like:
 
-```
-
+```csharp
 #!/bin/bash
 "C:\Program Files (x86)\Microsoft SDKs\Azure\CLI2\wbin\az.cmd" $1 $2 $3 $4 $5 $6 $7 $8 $9 ${10} ${11} ${12} ${13} ${14} ${15}
 ```

@@ -28,7 +28,7 @@ If you choose to create the project (and solution) **with** a solution directory
 
 In no case is the packages folder placed at the root level of the repo, where the standard gitignore file will be placed.
 
-Some developers however, prefer to have the packages folder at the root level, and simply “move” it there, by editing the Repository path in the nuget.config file, see the [docs](http://docs.nuget.org/docs/reference/nuget-config-settings), sot he pattern need to cover that too. 
+Some developers however, prefer to have the packages folder at the root level, and simply “move” it there, by editing the Repository path in the nuget.config file, see the [docs](http://docs.nuget.org/docs/reference/nuget-config-settings), sot he pattern need to cover that too.
 
 ## What is to be excluded and re-included
 
@@ -56,7 +56,7 @@ The section looks like this:
 
 #packages/
 
-As mentioned above, you must uncomment the last line here. 
+As mentioned above, you must uncomment the last line here.
 
 packages/
 
@@ -66,7 +66,7 @@ If we add a re-inclusion for the build folder, the result will be as shown below
 
 [![image](/images/2015/08/GWB-Windows-Live-Writer-GitIgnore_14795-image_thumb.png "image")](https://gwb.blob.core.windows.net/terje/Windows-Live-Writer/GitIgnore_14795/image_2.png)
 
-The packages folders are excluded, blue arrow, the build folders are reincluded, red arrow, and thus should appear, but they don’t. 
+The packages folders are excluded, blue arrow, the build folders are reincluded, red arrow, and thus should appear, but they don’t.
 
 ## Conclusion:  This pattern only works if you don’t want to re-include anything.
 
@@ -74,9 +74,11 @@ The packages folders are excluded, blue arrow, the build folders are reincluded,
 
 The pattern looks like this, with re-includes:
 
+```text
 \# NuGet Packages
 packages/\*
 \*.nupkg
+```
 
 ## TODO: If the tool you use requires repositories.config
 
@@ -126,17 +128,21 @@ However, note that if you use Visual Studio with the default locations of the pa
 
 If we combine Option 2 and Option 3 we will cover all options here, the resulting clauses are then
 
+```text
 \# NuGet Packages
 \*\*/packages/\*
 packages/\*
 \*.nupkg
+```
 
 ## TODO: If the tool you use requires repositories.config
 
 ## uncomment the next line
 
+```text
 !\*\*/packages/repositories.config
 !packages/repositories.config
+```
 
 # Enable "build/" folder in the NuGet Packages folder since
 
@@ -146,8 +152,10 @@ packages/\*
 
 # (and the packages folder if the lines above for that has been uncommented)
 
+```text
 !\*\*/packages/build/
 !packages/build/
+```
 
 And the results are:
 

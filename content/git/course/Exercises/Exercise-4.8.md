@@ -14,8 +14,7 @@ Check the repo that it has a .gitignore file, and that it is recent.
 
 Running
 
-```
-
+```cmd
 dotnet test
 ```
 
@@ -23,8 +22,7 @@ you verify this is a working program.
 
 Clean the repo again for all temporary files
 
-```
-
+```cmd
 git clean -xdf
 ```
 
@@ -44,8 +42,7 @@ Verify that you got everything up on Github.
 
 You need to find out if the repo contains any history of dll's.
 
-```
-
+```cmd
 git log --all   "**/*.dll"
 ```
 
@@ -53,8 +50,7 @@ You will be shown a list of all commits that contains dll's.
 
 For more details:
 
-```
-
+```cmd
 git log --all --full-history  "**/*.dll"
 ```
 
@@ -62,8 +58,7 @@ git log --all --full-history  "**/*.dll"
 
 If you don't want the paging
 
-```
-
+```cmd
 git --no-pager log --all --full-history  "**/*.dll"
 ```
 
@@ -75,8 +70,7 @@ We're going to start using a built-in tool called filter-branch.
 
 So to clean out the repo for dll's do the following:
 
-```
-
+```cmd
 git filter-branch --force --index-filter  "git rm --cached  --ignore-unmatch *.dll"
 ```
 
@@ -114,22 +108,19 @@ The [manual](https://htmlpreview.github.io/?https://github.com/newren/git-filter
 
 Now start by analyzing the repo
 
-```
-
+```cmd
 git filter-repo --analyze
 ```
 
 The go to the folder (using e.g. code)
 
-```
-
+```cmd
 code .git/filter-repo/analysis
 ```
 
 You see all the folders, all the files, extensions etc, and it is easy to understand what needs to be deleted.
 
-```
-
+```cmd
 git filter-repo --path "obj" --path "bin" --invert-paths
 ```
 
@@ -144,15 +135,13 @@ All gone!
 Now, I want this cleaned repo up on the remote.
 
 So I reconnect with the remote doing a
-```
-
+```cmd
 git remote add origin <myurl>
 ```
 
 Then I need to do the real connect, so.... a fetch ??  Or just try to push?   A fetch may bring back the old commits from the remote... so, I'll go for the push
 
-```
-
+```cmd
 git push -u origin master
 ```
 
@@ -160,7 +149,6 @@ Try this - it will not work....
 
 You need to force it up....  and then... look around, anyone else on that repo?  Have you warned them that you're now going to kill all their work?  Because that is what will happen.
 
-```
-
+```cmd
 git push -u origin master --force
 ```

@@ -11,8 +11,7 @@ Then create branches  a,b,c and d.
 Push each of these branches to the server
 
 Run
-```
-
+```cmd
 git branch -l  --no-color
 ```
 
@@ -21,8 +20,7 @@ Then go to the server, and delete the branch b
 Locally, go back to master,
 
 Fetch the remote repo:
-```
-
+```cmd
 git fetch
 ```
 
@@ -31,8 +29,7 @@ and run the branch list command again
 Is the remote branch 'b' still present?
 
 Now run :
-```
-
+```cmd
 git fetch --prune
 ```
 
@@ -46,8 +43,7 @@ Can we make this setting the default, and why?
 
 Run the following command
 
-```
-
+```cmd
 git config --global fetch.prune true
 ```
 
@@ -57,8 +53,7 @@ Check the branch list, and verify that the tracking branch for 'c' is still pres
 
 Ensure you're on master
 
-```
-
+```cmd
 git pull
 ```
 
@@ -76,8 +71,7 @@ Use Gitviz to find one of your repos that have dangling or orphaned objects. The
 
 You can list them though, doing:
 
-```
-
+```cmd
 git fsck
 
 or
@@ -87,8 +81,7 @@ git fsck --unreachable
 
 There are two steps to this process, one is to get rid of all refs that points to the objects, then to get rid of the objects themselves.
 
-```
-
+```cmd
 git reflog expire --expire-unreachable=now --all
 git gc --prune=now
 ```

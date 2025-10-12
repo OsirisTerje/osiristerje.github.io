@@ -11,8 +11,7 @@ If not [Install Git](https://git-scm.com/downloads)
 The Git documentation can be found here:  https://git-scm.com/docs
 
 Open a command prompt, and run:
-```
-
+```cmd
 git --version
 ```
 
@@ -21,16 +20,14 @@ git --version
 
 First check your configuration
 
-```
-
+```cmd
 git config user.name
 git config user.email
 ```
 
 If nothing, then configure it with
 
-```
-
+```cmd
 git config --global user.name "Your name"
 git config --global user.email "Your email"
 ```
@@ -127,8 +124,7 @@ Ensure you have dotnet core , and the .net core 3.1 SDK installed.
 
 Just write  (you can do this anywhere, it is just a check):
 
-```
-
+```cmd
 dotnet
 dotnet --list-sdks
 ```
@@ -139,8 +135,7 @@ If not [install .net core 3.1 SDK](https://dotnet.microsoft.com/download).
 
 Create a new local repo,  name it 'TaskSystem':
 
-```
-
+```cmd
 md taskSystem
 cd TaskSystem
 git init
@@ -152,8 +147,7 @@ Note:  Make sure you don't create this below another git repo, always start from
 
 use dotnet to create a small code sample:
 
-```
-
+```cmd
 dotnet new nunit
 ```
 
@@ -180,8 +174,7 @@ In that folder, add a new file named   "crap.dll",  it doesn't need to contain a
 
 E.g.:
 
-```
-
+```csharp
 echo >> crap.dll
 ```
 

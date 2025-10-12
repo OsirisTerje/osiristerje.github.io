@@ -85,8 +85,7 @@ There will always be a need to add some technical information in addition to the
 
 ### The integer fallacy
 
-```
-
+```csharp
 public class Person
     {
         int Id { get; set; }
@@ -98,8 +97,7 @@ public class Person
 
 The Id property here is the database Id column, which is set up as a primary unique key. When this is present in the business logic as an instance of this class, it will carry around its Id.  The reason for this is that code often uses this id to look it up from elsewhere.
 
-```
-
+```csharp
 public class SchoolClass
     {
         List<int> Persons { get; }
@@ -109,8 +107,7 @@ public class SchoolClass
 That is, we store the Id around the code, instead of a reference to the object itself. The example above might seem good enough, but it is breaking the Type Safe Boundary.  Using an integer Id to represent the object is a weakly typed way.  The integer may have any value, and might or not be an actual object.
 
 Instead use the reference to the object:
-```
-
+```csharp
 public class SchoolClass
     {
         List<Person> Persons { get; }
@@ -121,8 +118,7 @@ public class SchoolClass
 
 Another way weakly typed information sneaks in is more direct, using the name of the class in literal string form, or even disguising it a bit more, using ```nameof(Person)``` as a parameter to something.
 
-```
-
+```csharp
 void SendOutputOf(string classname,object obj);
 .....
 SendOutputOf("Person",person);
@@ -131,8 +127,7 @@ SendOutputOf(nameof(Person),person);
 
 In cases like this, the underlying reason is an attempt to make some kind of generic functionality that should work with multiple types of non-related classes.  The obvious remedy is to use generics itself.
 
-```
-
+```csharp
 void SendOutputOf<T>(T obj);
 .....
 SendOutputOf(person);

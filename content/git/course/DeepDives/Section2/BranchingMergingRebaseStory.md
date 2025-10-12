@@ -7,8 +7,7 @@ layout: page
 ## Developer 1
 
 First change something on the remote branch 'update' twice
-```
-
+```cmd
 git pull
 ```
 ![1](bms-1.jpg)

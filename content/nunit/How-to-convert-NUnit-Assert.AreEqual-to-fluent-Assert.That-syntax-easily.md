@@ -14,8 +14,7 @@ Why this was made so, is still unknown.
 
 But we end up with tons of code like:
 
-```
-
+```csharp
 Assert.AreEqual("Zulu", zulu.Name);
 Assert.AreEqual("Z - Zulu", zulu.Description);
 Assert.AreEqual(FlagType.Signal, zulu.Sort);
@@ -26,8 +25,7 @@ And it is not uncommon to see the two parameters swapped, making the displayed r
 
 If we write this with the fluent syntax:
 
-```
-
+```csharp
 Assert.That(zulu.Name,Is.EqualTo("Zulu");
 ```
 

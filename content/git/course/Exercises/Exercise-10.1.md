@@ -16,8 +16,7 @@ We want this over to the master branch, and we dont want the C3 nor the C5 there
 
 Ensure you are on master
 
-```
-
+```cmd
 git cherry-pick <YourSHA>
 ```
 
@@ -31,8 +30,7 @@ See in your graph tool, and find the SHA of the commit containing the files C10-
 
 Now, we want **only** the file C11 from that commit
 
-```
-
+```cmd
 git cherry-pick <YourSHA> --no-commit
 
 or
@@ -51,29 +49,25 @@ What are the states of the files?   Are they staged ?
 You need to unstage the files you don't want to commit.
 
 Alt. 1
-```
-
+```cmd
 git restore --staged C10.md C12.md
 ```
 
 Alt. 2
-```
-
+```cmd
 git reset HEAD C10.md
 git reset HEAD C12.md
 ```
 
 Then clean out the workspace for any untracked files (those you just unstaged)
 
-```
-
+```cmd
 git clean -f
 ```
 
 Then commit the staged file, the ones you wanted to keep.
 
-```
-
+```cmd
 git commit -m"cherrypicked C11.md"
 ```
 
@@ -83,8 +77,7 @@ If you cherrypick a commit that has the same file as the target branch, you may 
 (This was what I missed during the last hectic demo.  If I only had done 'code a.md' at that point I could have resolved the conflict and proceeded.)
 
 The first issue I got however, said :
-```
-
+```cmd
 d:\repos\gitcourse\whatever>git cherry-pick f9fd --no-commit
 error: commit f9fd8fd5e56f662b497dbcc75185ebc21dddcaee is a merge but no -m option was given.
 fatal: cherry-pick failed
@@ -96,8 +89,7 @@ See [image in comment here](https://github.com/sebgroup/Git_Course/issues/8#issu
 
 To figure out which parent number matches which commit you do a :
 
-```
-
+```cmd
 d:\repos\gitcourse\whatever>git show f9fd
 commit f9fd8fd5e56f662b497dbcc75185ebc21dddcaee
 Merge: ce28970 168a2fb

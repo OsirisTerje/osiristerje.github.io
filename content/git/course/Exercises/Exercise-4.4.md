@@ -28,8 +28,7 @@ Now, if you do a pull now, you would need to merge in the changes you did.  That
 
 So, let us do a rebase here:
 
-```
-
+```cmd
 git pull --rebase
 ```
 
@@ -99,8 +98,7 @@ Now, on server, make a change to one of the files there, and commit that one.
 
 Locally again, do a
 
-```
-
+```cmd
 git pull --rebase
 ```
 
@@ -116,8 +114,7 @@ It can be a good idea to nearly always use rebasing when pulling.  Most tools al
 
 From the command line:
 
-```
-
+```cmd
 git config --global pull.rebase=true
 ```
 

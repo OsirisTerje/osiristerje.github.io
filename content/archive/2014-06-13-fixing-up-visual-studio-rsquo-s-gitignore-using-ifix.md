@@ -16,7 +16,7 @@ Updated 3.July 2014:  Corrected pattern for NuGet, details in [this blogpost](h
 
 Is there anything wrong with the built-in Visual Studio gitignore ????
 
-Yes, there is ! 
+Yes, there is !
 
 First, some background:
 
@@ -28,10 +28,12 @@ The other source are the packages folder coming from your NuGet setup.  You do 
 
 To add those few lines is a no-brainer, you just include this:
 
+```text
 \# NuGet Packages
 packages/\*
 \*\*/packages/\*
 \*.nupkg
+```
 
 # Enable "build/" folder in the NuGet Packages folder since
 
@@ -41,20 +43,22 @@ packages/\*
 
 # (and the packages folder if the lines above has been uncommented)
 
+```text
 !packages/build/
 !\*\*/packages/build/
+```
 
 Now, if you are like me, and you probably are, you add git repo’s faster than you can code, and you end up with a bunch of repo’s, and then start to wonder:
 
 Did I fix up those gitignore files, or did I forget it?
 
-The next thing you learn, for example by reading this blog post, is that the “standard” latest Visual Studio gitignore file exist at [https://github.com/github/gitignore](https://github.com/github/gitignore "https://github.com/github/gitignore"), and you locate it under the file name [VisualStudio.gitignore](https://github.com/github/gitignore/blob/master/VisualStudio.gitignore).  Here you will find all the new stuff, for example, the exclusion of the roslyn ide folders was commited on May 24th. 
+The next thing you learn, for example by reading this blog post, is that the “standard” latest Visual Studio gitignore file exist at [https://github.com/github/gitignore](https://github.com/github/gitignore "https://github.com/github/gitignore"), and you locate it under the file name [VisualStudio.gitignore](https://github.com/github/gitignore/blob/master/VisualStudio.gitignore).  Here you will find all the new stuff, for example, the exclusion of the roslyn ide folders was commited on May 24th.
 
-So, you think, all is well, Visual Studio will use this file …..    
+So, you think, all is well, Visual Studio will use this file …..
 
 **I am very sorry, it won’t**. ![Surprised smile](/images/2015/08/GWB-Windows-Live-Writer-Fixing-up-Visual-Studios-gitignore_14D3E-wlEmoticon-surprisedsmile_2.png)
 
-Visual Studio comes with a gitignore file that is baked into the release, and that is by this time “very old”.  The one at github is the latest. 
+Visual Studio comes with a gitignore file that is baked into the release, and that is by this time “very old”.  The one at github is the latest.
 
 The included gitignore miss the exclusion of the nuget packages folder, it also miss a lot of new stuff, like the Roslyn stuff.
 
@@ -69,7 +73,11 @@ Enter **[IFix](https://github.com/OsirisTerje/IFix/wiki)** ,  install it from [
 
 IFix is a command line utility (and the installer adds it to the system path, you might need to reboot), and one of the commands is **gitignore**
 
-If you run it from a directory, it will check and optionally fix all gitignores in all git repo’s in that folder or below.  So, start up by running it from your C:/<user>/source/repos folder.
+If you run it from a directory, it will check and optionally fix all gitignores in all git repo’s in that folder or below.  So, start up by running it from your 
+
+```cmd
+C:/<user>/source/repos folder.
+```
 
 To run it in check mode – which will not change anything, just do a check:
 
@@ -101,13 +109,15 @@ You can check for this too, just add the option –merge (why this is named so w
 
 So,
 
+```text
 IFix gitignore --check –merge
+```
 
 The result may come out like this  (sorry no colors, not got that far yet here):
 
 [![image](/images/2015/08/GWB-Windows-Live-Writer-Fixing-up-Visual-Studios-gitignore_14D3E-image_thumb.png "image")](https://gwb.blob.core.windows.net/terje/Windows-Live-Writer/Fixing-up-Visual-Studios-gitignore_14D3E/image_2.png)
 
-As you can see, one repo has the latest gitignore (test1), the others are missing either 57 or 150 lines. 
+As you can see, one repo has the latest gitignore (test1), the others are missing either 57 or 150 lines.
 
 IFix has three ways to fix this:
 

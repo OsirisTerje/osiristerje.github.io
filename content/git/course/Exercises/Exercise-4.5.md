@@ -8,8 +8,7 @@ Run Exercise-4.5.cmd
 
 Now, look at the history using your grahical tool (Fork/SourceTree), or simply by using
 
-```
-
+```cmd
 git log
 ```
 
@@ -21,8 +20,7 @@ You can change the message of the last commit by **amending** the commit.
 
 Do:
 
-```
-
+```cmd
 git commit --amend -m"It should have been just C2"
 ```
 
@@ -34,8 +32,7 @@ This is anyway the way you can fix commit messages.  Note it only works on the l
 
 Run
 
-```
-
+```cmd
 git status
 ```
 
@@ -43,8 +40,7 @@ Notice there is a file that is untracked.  It should of course have been include
 
 We can amend the commit once more with this commit, and since we put so much effort into the message, we would like to not repeat that:
 
-```
-
+```cmd
 git add *.md
 git commit --amend  --no-edit
 ```
@@ -65,15 +61,13 @@ Add/commit  a new file.
 
 Revert the latest commit
 
-```
-
+```cmd
 git revert HEAD
 ```
 
 Then do a
 
-```
-
+```cmd
 git diff HEAD <notedSHA>
 ```
 
@@ -81,8 +75,7 @@ Any difference?
 
 Then revert a parent commit using the hash key (only 4 chars needed)
 
-```
-
+```cmd
 git revert <SHA>
 ```
 

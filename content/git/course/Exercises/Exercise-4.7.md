@@ -11,8 +11,7 @@ Use the repo from 4.6.  We will assume it is a repo that has a remote.
 
 Run the following commands:
 
-```
-
+```cmd
 echo C4 > c4mismatch.md
 git add *
 git commit -m"c4"
@@ -24,8 +23,7 @@ You now have 4 files in the workspace, and all are committed.
 
 Now run:
 
-```
-
+```cmd
 git revert HEAD --no-edit
 ```
 
@@ -41,8 +39,7 @@ Push the repo to the remote
 
 The we see we want to amend the message, so we run the commit amend command:
 
-```
-
+```cmd
 git commit --amend -m"It should have been just C2"
 ```
 

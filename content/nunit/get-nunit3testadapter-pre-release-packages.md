@@ -13,8 +13,7 @@ We publish pre-release packages for every pull request merge to the master branc
 
 Feed:
 
-```
-
+```csharp
 https://www.myget.org/F/nunit/api/v3/index.json
 ```
 
@@ -24,22 +23,19 @@ Instructions for getting it for the different package tools, and also to see whi
 
 For NuGet (package.config)
 
-```
-
+```csharp
 Install-Package NUnit3TestAdapter -Version 3.10.0-dev-00702 -Source https://www.myget.org/F/nunit/api/v3/index.json
 ```
 
 For NuGet (PackageReference in csproj)
 
-```
-
+```xml
 <PackageReference Include="NUnit3TestAdapter" Version="3.10.0-dev-00702" />
 ```
 
 **Tip 1:** The PackageReference version requires you to have the feed URL in the nuget.config file.
 
-```
-
+```cmd
 <packageSources>
     <add key="NuGet.org" value="http://api.nuget.org/v3/index.json" />
     <add key="NUnit.Myget.org" value="https://www.myget.org/F/nunit/api/v3/index.json" />
@@ -54,8 +50,7 @@ You get the Analyzer package from our alpha feed at MyGet
 
 The feed is located at :
 
-```
-
+```csharp
 https://www.myget.org/F/nunit-analyzers/api/v3/index.json
 ```
 
@@ -65,8 +60,7 @@ Or
 
 You can add it to a repo nuget.config file, it should look like:
 
-```
-
+```xml
 <?xml version="1.0" encoding="utf-8"?>
 <configuration>
     <packageSources>

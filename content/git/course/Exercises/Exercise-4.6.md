@@ -10,15 +10,13 @@ Look in the folder, and you will see three nice markdown files.
 
 Now run
 
-```
-
+```csharp
 Exercise-4.6.1.cmd
 ```
 
 Then check the status, and if you like, the content of the files.
 
-```
-
+```cmd
 git status
 ```
 
@@ -26,8 +24,7 @@ Now, this was bad, and we just want to forget about the whole thing:
 
 Easy:
 
-```
-
+```cmd
 git restore .
 ```
 
@@ -37,8 +34,7 @@ There is another similar way:
 
 Repeat the command file, veriofy the mess is present, but now run:
 
-```
-
+```cmd
 git reset --hard
 ```
 
@@ -48,15 +44,13 @@ And again, verify all is fine.
 
 Now run
 
-```
-
+```csharp
 Exercise-4.6.2.cmd
 ```
 
 And when you see the mess using git status, you decide to use
 
-```
-
+```cmd
 git restore .
 ```
 
@@ -72,8 +66,7 @@ Re-run the Exercise-4.6.2.cmd
 
 Then try the command below to fix the mess:
 
-```
-
+```cmd
 git clean -xdf
 ```
 

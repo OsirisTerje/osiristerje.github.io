@@ -14,6 +14,266 @@ namespace CleanupTool
 
         #region methods
 
+        // --- Line-based wrappers (join -> call existing string methods -> split) ---
+        public static List<string> RemoveUnwantedFrontmatterEntries(List<string> lines)
+        {
+            var text = string.Join(Environment.NewLine, lines);
+            var outText = RemoveUnwantedFrontmatterEntries(text);
+            return Regex.Split(outText, @"\r?\n").ToList();
+        }
+
+        public static List<string> ReplaceAnchorWrappedImagesWithPlaceholders(List<string> lines, Dictionary<string, string> placeholders, Func<string> tokenFactory)
+        {
+            var text = string.Join(Environment.NewLine, lines);
+            var outText = ReplaceAnchorWrappedImagesWithPlaceholders(text, placeholders, tokenFactory);
+            return Regex.Split(outText, @"\r?\n").ToList();
+        }
+
+        public static List<string> ReplaceImgTagsWithPlaceholders(List<string> lines, Dictionary<string, string> placeholders, Func<string> tokenFactory)
+        {
+            var text = string.Join(Environment.NewLine, lines);
+            var outText = ReplaceImgTagsWithPlaceholders(text, placeholders, tokenFactory);
+            return Regex.Split(outText, @"\r?\n").ToList();
+        }
+
+        public static List<string> ConvertWpImageBlocks(List<string> lines, Dictionary<string, string> placeholders, Func<string> tokenFactory)
+        {
+            var text = string.Join(Environment.NewLine, lines);
+            var outText = ConvertWpImageBlocks(text, placeholders, tokenFactory);
+            return Regex.Split(outText, @"\r?\n").ToList();
+        }
+
+        public static List<string> RemoveWordpressBlockComments(List<string> lines)
+        {
+            var text = string.Join(Environment.NewLine, lines);
+            var outText = RemoveWordpressBlockComments(text);
+            return Regex.Split(outText, @"\r?\n").ToList();
+        }
+
+        public static List<string> ConvertWpListBlocks(List<string> lines)
+        {
+            var text = string.Join(Environment.NewLine, lines);
+            var outText = ConvertWpListBlocks(text);
+            return Regex.Split(outText, @"\r?\n").ToList();
+        }
+
+        public static List<string> ConvertHtmlUnorderedListsToMarkdown(List<string> lines)
+        {
+            var text = string.Join(Environment.NewLine, lines);
+            var outText = ConvertHtmlUnorderedListsToMarkdown(text);
+            return Regex.Split(outText, @"\r?\n").ToList();
+        }
+
+        public static List<string> ConvertHtmlHeadingsToMarkdown(List<string> lines)
+        {
+            var text = string.Join(Environment.NewLine, lines);
+            var outText = ConvertHtmlHeadingsToMarkdown(text);
+            return Regex.Split(outText, @"\r?\n").ToList();
+        }
+
+        public static List<string> ConvertAnchorsToMarkdown(List<string> lines)
+        {
+            var text = string.Join(Environment.NewLine, lines);
+            var outText = ConvertAnchorsToMarkdown(text);
+            return Regex.Split(outText, @"\r?\n").ToList();
+        }
+
+        public static List<string> ConvertParagraphTags(List<string> lines)
+        {
+            var text = string.Join(Environment.NewLine, lines);
+            var outText = ConvertParagraphTags(text);
+            return Regex.Split(outText, @"\r?\n").ToList();
+        }
+
+        public static List<string> EnsureBlankLinesAroundHeaders(List<string> lines)
+        {
+            var text = string.Join(Environment.NewLine, lines);
+            var outText = EnsureBlankLinesAroundHeaders(text);
+            return Regex.Split(outText, @"\r?\n").ToList();
+        }
+
+        public static List<string> ConvertStrongAndEmphasis(List<string> lines)
+        {
+            var text = string.Join(Environment.NewLine, lines);
+            var outText = ConvertStrongAndEmphasis(text);
+            return Regex.Split(outText, @"\r?\n").ToList();
+        }
+
+        public static List<string> ConvertBoldLinesToHeaders(List<string> lines)
+        {
+            var text = string.Join(Environment.NewLine, lines);
+            var outText = ConvertBoldLinesToHeaders(text);
+            return Regex.Split(outText, @"\r?\n").ToList();
+        }
+
+        public static List<string> ConvertWpCodeBlocksToFenced(List<string> lines)
+        {
+            var text = string.Join(Environment.NewLine, lines);
+            var outText = ConvertWpCodeBlocksToFenced(text);
+            return Regex.Split(outText, @"\r?\n").ToList();
+        }
+
+        public static List<string> NormalizeFencedCodeBlocks(List<string> lines)
+        {
+            // Normalize shorthand label 'cs' -> 'csharp' on a per-line basis
+            for (int li = 0; li < lines.Count; li++)
+            {
+                if (Regex.IsMatch(lines[li] ?? string.Empty, @"(?im)^```[ \t]*cs[ \t]*$"))
+                    lines[li] = "```csharp";
+            }
+
+            var outLines = new List<string>();
+            int i = 0;
+            int totalFences = 0;
+            int unlabeled = 0;
+
+            while (i < lines.Count)
+            {
+                var line = lines[i] ?? string.Empty;
+                var trimmed = line.Trim();
+
+                // Opening fence with no language label (```) only
+                if (trimmed.StartsWith("```") && Regex.IsMatch(trimmed, @"^```\s*$"))
+                {
+                    totalFences++;
+                    int j = i + 1;
+                    var bodyLines = new List<string>();
+                    bool foundClose = false;
+
+                    while (j < lines.Count)
+                    {
+                        var l = lines[j] ?? string.Empty;
+                        int fencePos = l.IndexOf("```");
+                        if (fencePos >= 0)
+                        {
+                            var before = l.Substring(0, fencePos);
+                            if (!string.IsNullOrEmpty(before)) bodyLines.Add(before);
+                            foundClose = true;
+                            break;
+                        }
+                        bodyLines.Add(l);
+                        j++;
+                    }
+
+                    var body = string.Join(Environment.NewLine, bodyLines);
+                    var lang = InferLanguageFromCode(body);
+                    unlabeled++;
+
+                    outLines.Add("```" + lang);
+                    if (bodyLines[0]==string.Empty)
+                        bodyLines.RemoveAt(0);
+                    outLines.AddRange(bodyLines);
+
+                    if (foundClose)
+                    {
+                        outLines.Add("```");
+                        i = j + 1;
+                        continue;
+                    }
+                    else
+                    {
+                        i = j;
+                        continue;
+                    }
+                }
+
+                outLines.Add(line);
+                i++;
+            }
+
+            Console.WriteLine($"NormalizeFencedCodeBlocks: found fences={totalFences}, unlabeled={unlabeled}");
+            return outLines;
+        }
+
+        public static List<string> FixClosingFencedCodeBlockEndings(List<string> lines)
+        {
+            var outLines = new List<string>();
+            bool inBlock = false;
+
+            for (int i = 0; i < lines.Count; i++)
+            {
+                var line = lines[i] ?? string.Empty;
+                var trimmedStart = line.TrimStart();
+
+                if (trimmedStart.StartsWith("```"))
+                {
+                    // If we're not currently in a code block, this is an opening fence. Preserve as-is and enter block.
+                    if (!inBlock)
+                    {
+                        inBlock = true;
+                        outLines.Add(line);
+                        continue;
+                    }
+
+                    // We're in a block, so this fence is a closing fence.
+                    var trimmed = line.Trim();
+                    if (trimmed.Length > 3 && !trimmed.Equals("```"))
+                    {
+                        // normalize closing fence to exactly ``` (drop qualifier)
+                        outLines.Add("```");
+
+                        // collapse any existing blank lines after the fence to a single blank line if there is further content
+                        int k = i + 1;
+                        bool hadBlank = false;
+                        while (k < lines.Count && string.IsNullOrWhiteSpace(lines[k]))
+                        {
+                            hadBlank = true;
+                            k++;
+                        }
+
+                        // If there were blank lines after the closing fence, preserve exactly one.
+                        if (hadBlank)
+                        {
+                            outLines.Add(string.Empty);
+                        }
+
+                        // advance the loop to the last skipped index (k-1). The for-loop will increment to k.
+                        i = Math.Max(i, k - 1);
+                        inBlock = false;
+                        continue;
+                    }
+
+                    // Normal closing fence (```), preserve and exit block
+                    inBlock = false;
+                    outLines.Add(line);
+                    continue;
+                }
+
+                outLines.Add(line);
+            }
+
+            return outLines;
+        }
+
+        public static List<string> EnsureLeadingSlashForImagePaths(List<string> lines)
+        {
+            var text = string.Join(Environment.NewLine, lines);
+            var outText = EnsureLeadingSlashForImagePaths(text);
+            return Regex.Split(outText, @"\r?\n").ToList();
+        }
+
+        public static List<string> FixHermitImageUrls(List<string> lines)
+        {
+            var text = string.Join(Environment.NewLine, lines);
+            var outText = FixHermitImageUrls(text);
+            return Regex.Split(outText, @"\r?\n").ToList();
+        }
+
+        public static List<string> NormalizeBlankLinesAndHeaderSpacing(List<string> lines)
+        {
+            var text = string.Join(Environment.NewLine, lines);
+            var outText = NormalizeBlankLinesAndHeaderSpacing(text);
+            return Regex.Split(outText, @"\r?\n").ToList();
+        }
+
+        public static List<string> FixTrailingWhitespaceAndNewline(List<string> lines)
+        {
+            var text = string.Join(Environment.NewLine, lines);
+            var outText = FixTrailingWhitespaceAndNewline(text);
+            return Regex.Split(outText, @"\r?\n").ToList();
+        }
+
+
         public static string ReplaceAnchorWrappedImagesWithPlaceholders(string text, Dictionary<string, string> placeholders, Func<string> tokenFactory)
         {
             var regex = MyRegex8();
@@ -196,81 +456,7 @@ namespace CleanupTool
             return text;
         }
 
-        public static string NormalizeFencedCodeBlocks(string text)
-        {
-            // Normalize shorthand label 'cs' -> 'csharp' (preserve other explicit labels).
-            text = Regex.Replace(text, @"(?im)^```[ \t]*cs[ \t]*$", "```csharp", RegexOptions.Multiline);
-
-            // Line-based pass: find opening fences without a label and add an inferred language.
-            var lines = text.Split([@"\r\n"], StringSplitOptions.None);
-            var sb = new StringBuilder();
-            int i = 0;
-            int totalFences = 0;
-            int unlabeled = 0;
-            while (i < lines.Length)
-            {
-                var line = lines[i];
-                var trimmed = line.Trim();
-
-                // detect an opening fence that has no label (just ``` or ``` with whitespace)
-                if (trimmed.StartsWith("```") && Regex.IsMatch(trimmed, @"^```\s*$"))
-                {
-                    totalFences++;
-                    // find matching closing fence
-                    int j = i + 1;
-                    var bodySb = new StringBuilder();
-                    bool foundClose = false;
-                    while (j < lines.Length)
-                    {
-                        var l = lines[j];
-                        int fencePos = l.IndexOf("```");
-                        if (fencePos >= 0)
-                        {
-                            // If there's code/text before the inline fence, include it
-                            var before = l.Substring(0, fencePos);
-                            if (!string.IsNullOrEmpty(before)) bodySb.AppendLine(before);
-                            foundClose = true;
-                            break;
-                        }
-                        bodySb.AppendLine(l);
-                        j++;
-                    }
-
-                    var body = bodySb.ToString();
-                    var lang = InferLanguageFromCode(body);
-                    unlabeled++;
-
-                    sb.AppendLine("```" + lang);
-                    // append body lines as-is
-                    if (!string.IsNullOrEmpty(body))
-                    {
-                        // body already ends with newline from AppendLine
-                        sb.Append(body);
-                    }
-
-                    // if we found a closing fence, append it and advance
-                    if (foundClose)
-                    {
-                        sb.AppendLine("```");
-                        i = j + 1;
-                        continue;
-                    }
-                    else
-                    {
-                        // no closing fence found: just append rest and break
-                        i = j;
-                        continue;
-                    }
-                }
-
-                // otherwise copy the line
-                sb.AppendLine(line);
-                i++;
-            }
-
-            Console.WriteLine($"NormalizeFencedCodeBlocks: found fences={totalFences}, unlabeled={unlabeled}");
-            return sb.ToString().TrimEnd('\r', '\n') + Environment.NewLine;
-        }
+        // string-based NormalizeFencedCodeBlocks removed; use the List<string> overload instead.
 
         public static string FixClosingFencedCodeBlockEndings(string text)
         {
@@ -596,67 +782,53 @@ namespace CleanupTool
 
         public static string NormalizeBlankLinesAndHeaderSpacing(string text)
         {
-            // Work line-by-line, but avoid modifying content inside fenced code blocks (```).
-            var lines = Regex.Split(text, "\r?\n");
-            var sb = new StringBuilder();
+            var lines = Regex.Split(text, @"\r?\n");
+            var outLines = new List<string>();
             bool inFence = false;
-            bool prevBlank = false;
 
             for (int i = 0; i < lines.Length; i++)
             {
-                var line = lines[i];
-                var trimmedLine = line ?? string.Empty;
+                var line = lines[i] ?? string.Empty;
+                var trimmed = line.TrimEnd();
 
-                // detect fence start/end (lines that start with ```)
-                if (trimmedLine.TrimStart().StartsWith("```"))
+                // fence toggling
+                if (trimmed.TrimStart().StartsWith("```"))
                 {
-                    // toggle fence state and write the fence line
                     inFence = !inFence;
-                    sb.AppendLine(trimmedLine);
-                    prevBlank = false;
+                    outLines.Add(trimmed);
                     continue;
                 }
 
                 if (inFence)
                 {
-                    // inside a fenced block, preserve exact content
-                    sb.AppendLine(trimmedLine);
-                    prevBlank = false;
+                    outLines.Add(line);
                     continue;
                 }
 
-                if (string.IsNullOrWhiteSpace(trimmedLine))
+                // collapse multiple blank lines
+                if (string.IsNullOrWhiteSpace(line))
                 {
-                    // collapse multiple blank lines into a single blank line
-                    if (!prevBlank)
-                    {
-                        sb.AppendLine();
-                        prevBlank = true;
-                    }
+                    if (outLines.Count == 0 || string.IsNullOrWhiteSpace(outLines.Last()))
+                        continue; // skip additional blanks
+                    outLines.Add(string.Empty);
                     continue;
                 }
 
-                // Non-blank line outside fences: write it
-                sb.AppendLine(trimmedLine);
-                prevBlank = false;
+                // normal non-blank line
+                outLines.Add(trimmed);
 
-                // If this is a Markdown ATX header (starts with #), ensure a blank line follows when the next
-                // line exists and is not already blank.
-                var startsWithHash = trimmedLine.TrimStart().StartsWith("#");
-                if (startsWithHash)
+                // if this line is an ATX header, ensure a blank line follows
+                if (trimmed.TrimStart().StartsWith("#"))
                 {
                     if (i + 1 < lines.Length && !string.IsNullOrWhiteSpace(lines[i + 1]))
                     {
-                        // add a single blank line if not already present
-                        sb.AppendLine();
-                        prevBlank = true;
+                        outLines.Add(string.Empty);
                     }
                 }
             }
 
-            var output = sb.ToString();
-            // normalize final line endings and trailing newline will be ensured later
-            return output.Replace("\r\n", "\n").Replace("\n", Environment.NewLine);
+            // normalize endings
+            return string.Join(Environment.NewLine, outLines);
         }
 
         static string? CaptureAttribute(string? attrs, string name)

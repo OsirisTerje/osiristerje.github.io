@@ -20,8 +20,7 @@ A bit down in the file it says:
 
 This is incorrect.  Change it and add the following instead:
 
-```
-
+```xml
 <authentication mode="Forms">
     <forms loginUrl="UI/Pages/Login.aspx"
            protection="All"
@@ -38,8 +37,7 @@ This is incorrect.  Change it and add the following instead:
 
 Also note that the setting at the top of the file:
 
-```
-
+```xml
 <webAccessSettings>
     <!-- Specifies whether the login form is enabled. If disabled, only
     Integrated Windows Authentication is allowed. -->

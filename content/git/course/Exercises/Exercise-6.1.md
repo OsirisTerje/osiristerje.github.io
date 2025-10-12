@@ -6,25 +6,21 @@ Drop down to any git repository
 
 List your complete configuration by
 
-```
-
+```cmd
 git config -l
 ```
 
 You possibly got quite a long list, remember it has three levels, so you can filter it by that:
 
-```
-
+```cmd
 git config --system -l
 ```
 
-```
-
+```cmd
 git config --global -l
 ```
 
-```
-
+```cmd
 git config --local -l
 ```
 
@@ -34,8 +30,7 @@ git config --local -l
 
 Verify that the editor is being called, by doing :
 
-```
-
+```cmd
 git config --global --edit
 ```
 
@@ -45,8 +40,7 @@ Create a new repo (using git init), or use an existing scrap one.
 
 Then do:
 
-```
-
+```cmd
 echo abc > abc.md
 git add abc.md
 git commit -e
@@ -58,22 +52,19 @@ What happens if you just close the editor window with nothing added ?
 
 ### Check that you're using the credential manager
 
-```
-
+```cmd
 git config credential.helper
 ```
 
 The response should be
 
-```
-
+```csharp
 manager
 ```
 
 ### Check that you're ignoring case and have autocrlf on
 
-```
-
+```cmd
 git config core.ignorecase
 ```
 
@@ -87,8 +78,7 @@ Can be wise to check that you have core.longpaths true too.
 
 If not, you can set it by:
 
-```
-
+```cmd
 git config core.longpaths true
 ```
 
@@ -102,8 +92,7 @@ Now, write it into the global location!
 
 Assume you set this in the wrong place, you get rid of that key by:
 
-```
-
+```cmd
 git config --system --unset core.longpaths
 ```
 
@@ -111,22 +100,19 @@ git config --system --unset core.longpaths
 
 Check if you have 'grep' installed:
 
-```
-
+```csharp
 where grep
 ```
 
 If not, then run :
 
-```
-
+```cmd
 where git
 ```
 
 You will get a response that says something like
 
-```
-
+```cmd
 C:\Program Files\Git\cmd\git.exe
 ```
 
@@ -135,8 +121,7 @@ Pick out the path above the cmd, add **usr/bin** to that, and add the complete p
 (You can check in explorer that you have a valid path)
 On my machine it was:
 
-```
-
+```cmd
 C:\Program Files\Git\usr\bin
 ```
 
@@ -157,8 +142,7 @@ Go to the Git Settings hub, select the Global settings, and enable the diff tool
 Go back to the command line:
 
 Run
-```
-
+```cmd
 git config -l | grep merge
 ```
 

@@ -54,8 +54,7 @@ The different options to run it is as shown below:
 
 If we are just looking for the remotes, we can run with the **--r** option.
 
-```
-
+```csharp
 listgits --r
 ```
 
@@ -65,8 +64,7 @@ It will remove anything else, like empty folders and also some error messages fr
 
 Now, if we just wanted to see which repos are local only, then we use the **--l** flag:
 
-```
-
+```csharp
 listgits --l
 ```
 
@@ -74,8 +72,7 @@ listgits --l
 
 We can also just remove the empty folders, using the **--s** flag
 
-```
-
+```csharp
 listgits --s
 ```
 
@@ -90,8 +87,7 @@ Sometimes you have a remote url, and wonder if you already have it cloned.  The 
 You then use the **--f  somestring** option.  The *somestring* can be any part of the remote url.
 Let us say we want to know which repos we have that are connected to the Azure DevOps service.
 
-```
-
+```csharp
 listgits --f dev.azure
 ```
 
@@ -99,8 +95,7 @@ listgits --f dev.azure
 
 or we might want to see which are a wiki repo:
 
-```
-
+```csharp
 listgits --f wiki
 ```
 
@@ -116,15 +111,13 @@ The **listgits** tool is a [Python](https://www.python.org/downloads/) applicati
 
 You install it simply by using **[pip](https://www.w3schools.com/python/python_pip.asp)**, the Python package manager, and if you have your python scripts in your program folder, it can be wise to install it into the user.
 
-```
-
+```cmd
 pip install listgits --user
 ```
 
 The tool will probably be updated often, so for updating it:
 
-```
-
+```cmd
 pip install listgits --user -U
 ```
 
@@ -132,8 +125,7 @@ pip install listgits --user -U
 
 You need to use the full name of the executable, which is
 
-```
-
+```csharp
 listgits.exe
 ```
 

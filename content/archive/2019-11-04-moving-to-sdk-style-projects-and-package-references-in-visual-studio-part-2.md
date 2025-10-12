@@ -52,11 +52,9 @@ Figure 4
 
 We first has to install the migration tool. We only need to do this once, since we install it globally.
 
-```
-
+```cmd
 dotnet tool install --global Project2015To2017.Migrate2019.Tool
 ```
-
 ![](/images/2019/10/6-1024x79.jpg)
 
 Figure 5
@@ -64,10 +62,8 @@ Figure 5
 Then to run it is very simple:
 
 ```
-
 dotnet migrate-2019 wizard migrationsample.sln
 ```
-
 We will run it as a wizard, so there will be a couple of questions under way, among them asking if we want backups.  This can be ok, in order to more quickly see what was changed, but we will anyway delete these backup folders before we commit the conversion.
 
 We also ask it to do whatever optimization it can.  Now, this may or may not be problematic, so if this means your project won't compile afterwards - and you cant figure it out,  you should run again without optimization.

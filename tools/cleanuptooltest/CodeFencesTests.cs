@@ -4,16 +4,77 @@ namespace cleanuptooltest;
 
 public class CodeFencesTests
 {
-    private const string blankfencesDefault = @"\r\nRun the tool\r\n\r\n```\r\n\r\nyourtoolname\r\n```\r\n";
+    private static readonly List<string> blankfencesDefault =
+    [
+        "",
+        "Run the tool",
+        "",
+        "```",
+        "",
+        "yourtoolname",
+        "```",
+        ""
+    ];
 
-    private const string blankfencesCmd =
-        @"```\r\ndotnet tool install --global Project2015To2017.Migrate2019.Tool\r\n```\r\n";
-    
-    [TestCase(blankfencesDefault,"csharp")]
-    [TestCase(blankfencesCmd, "cmd")]
-    public void TestBlankCodeFences(string input,string codeTag)
+    private static readonly List<string> blankfencesDefaultOutput =
+    [
+        "Run the tool",
+        "",
+        "```csharp",
+        "",
+        "yourtoolname",
+        "```whatever",
+        "",
+        "",
+        ""
+    ];
+
+    private static readonly List<string> blankfencesCmd =
+    [
+        "```",
+        "dotnet tool install --global Project2015To2017.Migrate2019.Tool",
+        "```",
+        ""
+    ];
+
+    private static readonly List<string> blankfencesCmdOutput =
+    [
+        "```cmd",
+        "dotnet tool install --global Project2015To2017.Migrate2019.Tool",
+        "```whatever",
+        ""
+    ];
+
+    private static readonly object[] TestCases =
+    [
+        new object[] { blankfencesDefault, "csharp" },
+        new object[] { blankfencesCmd, "cmd" }
+    ];
+    private static readonly object[] TestCases2 =
+    [
+        new object[] { blankfencesDefaultOutput, "csharp" },
+        new object[] { blankfencesCmdOutput, "cmd" }
+    ];
+
+
+    [TestCaseSource(nameof(TestCases))]
+    public void TestBlankCodeFences(List<string> input,string codeTag)
     {
         var output = Processor.NormalizeFencedCodeBlocks(input);
         Assert.That(output,Does.Contain($"```{codeTag}"));
+
+        
     }
+
+    [TestCaseSource(nameof(TestCases2))]
+    public void FixClosingFencedCodeBlockEndingsTests(List<string> input,string codeTag)
+    {
+        var output = Processor.FixClosingFencedCodeBlockEndings(input);
+        Assert.That(output, Does.Contain($"```{codeTag}"));
+        Assert.That(output.Last(), Is.EqualTo(string.Empty));
+        Assert.That(output[^2], Is.EqualTo("```"));
+    }
+
+
+
 }

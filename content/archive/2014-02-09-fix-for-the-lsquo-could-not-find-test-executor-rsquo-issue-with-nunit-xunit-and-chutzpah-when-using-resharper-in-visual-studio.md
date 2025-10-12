@@ -10,7 +10,7 @@ categories:
   - Resharper
   - Unit Testing
 ---
-This issue is resolved in the latest ReSharper release, version 8.2.0.2160, [download here](http://www.jetbrains.com/resharper/download/). 
+This issue is resolved in the latest ReSharper release, version 8.2.0.2160, [download here](http://www.jetbrains.com/resharper/download/).
 
 The issue appears when using the Test Explorer to run tests in any of the frameworks mentioned in the title.  The tests are shown in the Test Explorer, but are not executed.  It may look like this:
 
@@ -30,7 +30,7 @@ One report of this issue is on the Chutzpah [page](https://chutzpah.codeplex.com
 
 The issue seems to have surfaced in different circumstances. Some people, including myself, noted the issue when we used the [Nuget adapter for NUnit](http://www.nuget.org/packages/NUnitTestAdapter/), which btw is a brilliant way of adding an adapter – and noted that it worked with the extension adapter but not with the NuGet adapter. With the XUnit and Chutzpah however, the issue appeared with the extension test adapters, so it was obviously not the way the adapters were installed that caused the issue to appear.
 
-The common denominator was always ReSharper.  A similar issue was solved in version 8.0.2, but this seems to be another one coming up. 
+The common denominator was always ReSharper.  A similar issue was solved in version 8.0.2, but this seems to be another one coming up.
 
 The current issue is now solved in a pre-release version of ReSharper, version 23.904,  the latest official version is 23.546.  So note that you need to upgrade to this pre-release version if the issue appears. The 904 version doesn’t seem to have any other “bad” issues, as far as I have seen.
 

@@ -25,22 +25,19 @@ We suggest you use the folder C:\nuget
 
 Clone the adapter repository:
 
-```
-
+```cmd
 git clone https://github.com/nunit/nunit3-vs-adapter.git
 ```
 
 Create a local branch, e.g. debug
 
-```
-
+```cmd
 git checkout -b debug
 ```
 
 You will debug the adapter in Visual Studio 2019, so start up visual studio:
 
-```
-
+```cmd
 devenv NUnit3TestAdapter.sln
 ```
 
@@ -50,8 +47,7 @@ In the folder for the repro/project to be debugged, create (or modify, if it exi
 
 The content of the nuget.config should be like:
 
-```
-
+```cmd
 <?xml version="1.0" encoding="utf-8"?>
 <configuration>
     <packageSources>
@@ -66,22 +62,19 @@ The content of the nuget.config should be like:
 
 Now create the repro project:
 
-```
-
+```cmd
 dotnet new nunit
 ```
 
 You can now start Visual Studio proper :
 
-```
-
+```cmd
 devenv Whatever.csproj
 ```
 
 or use Visual Studio Code
 
-```
-
+```csharp
 code .
 ```
 
@@ -109,8 +102,7 @@ The symbol we uncommented will ensure that the debugger will be launched at this
 
 Build a debug version is a two-step process, first compile it, then package it.
 
-```
-
+```csharp
 build -c debug
 build -t package -c debug
 ```
@@ -120,8 +112,7 @@ Notice the version number created for the package, underlined red below:
 
 Given that your nuget folder is in c:\nuget, you can now just run the command 'copynp', replacing the argument with your particular package version.
 
-```
-
+```csharp
 copynp 3.16.0-d01-dbg
 ```
 

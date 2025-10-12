@@ -24,22 +24,19 @@ If you accept that the local name is to be identical to the remote name you can 
 
 Assume a remote branch named  *whatever*
 
-```
-
+```cmd
 git switch whatever
 ```
 
 This is a shorthand for:
 
-```
-
+```cmd
 git switch --track origin/whatever
 ```
 
 Let say you for some reason (and it better be good), you want a different name on your local branch than on the remote:
 
-```
-
+```cmd
 git switch -c surprise origin/whatever
 ```
 
@@ -47,8 +44,7 @@ Another weird case is that you have a local branch, and now want it to track som
 
 This is done using the *--set-upstream* option, or short *-u*.
 
-```
-
+```cmd
 git branch -u origin/whatever
 ```
 
@@ -56,8 +52,7 @@ git branch -u origin/whatever
 
 ## Understanding what tracking branches you have
 
-```
-
+```cmd
 git branch -vv --no-color
 ```
 
@@ -67,15 +62,13 @@ git branch -vv --no-color
 
 Now, if you want to see ALL your remote branches (including those not tracked), you can use the command:
 
-```
-
+```cmd
 git branch -r
 ```
 
 or even a bit more 'nerdy'
 
-```
-
+```cmd
 git ls-remotes --heads
 ```
 
@@ -83,8 +76,7 @@ git ls-remotes --heads
 
 ## Set up tracking branched directly
 
-```
-
+```cmd
 git switch --track origin/branchname
 
 or
@@ -99,8 +91,7 @@ where branchname is the remote branch name.
 
 You can also remove the tracking branch.
 
-```
-
+```cmd
 git branch --unset-upstream
 
 or
@@ -120,8 +111,7 @@ For more information, [see this](https://stackoverflow.com/questions/3046436/how
 
 Assume you have created a local branch, which does not exist remote:
 
-```
-
+```cmd
 git branch anotherone
 ```
 
@@ -129,8 +119,7 @@ You have created it, but you're not switched to it.
 
 or
 
-```
-
+```cmd
 git switch -c anotherone
 ```
 
@@ -138,8 +127,7 @@ You have created it, and switched to it.
 
 To get this to the remote and at the same time setting up a tracking branch, you do:
 
-```
-
+```cmd
 git push -u origin anotherone
 ```
 

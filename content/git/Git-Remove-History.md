@@ -22,8 +22,7 @@ Also see [Andrew Locks post](https://andrewlock.net/rewriting-git-history-simply
 
 ### Installing `git-filter-repo`
 
-```
-
+```cmd
 pip install --user git-filter-repo
 ```
 
@@ -31,15 +30,13 @@ pip install --user git-filter-repo
 
 ### Removing a file
 
-```
-
+```cmd
 git filter-repo --path <file> --invert-paths
 ```
 
 ### Removing a folder with all content
 
-```
-
+```cmd
 git filter-repo --path <folder> --invert-paths
 ```
 

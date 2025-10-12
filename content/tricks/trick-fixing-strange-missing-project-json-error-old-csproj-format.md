@@ -17,8 +17,7 @@ Deleting these in all subfolders seems to do the trick.
 
 Run, from the root of your repo:
 
-```
-
+```csharp
 del project.assets.json /s /q
 ```
 
@@ -28,8 +27,7 @@ And whatever I do to get rid of it, clearing caches and more, nothing seems to h
 
 For the project which are affected, add the following snippet into your csproj file.
 
-```
-
+```xml
 <PropertyGroup>
   <RuntimeIdentifiers>win</RuntimeIdentifiers>
 </PropertyGroup>

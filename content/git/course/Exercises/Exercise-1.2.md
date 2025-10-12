@@ -20,8 +20,7 @@ The try [this](https://github.com/microsoft/vscode), you will manage it!
 
 Run
 
-```
-
+```cmd
 git-sizer  --verbose
 ```
 
@@ -55,8 +54,7 @@ To set up with SSH, ensure you have it installed - otherwise add it from Apps & 
 
 If you don't have any, create a new SSH key, and add it to your github profile.
 
-```
-
+```csharp
 ssh-keygen
 ```
 
@@ -66,8 +64,7 @@ If you use https, you don't need to do anything mroe than cloning.
 
 Note that the format for cloning is different between https and ssh.
 
-```
-
+```cmd
 git clone git@github.com:OsirisTerje/exercise12.git
 
 or
@@ -86,8 +83,7 @@ More [info here](https://help.github.com/en/github/authenticating-to-github/conn
 
 Create a local repo, name it whatever you like
 
-```
-
+```cmd
 git init
 or
 git init mywhatever
@@ -95,8 +91,7 @@ git init mywhatever
 
 Commit a new file to it
 
-```
-
+```cmd
 echo  # Fun stuff  >> readme.md
 git add *
 git commit -m"initial"
@@ -108,8 +103,7 @@ Create a repo named 'exercise12' on your Github account, **without adding any fi
 
 Notice the second block, "push an existing repository from the command line"
 
-```
-
+```cmd
 git remote add origin https://github.com/<youraccountname>/exercise12.git
 git push -u origin master
 ```
@@ -132,8 +126,7 @@ Create a new repo on github, initialize it with a readme.md file, and clone this
 
 Run
 
-```
-
+```cmd
 git remote -v
 ```
 

@@ -10,7 +10,7 @@ categories:
 ---
 [Download tool](http://visualstudiogallery.msdn.microsoft.com/b8ba97b0-bb89-4c21-a1e2-53ef335fd9cb)
 
-In version 2.7 of NuGet automatic nuget restore was introduced, meaning you no longer need to distort your msbuild project files with nuget target information.   Visual Studio and TFS 2013 build have this enabled by default. 
+In version 2.7 of NuGet automatic nuget restore was introduced, meaning you no longer need to distort your msbuild project files with nuget target information.   Visual Studio and TFS 2013 build have this enabled by default.
 
 However, if your project was created before this was introduced, and/or if you have used the “Enable NuGet Package Restore” afterwards, you now have a series of unwanted things in your projects, and a series of project files that have been modified – and – you no longer neither want nor need this !  You might also get into some unwanted issues due to these modifications.  This is a MSBuild modification that was needed only before NuGet 2.7 !
 
@@ -22,16 +22,16 @@ There is an issue [https://nuget.codeplex.com/workitem/4019](https://nuget.codep
 
 This function does nothing you need after the introduction of NuGet 2.7.  What is also unfortunate is the naming of it – it implies that it is needed, it is not, and what is worse, there is no corresponding function to remove what it does !
 
-So to fix this use the tool named IFix,  - all free of course, and the code is [open source](https://github.com/OsirisTerje/IFix).  Also report issues at:  [https://github.com/OsirisTerje/IFix](https://github.com/OsirisTerje/IFix "https://github.com/OsirisTerje/IFix") 
+So to fix this use the tool named IFix,  - all free of course, and the code is [open source](https://github.com/OsirisTerje/IFix).  Also report issues at:  [https://github.com/OsirisTerje/IFix](https://github.com/OsirisTerje/IFix "https://github.com/OsirisTerje/IFix")
 
 IFix information
 ================
 
 ## [DOWNLOAD HERE](http://visualstudiogallery.msdn.microsoft.com/b8ba97b0-bb89-4c21-a1e2-53ef335fd9cb)
 
-This command line tool installs using an MSI, and add itself to the system path. 
+This command line tool installs using an MSI, and add itself to the system path.
 
-If you work in a team, you will probably need to use the  tool multiple times.  Anyone in the team may at any time use the “Enable NuGet Package Restore” function and mess up your project again. 
+If you work in a team, you will probably need to use the  tool multiple times.  Anyone in the team may at any time use the “Enable NuGet Package Restore” function and mess up your project again.
 
 The IFix program can be run either in a  check mode, where it does not write anything back – it only checks if you have any issues, or in a Fix mode, where it will also perform the necessary fixes for you.
 
@@ -39,7 +39,7 @@ The IFix program is used like this:
 
 ## IFix <command> \[-c/--check\] \[-f/--fix\]  \[-v/--verbose\]
 
-The command in this case is “nugetrestore”. 
+The command in this case is “nugetrestore”.
 
 It will do a check from the location where it is being called, and run through all subfolders from that location.
 
@@ -80,7 +80,7 @@ It can be a good idea to add this check to a checkin policy – if you run TFS s
 
 So, better be prepared to run the IFix check from time to time.
 
-Or, even better, install IFix on your build servers, and add a call to IFix nugetrestore --check in the TFS Build script. 
+Or, even better, install IFix on your build servers, and add a call to IFix nugetrestore --check in the TFS Build script.
 
 ## How does it look
 

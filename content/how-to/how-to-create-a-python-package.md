@@ -19,8 +19,7 @@ It should only contain an import of your code, and then a call to the main metho
 
 Example:
 
-```
-
+```csharp
 import listgits
 
 listgits.main()
@@ -32,8 +31,7 @@ Copy from [Packaging Python Projects](https://packaging.python.org/tutorials/pac
 
 Replace where appropriate with your own settings
 
-```
-
+```cmd
 import setuptools
 
 with open("README.md", "r") as fh:
@@ -86,15 +84,13 @@ If these folders do exist, you can't update to a new version
 
 ### Create the package
 
-```
-
+```cmd
 python setup.py sdist bdist_wheel
 ```
 
 ### Upload the package to test
 
-```
-
+```cmd
 python -m twine upload --repository-url https://test.pypi.org/legacy/ dist/*
 ```
 
@@ -102,8 +98,7 @@ You will be asked for your credentials to test.pypi
 
 ### Upload the package to production
 
-```
-
+```cmd
 python -m twine upload dist/*
 ```
 
@@ -111,15 +106,13 @@ python -m twine upload dist/*
 
 It will take a few seconds for the package to register after your upload.  Watch the version number when you install:
 
-```
-
+```cmd
 pip install --index-url https://test.pypi.org/simple/ --no-deps <yourpackagename>   --user -U
 ```
 
 Run the tool
 
-```
-
+```csharp
 yourtoolname
 ```
 
@@ -127,23 +120,20 @@ yourtoolname
 
 In your default .gitconfig file, add the following lines to the section under [Alias].  If it doesnt exist, create it.
 
-```
-
+```cmd
 listgits = !python listgits $@
 lg = !git listgits $@
 ```
 
 This mean you can call the commands as either the fullname:
 
-```
-
+```cmd
 git listgits
 ```
 
 or even as a short command
 
-```
-
+```cmd
 git lg
 ```
 

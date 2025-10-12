@@ -89,7 +89,7 @@ Visual Studio and TFS
 
 [SQL Server 2012 SP1](http://www.microsoft.com/en-us/download/details.aspx?id=35575)
 or
-[SQL Server 2012 SP2](http://www.microsoft.com/en-us/download/details.aspx?id=43340) 
+[SQL Server 2012 SP2](http://www.microsoft.com/en-us/download/details.aspx?id=43340)
 or
 SQL Server 2014
 
@@ -110,7 +110,7 @@ Updated July 7th 2014:  [Visual Studio](http://www.microsoft.com/en-us/download
 
 Updated April 12th 2014:  [Visual Studio 2013 Update 2 RC](http://www.visualstudio.com/en-us/downloads/prerelease-software-downloads-vs) &  [TFS Server 2013 Update 2](http://www.visualstudio.com/downloads/download-visual-studio-vs)
 
-Updated March 5th 2014:   [Visual Studio 2013 Update 2 CTP 2](http://www.microsoft.com/en-us/download/details.aspx?id=42023) Updated Feb 8th 2014:   [Visual Studio 2013 Update 1](http://www.microsoft.com/en-us/download/details.aspx?id=41650),  [Visual Studio 2013 Update 2 CTP 1](http://www.microsoft.com/en-us/download/details.aspx?id=41699) 
+Updated March 5th 2014:   [Visual Studio 2013 Update 2 CTP 2](http://www.microsoft.com/en-us/download/details.aspx?id=42023) Updated Feb 8th 2014:   [Visual Studio 2013 Update 1](http://www.microsoft.com/en-us/download/details.aspx?id=41650),  [Visual Studio 2013 Update 2 CTP 1](http://www.microsoft.com/en-us/download/details.aspx?id=41699)
 
 ## Product
 

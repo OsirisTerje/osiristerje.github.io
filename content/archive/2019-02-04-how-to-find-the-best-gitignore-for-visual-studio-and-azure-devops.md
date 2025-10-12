@@ -61,14 +61,12 @@ Currently (January 2019), the Visual Studio gitignore file and the one from giti
 1. First option you have is to simply copy the raw content from the originator source, using this [link](https://raw.githubusercontent.com/github/gitignore/master/VisualStudio.gitignore).
 2. Second option you have is to simply copy the raw content from the gitignore.io site, using this [link](https://www.gitignore.io/api/visualstudio).
 3. Third option is to install the [IFix](https://marketplace.visualstudio.com/items?itemName=OsirisTerje.IFix)command line tool, and use the command
-```
-
+```cmd
 IFix gitignore -r -f
 ```
 
 to get a fresh latest copy down.  Alternatively, if you already have one, using
-```
-
+```cmd
 IFix -m -f
 ```
 
@@ -82,22 +80,19 @@ We can add the curl command with it's parameters as a git alias, like I have sho
 
 So, add the following lineinto your git config file:
 
-```
-
+```cmd
 ignore = "!gi() { curl -L -s https://www.gitignore.io/api/$@ ;}; gi"
 ```
 
 You can then add a gitignore file doing:
 
-```
-
+```cmd
 git ignore visualstudio > .gitignore
 ```
 
 And of course you can simplify this further by adding the following alias:
 
-```
-
+```cmd
 ignorevs = !git ignore visualstudio > .gitignore
 ```
 
@@ -107,8 +102,7 @@ ignorevs = !git ignore visualstudio > .gitignore
 
 And for being able to update it, you can add the following IFix command as another alias to your gitconfig
 
-```
-
+```text
 updategitignore = "!f() { exec ifix gitignore -m -f;}; f"
 ```
 

@@ -6,8 +6,7 @@ Init a new repo
 
 Create two new files
 
-```
-
+```cmd
 echo C1 >> c1.md
 echo C2 >> c2.md
 git status
@@ -34,8 +33,7 @@ Now, remove the file:
 
 ### Method 1
 
-```
-
+```csharp
 del c1.md
 ```
 
@@ -43,8 +41,7 @@ What is the status?
 
 ### Method 2
 
-```
-
+```cmd
 git rm c2.md
 ```
 
@@ -74,23 +71,20 @@ What is the conclusion from this?
 
 Create a new repo, get some code in there, and run it
 
-```
-
+```cmd
 git init testrepo  && cd testrepo
 ```
 
 Add a .gitignore file (from [gitignore.io]())
 
-```
-
+```cmd
 git add * && git commit -m"gitignore"
 dotnet new nunit
 dotnet build
 ```
 
 Now run
-```
-
+```cmd
 git status --ignore
 ```
 

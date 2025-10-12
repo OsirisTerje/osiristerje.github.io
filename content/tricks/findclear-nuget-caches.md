@@ -11,8 +11,7 @@ Sometimes you need to find and clear a particular package, or simple clear the c
 
 The most used locations can be found at:
 
-```
-
+```cmd
 %LocalAppData%\NuGet\Cache
 %UserProfile%\.nuget\packages
 ```
@@ -21,8 +20,7 @@ The easiest way to find all of them however is to use nuget itself:
 
 The following command lists all the cache locations:
 
-```
-
+```cmd
 nuget locals all -list
 ```
 
@@ -32,8 +30,7 @@ You will see four different cache locations.
 
 If you want to clear all the caches the following command will do that:
 
-```
-
+```cmd
 nuget locals all -clear
 ```
 

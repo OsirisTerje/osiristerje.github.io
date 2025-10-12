@@ -16,9 +16,9 @@ The article is as follows:
 
 This article came out of a post on the Microsoft forums concerning how to handle team builds of subsystems.  The post can be found [here](http://social.msdn.microsoft.com/forums/en-US/tfsbuild/thread/5a017a4b-4617-4339-af18-3077c77abb20/), look up the original post to see the problem in detail.  Some of the problems the original poster got, concerned build reports which included work items belonging to other subprojects, but the problem go further than that.  By not having a proper structure for your source code, you run the risk of build problems when you try to set up team build.
 
-The problem concerns how to arrange your source code and build structure in these cases. There are several options, as outlined below.  Which one to choose depends on your particular situation. 
+The problem concerns how to arrange your source code and build structure in these cases. There are several options, as outlined below.  Which one to choose depends on your particular situation.
 
-In the original problem, each subsystem resided in separate team projects. For this discussion, the subssystem may or may not be located separately.  
+In the original problem, each subsystem resided in separate team projects. For this discussion, the subssystem may or may not be located separately.
 
 For the sake of the discussion: Assume the existence of a Common framework project, and two other projects named Project1 and Project2 which uses this common framework. You want to build these as separate build projects, so to get as high isolation between them as possible.
 
@@ -27,7 +27,7 @@ There is guidelines for this on codeplex, see <http://www.codeplex.com/TFSGuide/
 A)  A decision to use one or multiple TFS Projects should be based on other criteria, like teams, rights management, etc,  and not on the problem you have.
 
 B) The reason you get the behavior you describe first, is that both your builds "points", so to speak, at the level above your projects, that is the node called 'source'.  It is this that determines what is shown in the build report.  And no, you should not change anything in the build report. At this level, you probably have two solutions, one called Project1 and one called Project2, or if you have the solutions down at the level of the Project1 and Project2, you have still your workspace for the build at the level of the 'source'.
-So in order to get the behavior you want, you have some options.  Which to choose depends a bit on the size of your projects, including common, and the stability of the 'common' framework, your team sizes, how much isolation between them you want etc etc. 
+So in order to get the behavior you want, you have some options.  Which to choose depends a bit on the size of your projects, including common, and the stability of the 'common' framework, your team sizes, how much isolation between them you want etc etc.
 I'll outline these options below:
 
 ### Solution 1: Multiple build workspacemappings
@@ -53,7 +53,7 @@ Do the same for Project2.
 Simple to do
 **Disadvantages**: A developer may not always get the latest source down, if they are unaware of the dependency on Common. If Common is a very long path-way away from your project, more levels than what you have shown above, this problem is much more likely to happen, in that case got to solution 2 or 3.
 
-### Solution 2.  Source code branching: 
+### Solution 2.  Source code branching:
 
 #### Choose this if:
 
@@ -75,7 +75,7 @@ Then of course create the branches from Common to the two respective CommonBranc
 It is probably wise in this setup to have a separate solution for Common alone, and its own CI build to make sure it is correct before merging changes over to the Branches.
 The solutions for Project1 and Project2 should be as described in solution 1, no changes there.
 Note that one would normally not do any changes in the source in the CommonBranches, one could of course, but that would create a merging issue later when one merges new or updated code from the Common trunk.
-**Advantages**:  
+**Advantages**:
 Provides better separation between the projects and common
 A developer will always get a buildable solution if he takes get latest from the Project node.
 **Disadvantages**:
@@ -111,7 +111,7 @@ Binaries must be checked in (not a problem IMHO).
 
 Versioning should be introduced in the build process (not described in this post), may further complicate the build script
 
-**Advantage in disadvantage**:  
+**Advantage in disadvantage**:
 When the build script changes have been done, the process is smooooottth  .
 
 ### Solution 3B : Binary deployment with immediate merge

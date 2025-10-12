@@ -16,8 +16,7 @@ As you can see, you now have a new merge commit.  We want to get rid of this and
 
 We can do that doing a rebase on origin/master, which points to the previous commit from the remote repo.
 
-```
-
+```cmd
 git rebase origin/master
 ```
 

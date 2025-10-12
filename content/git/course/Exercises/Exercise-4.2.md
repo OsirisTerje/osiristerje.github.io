@@ -16,8 +16,7 @@ Set up a remote, and push the branches master and fixmore to that remote.
 
 To delete a branch, the command is:
 
-```
-
+```cmd
 git branch -d/-D  branchname
 ```
 
@@ -35,8 +34,7 @@ When trying to delete the dev2 branch you'll get a warning.  Then try to force-d
 
 Now, Gitviz doesn't show any more branches, but run :
 
-```
-
+```cmd
 git branch --all
 ```
 
@@ -46,14 +44,12 @@ Deleting a tracking branch is the same as unsetting the tracking for a local bra
 
 Now, delete the one for fixmore
 
-```
-
+```cmd
 git branch -d -r origin/fixmore
 ```
 
 Use
-```
-
+```cmd
 git branch --all
 ```
 
@@ -74,30 +70,26 @@ If we just go back, we will be left with dangling commits, and hard to get back.
 What you do is to notice the two SHAs and add branches to them:
 (Note that your SHAs will differ from my below)
 
-```
-
+```cmd
 git branch first 6277a7d
 git branch second 9c3f8d1
 ```
 
 Why didn't we need to do anything with the merge commit?  It will be lost, and that is ok, why?  How do we know?
 
-```
-
+```cmd
 git reset --hard HEAD~1
 ```
 
 Ok, now it is obvious which is in the master branch and which is in the other.  In my case, the branch named second, so I go there.
 
-```
-
+```cmd
 git switch second
 ```
 
 and then rebase onto master, and forward merge master
 
-```
-
+```cmd
 git rebase master
 git switch master
 git merge second
@@ -117,16 +109,14 @@ There are multiple ways to do this.
 
 Let us start with a simple one:
 
-```
-
+```cmd
 git switch master
 git merge --squash wow
 ```
 
 Notice your UI tree in gitviz didn't change.
 So do a
-```
-
+```cmd
 git status
 ```
 
@@ -142,8 +132,7 @@ Well, I assume you added a commit message :-)
 
 Ok, let us try another one, but first:
 
-```
-
+```cmd
 git reset --hard HEAD~1
 ```
 
@@ -151,8 +140,7 @@ Now we're back to square 1!
 
 We will do the same, just slightly different:
 
-```
-
+```cmd
 git merge  --squash wow
 git commit
 ```
@@ -165,15 +153,13 @@ You still have the commits there, and the branch you merged in as a seperate bra
 
 But there is yet another way:
 
-```
-
+```cmd
 git reset --hard HEAD~1
 ```
 
 Now go back to the wow branch:
 
-```
-
+```cmd
 git reset --hard HEAD~6
 git merge --squash HEAD@{1}
 git commit
@@ -193,15 +179,13 @@ Go back to have a branch at the top of those 6.
 
 Lets assume it is called whyrebasei
 
-```
-
+```cmd
 git branch whyrebasei 6b1e063
 ```
 
 Now, run:
 
-```
-
+```cmd
 git rebase -i master
 ```
 

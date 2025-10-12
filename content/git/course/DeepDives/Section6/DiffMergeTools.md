@@ -16,8 +16,7 @@ Some alternatives that are understood by git
 These have to be installed, and available in the path.
 
 Run
-```
-
+```cmd
 git mergetool --tool-help
 ```
 
@@ -56,8 +55,7 @@ Copy the section shown into the global git config
 Add the following to the global git config file, just check the path to your installation of Visual Studio.
 
 Find that path
-```
-
+```csharp
 where vsdiffmerge.exe >> vsd.txt
 ```
 
@@ -68,8 +66,7 @@ Also, Visual Studio may be very slow to open it, and I have often experienced it
 
 It is much easier to just start VS in that folder, it will then automatically pick up the merge conflict.
 
-```
-
+```csharp
 [diff]
   tool = vsdiffmerge
 [merge]
@@ -95,8 +92,7 @@ It is much easier to just start VS in that folder, it will then automatically pi
 
 Setting up just the  merge tool sections:
 
-```
-
+```csharp
 [merge]
         tool = vscode
 [mergetool "vscode"]
@@ -113,14 +109,12 @@ We can then choose to run with a specific tool, or we can run with the default o
 
 Running with a default tool:
 
-```
-
+```cmd
 git mergetool
 ```
 
 or choose a specific tool:
 
-```
-
+```cmd
 git mergetool --tool=vscode
 ```

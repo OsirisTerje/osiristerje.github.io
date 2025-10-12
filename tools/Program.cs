@@ -19,6 +19,9 @@ if (!File.Exists(path))
 string original = File.ReadAllText(path);
 string updated = original;
 
+// Remove unwanted frontmatter keys that come from the old WP export (idempotent)
+updated = RemoveUnwantedFrontmatterEntries(updated);
+
 // placeholder map to avoid double-conversion
 var placeholders = new Dictionary<string, string>(StringComparer.Ordinal);
 int tokenCounter = 0;
@@ -65,6 +68,9 @@ foreach (var kv in placeholders)
 
 // 7.5) Fix closing fenced code block qualifiers (e.g. ```text) and ensure exactly one blank line after
 updated = FixClosingFencedCodeBlockEndings(updated);
+
+// 7.6) Ensure image paths that start with "images/..." get a leading slash -> "/images/..."
+updated = EnsureLeadingSlashForImagePaths(updated);
 
 // 7.6) Rewrite hermit.no WP uploads image URLs to local images/ path
 updated = FixHermitImageUrls(updated);
@@ -261,6 +267,21 @@ static string FixClosingFencedCodeBlockEndings(string text)
     return sb.ToString();
 }
 
+static string EnsureLeadingSlashForImagePaths(string text)
+{
+    if (string.IsNullOrEmpty(text)) return text;
+
+    // Markdown links/images: ](images/...  and ![alt](images/...
+    text = Regex.Replace(text, @"\]\(\s*images[\\/]", "](/images/", RegexOptions.IgnoreCase);
+    text = Regex.Replace(text, @"!\[([^\]]*)\]\(\s*images[\\/]", "![$1](/images/", RegexOptions.IgnoreCase);
+
+    // HTML img src attributes with double or single quotes
+    text = Regex.Replace(text, @"src\s*=\s*""\s*images[\\/]", "src=\"/images/", RegexOptions.IgnoreCase);
+    text = Regex.Replace(text, @"src\s*=\s*'\s*images[\\/]", "src='/images/", RegexOptions.IgnoreCase);
+
+    return text;
+}
+
 static string FixHermitImageUrls(string text)
 {
     // Convert absolute hermit.no upload URLs to local images/ path
@@ -270,7 +291,7 @@ static string FixHermitImageUrls(string text)
     return rx.Replace(text, m =>
     {
         var rest = m.Groups["rest"].Value.TrimStart('/');
-        return "images/" + rest;
+        return "/images/" + rest;
     });
 }
 
@@ -502,4 +523,26 @@ static string? CaptureAttribute(string? attrs, string name)
     if (string.IsNullOrEmpty(attrs)) return null;
     var m = Regex.Match(attrs, $@"\b{name}\s*=\s*""(?<v>[^""]*)""", RegexOptions.IgnoreCase);
     return m.Success ? m.Groups["v"].Value : null;
+}
+
+static string RemoveUnwantedFrontmatterEntries(string text)
+{
+    // We operate only inside the top frontmatter block (between --- and ---)
+    var fmMatch = Regex.Match(text, "^(---\r?\n.*?\r?\n---\r?\n)", RegexOptions.Singleline);
+    if (!fmMatch.Success) return text;
+
+    var fm = fmMatch.Groups[1].Value;
+    // Keys to remove (match key: and any following indented lines)
+    var keys = new[] { "guid", "permalink", "catchevolution-sidebarlayout", "dsq_thread_id" };
+
+    foreach (var key in keys)
+    {
+        // Remove lines starting with key: and any immediately following indented lines (e.g. - "123")
+        fm = Regex.Replace(fm, $@"^{Regex.Escape(key)}\s*:\s*.*(?:\r?\n(?:\s+-\s*.*|\s+.*))*", "", RegexOptions.IgnoreCase | RegexOptions.Multiline);
+    }
+
+    // Collapse multiple blank lines inside frontmatter to a single blank line
+    fm = Regex.Replace(fm, "\r?\n{2,}", "\r\n");
+
+    return fmMatch.Result(fm) + text.Substring(fmMatch.Length);
 }

@@ -4,12 +4,6 @@ title: Moving to SDK-Style projects and package references in Visual Studio, par
 date: 2019-11-04T16:01:13+01:00
 author: terje
 layout: post
-permalink: /moving-to-sdk-style-projects-and-package-references-in-visual-studio-part-2/
-
-categories:
-  - Azure DevOps
-  - Build
-  - Visual Studio
 ---
 
 #### Introduction
@@ -28,7 +22,7 @@ When we build the new project, we will use the dotnet toolset.  You can still bu
 
 Below is a sample project containing a small Math class library, and a unit test project for the same.  Both projects run using .net framework 4.7.2, and we want to keep it as a 4.7.2 project, even after conversion to the SDK style.
 
-![](images/2019/10/1.jpg)
+![](/images/2019/10/1.jpg)
 
 Figure 1
 
@@ -38,19 +32,19 @@ The math library use a nuget package, NewtonSoft.Json.  The test project uses th
 
 The code below is the unit test for the Math class, where we test two aspects of the Add method.
 
-![](images/2019/10/2.jpg)
+![](/images/2019/10/2.jpg)
 
 Figure 2
 
 The Math class is has only two methods,  Add, and AsJson, the latter just returns a json representation of the last result of the Add method.
 
-![](images/2019/10/3.jpg)
+![](/images/2019/10/3.jpg)
 
 Figure 3
 
 If we try to use 'dotnet build' on this legacy project format projects, it will fail as shown below. Also note that it complains about not finding any packages to restore.  This is because the project are using the old style package system, which is not supported by dotnet restore.
 
-![](images/2019/10/4-1024x272.jpg)
+![](/images/2019/10/4-1024x272.jpg)
 
 Figure 4
 
@@ -63,7 +57,7 @@ We first has to install the migration tool. We only need to do this once, since 
 dotnet tool install --global Project2015To2017.Migrate2019.Tool
 ```
 
-![](images/2019/10/6-1024x79.jpg)
+![](/images/2019/10/6-1024x79.jpg)
 
 Figure 5
 
@@ -78,25 +72,25 @@ We will run it as a wizard, so there will be a couple of questions under way, am
 
 We also ask it to do whatever optimization it can.  Now, this may or may not be problematic, so if this means your project won't compile afterwards - and you cant figure it out,  you should run again without optimization.
 
-![](images/2019/10/9-1024x469.jpg)
+![](/images/2019/10/9-1024x469.jpg)
 
 Figure 6
 
 The projects will ask you to be reloaded, but just before you do, the solution will look like below, - note that the packages.config files now are being deleted.
 
-![](images/2019/10/10.jpg)
+![](/images/2019/10/10.jpg)
 
 Figure 10
 
 After reloading, the project looks like below, and we see we still have the package there, but now it will be as a package reference.  We also see the Backup folders - although they are ignored by git (note the icon).
 
-![](images/2019/10/12.jpg)
+![](/images/2019/10/12.jpg)
 
 Figure 12
 
 If we now do a 'dotnet build', we see it builds just fine.  This is a good indication that the conversion was successful.  You will not always be that lucky!
 
-![](images/2019/10/13-1024x212.jpg)
+![](/images/2019/10/13-1024x212.jpg)
 
 Figure 13
 
@@ -104,35 +98,35 @@ Figure 13
 
 With the SDK format, we no longer use the assemblyinfo.cs file.  Whatever we have there can be moved into the csproj file.  The migrator does that work for us, but it leaves stuff it don't understand in an assemblyinfo.cs file.   It now looks like shown below.
 
-![](images/2019/10/14-1024x437.jpg)
+![](/images/2019/10/14-1024x437.jpg)
 
 Figure 14
 
 As we don't see any need for any of these settings either (you don't use COM, do you?), we can just remove it, meaning deleting the file itself, and also the Properties folder.
 
-![](images/2019/10/15.jpg)
+![](/images/2019/10/15.jpg)
 
 Figure 15
 
 The structure in Figure 15 looks way simpler and better.  We now check that it still compiles, and that tests run.
 
-![](images/2019/10/17-1024x572.jpg)
+![](/images/2019/10/17-1024x572.jpg)
 
 Figure 16
 
 If we look at the two csproj files, we still see a lot of stuff that actually can just go.
 
-![](images/2019/10/18.jpg)
+![](/images/2019/10/18.jpg)
 
 Figure 17
 
-![](images/2019/10/19.jpg)
+![](/images/2019/10/19.jpg)
 
 Figure 18
 
 If we take the test project, and look at what we can remove:
 
-![](images/2019/11/30-1.jpg)
+![](/images/2019/11/30-1.jpg)
 
 Figure 19
 
@@ -149,11 +143,11 @@ Figure 19
 
 The test.sdk package contains only a few properties.  We removed the properties for test above (point 4 above), and as can be seen the props file contain a property IsTestProject = true, so by including that package we ensure we have the right default properties for a Test project
 
-![](images/2019/10/20-1024x604.jpg)
+![](/images/2019/10/20-1024x604.jpg)
 
 Figure 20
 
-![](images/2019/10/21-1024x423.jpg)
+![](/images/2019/10/21-1024x423.jpg)
 
 Figure 21
 
@@ -163,7 +157,7 @@ When we have done the appropriate cleaning, the final SDK style project for the 
 
 Note that with the SDK format you don't need to include any code files, they are included automatically.  This goes a long way on making the format very slim.  This goes hand in hand with a git source control system, where also all files matters.  If you don't want to include a file, you should just delete it, and if you regret, grab it back from version control.
 
-![](images/2019/11/31.jpg?fit=678%2C309)
+![](/images/2019/11/31.jpg?fit=678%2C309)
 
 Figure 22
 
@@ -171,7 +165,7 @@ Figure 22
 
 The SDK style format can also handle files contained in sub folders, without adding any more stuff into the csproj file.
 
-![](images/2019/10/25-1024x334.jpg)
+![](/images/2019/10/25-1024x334.jpg)
 
 Figure 25
 
@@ -179,13 +173,13 @@ However, when the migration tool runs, it tends to add some folders here and the
 
 If you just add a single folder, it will be included in the format, as shown below.
 
-![](images/2019/10/26-1024x318.jpg)
+![](/images/2019/10/26-1024x318.jpg)
 
 Figure 26
 
 But when you add the first file into that folder, the folder is removed automatically from your project file.
 
-![](images/2019/10/27-1024x344.jpg)
+![](/images/2019/10/27-1024x344.jpg)
 
 Figure 27
 

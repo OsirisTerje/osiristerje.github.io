@@ -11,7 +11,17 @@ dsq_thread_id:
 categories:
   - none
 ---
-<div class="wlWriterHeaderFooter" style="float:none; margin:0px; padding:4px 0px 4px 0px;"><iframe src="http://www.facebook.com/widgets/like.php?href=http://geekswithblogs.net/terje/archive/2010/10/14/making-static-code-analysis-and-code-contracts-work-together-or.aspx" scrolling="no" frameborder="0" style="border:none; width:450px; height:80px"></iframe></div><p><font color="#ff0000">UPDATED</font>: Feb 16th 2012:  Workaround #1 and #2 only works when run-time checking is not enabled. Added workaround #2B which seems to work.  Thanks to David S, Michael S and ZbynekZ for pointing this out, and sorry for not responding faster to this. Also added comments and overviews over what happens for different settings. </p>  <p> </p>  <p>There have been several reports on problems with the Static Code Analysis (SCA) not adhering to the statements of the Code Contract tools. See these links: <a href="https://connect.microsoft.com/VisualStudio/feedback/ViewFeedback.aspx?FeedbackID=488341&amp;wa=wsignin1.0" target="_blank">connect</a>, <a href="http://social.msdn.microsoft.com/Forums/en/codecontracts/thread/8016ba58-8ae1-483e-90ac-d14a4cb73a7c " target="_blank">forum1</a>, <a href="http://social.msdn.microsoft.com/Forums/en/codecontracts/thread/32f0f5c1-89fd-486f-9530-add3670552d0 " target="_blank">forum2</a>.</p>  <p>The problem can be shown in the following code snippet:</p>  <p> </p>  <p><font color="#ff0000">Code Problem:</font></p>  <pre class="csharpcode"> <span style="color: blue">public int </span>FindLength1(<span style="color: blue">string </span>something)
+<div class="wlWriterHeaderFooter" style="float:none; margin:0px; padding:4px 0px 4px 0px;"><iframe src="http://www.facebook.com/widgets/like.php?href=http://geekswithblogs.net/terje/archive/2010/10/14/making-static-code-analysis-and-code-contracts-work-together-or.aspx" scrolling="no" frameborder="0" style="border:none; width:450px; height:80px"></iframe></div><p><font color="#ff0000">UPDATED</font>: Feb 16th 2012: Workaround #1 and #2 only works when run-time checking is not enabled. Added workaround #2B which seems to work. Thanks to David S, Michael S and ZbynekZ for pointing this out, and sorry for not responding faster to this. Also added comments and overviews over what happens for different settings.</p>
+
+<p>There have been several reports on problems with the Static Code Analysis (SCA) not adhering to the statements of the Code Contract tools. See these links: <a href="https://connect.microsoft.com/VisualStudio/feedback/ViewFeedback.aspx?FeedbackID=488341&amp;wa=wsignin1.0" target="_blank">connect</a>, <a href="http://social.msdn.microsoft.com/Forums/en/codecontracts/thread/8016ba58-8ae1-483e-90ac-d14a4cb73a7c " target="_blank">forum1</a>, <a href="http://social.msdn.microsoft.com/Forums/en/codecontracts/thread/32f0f5c1-89fd-486f-9530-add3670552d0 " target="_blank">forum2</a>.</p>
+
+<p>The problem can be shown in the following code snippet:</p>
+
+<p> </p>
+
+<p><font color="#ff0000">Code Problem:</font></p>
+
+<pre class="csharpcode"> <span style="color: blue">public int </span>FindLength1(<span style="color: blue">string </span>something)
         {
             <span style="color: #2b91af">Contract</span>.Requires(something != <span style="color: blue">null</span>);
             <span style="color: blue">return </span>something.Length;

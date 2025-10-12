@@ -9,4 +9,45 @@ permalink: /seminar-on-news-in-team-system-2010-september-15th-in-oslo-norway/
 categories:
   - Uncategorized
 ---
-<p>In June we ran a free 2,5 hour seminar at Microsoft on the Team System 2010.  It went rather well, so it's being set up again, on September 15th.  It's being done as a practical demo case, we've "invented" a problem, and uses the 2010 to solve the problem. In the process of doing that, we're going through the Architect parts, the work items, the build system, coding, branching, code reviews with the static code analysis, testing with the new Test Edition ("Camano") and more.   We've done it nearly power point free :-). </p>  <p>The agenda, which is more like a summary of the stuff we go through during the case study, is as follows (in Norwegian) :</p>  <p><strong>Introduksjon</strong></p>  <ul>   <li>Introduksjon til ny funksjonalitet for arkitekter, utviklere, testere og prosjektledere</li> </ul>  <p><strong>Testing</strong></p>  <ul>   <li>No-repro bug. Automatisk lagring av testscenarier for reprodusering av feil</li>    <li>Testing av brukergrensesnitt - ende til ende fra test bruker med full lagring av alle hendelseer, klikk og reproduksjon i utviklingsmiljøet</li>    <li>Økt effektivitet og sporbarhet i testing</li> </ul>  <p><strong>Source control</strong></p>  <ul>   <li>Sporing og visualisering av endringer i branch.</li>    <li>Annotated across merges</li>    <li>Rollback</li> </ul>  <p><strong>Project control</strong></p>  <ul>   <li>Hierarchical work items</li>    <li>New work item controls</li>    <li>Field comparison queries</li>    <li>Ad-hoc Excel reports</li>    <li>Utvidet Project Server-integrasjon</li> </ul>  <p><strong>Architect Edition</strong></p>  <ul>   <li>Mange nye designer-elementer for bl. Use case, component, logical class, class, sequence m. fl</li> </ul>  <p><strong>Build &amp; release</strong></p>  <ul>   <li>Byggkøer</li>    <li>Gated checking</li>    <li>Automatisk installering</li> </ul>  <p> </p>  <p>Register here : <a title="http://msevents.microsoft.com/CUI/EventDetail.aspx?EventID=1032420915&amp;EventCategory=1&amp;culture=nb-NO&amp;CountryCode=NO" href="http://msevents.microsoft.com/CUI/EventDetail.aspx?EventID=1032420915&amp;EventCategory=1&amp;culture=nb-NO&amp;CountryCode=NO">http://msevents.microsoft.com/CUI/EventDetail.aspx?EventID=1032420915&amp;EventCategory=1&amp;culture=nb-NO&amp;CountryCode=NO</a></p>  <p>Rune has written up more on it here: <a title="http://blogs.msdn.com/grothaug/archive/2009/08/21/under-panseret-p-visual-studio-team-system-2010.aspx" href="http://blogs.msdn.com/grothaug/archive/2009/08/21/under-panseret-p-visual-studio-team-system-2010.aspx">http://blogs.msdn.com/grothaug/archive/2009/08/21/under-panseret-p-visual-studio-team-system-2010.aspx</a></p>
+
+In June we ran a free 2,5 hour seminar at Microsoft on the Team System 2010.  It went rather well, so it's being set up again, on September 15th.  It's being done as a practical demo case, we've "invented" a problem, and uses the 2010 to solve the problem. In the process of doing that, we're going through the Architect parts, the work items, the build system, coding, branching, code reviews with the static code analysis, testing with the new Test Edition ("Camano") and more.   We've done it nearly power point free :-).
+
+The agenda, which is more like a summary of the stuff we go through during the case study, is as follows (in Norwegian):
+
+**Introduksjon**
+
+- Introduksjon til ny funksjonalitet for arkitekter, utviklere, testere og prosjektledere
+
+**Testing**
+
+- No-repro bug. Automatisk lagring av testscenarier for reprodusering av feil
+- Testing av brukergrensesnitt - ende til ende fra test bruker med full lagring av alle hendelseer, klikk og reproduksjon i utviklingsmiljøet
+- Økt effektivitet og sporbarhet i testing
+
+**Source control**
+
+- Sporing og visualisering av endringer i branch.
+- Annotated across merges
+- Rollback
+
+**Project control**
+
+- Hierarchical work items
+- New work item controls
+- Field comparison queries
+- Ad-hoc Excel reports
+- Utvidet Project Server-integrasjon
+
+**Architect Edition**
+
+- Mange nye designer-elementer for bl. Use case, component, logical class, class, sequence m. fl
+
+**Build & release**
+
+- Byggkøer
+- Gated checking
+- Automatisk installering
+
+Register here: [http://msevents.microsoft.com/CUI/EventDetail.aspx?EventID=1032420915&EventCategory=1&culture=nb-NO&CountryCode=NO](http://msevents.microsoft.com/CUI/EventDetail.aspx?EventID=1032420915&EventCategory=1&culture=nb-NO&CountryCode=NO)
+
+Rune has written up more on it here: [http://blogs.msdn.com/grothaug/archive/2009/08/21/under-panseret-p-visual-studio-team-system-2010.aspx](http://blogs.msdn.com/grothaug/archive/2009/08/21/under-panseret-p-visual-studio-team-system-2010.aspx)

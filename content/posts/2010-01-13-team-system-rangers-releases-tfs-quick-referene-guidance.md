@@ -6,8 +6,6 @@ author: terje
 layout: post
 guid: http://terje.wpengine.com/?p=137461
 permalink: /team-system-rangers-releases-tfs-quick-referene-guidance/
-dsq_thread_id:
-  - "7017979069"
 categories:
   - none
 ---
@@ -16,4 +14,50 @@ The Team System Rangers (http://msdn.microsoft.com/en-us/teamsystem/ee358786.asp
 
 [![](http://hermit.no/wp-content/uploads/2015/08/GWB-WindowsLiveWriter-TeamSystemRangersreleasesTFSQuickReferen_881B-image_thumb.png "Quick reference example thumbnail")](http://gwb.blob.core.windows.net/terje/WindowsLiveWriter/TeamSystemRangersreleasesTFSQuickReferen_881B/image_2.png)
 
-  <p>1. Planning:</p>  <p><a href="http://gwb.blob.core.windows.net/terje/WindowsLiveWriter/TeamSystemRangersreleasesTFSQuickReferen_881B/image_4.png"><img style="border-right-width: 0px; display: inline; border-top-width: 0px; border-bottom-width: 0px; border-left-width: 0px" title="image" border="0" alt="image" src="http://hermit.no/wp-content/uploads/2015/08/GWB-WindowsLiveWriter-TeamSystemRangersreleasesTFSQuickReferen_881B-image_thumb_1.png" width="244" height="84" /></a> </p>  <p>2. Design</p>  <p><a href="http://gwb.blob.core.windows.net/terje/WindowsLiveWriter/TeamSystemRangersreleasesTFSQuickReferen_881B/image_6.png"><img style="border-right-width: 0px; display: inline; border-top-width: 0px; border-bottom-width: 0px; border-left-width: 0px" title="image" border="0" alt="image" src="http://hermit.no/wp-content/uploads/2015/08/GWB-WindowsLiveWriter-TeamSystemRangersreleasesTFSQuickReferen_881B-image_thumb_2.png" width="244" height="55" /></a> </p>  <p>3. Dev Debug</p>  <p><a href="http://gwb.blob.core.windows.net/terje/WindowsLiveWriter/TeamSystemRangersreleasesTFSQuickReferen_881B/image_8.png"><img style="border-right-width: 0px; display: inline; border-top-width: 0px; border-bottom-width: 0px; border-left-width: 0px" title="image" border="0" alt="image" src="http://hermit.no/wp-content/uploads/2015/08/GWB-WindowsLiveWriter-TeamSystemRangersreleasesTFSQuickReferen_881B-image_thumb_3.png" width="244" height="50" /></a> </p>  <p>4. Database</p>  <p><a href="http://gwb.blob.core.windows.net/terje/WindowsLiveWriter/TeamSystemRangersreleasesTFSQuickReferen_881B/image_10.png"><img style="border-right-width: 0px; display: inline; border-top-width: 0px; border-bottom-width: 0px; border-left-width: 0px" title="image" border="0" alt="image" src="http://hermit.no/wp-content/uploads/2015/08/GWB-WindowsLiveWriter-TeamSystemRangersreleasesTFSQuickReferen_881B-image_thumb_4.png" width="244" height="58" /></a> </p>  <p>5. Testing</p>  <p><a href="http://gwb.blob.core.windows.net/terje/WindowsLiveWriter/TeamSystemRangersreleasesTFSQuickReferen_881B/image_12.png"><img style="border-right-width: 0px; display: inline; border-top-width: 0px; border-bottom-width: 0px; border-left-width: 0px" title="image" border="0" alt="image" src="http://hermit.no/wp-content/uploads/2015/08/GWB-WindowsLiveWriter-TeamSystemRangersreleasesTFSQuickReferen_881B-image_thumb_5.png" width="244" height="102" /></a> </p>  <p>6. Build</p>  <p><a href="http://gwb.blob.core.windows.net/terje/WindowsLiveWriter/TeamSystemRangersreleasesTFSQuickReferen_881B/image_14.png"><img style="border-right-width: 0px; display: inline; border-top-width: 0px; border-bottom-width: 0px; border-left-width: 0px" title="image" border="0" alt="image" src="http://hermit.no/wp-content/uploads/2015/08/GWB-WindowsLiveWriter-TeamSystemRangersreleasesTFSQuickReferen_881B-image_thumb_6.png" width="244" height="60" /></a> </p>  <p>7. General</p>  <p><a href="http://gwb.blob.core.windows.net/terje/WindowsLiveWriter/TeamSystemRangersreleasesTFSQuickReferen_881B/image_16.png"><img style="border-right-width: 0px; display: inline; border-top-width: 0px; border-bottom-width: 0px; border-left-width: 0px" title="image" border="0" alt="image" src="http://hermit.no/wp-content/uploads/2015/08/GWB-WindowsLiveWriter-TeamSystemRangersreleasesTFSQuickReferen_881B-image_thumb_7.png" width="244" height="42" /></a> </p>  <p>The guides are rather detailed and can be used as “cheat” sheets, so I’ll just drop one of them as an example, download them and get the whole set:</p>  <p><a href="http://gwb.blob.core.windows.net/terje/WindowsLiveWriter/TeamSystemRangersreleasesTFSQuickReferen_881B/image_20.png"><img style="border-bottom: 0px; border-left: 0px; display: inline; border-top: 0px; border-right: 0px" title="image" border="0" alt="image" src="http://hermit.no/wp-content/uploads/2015/08/GWB-WindowsLiveWriter-TeamSystemRangersreleasesTFSQuickReferen_881B-image_thumb_9.png" width="244" height="185" /></a> </p>  <p>There are 3 downloads:</p>  <p><a title="http://vs2010quickref.codeplex.com/Release/ProjectReleases.aspx?ReleaseId=37144" href="http://vs2010quickref.codeplex.com/Release/ProjectReleases.aspx?ReleaseId=37144">http://vs2010quickref.codeplex.com/Release/ProjectReleases.aspx?ReleaseId=37144</a></p>  <p><a title="http://vs2010quickref.codeplex.com/Release/ProjectReleases.aspx?ReleaseId=37145" href="http://vs2010quickref.codeplex.com/Release/ProjectReleases.aspx?ReleaseId=37145">http://vs2010quickref.codeplex.com/Release/ProjectReleases.aspx?ReleaseId=37145</a></p>  <p><a title="http://vs2010quickref.codeplex.com/Release/ProjectReleases.aspx?ReleaseId=37147" href="http://vs2010quickref.codeplex.com/Release/ProjectReleases.aspx?ReleaseId=37147">http://vs2010quickref.codeplex.com/Release/ProjectReleases.aspx?ReleaseId=37147</a></p>  <p>While downloading, get the branching guidance too:</p>  <p><a title="http://tfsbranchingguideii.codeplex.com/Release/ProjectReleases.aspx?ReleaseId=20785" href="http://tfsbranchingguideii.codeplex.com/Release/ProjectReleases.aspx?ReleaseId=20785">http://tfsbranchingguideii.codeplex.com/Release/ProjectReleases.aspx?ReleaseId=20785</a></p>  <p>The cheat sheet there is in the Drawings package, the sheet itself is called “…Scenarios 2.0”.</p>  <p>Also see this blogpost:  <a title="http://blogs.msdn.com/willy-peter_schaub/archive/2010/01/13/rangers-visual-studio-2010-quick-reference-guidance-includes-new-posters.aspx" href="http://blogs.msdn.com/willy-peter_schaub/archive/2010/01/13/rangers-visual-studio-2010-quick-reference-guidance-includes-new-posters.aspx">http://blogs.msdn.com/willy-peter_schaub/archive/2010/01/13/rangers-visual-studio-2010-quick-reference-guidance-includes-new-posters.aspx</a></p>
+1. Planning:
+
+![image](http://gwb.blob.core.windows.net/terje/WindowsLiveWriter/TeamSystemRangersreleasesTFSQuickReferen_881B/image_4.png)
+
+2. Design
+
+![image](http://gwb.blob.core.windows.net/terje/WindowsLiveWriter/TeamSystemRangersreleasesTFSQuickReferen_881B/image_6.png)
+
+3. Dev Debug
+
+![image](http://gwb.blob.core.windows.net/terje/WindowsLiveWriter/TeamSystemRangersreleasesTFSQuickReferen_881B/image_8.png)
+
+4. Database
+
+![image](http://gwb.blob.core.windows.net/terje/WindowsLiveWriter/TeamSystemRangersreleasesTFSQuickReferen_881B/image_10.png)
+
+5. Testing
+
+![image](http://gwb.blob.core.windows.net/terje/WindowsLiveWriter/TeamSystemRangersreleasesTFSQuickReferen_881B/image_12.png)
+
+6. Build
+
+![image](http://gwb.blob.core.windows.net/terje/WindowsLiveWriter/TeamSystemRangersreleasesTFSQuickReferen_881B/image_14.png)
+
+7. General
+
+![image](http://gwb.blob.core.windows.net/terje/WindowsLiveWriter/TeamSystemRangersreleasesTFSQuickReferen_881B/image_16.png)
+
+The guides are rather detailed and can be used as "cheat" sheets, so I'll just drop one of them as an example, download them and get the whole set:
+
+![image](http://gwb.blob.core.windows.net/terje/WindowsLiveWriter/TeamSystemRangersreleasesTFSQuickReferen_881B/image_20.png)
+
+There are 3 downloads:
+
+[Release 37144](http://vs2010quickref.codeplex.com/Release/ProjectReleases.aspx?ReleaseId=37144)
+
+[Release 37145](http://vs2010quickref.codeplex.com/Release/ProjectReleases.aspx?ReleaseId=37145)
+
+[Release 37147](http://vs2010quickref.codeplex.com/Release/ProjectReleases.aspx?ReleaseId=37147)
+
+While downloading, get the branching guidance too:
+
+[Branching guidance release](http://tfsbranchingguideii.codeplex.com/Release/ProjectReleases.aspx?ReleaseId=20785)
+
+The cheat sheet there is in the Drawings package, the sheet itself is called "…Scenarios 2.0".
+
+Also see this blogpost: [Rangers Visual Studio 2010 quick reference guidance includes new posters](http://blogs.msdn.com/willy-peter_schaub/archive/2010/01/13/rangers-visual-studio-2010-quick-reference-guidance-includes-new-posters.aspx)

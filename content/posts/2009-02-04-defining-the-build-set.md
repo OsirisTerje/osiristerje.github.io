@@ -11,16 +11,19 @@ dsq_thread_id:
 categories:
   - none
 ---
-<p>A <strong>build set</strong> is a set of builds running on the same solution or set of solutions, catering for different aspects of the Continuous Integration process.  Why a set of builds ?  Because one size doesn't fit all.  Something you want to run quickly and others you want to cover a lot of stuff.  This can be divided into a set of aspects.</p>
-<p>The aspects can be divided into three major parts:</p>
-<ol>
-    <li><strong>Developer aspect</strong>.  A continuous build running normally at each check in to ensure that the code the developer checks in is sound and working.  Normally this build is run at each check in of code. Depending on the size of the code, and thus the total build time, and the number of developers on the team, there is some different types to choose from. </li>
-    <li><strong>Quality assurance aspect</strong>.  A build running at regular interval, nightly might be wise, intended to ensure that the total quality of the code is satisfactory.  This build will take longer time, and you do as much as possible in order to cover the different types of quality you want to check.  Normally you would also put code documentation into this build.</li>
-    <li><strong>Deployment aspect</strong>.  This type of build is also called Public builds or release builds.  They build a complete installable package, and would normally also deploy and install the package onto a test system. They have at least two different parts, or paths. One is to run it against a test system, the other is to create the public release package, which we often call Production.  It would normally be dependent upon a correct Build Quality. If a build has not been given a correct build quality it should not be possible to run a Deployment build.</li>
-</ol>
-<p> </p>
-<p><strong>Scheduling</strong></p>
-<p>The scheduling of the different aspects may vary, depending on the total build time, but given a reasonable size, a set can be as outlined in this table:</p>
+
+A **build set** is a set of builds running on the same solution or set of solutions, catering for different aspects of the Continuous Integration process.  Why a set of builds ?  Because one size doesn't fit all.  Something you want to run quickly and others you want to cover a lot of stuff.  This can be divided into a set of aspects.
+
+The aspects can be divided into three major parts:
+
+1. **Developer aspect**.  A continuous build running normally at each check in to ensure that the code the developer checks in is sound and working.  Normally this build is run at each check in of code. Depending on the size of the code, and thus the total build time, and the number of developers on the team, there is some different types to choose from.
+2. **Quality assurance aspect**.  A build running at regular interval, nightly might be wise, intended to ensure that the total quality of the code is satisfactory.  This build will take longer time, and you do as much as possible in order to cover the different types of quality you want to check.  Normally you would also put code documentation into this build.
+3. **Deployment aspect**.  This type of build is also called Public builds or release builds.  They build a complete installable package, and would normally also deploy and install the package onto a test system. They have at least two different parts, or paths. One is to run it against a test system, the other is to create the public release package, which we often call Production.  It would normally be dependent upon a correct Build Quality. If a build has not been given a correct build quality it should not be possible to run a Deployment build.
+
+**Scheduling**
+
+The scheduling of the different aspects may vary, depending on the total build time, but given a reasonable size, a set can be as outlined in this table:
+
 <table border="1" cellspacing="0" cellpadding="2" width="708">
     <tbody>
         <tr>
@@ -45,9 +48,11 @@ categories:
         </tr>
     </tbody>
 </table>
-<p> </p>
-<p><strong>Content of builds</strong></p>
-<p>The content of each build also has a certain dependency on the total build time. When the build time increases one must cut off some of the functionality. The table below shows the different tasks to be done for each aspect, the tasks marked with (x) is typically cut-off tasks.</p>
+
+**Content of builds**
+
+The content of each build also has a certain dependency on the total build time. When the build time increases one must cut off some of the functionality. The table below shows the different tasks to be done for each aspect, the tasks marked with (x) is typically cut-off tasks.
+
 <table border="1" cellspacing="0" cellpadding="2" width="710">
     <tbody>
         <tr>
@@ -124,14 +129,22 @@ categories:
         </tr>
     </tbody>
 </table>
-<p> </p>
-<p><strong>Notes about some of the tasks</strong></p>
-<p>The Unit testing framework in Team System can be used for both class based unit tests, by which I mean testing of one class at a time, possibly using a mocking system to isolate the class from its dependencies, and for functional automatic testing.  The latter comes by many names, but it means testing of a set of functionality, in some cases including a database round-trip.  This type of testing is much more complex than ordinary class based testing, but is more alike to end-user testing, and thus easier for testing groups to specify.</p>
-<p>A manual test in an early iteration will often be converted into an automatic functional test in a latter iteration.  This type of tests may take significantly longer time to execute, especially if a database is involved, which has to be created from scratch for each run.</p>
-<p>Code metrics can not be run using TFS 2008, but will hopefully be included in TFS 2010. Third party products may of course be used.</p>
-<p>A Release Repository is a specialized storage for public releases, often also test releases are stored there. It contains the msi files, and is linked to the workitems and changesets included in a build. The task moves the results off the drop folder of the build server and into the release repository together with other relevant information. It is used for easy access to the final results, normally accessed through a web system.  Using a release repository makes it possible to integrate the TFS build system with a release and download system.  Osiris Data (the company I'm working at) is in the process of finalizing and releasing such a system for the TFS 2010. A pilot will be available for the TFS 2008 also.</p>
-<p>Deployment onto a test server can be implemented either through a push or a pull strategy. Which to choose depends on the security models in effect at your site. </p>
-<p>Generation of version numbers should include both the assemblyinfo.cs files, and the msi files.  It should also include both the total version number and the version name of the release.</p>
-<p> </p>
-<p><strong>The build set</strong> </p>
-<p>Each build in a build set has a set of tasks, settings and properties in common, among them the solution (or code) to build. The TFS 2008 has no concept of build sets.  Having a folder to group a set of builds would be a way to organize these things. That is on my wish list for 2010.  The use of templates in the new build system for the 2010 may be a way of solving the commonality problem. The best would however be for the TFS to include the build set as a recognizable term in the build system.</p>
+
+Notes about some of the tasks
+
+The Unit testing framework in Team System can be used for both class based unit tests, by which I mean testing of one class at a time, possibly using a mocking system to isolate the class from its dependencies, and for functional automatic testing.  The latter comes by many names, but it means testing of a set of functionality, in some cases including a database round-trip.  This type of testing is much more complex than ordinary class based testing, but is more alike to end-user testing, and thus easier for testing groups to specify.
+
+A manual test in an early iteration will often be converted into an automatic functional test in a latter iteration.  This type of tests may take significantly longer time to execute, especially if a database is involved, which has to be created from scratch for each run.
+
+Code metrics can not be run using TFS 2008, but will hopefully be included in TFS 2010. Third party products may of course be used.
+
+A Release Repository is a specialized storage for public releases, often also test releases are stored there. It contains the msi files, and is linked to the workitems and changesets included in a build. The task moves the results off the drop folder of the build server and into the release repository together with other relevant information. It is used for easy access to the final results, normally accessed through a web system.  Using a release repository makes it possible to integrate the TFS build system with a release and download system.  Osiris Data (the company I'm working at) is in the process of finalizing and releasing such a system for the TFS 2010. A pilot will be available for the TFS 2008 also.
+
+Deployment onto a test server can be implemented either through a push or a pull strategy. Which to choose depends on the security models in effect at your site.
+
+Generation of version numbers should include both the assemblyinfo.cs files, and the msi files.  It should also include both the total version number and the version name of the release.
+
+
+**The build set**
+
+Each build in a build set has a set of tasks, settings and properties in common, among them the solution (or code) to build. The TFS 2008 has no concept of build sets.  Having a folder to group a set of builds would be a way to organize these things. That is on my wish list for 2010.  The use of templates in the new build system for the 2010 may be a way of solving the commonality problem. The best would however be for the TFS to include the build set as a recognizable term in the build system.

@@ -11,4 +11,7 @@ dsq_thread_id:
 categories:
   - Uncategorized
 ---
-<p>Jakob got out a cool checkin policy after a question on the microsoft forums about this. The policy ensures that you have run a code coverage, and that the coverage percentage is above a certain set limit.  See Jakob's blog for a description <a title="http://geekswithblogs.net/jakob/archive/2009/02/23/writing-a-code-coverage-checkin-policy.aspx" href="http://geekswithblogs.net/jakob/archive/2009/02/23/writing-a-code-coverage-checkin-policy.aspx">http://geekswithblogs.net/jakob/archive/2009/02/23/writing-a-code-coverage-checkin-policy.aspx</a></p>  <p>The code is available on codeplex, see here <a title="http://www.codeplex.com/TFSCCCheckinPolicy" href="http://www.codeplex.com/TFSCCCheckinPolicy">http://www.codeplex.com/TFSCCCheckinPolicy</a>.</p>
+
+Jakob got out a cool checkin policy after a question on the microsoft forums about this. The policy ensures that you have run a code coverage, and that the coverage percentage is above a certain set limit. See Jakob's blog for a description: [Writing a code coverage checkin policy](http://geekswithblogs.net/jakob/archive/2009/02/23/writing-a-code-coverage-checkin-policy.aspx)
+
+The code is available on codeplex, see here: [TFSCCCheckinPolicy](http://www.codeplex.com/TFSCCCheckinPolicy)

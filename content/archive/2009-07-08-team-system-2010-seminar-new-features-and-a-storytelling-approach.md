@@ -4,8 +4,6 @@ title: 'Team System 2010 seminar – New features – and a storytelling approac
 date: 2009-07-08T15:06:43+01:00
 author: terje
 layout: post
-guid: http://terje.wpengine.com/?p=133360
-permalink: /team-system-2010-seminar-new-features-and-a-storytelling-approach/
 categories:
   - Uncategorized
 ---

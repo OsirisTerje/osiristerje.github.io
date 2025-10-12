@@ -17,7 +17,8 @@ Microsoft Visual Studio supports two project formats. The new format uses packag
 
 All you need to do to use NUnit with the new format is as shown in the example csproj below. The target framework can be any of the .net framework ones. For information on using .net core, see [a short recipe for that](http://hermit.no/net-core-setup/)
 
-```xml
+```
+
 <Project Sdk="Microsoft.NET.Sdk">
 
     <PropertyGroup>
@@ -41,7 +42,8 @@ Tips:
 1. You don't really need the LangVersion, but this is the way to ensure you have the latest minor version of C# enabled.
 2. It can be wise to add the following two attributes to the first propertygroup, to set the assembly and namespace to something specific, and not rely on the default mapping:
 
-```xml
+```
+
 <RootNamespace>MyCompany.MyApp.MyComponent</RootNamespace>
 <AssemblyName>MyCompany.MyApp.MyComponent</AssemblyName>
 ```

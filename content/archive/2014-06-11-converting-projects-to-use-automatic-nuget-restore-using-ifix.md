@@ -4,10 +4,6 @@ title: Converting projects to use Automatic NuGet restore, using IFix
 date: 2014-06-11T22:10:40+01:00
 author: terje
 layout: post
-guid: http://terje.wpengine.com/?p=156894
-permalink: /converting-projects-to-use-automatic-nuget-restore-using-ifix/
-dsq_thread_id:
-  - "4504836863"
 categories:
   - IFix
   - NuGet
@@ -20,7 +16,7 @@ However, if your project was created before this was introduced, and/or if you h
 
 So: **DON’T USE THIS FUNCTION !!!**
 
-[![image](http://hermit.no/wp-content/uploads/2015/08/GWB-Windows-Live-Writer-IFix_1349F-image_thumb_2.png "image")](https://gwb.blob.core.windows.net/terje/Windows-Live-Writer/IFix_1349F/image_6.png)
+[![image](/images/2015/08/GWB-Windows-Live-Writer-IFix_1349F-image_thumb_2.png "image")](https://gwb.blob.core.windows.net/terje/Windows-Live-Writer/IFix_1349F/image_6.png)
 
 There is an issue [https://nuget.codeplex.com/workitem/4019](https://nuget.codeplex.com/workitem/4019 "https://nuget.codeplex.com/workitem/4019")  on the NuGet project site to get this function removed, renamed or at least moved farther away from the top level (please help vote it up!).  The response seems to be that it WILL BE removed, around version 3.0.
 
@@ -92,7 +88,7 @@ As a first example I have run the IFix program from the top of a set of git repo
 
 The result from the check option is as follows:
 
-[![SNAGHTML1218b841](http://hermit.no/wp-content/uploads/2015/08/GWB-Windows-Live-Writer-IFix_1349F-SNAGHTML1218b841_thumb.png "SNAGHTML1218b841")](https://gwb.blob.core.windows.net/terje/Windows-Live-Writer/IFix_1349F/SNAGHTML1218b841.png)
+[![SNAGHTML1218b841](/images/2015/08/GWB-Windows-Live-Writer-IFix_1349F-SNAGHTML1218b841_thumb.png "SNAGHTML1218b841")](https://gwb.blob.core.windows.net/terje/Windows-Live-Writer/IFix_1349F/SNAGHTML1218b841.png)
 
 We see the four red lines, there is one for each of the four checks we talked about in the previous section. The fact that they are red, means we have that particular issue.
 
@@ -106,6 +102,6 @@ It then checks the csproj files, and as can be seen from the last red line, it h
 
 Now, if we run the IFix nugetrestore –fix command, and then the check again after that, the result is:
 
-[![image](http://hermit.no/wp-content/uploads/2015/08/GWB-Windows-Live-Writer-IFix_1349F-image_thumb.png "image")](https://gwb.blob.core.windows.net/terje/Windows-Live-Writer/IFix_1349F/image_3.png)
+[![image](/images/2015/08/GWB-Windows-Live-Writer-IFix_1349F-image_thumb.png "image")](https://gwb.blob.core.windows.net/terje/Windows-Live-Writer/IFix_1349F/image_3.png)
 
 All green !

@@ -4,8 +4,6 @@ date: 2020-09-20
 url: "/git/course/"
 ---
 
-
-
 # Git Config
 
 ## Git Configurations
@@ -36,7 +34,7 @@ The `worktree` configuration is used when you have multiple worktrees for the sa
 
 The configurations are read in the order above, and the last one read will override the previous ones.
 
-This may cause you to wonder why your config doesn't work after you have changed it.  You will always write to a specific level, and if that particular setting have an override in a higher level, then your change will have no effect.  
+This may cause you to wonder why your config doesn't work after you have changed it.  You will always write to a specific level, and if that particular setting have an override in a higher level, then your change will have no effect.
 
 The best way to figure it out, is to run `git config --show-origin <your config value>` to see where it is read from. The format should be like `section.name`.  If you don't know the section, you can use `git config --list --show-origin` to see all the settings and where they are read from.
 
@@ -44,13 +42,15 @@ If you just want to see the actual value of a given config value, you can use `g
 
 Example:
 
-```cmd
-git config --show-origin user.name 
+```
+
+git config --show-origin user.name
 ```
 
 will give you something like:
 
-```cmd
+```
+
 file:C:/Users/TerjeSandstrom/.gitconfig Terje Sandstrom
 ```
 
@@ -64,13 +64,11 @@ Using the table above, you see that this file is the global config file for user
 
 [Setting up diff and merge tools](https://github.com/OsirisTerje/osiristerje.github.io/blob/master/Git/Course/DeepDives/Section6/DiffMergeTools.md)
 
-
-
 ## Other Links
 
 [Official Git Config reference documentation](https://git-scm.com/docs/git-config)
 
 [Official Git tutorial book](https://git-scm.com/book/en/v2/Customizing-Git-Git-Configuration)
 
-**Tip**:  You can get help locally by running `git config --help`.  
+**Tip**:  You can get help locally by running `git config --help`.
 (P.S. This way of getting help applies to all git commands.)

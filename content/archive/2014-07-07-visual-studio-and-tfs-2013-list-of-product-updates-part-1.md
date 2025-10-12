@@ -4,10 +4,6 @@ title: Visual Studio and TFS 2013 List of Product Updates (Part 1)
 date: 2014-07-07T19:40:55+01:00
 author: terje
 layout: post
-guid: http://terje.wpengine.com/?p=157349
-permalink: /visual-studio-and-tfs-2013-list-of-product-updates-part-1/
-dsq_thread_id:
-  - "4548228718"
 categories:
   - Azure DevOps
   - Visual Studio
@@ -46,10 +42,10 @@ Oct 16th 2014
 
 Visual Studio & TFS
 
-[Visual Studio](http://www.visualstudio.com/en-us/downloads/download-visual-studio-vs#d-visual-studio-2013-update)  
-  
-[TFS 2013 Update 3](http://www.microsoft.com/en-us/download/details.aspx?id=43728)  
-  
+[Visual Studio](http://www.visualstudio.com/en-us/downloads/download-visual-studio-vs#d-visual-studio-2013-update)
+
+[TFS 2013 Update 3](http://www.microsoft.com/en-us/download/details.aspx?id=43728)
+
 Update 3
 
 See [kb2933779](http://support.microsoft.com/kb/2933779 "http://support.microsoft.com/kb/2933779") and [Brian Harry blogpost](http://blogs.msdn.com/b/bharry/archive/2014/08/04/vs-tfs-2013-3-update-3-released.aspx)
@@ -80,7 +76,7 @@ Jan 20th 2014
 
 Visual Studio
 
-Visual Studio and TFS 2013  
+Visual Studio and TFS 2013
 [download link](http://www.visualstudio.com/downloads/download-visual-studio-vs)
 
 The RTM version of Visual Studio 2013  (Note 3)
@@ -91,20 +87,18 @@ Nov 18th 2013
 
 Visual Studio and TFS
 
-[SQL Server 2012 SP1](http://www.microsoft.com/en-us/download/details.aspx?id=35575)  
-or  
-[SQL Server 2012 SP2](http://www.microsoft.com/en-us/download/details.aspx?id=43340)   
-or  
-SQL Server 2014  
+[SQL Server 2012 SP1](http://www.microsoft.com/en-us/download/details.aspx?id=35575)
+or
+[SQL Server 2012 SP2](http://www.microsoft.com/en-us/download/details.aspx?id=43340) 
+or
+SQL Server 2014
 
-The TFS 2013 require minimum the SQL 2012 server, SP1  
+The TFS 2013 require minimum the SQL 2012 server, SP1
 Also see [Manually Install SQL Server for TFS 2013](http://msdn.microsoft.com/en-us/library/dd578652.aspx)
 
-2012 SP1: 11.0.3000.0  
-2012 SP2:  
+2012 SP1: 11.0.3000.0
+2012 SP2:
 11.0.5058.0
-
- 
 
 SQL Server 2012 SP1
 
@@ -116,8 +110,7 @@ Updated July 7th 2014:  [Visual Studio](http://www.microsoft.com/en-us/download
 
 Updated April 12th 2014:  [Visual Studio 2013 Update 2 RC](http://www.visualstudio.com/en-us/downloads/prerelease-software-downloads-vs) &  [TFS Server 2013 Update 2](http://www.visualstudio.com/downloads/download-visual-studio-vs)
 
-Updated March 5th 2014:   [Visual Studio 2013 Update 2 CTP 2](http://www.microsoft.com/en-us/download/details.aspx?id=42023) Updated Feb 8th 2014:   [Visual Studio 2013 Update 1](http://www.microsoft.com/en-us/download/details.aspx?id=41650),  [Visual Studio 2013 Update 2 CTP 1](http://www.microsoft.com/en-us/download/details.aspx?id=41699)   
-  
+Updated March 5th 2014:   [Visual Studio 2013 Update 2 CTP 2](http://www.microsoft.com/en-us/download/details.aspx?id=42023) Updated Feb 8th 2014:   [Visual Studio 2013 Update 1](http://www.microsoft.com/en-us/download/details.aspx?id=41650),  [Visual Studio 2013 Update 2 CTP 1](http://www.microsoft.com/en-us/download/details.aspx?id=41699) 
 
 **Product**
 
@@ -129,10 +122,10 @@ Updated March 5th 2014:   [Visual Studio 2013 Update 2 CTP 2](http://www.micro
 
 **Applicable to**
 
-[Visual Studio](http://www.microsoft.com/en-us/download/details.aspx?id=43398)  
-  
-[TFS 2013](http://www.microsoft.com/en-us/download/details.aspx?id=43405)  
-  
+[Visual Studio](http://www.microsoft.com/en-us/download/details.aspx?id=43398)
+
+[TFS 2013](http://www.microsoft.com/en-us/download/details.aspx?id=43405)
+
 Update 3 RC
 
 See [KB 2933779](http://support.microsoft.com/kb/2933779),  [news](http://www.visualstudio.com/news/2014-jul-2-vs) and [Brian Harry’s blogpost](http://blogs.msdn.com/b/bharry/archive/2014/07/02/vs-tfs-2013-3-update-3-rc.aspx).
@@ -197,7 +190,7 @@ Visual Studio
 
 The version number of Visual Studio is not changed when installing this patch.  The only place you see it is in the Installed Updates list
 
-[![image](http://hermit.no/wp-content/uploads/2015/08/GWB-WindowsLiveWriter-VisualStudioandTFS2013ListofProductUpdat_E10D-image_thumb.png "image")](https://gwb.blob.core.windows.net/terje/WindowsLiveWriter/VisualStudioandTFS2013ListofProductUpdat_E10D/image_2.png)
+[![image](/images/2015/08/GWB-WindowsLiveWriter-VisualStudioandTFS2013ListofProductUpdat_E10D-image_thumb.png "image")](https://gwb.blob.core.windows.net/terje/WindowsLiveWriter/VisualStudioandTFS2013ListofProductUpdat_E10D/image_2.png)
 
 **Note 2**
 
@@ -213,13 +206,13 @@ There was a rerelease of TFS 2013.  The first release had a bug which appeared 
 
 Go to the top menu, choose Help | About
 
-[![image](http://hermit.no/wp-content/uploads/2015/08/GWB-Windows-Live-Writer-Visual-Studio-and-TFS-2012-product-insta_F68B-image_thumb.png "image")](https://gwb.blob.core.windows.net/terje/Windows-Live-Writer/Visual-Studio-and-TFS-2012-product-insta_F68B/image_2.png)
+[![image](/images/2015/08/GWB-Windows-Live-Writer-Visual-Studio-and-TFS-2012-product-insta_F68B-image_thumb.png "image")](https://gwb.blob.core.windows.net/terje/Windows-Live-Writer/Visual-Studio-and-TFS-2012-product-insta_F68B/image_2.png)
 
 Note that both the name of the update and the corresponding version number is given.
 
 Go to the top menu, select Tools | Extensions and Updates. Under the Updates | Product Updates section you will see if there is a new update ready for you. Note that pre-releases and hotfixes don’t arrive here.
 
-[![image](http://hermit.no/wp-content/uploads/2015/08/GWB-Windows-Live-Writer-Visual-Studio-and-TFS-2012-product-insta_F68B-image_thumb_2.png "image")](https://gwb.blob.core.windows.net/terje/Windows-Live-Writer/Visual-Studio-and-TFS-2012-product-insta_F68B/image_6.png)
+[![image](/images/2015/08/GWB-Windows-Live-Writer-Visual-Studio-and-TFS-2012-product-insta_F68B-image_thumb_2.png "image")](https://gwb.blob.core.windows.net/terje/Windows-Live-Writer/Visual-Studio-and-TFS-2012-product-insta_F68B/image_6.png)
 
 (Image from VS 2013 preview, but it is the same in VS 2013)
 
@@ -229,7 +222,7 @@ To the far right you see the version number you have, and what version to update
 
 Use the web access for the TFS. Go to the Help Icon to the far right, and choose “About” from the menu:
 
-[![image](http://hermit.no/wp-content/uploads/2015/08/GWB-Windows-Live-Writer-Visual-Studio-and-TFS-2012-product-insta_F68B-image_thumb_1.png "image")](https://gwb.blob.core.windows.net/terje/Windows-Live-Writer/Visual-Studio-and-TFS-2012-product-insta_F68B/image_4.png)
+[![image](/images/2015/08/GWB-Windows-Live-Writer-Visual-Studio-and-TFS-2012-product-insta_F68B-image_thumb_1.png "image")](https://gwb.blob.core.windows.net/terje/Windows-Live-Writer/Visual-Studio-and-TFS-2012-product-insta_F68B/image_4.png)
 
 In this case I have a TFS 2013 preview server.
 

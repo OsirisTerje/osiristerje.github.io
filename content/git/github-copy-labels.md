@@ -9,6 +9,6 @@ date: 2020-09-20
 Using tool named [copy-github-labels]()
 
 ```
+
 npm install -g copy-github-labels
 ```
-

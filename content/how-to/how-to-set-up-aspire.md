@@ -103,4 +103,3 @@ See [Aspire Documentation](https://learn.microsoft.com/en-us/dotnet/aspire/)
 and [Integrations](https://learn.microsoft.com/en-us/dotnet/aspire/fundamentals/integrations-overview?source=recommendations)
 
 and [Additional resources](https://learn.microsoft.com/en-us/dotnet/aspire/fundamentals/setup-tooling?source=recommendations&tabs=windows&pivots=vscode#see-also)
-

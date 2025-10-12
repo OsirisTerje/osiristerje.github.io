@@ -4,28 +4,23 @@ title: 'How to resolve cases of Visual Studio &ldquo;No tests appearing&rdquo;'
 date: 2017-12-29T21:22:09+01:00
 author: terje
 layout: post
-guid: http://hermit.no/?p=160493
-permalink: /how-to-resolve-cases-of-visual-studio-no-tests-appearing/
-catchevolution-sidebarlayout:
-  - default
-dsq_thread_id:
-  - "6379972229"
 categories:
   - IFix
   - NUnit
   - Unit Testing
   - Visual Studio
 ---
-The Visual Studio Test Explorer can be a bit picky about showing tests.  There are multiple reasons for why they don’t always show up when you expect them to do, and most of the cases are <a href="https://en.wiktionary.org/wiki/PEBCAK" target="_blank" rel="noopener">PEBKAC</a> type of issues.  That doesn’t mean it is easy, there are just becoming too many variations, and Visual Studio does not tell you what is really wrong.
+The Visual Studio Test Explorer can be a bit picky about showing tests.  There are multiple reasons for why they don’t always show up when you expect them to do, and most of the cases are [PEBKAC](https://en.wiktionary.org/wiki/PEBCAK) type of issues.  That doesn’t mean it is easy, there are just becoming too many variations, and Visual Studio does not tell you what is really wrong.
 
 The different variations of targets and adapters doesn’t make this easier.  To help in diagnosing this, I have created the diagnostic flow chart shown below.   Further below you will find the comments for each block and how to rectify the issues, if you don’t already know.  The flowchart is mostly general, although I use NUnit as the default adapter in the examples.
 
 Also note that for many of the steps below, you might need to restart Visual Studio.  When, what and which version of VS require it is still unclear.
 
-<a href="http://hermit.no/wp-content/uploads/2017/12/UT-1.jpg"><img class="alignnone size-large wp-image-160497" src="http://hermit.no/wp-content/uploads/2017/12/UT-1-1024x633.jpg" alt="" width="678" height="419" /></a> <a href="http://hermit.no/wp-content/uploads/2017/12/UT-2.jpg"><img class="alignnone size-large wp-image-160498" src="http://hermit.no/wp-content/uploads/2017/12/UT-2-1024x625.jpg" alt="" width="678" height="414" /></a> <a href="http://hermit.no/wp-content/uploads/2017/12/UT-3.jpg"><img class="alignnone size-large wp-image-160499" src="http://hermit.no/wp-content/uploads/2017/12/UT-3-1024x396.jpg" alt="" width="678" height="262" /></a>
+[![](/images/2017/12/UT-1-1024x633.jpg)](/images/2017/12/UT-1.jpg) [![](/images/2017/12/UT-2-1024x625.jpg)](/images/2017/12/UT-2.jpg) [![](/images/2017/12/UT-3-1024x396.jpg)](/images/2017/12/UT-3.jpg)
 
 &nbsp;
-<h3>User setup issues:</h3>
+#### User setup issues:
+
 0)  First of all, you need to have an adapter installed.  Visual Studio only comes with the old MSTest 1 adapter installed.  If you want to have any other adapter, either for MSTest, NUnit or XUnit, you must install them.
 
 There are two types of installers, VSIX and Nuget.  MSTest 2 and XUnit only exists as Nuget adapters, NUnit still have a VSIX adapter too.
@@ -45,7 +40,7 @@ Anyway, if you use the new format, there are a couple of additional things you n
 </pre>
 &nbsp;
 
-4,5)  The new format includes support for .Net Core and .Net Standard.   You *<strong>can’t</strong>* run tests using .Net Standard as the project type for your test assembly.  You can *<strong>test</strong>* .net standard code,  using either .Net core or .Net framework.   So ensure that your target is set appropriately, either:
+4,5)  The new format includes support for .Net Core and .Net Standard.   You ***can’t*** run tests using .Net Standard as the project type for your test assembly.  You can ***test*** .net standard code,  using either .Net core or .Net framework.   So ensure that your target is set appropriately, either:
 <pre>&lt;PropertyGroup&gt;
  &lt;TargetFramework&gt;netcoreapp2.0&lt;/TargetFramework&gt;
  &lt;/PropertyGroup&gt;</pre>
@@ -55,31 +50,32 @@ or
  &lt;/PropertyGroup&gt;</pre>
 You can select both .net core 1 or 2, and any valid .net framework version.
 
-For a list of target framework monikers, see <a title="https://docs.microsoft.com/en-us/dotnet/standard/frameworks" href="https://docs.microsoft.com/en-us/dotnet/standard/frameworks">https://docs.microsoft.com/en-us/dotnet/standard/frameworks</a>
+For a list of target framework monikers, see [https://docs.microsoft.com/en-us/dotnet/standard/frameworks](https://docs.microsoft.com/en-us/dotnet/standard/frameworks)
 
-A fully working setup for .net core can be found <a href="http://hermit.no/net-core-setup/" target="_blank" rel="noopener">here</a>.
+A fully working setup for .net core can be found [here](http://hermit.no/net-core-setup/).
 
-10,11)  If you do have a vsix adapter installed, and you’re *<strong>not</strong>* targeting .net core, you don’t need to include the adapter in the csproj file.  BUT – if you do target .net core, you *<strong>must</strong>* include the nuget adapter regardless of whether you have the vsix installed or not.  .Net core test projects do not work with vsix.
+10,11)  If you do have a vsix adapter installed, and you’re ***not*** targeting .net core, you don’t need to include the adapter in the csproj file.  BUT – if you do target .net core, you ***must*** include the nuget adapter regardless of whether you have the vsix installed or not.  .Net core test projects do not work with vsix.
 
-6-8)  If you’re running under the .net framework target, and you run specific x86 or x64, that is *<strong>not</strong>* AnyCPU, then you must ensure that the test settings for the test runner is set to the same as the platform you have specified.
+6-8)  If you’re running under the .net framework target, and you run specific x86 or x64, that is ***not*** AnyCPU, then you must ensure that the test settings for the test runner is set to the same as the platform you have specified.
 
-For details on how to do this, see <a href="http://hermit.no/how-to-control-the-selection-of-test-runner-in-tfsvsts-making-it-work-with-x86x64-selected-targets/" target="_blank" rel="noopener">this blogpost</a>.
+For details on how to do this, see [this blogpost](http://hermit.no/how-to-control-the-selection-of-test-runner-in-tfsvsts-making-it-work-with-x86x64-selected-targets/).
 
 Note 1:  Most of the issues come from using x64,  as the deafault is x86
 
-Note 2: Using a runsettings file can be smart, as that makes it easier to make it work on your CI server.   You can install <a href="https://marketplace.visualstudio.com/items?itemName=OsirisTerje.Runsettings-19151" target="_blank" rel="noopener">runsettings templates from here</a>.
+Note 2: Using a runsettings file can be smart, as that makes it easier to make it work on your CI server.   You can install [runsettings templates from here](https://marketplace.visualstudio.com/items?itemName=OsirisTerje.Runsettings-19151).
 
 &nbsp;
-<h3>Crash fixing</h3>
-All the above settings are user setup issues.   If you’re still having issues, something in your system is not working properly, and preventing you from seeing your tests.   If you have arrived here, and it still doesn’t work, there is <strong>one</strong> thing that you can try before you start diagnosing your system.
+#### Crash fixing
+
+All the above settings are user setup issues.   If you’re still having issues, something in your system is not working properly, and preventing you from seeing your tests.   If you have arrived here, and it still doesn’t work, there is **one** thing that you can try before you start diagnosing your system.
 
 Visual Studio maintain a cache of the text explorer extensions it is using.  This cache can in some cases go corrupt, so that Visual Studio believes it is ok – but it really isn’t, and it breaks on you, and unfortunately it does so silently, that is by not showing any tests.
 
-The resolution to this was found by <a href="https://www.linkedin.com/in/lorenhalvorson/" target="_blank" rel="noopener">Loren Halvorsen</a>, and is documented in <a href="https://github.com/nunit/nunit3-vs-adapter/issues/261" target="_blank" rel="noopener">this issue at the NUnit adapter Github site.</a>
+The resolution to this was found by [Loren Halvorsen](https://www.linkedin.com/in/lorenhalvorson/), and is documented in [this issue at the NUnit adapter Github site.](https://github.com/nunit/nunit3-vs-adapter/issues/261)
 
 Since it is just a cache, you can just delete it, it will rebuild itself.   Note that you need to close down all instances of Visual Studio, and in particular the vstest executables.
 
-You can also use the <a href="http://visualstudiogallery.msdn.microsoft.com/b8ba97b0-bb89-4c21-a1e2-53ef335fd9cb" target="_blank" rel="noopener">IFix</a> version 2 tool to do both the check and the actual fix on this.
+You can also use the [IFix](http://visualstudiogallery.msdn.microsoft.com/b8ba97b0-bb89-4c21-a1e2-53ef335fd9cb) version 2 tool to do both the check and the actual fix on this.
 
 What next?
 

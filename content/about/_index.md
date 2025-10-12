@@ -18,22 +18,22 @@ I am an ardent supporter of Open Source and firmly believe that both companies a
 
 My possible areas of engagement can be divided into four parts:
 
-<strong>Coding and Design</strong>
+**Coding and Design**
 
-I am a strong believer in good coding practices, beautiful code, minimalistic coding, pragmatism, strongly typed code, and overall shift-left thinking to everything that relates to coding.  The language of use doesn't really matter, but for myself, I am mostly using C#, dabbles with Python, a bit of C/C++, and otherwise whatever comes my way.  
+I am a strong believer in good coding practices, beautiful code, minimalistic coding, pragmatism, strongly typed code, and overall shift-left thinking to everything that relates to coding.  The language of use doesn't really matter, but for myself, I am mostly using C#, dabbles with Python, a bit of C/C++, and otherwise whatever comes my way.
 
-<strong>Management consulting</strong>
+**Management consulting**
 
 Coaching and mentoring management
 Working with the organization, establishing teams and team structures
 Establishing best practices for an end-to-end process in an organization, covering from sales through software production, testing and customer feedback.
 
-<strong>Test practices</strong>
+**Test practices**
 
 I have been working with test teams to improve and change test practices, and in particular in how to automate as much as possible of the testing.
 I am advocating that developers embrace in principle a "test-first" (TDD) approach, but stay pragmatic about it. Also that a shift-left practice is often the best, but that it doesn't mean you should not do integration tests. You need both! It is all about the proper balance.
 
-<strong>Architecture, Design and Coding</strong>
+**Architecture, Design and Coding**
 
 I am available for work in the areas of architecture, design (patterns and best practices), coding and testing
 - Application and code assessment
@@ -66,13 +66,13 @@ I can be contacted through mail at terje at hermit.no, or through any of the soc
 
 --------------
 
-<strong>NUnit stuff</strong>
+**NUnit stuff**
 
-[NUnit Github organisation](https://github.com/nunit)  
+[NUnit Github organisation](https://github.com/nunit)
 
-[NUnit Framework](https://github.com/nunit/nunit) 
+[NUnit Framework](https://github.com/nunit/nunit)
 
-[NUnit3TestAdapter](https://github.com/nunit/nunit3-vs-adapter) 
+[NUnit3TestAdapter](https://github.com/nunit/nunit3-vs-adapter)
 
 [NUnitTestGenerator](https://github.com/nunit/nunit-vs-testgenerator)
 
@@ -86,10 +86,8 @@ I can be contacted through mail at terje at hermit.no, or through any of the soc
 
 [Stack Overflow profile](https://stackoverflow.com/users/1203904/terje-sandstr%C3%B8m?tab=profile)
 
-
-<strong>Videos</strong>
+**Videos**
 
 [Better Architecture and Code Review with Marcel and Terje](https://www.youtube.com/watch?v=vRvtvRMq1vI)
 
 [New unit testing features in Visual Studio 2015 - Terje Sandstrom](https://www.youtube.com/watch?v=ANg1Nol6UvU)
-

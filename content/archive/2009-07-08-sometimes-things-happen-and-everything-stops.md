@@ -4,10 +4,6 @@ title: Sometimes things happen, and everything stops
 date: 2009-07-08T07:06:32+01:00
 author: terje
 layout: post
-guid: http://terje.wpengine.com/?p=133346
-permalink: /sometimes-things-happen-and-everything-stops/
-dsq_thread_id:
-  - "5090560380"
 categories:
   - Uncategorized
 ---

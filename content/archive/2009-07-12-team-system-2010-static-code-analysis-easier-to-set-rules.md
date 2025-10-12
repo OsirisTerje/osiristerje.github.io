@@ -4,8 +4,6 @@ title: 'Team System 2010:  Static Code Analysis, easier to set rules'
 date: 2009-07-12T12:41:01+01:00
 author: terje
 layout: post
-guid: http://terje.wpengine.com/?p=133435
-permalink: /team-system-2010-static-code-analysis-easier-to-set-rules/
 categories:
   - none
 ---
@@ -15,10 +13,10 @@ With Visual Studio 2010 this will be more easy, because in 2010 you can define s
 
 To make your own rule set, just open any of the default ones, make any changes you like to it, and save it under a suitable name. A rule set file is created, which can be checked in together with the other files of the project. This file [rule set] can now be used by any other project you have. So you only need to define it once.
 
-[![Code Analysis page](http://hermit.no/wp-content/uploads/2015/08/GWB-WindowsLiveWriter-TeamSystem2010StaticCodeAnalysis_5770-image_thumb.png)](http://gwb.blob.core.windows.net/terje/WindowsLiveWriter/TeamSystem2010StaticCodeAnalysis_5770/image_2.png)
+[![Code Analysis page](/images/2015/08/GWB-WindowsLiveWriter-TeamSystem2010StaticCodeAnalysis_5770-image_thumb.png)](http://gwb.blob.core.windows.net/terje/WindowsLiveWriter/TeamSystem2010StaticCodeAnalysis_5770/image_2.png)
 
 To make your own rule set, just open any of the default ones, make any changes you like to it, and save it under a suitable name. A rule set file is created, which can be checked in together with the other files of the project. This file [rule set] can now be used by any other project you have. So you only need to define it once.
 
-[![image](http://hermit.no/wp-content/uploads/2015/08/GWB-WindowsLiveWriter-TeamSystem2010StaticCodeAnalysis_5770-image_thumb_1.png)](http://gwb.blob.core.windows.net/terje/WindowsLiveWriter/TeamSystem2010StaticCodeAnalysis_5770/image_4.png)
+[![image](/images/2015/08/GWB-WindowsLiveWriter-TeamSystem2010StaticCodeAnalysis_5770-image_thumb_1.png)](http://gwb.blob.core.windows.net/terje/WindowsLiveWriter/TeamSystem2010StaticCodeAnalysis_5770/image_4.png)
 
 It's then easy to select the rule set you want for all projects within your solution.

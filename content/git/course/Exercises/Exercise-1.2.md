@@ -6,9 +6,7 @@ Install  [git sizer](https://github.com/github/git-sizer/releases) following [th
 
 Also check [this blogpost](https://github.blog/2018-03-05-measuring-the-many-sizes-of-a-git-repository/)
 
-
 ### Why should repos be small and what does it mean
-
 
 Start cloning [this repo](https://github.com/torvalds/linux).
 
@@ -20,10 +18,10 @@ Still too much?
 
 The try [this](https://github.com/microsoft/vscode), you will manage it!
 
-
-Run 
+Run
 
 ```
+
 git-sizer  --verbose
 ```
 
@@ -37,7 +35,7 @@ What is the size of the workspace folder (inluding its .git folder) ?   What doe
 
 Now try to clone [this](https://github.com/nunit/nunit3-vs-adapter.git)
 
-Repeat sizing it.  
+Repeat sizing it.
 
 Do the same with [this one](https://github.com/microsoft/vscode-python)
 
@@ -46,9 +44,6 @@ What types of files seems to be bothering these, with respect to sizes?
 #### Extra
 
 Install the Github size extension (link at the bottom), to see the size before you start a download
-
-
-
 
 ## Remotes
 
@@ -61,6 +56,7 @@ To set up with SSH, ensure you have it installed - otherwise add it from Apps & 
 If you don't have any, create a new SSH key, and add it to your github profile.
 
 ```
+
 ssh-keygen
 ```
 
@@ -68,9 +64,10 @@ Insert it (from id_rsa.pub) into your "Profile/SSH and GPG keys" section on Gith
 
 If you use https, you don't need to do anything mroe than cloning.
 
-Note that the format for cloning is different between https and ssh.  
+Note that the format for cloning is different between https and ssh.
 
 ```
+
 git clone git@github.com:OsirisTerje/exercise12.git
 
 or
@@ -90,6 +87,7 @@ More [info here](https://help.github.com/en/github/authenticating-to-github/conn
 Create a local repo, name it whatever you like
 
 ```
+
 git init
 or
 git init mywhatever
@@ -98,6 +96,7 @@ git init mywhatever
 Commit a new file to it
 
 ```
+
 echo  # Fun stuff  >> readme.md
 git add *
 git commit -m"initial"
@@ -109,8 +108,8 @@ Create a repo named 'exercise12' on your Github account, **without adding any fi
 
 Notice the second block, "push an existing repository from the command line"
 
-
 ```
+
 git remote add origin https://github.com/<youraccountname>/exercise12.git
 git push -u origin master
 ```
@@ -127,7 +126,6 @@ What is the connection between a local name of repo, and the name of the remote 
 
 How can you remove the remote?
 
-
 ### Method 2
 
 Create a new repo on github, initialize it with a readme.md file, and clone this down.
@@ -135,11 +133,11 @@ Create a new repo on github, initialize it with a readme.md file, and clone this
 Run
 
 ```
+
 git remote -v
 ```
 
 How does it look compared to Method 1?
-
 
 ### Note
 
@@ -159,5 +157,3 @@ If you want to know the size of a github repo, install [this Chrome Extension](h
 ### Further reading
 
 https://git-scm.com/book/en/v2/Git-Internals-Git-Objects
-
-

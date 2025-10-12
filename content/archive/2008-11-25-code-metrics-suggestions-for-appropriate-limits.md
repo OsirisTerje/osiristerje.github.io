@@ -4,10 +4,6 @@ title: 'Code Metrics – suggestions for appropriate limits'
 date: 2008-11-25T21:20:49+01:00
 author: terje
 layout: post
-guid: http://terje.wpengine.com/?p=127385
-permalink: /code-metrics-suggestions-for-appropriate-limits/
-dsq_thread_id:
-  - "5757560844"
 categories:
   - Code Analysis
   - Code Quality

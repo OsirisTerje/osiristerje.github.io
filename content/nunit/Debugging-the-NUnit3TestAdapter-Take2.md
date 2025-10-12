@@ -21,12 +21,13 @@ First, debugging the adapter require you to compile and consume a debug version 
 
 ## Setting up for debugging
 
-Create a folder to keep the nuget debug packages.  
+Create a folder to keep the nuget debug packages.
 We suggest you use the folder C:\nuget
 
 Clone the adapter repository:
 
-```cmd
+```
+
 git clone https://github.com/nunit/nunit3-vs-adapter.git
 ```
 
@@ -34,13 +35,15 @@ You may choose to create a local branch,  e.g. debug, but you don't actually nee
 
 If you prefer do:
 
-```cmd
+```
+
 git checkout -b debug
 ```
 
 You will debug the adapter in Visual Studio 2019, so start up visual studio:
 
-```cmd
+```
+
 devenv NUnit3TestAdapter.sln
 ```
 
@@ -50,10 +53,11 @@ In the folder for the repro/project to be debugged, create (or modify, if it exi
 
 The content of the nuget.config should be like:
 
-```xml
+```
+
 <?xml version="1.0" encoding="utf-8"?>
-<configuration>    
-    <packageSources>    
+<configuration>
+    <packageSources>
         <add key="local" value="c:\\nuget" />
     </packageSources>
 </configuration>
@@ -65,19 +69,22 @@ The content of the nuget.config should be like:
 
 Now create the repro project:
 
-```cmd
+```
+
 dotnet new nunit
 ```
 
 You can now start Visual Studio proper :
 
-```cmd
+```
+
 devenv Whatever.csproj
 ```
 
 or use Visual Studio Code
 
-```cmd
+```
+
 code .
 ```
 
@@ -89,7 +96,7 @@ However, if you plan to change something in the adapter, then you can follow the
 
 The only file you may want to change is the **build.cake** file.
 
-In the build.cake file, go to Line 16, and add a useful modifer - it will be the preview version for the package, so something like '-d01' would go fine.  
+In the build.cake file, go to Line 16, and add a useful modifer - it will be the preview version for the package, so something like '-d01' would go fine.
 **Ensure you have the dash there!**
 
 If you do changes in the adapter code, you can just increment this number, for each one.
@@ -98,7 +105,8 @@ If you do changes in the adapter code, you can just increment this number, for e
 
 Build a debug version is a two-step process, first compile it, then package it.
 
-```cmd
+```
+
 build -c debug
 build -t package -c debug
 
@@ -109,7 +117,8 @@ Notice the version number created for the package, underlined red below:
 
 Given that your nuget folder is in c:\nuget, you can now just run the command 'copynp', replacing the argument with your particular package version.
 
-```cmd
+```
+
 copynp 4.2.0-dbg
 ```
 
@@ -117,7 +126,7 @@ Your debug package is now in the c:\nuget folder.
 
 ## Using the debug package
 
-Now go to your repro project, and depending on whether you use VS Code or Visual Studio, you have to add this particular package version.  
+Now go to your repro project, and depending on whether you use VS Code or Visual Studio, you have to add this particular package version.
 
 Notice that if you use the old legacy project format, then you better use Visual Studio and do the changes in the Tools/Nuget Package Manager/Manage Nuget packages for Solution.... dialog.
 
@@ -137,7 +146,8 @@ There are two ways to start the session, one from command line and one from Visu
 
 You need to add a runsettings command to your command line, like :
 
-```cmd
+```
+
 dotnet test -- NUnit.DebugExecution=true
 ```
 
@@ -147,7 +157,8 @@ If you need to use a runsettings file for other purposes, just add the same sett
 
 Add a runsettings file, or a minimum one like:
 
-```xml
+```
+
 <RunSettings>
    <NUnit>
        <DebugExecution>True</DebugExecution>

@@ -2,17 +2,14 @@
 
 ## Simple branching
 
-
-### **DO 1**  
+### **DO 1**
 
 Create a new repo
 
 Point Gitviz to it
 
-
-
-
 ```
+
 echo C1 >> c1.md
 git add *
 git commit -m "C1"
@@ -27,13 +24,15 @@ Run git-sizer and note the values:
 Now, create a new branch:
 
 ```
+
 git switch -c experiment
 ```
+
 Run git-sizer again
 
 What changed there?
 
-Notice HEAD!  
+Notice HEAD!
 
 ------
 
@@ -47,12 +46,12 @@ You can use HEAD to work down (to the parents) of your current commit.
 
 -------
 
-
-### **DO 2**  
+### **DO 2**
 
 Run
 
 ```
+
 echo C2 >> c2.md
 git add *
 git commit -m "C2"
@@ -67,10 +66,13 @@ Go back to master
 
 Either
 ```
+
 git switch -
 ```
+
 or
 ```
+
 git switch master
 ```
 
@@ -79,6 +81,7 @@ What does the first one mean?
 Check your workspace.  What happened ?
 
 ```
+
 echo C4 >> c4.md
 git add *
 git commit -m "C4"
@@ -89,6 +92,7 @@ Now, your GitViz should show that the two branches have **diverged**.  They have
 We now merge these two together:
 
 ```
+
 git merge experiment
 ```
 
@@ -98,7 +102,6 @@ What does it contain ?
 
 (Use your graphical tool to look into this commit)
 
-
 ### **DO 3**  Adding a tag
 
 Let us assume you want the release the code at this stage
@@ -106,12 +109,14 @@ Let us assume you want the release the code at this stage
 You can add a release branch here, but it is better to use a tag
 
 ```
+
 git tag V1.1
 ```
 
 Now add another commit:
 
 ```
+
 echo C5 >> c5.md
 git add *
 git commit -m "C5"
@@ -121,12 +126,10 @@ Now check in GitViz how the branch and tag behaved.
 
 Explain why tags are a good way of marking releases.
 
-
-
 -------
 #### Extra: Tip or trap
 
-See https://stackoverflow.com/questions/8762601/how-do-i-rename-my-git-master-branch-to-release 
+See https://stackoverflow.com/questions/8762601/how-do-i-rename-my-git-master-branch-to-release
 
 Is this a good idea?
 
@@ -134,7 +137,7 @@ Is this a good idea?
 
 ## Analyzing an unknown repository
 
-Unzip the NUnit3TestAdapter.zip into a local folder.  
+Unzip the NUnit3TestAdapter.zip into a local folder.
 
 This repository is a copy of a local repository, and contains both local and remote branches.
 
@@ -157,10 +160,9 @@ What is the difference between a tag and a branch?
 
 ### **DO 3**  Stray cats
 
-Using GitViz:  
+Using GitViz:
 
 1) Can you explain what the dimmed commits are?
-
 
 ----
 
@@ -179,7 +181,6 @@ Ensure you are on master
 Create a set of new branches "Task1", "Task-1","Task_1", "Task 1", "task1"
 
 How many worked ?
-
 
 Switch to task1  (note: lower case only)
 What do you see, and what happened ?
@@ -200,9 +201,10 @@ Go to the tag "HereIAm"
 What was the respone from the command to go there ?
 What does it mean?
 
-Add/Commit a new file  
+Add/Commit a new file
 
 ```
+
 echo >> detached.md
 git add *
 git commit -m"Added detached.md"
@@ -221,6 +223,7 @@ You can checkout/switch to any commit, based on their SHA.
 So, see the SHA of the commit you want to keep, in my case it is b844cf4 (the seven first shown is normally enough).  Then create a branch at that commit.
 
 ```
+
 git switch --detach b844cf4
 git branch keepthis
 git switch keepthis
@@ -238,6 +241,7 @@ There is another command , checkout.   Explain the difference between checkout a
 List the tags you have:
 
 ```
+
 git tag
 
 or
@@ -248,6 +252,7 @@ git tag --list <search params>
 Run the following:
 
 ```
+
   git tag V1.0
   git tag V2.0
   git tag V3.0
@@ -258,13 +263,12 @@ Run the following:
 
 Now to only see issue tags:
 
-
 ```
+
     git tag -l "Issue*"
 ```
 
 Note:  -l and --list is the same
-
 
 You realize you don't need the tag named 'whatever', so delete it.
 
@@ -273,18 +277,20 @@ You realize you don't need the tag named 'whatever', so delete it.
 Now connect this repo with a remote
 
 ```
+
     git switch master
     git push -u origin master
     git switch -c release1
     git tag V1.0
     git push -u origin release1
-```    
+```
 
 Check the remote - is the tag there ?
 
 In order to push the tags up to the remote, you need to explicitly push the tags
 
 ```
+
     git push origin V1.0
 ```
 
@@ -294,8 +300,6 @@ Then pull the branch down.
 
 You should now see that the tag is in your repo too.
 
-
 ### Annotated Tags with messages
 
 "*A tag is a pointer, an annotated tag is an object.*"
-

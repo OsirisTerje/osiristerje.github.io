@@ -26,7 +26,7 @@ Go to Settings, choose Branches
 
 The second section there, choose "Add rule"
 
-Give it a nice name that you easily can recognize, like "Practices.PR".  
+Give it a nice name that you easily can recognize, like "Practices.PR".
 
 Check the "Require pull request reviews before merging".
 
@@ -44,9 +44,9 @@ Publish the branch to the remote.
 
 Raise a pull request from the repo web site for the branch you just published.
 
-You can add a fair comment on the PR to help the reviewer.  Also, request a reviewer from one of those you added to your repo above. 
+You can add a fair comment on the PR to help the reviewer.  Also, request a reviewer from one of those you added to your repo above.
 
-Ask a team member to do a code review.  
+Ask a team member to do a code review.
 
 You will get some feedback, fix whatever that is, and when the review is finished, and all builds are green, Merge the PR.
 
@@ -79,4 +79,3 @@ There are multiple other checks you can add.
 Discuss a few that you would think could benefit the organisation, and help in ensuring quality is raised.
 
 Hint:  Check out the github apps.  Try e.g. WIP,  and check out the possible actions you can add to your build
-

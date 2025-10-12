@@ -2,7 +2,6 @@
 
 Run Exercise-7.1.cmd from a non-git folder
 
-
 ## **DO 1**
 
 Use two instances of gitviz to check the content of the two client repos, the two server repos, and between the client and servers
@@ -10,7 +9,6 @@ Use two instances of gitviz to check the content of the two client repos, the tw
 Notice the way the secondary server repo is added
 
 The exercise introduces bare repositories.  Explain what that is.
-
 
 ## **DO 2**
 
@@ -26,16 +24,10 @@ Push all up there too
 
 Where can this be useful?
 
-
 Now add a commit ON THE REMOTE GITHUB site, just add a readme
 
 On the local server repo, try to pull this down.   What and why happened ?
 
-Then fetch. 
+Then fetch.
 
 Go to the corresponding local repo
-
-
-
-
-

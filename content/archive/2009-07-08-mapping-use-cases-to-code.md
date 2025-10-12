@@ -4,8 +4,6 @@ title: Mapping use cases to code
 date: 2009-07-08T14:30:24+01:00
 author: terje
 layout: post
-guid: http://terje.wpengine.com/?p=133359
-permalink: /mapping-use-cases-to-code/
 categories:
   - none
 ---

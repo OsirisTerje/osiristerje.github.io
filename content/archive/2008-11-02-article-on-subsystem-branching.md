@@ -4,8 +4,6 @@ title: Article on Subsystem branching
 date: 2008-11-02T06:38:26+01:00
 author: terje
 layout: post
-guid: http://terje.wpengine.com/?p=126491
-permalink: /article-on-subsystem-branching/
 categories:
   - none
 ---

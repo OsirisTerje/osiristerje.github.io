@@ -4,8 +4,6 @@ title: Seminar on news in Team System 2010, September 15th in Oslo, Norway
 date: 2009-08-24T17:55:30+01:00
 author: terje
 layout: post
-guid: http://terje.wpengine.com/?p=134291
-permalink: /seminar-on-news-in-team-system-2010-september-15th-in-oslo-norway/
 categories:
   - Uncategorized
 ---

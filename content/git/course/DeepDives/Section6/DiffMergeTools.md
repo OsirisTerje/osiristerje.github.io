@@ -4,7 +4,6 @@ layout: page
 
 # Configurations for Diff and merge tools
 
-
 ## Possible diff/merge tools
 
 Default is vimdiff.
@@ -14,12 +13,14 @@ Some alternatives that are understood by git
 * KDiff3
 * BeyondCompare
 
-These have to be installed, and available in the path.  
+These have to be installed, and available in the path.
 
 Run
 ```
+
 git mergetool --tool-help
 ```
+
 to see a complete list of supported tools.
 
 An alternative that must be fully configured:
@@ -35,8 +36,6 @@ See [information here.](https://code.visualstudio.com/docs/editor/versioncontrol
 Note: Get to this by using the Source Control tool, select the file(s) shown under "Merge Changes".
 
 But in order to fire it up from the command line, it has to be added to the global config too.
-
-
 
 ## Specific instructions for configuration
 
@@ -58,16 +57,19 @@ Add the following to the global git config file, just check the path to your ins
 
 Find that path
 ```
+
 where vsdiffmerge.exe >> vsd.txt
 ```
+
 Copy the content of vsd.txt into the :your path to vsdiffmerge: below.
 
-Note that you might need to escape the \, and possibly the " too.  
+Note that you might need to escape the \, and possibly the " too.
 Also, Visual Studio may be very slow to open it, and I have often experienced it hangs too, depending on versions.
 
 It is much easier to just start VS in that folder, it will then automatically pick up the merge conflict.
 
 ```
+
 [diff]
   tool = vsdiffmerge
 [merge]
@@ -89,14 +91,12 @@ It is much easier to just start VS in that folder, it will then automatically pi
    trustexitcode = true
 ```
 
-
-
-
 ### Setting up Visual Studio Code
 
 Setting up just the  merge tool sections:
 
 ```
+
 [merge]
         tool = vscode
 [mergetool "vscode"]
@@ -104,7 +104,6 @@ Setting up just the  merge tool sections:
         keepBackup = false
         trustexitcode = true
 ```
-
 
 ## Running the tool
 
@@ -115,15 +114,13 @@ We can then choose to run with a specific tool, or we can run with the default o
 Running with a default tool:
 
 ```
+
 git mergetool
 ```
 
 or choose a specific tool:
 
 ```
+
 git mergetool --tool=vscode
 ```
-
-
-
-

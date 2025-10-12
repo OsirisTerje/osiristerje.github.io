@@ -4,25 +4,21 @@ title: How to extend the NUnit constraints
 date: 2018-11-01T02:19:54+01:00
 author: terje
 layout: post
-guid: http://hermit.no/?p=160567
-permalink: /how-to-extend-the-nunit-constraints/
-catchevolution-sidebarlayout:
-  - default
-dsq_thread_id:
-  - "7010716137"
 categories:
   - 'C#'
   - NUnit
   - Unit Testing
 ---
 
-<p style="text-align: left;"><a href="http://nunit.org/" target="_blank" rel="noopener">NUnit</a> has a very rich and readable constraint set.  Normally you don’t need to do anything. But, there are some cases where it would be nice to be able to tweak these constraints.  You can always wrap them and extend them that way, but then you lose all the other good stuff, like chaining.  What is not so well known is that you can extend the existing constraints, they are **designed** to be extendable!   In this post I will show how you can do that easily.</p>
-<p style="text-align: left;">You can also use this approach to build your own custom test "language" for your own domain testing. Doing that this way means you build on top of NUnit instead of inventing everything from scratch.</p>
-<p style="text-align: left;">That also means that all existing testing tools that can run NUnit, like Visual Studio Test Explorer, <a href="https://azure.microsoft.com/en-us/services/devops/" target="_blank" rel="noopener">Azure Devops</a> testing tasks, NUnit Console and more will ALL work with your constraints and your custom test language.</p>
+[NUnit](http://nunit.org/) has a very rich and readable constraint set.  Normally you don’t need to do anything. But, there are some cases where it would be nice to be able to tweak these constraints.  You can always wrap them and extend them that way, but then you lose all the other good stuff, like chaining.  What is not so well known is that you can extend the existing constraints, they are **designed** to be extendable!   In this post I will show how you can do that easily.
 
+You can also use this approach to build your own custom test "language" for your own domain testing. Doing that this way means you build on top of NUnit instead of inventing everything from scratch.
 
-<h2 style="text-align: left;">The scenario</h2>
-<p style="text-align: left;">Let us start with a very "complex" piece of code that obviously need some heavy unit testing:</p>
+That also means that all existing testing tools that can run NUnit, like Visual Studio Test Explorer, [Azure Devops](https://azure.microsoft.com/en-us/services/devops/) testing tasks, NUnit Console and more will ALL work with your constraints and your custom test language.
+
+### The scenario
+
+Let us start with a very "complex" piece of code that obviously need some heavy unit testing:
 
 <pre>public class Math
 {
@@ -52,7 +48,8 @@ public void TestAddCustom()
     var res = sut.Add(42d, 42d);
     Assert.That(res, Is.Approx(84d));
 }</pre>
-<h2> Adding new constraints</h2>
+### Adding new constraints
+
 There are two ways we can extend this, one is a rather generic way of doing it, which is a bit more code, the other matches the requirement we have above, and possibly many others, but with less code.
 <pre>using NUnit.Framework.Constraints;
 /// &lt;summary&gt;
@@ -106,7 +103,7 @@ And finally we add an extension method that allow us to chain our new constraint
 public static class Verifications
 {
       public static DoubleConstraint Approx(this ConstraintExpression expression, double expected)
-      { 
+      {
           var constraint = new DoubleConstraint(expected);
           expression.Append(constraint);
           return constraint;
@@ -124,7 +121,4 @@ public void TestAddCustom3()
 
 Acknowledgement:
 
-Thanks to my fellow <a href="http://nunit.org/" target="_blank" rel="noopener">NUnit</a> core team member <a href="https://github.com/jnm2" target="_blank" rel="noopener">Joseph Musser</a> for good suggestions and clarifications !
-
-
-
+Thanks to my fellow [NUnit](http://nunit.org/) core team member [Joseph Musser](https://github.com/jnm2) for good suggestions and clarifications !

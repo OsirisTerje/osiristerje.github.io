@@ -18,30 +18,29 @@ Debugging the adapter require you to compile and consume a debug version of the 
 
 (Earlier we used the VSIX for debugging, but it is now simpler to use the nuget package.  It is still possible to use the VSIX, it follows the normal way for debugging VSIX packages, but this description will concentrate on the nuget package.)
 
-
-
 ## Setting up for debugging
 
-Create a folder to keep the nuget debug packages.  
+Create a folder to keep the nuget debug packages.
 We suggest you use the folder C:\nuget
-
-
 
 Clone the adapter repository:
 
-```cmd
+```
+
 git clone https://github.com/nunit/nunit3-vs-adapter.git
 ```
 
 Create a local branch, e.g. debug
 
-```cmd
+```
+
 git checkout -b debug
 ```
 
 You will debug the adapter in Visual Studio 2019, so start up visual studio:
 
-```cmd
+```
+
 devenv NUnit3TestAdapter.sln
 ```
 
@@ -51,7 +50,8 @@ In the folder for the repro/project to be debugged, create (or modify, if it exi
 
 The content of the nuget.config should be like:
 
-```xml
+```
+
 <?xml version="1.0" encoding="utf-8"?>
 <configuration>
     <packageSources>
@@ -59,35 +59,39 @@ The content of the nuget.config should be like:
     </packageSources>
 </configuration>
 ```
+
 (PS 1: Note the value, it should be your chosen nuget folder for debug packages.)
 
 (PS 2: You can also add this key/value set to your global nuget.config, if you need to debug multiple projects. You can do this from inside Visual Studio, or just modify the file itself, which is located at %appdata%\nuget )
 
 Now create the repro project:
 
-```cmd
+```
+
 dotnet new nunit
 ```
 
 You can now start Visual Studio proper :
 
-```cmd
+```
+
 devenv Whatever.csproj
 ```
 
 or use Visual Studio Code
 
-```cmd
+```
+
 code .
 ```
 
 ## Modifying the adapter code for debugging
 
-The reason for having this in a seperate branch is that we need to do a few changes that should not go back into the public repository.  
+The reason for having this in a seperate branch is that we need to do a few changes that should not go back into the public repository.
 
 The files we need to change is the **build.cake** file, and then either the NUnit3TestExecutor.cs - if you want to debug test execution - or NUnit3TestDiscoverer.cs
 
-In the build.cake file, go to Line 16, and add a useful modifer - it will be the preview version for the package, so something like '-d01' would go fine.  
+In the build.cake file, go to Line 16, and add a useful modifer - it will be the preview version for the package, so something like '-d01' would go fine.
 **Ensure you have the dash there!**
 
 If you do changes in the adapter code, you can just increment this number, for each one.
@@ -104,16 +108,19 @@ The symbol we uncommented will ensure that the debugger will be launched at this
 
 Build a debug version is a two-step process, first compile it, then package it.
 
-```cmd
+```
+
 build -c debug
 build -t package -c debug
 ```
+
 Notice the version number created for the package, underlined red below:
 ![Package adapter package version highlighted](https://github.com/OsirisTerje/osiristerje.github.io/blob/master/images/packageAdapter.jpg)
 
 Given that your nuget folder is in c:\nuget, you can now just run the command 'copynp', replacing the argument with your particular package version.
 
-```cmd
+```
+
 copynp 3.16.0-d01-dbg
 ```
 
@@ -121,7 +128,7 @@ Your debug package is now in the c:\nuget folder.
 
 ## Using the debug package
 
-Now go to your repro project, and depending on whether you use VS Code or Visual Studio, you have to add this particular package version.  
+Now go to your repro project, and depending on whether you use VS Code or Visual Studio, you have to add this particular package version.
 
 Notice that if you use the old legacy project format, then you better use Visual Studio and do the changes in the Tools/Nuget Package Manager/Manage Nuget packages for Solution.... dialog.
 

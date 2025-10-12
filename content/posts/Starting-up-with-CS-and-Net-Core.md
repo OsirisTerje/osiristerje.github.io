@@ -8,11 +8,13 @@ date: 2021-12-29
 ## Get the tools
 
 ### .Net core
+
 Ensure you have the .net core sdk installed.
 
-Run 
+Run
 
-```cmd
+```
+
 dotnet
 ```
 
@@ -20,7 +22,8 @@ If you get a "not found" message, then [Download and install .net 9 from here](h
 
 The run the following command to ensure you got it all right:
 
-```cmd
+```
+
 dotnet
 ```
 
@@ -28,7 +31,8 @@ It should be found and display the help page.
 
 then run
 
-```cmd
+```
+
 dotnet --list-sdks
 ```
 
@@ -49,7 +53,8 @@ Optionally you can also install [Visual Studio (large IDE)](https://visualstudio
 
 Create a basic application, Add a folder Test and then there:
 
-```cmd
+```
+
 dotnet new nunit
 ```
 
@@ -57,19 +62,22 @@ This is a scaffolding operation for a unit test project, the code generated is t
 
 You can build and run test tests simply by:
 
-```cmd
+```
+
 dotnet test
 ```
 
 If you just wanted to build, without running the test, it is just
 
-```cmd
+```
+
 dotnet build
 ```
 
 The start code by writing:
 
-```cmd
+```
+
 code .
 ```
 
@@ -93,7 +101,8 @@ Now change the name from Class1 to Math
 
 Add a method like:
 
-```csharp
+```
+
 public double Add (double a, double b)
 {
     return a + b;
@@ -105,7 +114,8 @@ The project is called mylib (as the file mylib.csproj).  You rename this to e.g.
 
 Now, go back to the root folder for these three projects and run:
 
-```cmd
+```
+
 dotnet new sln
 ```
 
@@ -113,13 +123,14 @@ It will create a file named after the folder you're in, in my case `examples.sln
 
 Assuming you have installed VS Community edition, start it up doing:
 
-```cmd
+```
+
 devenv examples.sln
 ```
 
 It will be slower on startup than VS code, as expected - it is a bigger IDE, but after a while you'll see the Solution explorer to the right side, showing a single node named Solution (which is the last file you created)
 
-Now from the context menu on that node, select Add/Existing projects, and located and add the three csproj files you have recently created. 
+Now from the context menu on that node, select Add/Existing projects, and located and add the three csproj files you have recently created.
 
 When finished, it should look like:
 
@@ -136,7 +147,8 @@ Now, click the Dependency node on Cons and select Add Project Reference. and the
 
 Now, take a look inside the csproj files and see that it has now added a ProjectReference node.  Now you know how it looks, and you can add these in the editor later, if you prefer that.
 
-```xml
+```
+
   <ItemGroup>
     <ProjectReference Include="..\mylib\MyMath.csproj" />
   </ItemGroup>
@@ -144,7 +156,8 @@ Now, take a look inside the csproj files and see that it has now added a Project
 
 Now change your program code in Program.cs to look like:
 
-```csharp
+```
+
 using System;
 using System.Linq;
 
@@ -191,7 +204,8 @@ namespace cons
 
 And you can try to run it doing :
 
-```cmd
+```
+
 dotnet run 45.5  45
 Result is 90.50
 ```
@@ -200,13 +214,14 @@ or without arguments or whatever, to check the error handling.
 
 Notice in the code the use of string interpolation, using the `$" {somevar}"` syntax.
 
-Notice also the inclusion of the `System.Linq`, which gave you access to the Any method. 
+Notice also the inclusion of the `System.Linq`, which gave you access to the Any method.
 
 And notice the use of the `var` keyword, which says that the variable should be anything inferred by what is on the right hand side.  So in this case the `result` will be a double, because the math.Add statement returns a double.
 
 Now, the code is a bit duplicated, and the static Main is a bit big, so let us rearrange it a bit.
 
-```csharp
+```
+
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -248,7 +263,7 @@ namespace cons
             var result2 = Parse(arguments.Skip(1).First(), "Second");
             if (!result2.Ok)
                 return;
-            
+
             var math = new MyLib.Math();
             var result = math.Add(result1.Result, result2.Result);
             Console.WriteLine($"Result is {result:F2}");
@@ -278,7 +293,8 @@ We have now introduced a few more concepts:
 * Tuples as results from a method
 * Private function
 
-```cmd
+```
+
 dotnet run 45.5  45
 Result is 91.00
 ```
@@ -295,11 +311,12 @@ Press the Run All button to the left in the top button bar of that hub.
 
 It should go green.  Double click the Test1 node, to see the code.
 
-We now want to unit test the program we wrote.  
+We now want to unit test the program we wrote.
 
 Let us start with checking the Math library we had
 
-```csharp
+```
+
         [Test]
         public void TestMath()
         {
@@ -311,7 +328,7 @@ Let us start with checking the Math library we had
 
 Notice the Within constraint added.  Doubles are never exact, so we put a range to it.
 
-Now do a Test All again, and it should go green. 
+Now do a Test All again, and it should go green.
 
 ### Testing the program
 
@@ -323,13 +340,15 @@ Then make the Run method return a double, which should be the result from the Ad
 
 Add the following to the class:
 
-```csharp
+```
+
         public bool Ok { get; private set; } = false;
 ```
 
 Now, in the Run method, after the parsing, just before the call the Math.Add, do:
 
-```csharp
+```
+
     Ok = true;
 ```
 
@@ -341,7 +360,8 @@ Go back to the test project, and create a new test class for testing the Program
 
 Add a new Test method, but now we shall use another type of test:
 
-```csharp
+```
+
 using System.Collections.Generic;
 using cons;
 using NUnit.Framework;
@@ -369,7 +389,8 @@ Running this test, will show it as red.  We sort of knew that already, so we hav
 
 We start off by adding an interface to the Math class:
 
-```csharp
+```
+
     public interface IMath
     {
         double Add (double a, double b);
@@ -386,7 +407,8 @@ We start off by adding an interface to the Math class:
 
 And then we inject that into the Program instead of new'ing it up internally:
 
-```csharp
+```
+
  public class Program
     {
         static void Main(string[] args)
@@ -407,7 +429,8 @@ And then we inject that into the Program instead of new'ing it up internally:
 
 and using it, we can remove the new'ing further down, and just use the private Math Property.  Notice we don't have any setter on it, since it is initialized in the constructor.
 
-```csharp
+```
+
         var result = Math.Add(result1.Result, result2.Result);
         Console.WriteLine($"Result is {result:F2}");
         return result;
@@ -417,7 +440,8 @@ Now, we can turn to the test again, and let us start with adding in mocking.
 
 In the test project csproj file, add in the NSubstitute package:
 
-```xml
+```
+
  <ItemGroup>
     <PackageReference Include="NUnit" Version="3.12.0" />
     <PackageReference Include="NUnit3TestAdapter" Version="3.16.1" />
@@ -426,11 +450,12 @@ In the test project csproj file, add in the NSubstitute package:
   </ItemGroup>
 ```
 
-First, you need to add in the `new MyLib.Math()` to the ctor for the Program call.  
+First, you need to add in the `new MyLib.Math()` to the ctor for the Program call.
 
 Then create a new copy of that test, call it TestRunMethodOnly, but now add in a mock for the Math instance.
 
-```csharp
+```
+
         [Test]
         public void TestRunMethodOnly()
         {
@@ -449,7 +474,8 @@ Try to run these.  You will see they both are red, which means the error must be
 
 Now, let us test the Parse method. Notice we still need to construct the Program class, but we will not be using the arguments, so they can be dummies both of them. We will still use the same arguments though, just since we have it.
 
-```csharp
+```
+
         [TestCase("10", 10.0)]
         [TestCase("20.4", 20.4)]
         [TestCase("45.5", 45.5)]
@@ -470,16 +496,14 @@ Running this, we get the following results:
 
 ![](https://github.com/OsirisTerje/osiristerje.github.io/blob/master/images/testfails.jpg)
 
-And, we see that regardless of what we give in, the result is equal to 45.5.  Which incidentially is the same number as what we have inserted as parameter in the constructor, so the Parse method seems to pick that one up instead of the real parameter. 
+And, we see that regardless of what we give in, the result is equal to 45.5.  Which incidentially is the same number as what we have inserted as parameter in the constructor, so the Parse method seems to pick that one up instead of the real parameter.
 
 Looking at the Parse method we see the line:
 
-```csharp
+```
+
 public (bool Ok, double Result) Parse(string arg, string position)
         {
             var ok = double.TryParse(arguments.First(), out double parsedValue);
 ```
 and indeed, the argument is arguments.First(), and not the arg parameter to the method.  We fix this, and then rerun the tests:
-
-
-

@@ -4,10 +4,6 @@ title: 'Team Foundation Server &#8211; Test Center and Visual Studio build list 
 date: 2010-06-26T13:59:24+01:00
 author: terje
 layout: post
-guid: http://terje.wpengine.com/?p=140620
-permalink: /team-foundation-server-test-center-and-visual-studio-build-list-management/
-dsq_thread_id:
-  - "6134132793"
 categories:
   - Uncategorized
 ---

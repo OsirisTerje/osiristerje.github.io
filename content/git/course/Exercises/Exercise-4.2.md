@@ -17,6 +17,7 @@ Set up a remote, and push the branches master and fixmore to that remote.
 To delete a branch, the command is:
 
 ```
+
 git branch -d/-D  branchname
 ```
 
@@ -26,7 +27,7 @@ git branch -d/-D  branchname
 
 We now know that fixmore is connected to a remote.
 
-* Delete all the branches, one by one.  
+* Delete all the branches, one by one.
 
 Note that you can't delete the branch you're standing on.  You may try by checking out that branch and try to delete it.
 
@@ -35,6 +36,7 @@ When trying to delete the dev2 branch you'll get a warning.  Then try to force-d
 Now, Gitviz doesn't show any more branches, but run :
 
 ```
+
 git branch --all
 ```
 
@@ -45,20 +47,23 @@ Deleting a tracking branch is the same as unsetting the tracking for a local bra
 Now, delete the one for fixmore
 
 ```
+
 git branch -d -r origin/fixmore
 ```
 
-Use 
+Use
 ```
+
 git branch --all
 ```
+
 to see the change.
 
 ## **DO 2** Cleaning up your history - the branches
 
 Now, we have two commit roads that are sort of annoying.  Is there something we can do to make these become one single line of commits?
 
-If we look at them in the UI (e.g. Fork), we'll see that one branch contains c2 and c3 and the other c5 and c4. We can also see that we should not had merged the fixmore branch, but rebased it instead. 
+If we look at them in the UI (e.g. Fork), we'll see that one branch contains c2 and c3 and the other c5 and c4. We can also see that we should not had merged the fixmore branch, but rebased it instead.
 
 There is multiple ways of doing this, one way could be:
 
@@ -70,6 +75,7 @@ What you do is to notice the two SHAs and add branches to them:
 (Note that your SHAs will differ from my below)
 
 ```
+
 git branch first 6277a7d
 git branch second 9c3f8d1
 ```
@@ -77,21 +83,25 @@ git branch second 9c3f8d1
 Why didn't we need to do anything with the merge commit?  It will be lost, and that is ok, why?  How do we know?
 
 ```
+
 git reset --hard HEAD~1
 ```
+
 Ok, now it is obvious which is in the master branch and which is in the other.  In my case, the branch named second, so I go there.
 
 ```
+
 git switch second
 ```
+
 and then rebase onto master, and forward merge master
 
 ```
+
 git rebase master
 git switch master
 git merge second
 ```
-
 
 ## **DO 3**  Cleaning up your history - squashing
 
@@ -103,18 +113,20 @@ Run the script Exercise-4.2.2.cmd
 
 Now you got a bunch of commits.....
 
-There are multiple ways to do this.  
+There are multiple ways to do this.
 
 Let us start with a simple one:
 
 ```
+
 git switch master
 git merge --squash wow
 ```
 
 Notice your UI tree in gitviz didn't change.
-So do a 
+So do a
 ```
+
 git status
 ```
 
@@ -131,19 +143,21 @@ Well, I assume you added a commit message :-)
 Ok, let us try another one, but first:
 
 ```
+
 git reset --hard HEAD~1
 ```
-Now we're back to square 1!
 
+Now we're back to square 1!
 
 We will do the same, just slightly different:
 
 ```
+
 git merge  --squash wow
 git commit
 ```
-Notice no message on the last one, but that means the editor comes up, prefilled with all your commit messages
 
+Notice no message on the last one, but that means the editor comes up, prefilled with all your commit messages
 
 You still have the commits there, and the branch you merged in as a seperate branch.  No problem getting rid of those, by just deleting that branch and let garbage collection fix the rest.
 
@@ -152,18 +166,20 @@ You still have the commits there, and the branch you merged in as a seperate bra
 But there is yet another way:
 
 ```
+
 git reset --hard HEAD~1
 ```
 
 Now go back to the wow branch:
 
 ```
+
 git reset --hard HEAD~6
 git merge --squash HEAD@{1}
 git commit
 ```
 
-Now, the wow branch is still there, but all commits are nicely squashed into one, but with all the commit messages preserved. 
+Now, the wow branch is still there, but all commits are nicely squashed into one, but with all the commit messages preserved.
 
 ------------
 
@@ -178,12 +194,14 @@ Go back to have a branch at the top of those 6.
 Lets assume it is called whyrebasei
 
 ```
+
 git branch whyrebasei 6b1e063
 ```
 
 Now, run:
 
 ```
+
 git rebase -i master
 ```
 
@@ -200,8 +218,3 @@ Now, look at the commit message, it is even nicer than the others....
 Check out the other options for using Interactive rebase
 
 Look up [this blogpost](https://hackernoon.com/beginners-guide-to-interactive-rebasing-346a3f9c3a6d) and [this documentation](https://git-scm.com/book/en/v2/Git-Tools-Rewriting-History)
-
-
-
-
-

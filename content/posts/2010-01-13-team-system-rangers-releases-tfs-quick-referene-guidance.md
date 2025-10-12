@@ -4,15 +4,13 @@ title: Team System Rangers releases TFS Quick Referene Guidance
 date: 2010-01-13T04:41:09+01:00
 author: terje
 layout: post
-guid: http://terje.wpengine.com/?p=137461
-permalink: /team-system-rangers-releases-tfs-quick-referene-guidance/
 categories:
   - none
 ---
 
 The Team System Rangers (http://msdn.microsoft.com/en-us/teamsystem/ee358786.aspx) just released a set of Quick Reference Guidance sheets for Visual Studio 2010 at Codeplex: http://vs2010quickref.codeplex.com/. These guides collect a lot of useful information in compact slides and cover many areas.
 
-[![](http://hermit.no/wp-content/uploads/2015/08/GWB-WindowsLiveWriter-TeamSystemRangersreleasesTFSQuickReferen_881B-image_thumb.png "Quick reference example thumbnail")](http://gwb.blob.core.windows.net/terje/WindowsLiveWriter/TeamSystemRangersreleasesTFSQuickReferen_881B/image_2.png)
+[![](/images/2015/08/GWB-WindowsLiveWriter-TeamSystemRangersreleasesTFSQuickReferen_881B-image_thumb.png "Quick reference example thumbnail")](http://gwb.blob.core.windows.net/terje/WindowsLiveWriter/TeamSystemRangersreleasesTFSQuickReferen_881B/image_2.png)
 
 1. Planning:
 

@@ -20,7 +20,8 @@ That also means that all existing testing tools that can run NUnit, like Visual 
 
 Let us start with a very "complex" piece of code that obviously need some heavy unit testing:
 
-```cs
+```
+
 public class Math
 {
      public double Add(double a, double b)
@@ -32,7 +33,8 @@ public class Math
 
 And we add a standard test method to verify this code:
 
-```cs
+```
+
 public void TestAddStandard()
 {
      var sut = new Math();
@@ -43,7 +45,8 @@ public void TestAddStandard()
 
 Note that since we are testing double values, the operations may not be exact, so we have added the Within with a specified tolerance.  If we have a lot of test code like this, which all uses the same tolerance, this soon starts to look like something that could be simplified. Now, if we take some inspiration from e.g. Python, which for its PyTest has a constraint named 'approx'.  What it does is the same as the Is.EqualTo(...).Within(tolerance), but with a predefined tolerance. When you know your domain, having a predefined tolerance can be a saver.  So, let us make a Approx constraint for NUnit! First, let us see how a test using it would look like:
 
-```cs
+```
+
 [Test]
 public void TestAddCustom()
 {
@@ -57,7 +60,8 @@ public void TestAddCustom()
 
 There are two ways we can extend this, one is a rather generic way of doing it, which is a bit more code, the other matches the requirement we have above, and possibly many others, but with less code.
 
-```cs
+```
+
 using NUnit.Framework.Constraints;
 /// <summary>
 /// Generic way of extending by using the inherent constraints
@@ -91,7 +95,8 @@ public class DoubleVerification2 : EqualConstraint
 
 The code above is the constraints themselves, but we need to get them into the same syntax, so we will also extend the 'Is'  for the two methods we have above:
 
-```cs
+```
+
 /// <summary>
 /// This extends the Is functionality
 /// </summary>
@@ -111,14 +116,15 @@ public class Is : NUnit.Framework.Is
 
 And finally we add an extension method that allow us to chain our new constraint with others:
 
-```cs
+```
+
 /// <summary>
 /// This allows for chaining
 /// </summary>
 public static class Verifications
 {
       public static DoubleConstraint Approx(this ConstraintExpression expression, double expected)
-      { 
+      {
           var constraint = new DoubleConstraint(expected);
           expression.Append(constraint);
           return constraint;
@@ -128,7 +134,8 @@ public static class Verifications
 
 This will allow us to do stuff like below, where we use the 'Is.Not' before the Approx, that is what we mean by chaining.
 
-```cs
+```
+
 [Test]
 public void TestAddCustom3()
 {

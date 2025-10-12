@@ -4,10 +4,6 @@ title: Finally entering the blogsphere !
 date: 2008-10-01T15:40:30+01:00
 author: terje
 layout: post
-guid: http://terje.wpengine.com/?p=125584
-permalink: /finally-entering-the-blogsphere/
-dsq_thread_id:
-  - "6127509754"
 categories:
   - Uncategorized
 ---

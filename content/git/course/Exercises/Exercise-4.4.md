@@ -2,7 +2,6 @@
 
 Before doing these exercises, ensure you have the config properly set up with merge tools.
 
-
 Join up with your team, and agree upon a common repository where everyone has access.  It can be one of the team members own repo, just invite in the others on the team, or some other "scrap" team project.
 
 Assign one as the team leader, Dev0
@@ -12,7 +11,6 @@ If the repo doesn't exist, Dev0 creates it on server, and initializes it with a 
 Everyone clone down the repo.
 
 The other Devs are Dev1, Dev2 and so forth.
-
 
 ## **DO 1**
 
@@ -31,13 +29,13 @@ Now, if you do a pull now, you would need to merge in the changes you did.  That
 So, let us do a rebase here:
 
 ```
+
 git pull --rebase
 ```
 
 Look up in GitViz what happened.
 
 ## **DO 2**
-
 
 Each Dev creates their own branch locally, and adds a commit there, with a new file.
 
@@ -99,9 +97,10 @@ See it in Gitviz, and take a screenshot, or just remember the commit SHA for the
 
 Now, on server, make a change to one of the files there, and commit that one.
 
-Locally again, do a 
+Locally again, do a
 
 ```
+
 git pull --rebase
 ```
 
@@ -111,8 +110,6 @@ Run git status afterwards, and see if everything looks correct or not.
 
 If you have a mess, suggest how to fix it.
 
-
-
 ## Configuring git pull rebase
 
 It can be a good idea to nearly always use rebasing when pulling.  Most tools allow that setting, but you can actually also set git to that by default.
@@ -120,18 +117,12 @@ It can be a good idea to nearly always use rebasing when pulling.  Most tools al
 From the command line:
 
 ```
+
 git config --global pull.rebase=true
 ```
 
 For a nice writeup on rebasing on pull, [see this blogpost](http://bit-booster.blogspot.com/2016/02/no-foxtrots-allowed.html)
 
-
 Note that sometimes this may hit back on you, then just turn it off.
 
 Do you see when it may be counterproductive to use pull rebase ?
-
-
-
-
-
-

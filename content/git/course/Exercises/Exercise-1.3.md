@@ -2,15 +2,15 @@
 
 ## Git states
 
-
 Init a new repo
 
 Create two new files
 
 ```
+
 echo C1 >> c1.md
 echo C2 >> c2.md
-git status 
+git status
 git status -s
 ```
 
@@ -35,6 +35,7 @@ Now, remove the file:
 ### Method 1
 
 ```
+
 del c1.md
 ```
 
@@ -43,6 +44,7 @@ What is the status?
 ### Method 2
 
 ```
+
 git rm c2.md
 ```
 
@@ -73,12 +75,14 @@ What is the conclusion from this?
 Create a new repo, get some code in there, and run it
 
 ```
+
 git init testrepo  && cd testrepo
 ```
 
 Add a .gitignore file (from [gitignore.io]())
 
 ```
+
 git add * && git commit -m"gitignore"
 dotnet new nunit
 dotnet build
@@ -86,8 +90,8 @@ dotnet build
 
 Now run
 ```
+
 git status --ignore
 ```
 
 Notice what you see ?
-

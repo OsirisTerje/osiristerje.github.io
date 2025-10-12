@@ -48,7 +48,7 @@ And when it has run, successfully of course, the details look like shown below:
 
 ###  Building the NUnit3TestAdapter using powershell and Cake
 
-The build system for the NUnit3TestAdapter is based on a Cake script that is started off by a powershell script. 
+The build system for the NUnit3TestAdapter is based on a Cake script that is started off by a powershell script.
 
 To set that build off doesn't require much:
 
@@ -62,7 +62,7 @@ and the results look like:
 
 To build .net framework projects we must check out whether it uses the old legacy project format, or the new SDK based format.  Many projects, or most now, can use the new SDK format.  See [this blogpost](https://hermit.no/moving-to-sdk-style-projects-and-package-references-in-visual-studio-part-2/) for how to convert your project automatically to the new SDK format from the old legacy format.
 
-Using the new SDK project format makes it much simpler to build, because you can then use the dotnet system, which encapsulates all the other stuff you need.  
+Using the new SDK project format makes it much simpler to build, because you can then use the dotnet system, which encapsulates all the other stuff you need.
 
 If you have to stay on the old legacy format, you must use the msbuild system.
 
@@ -91,7 +91,7 @@ For such a project, there is no starter workflow available (as of writing Nov 20
 
 ![](https://github.com/OsirisTerje/osiristerje.github.io/blob/master/images/2019-11-19_20-01-50.jpg)
 
-The "empty" is not that empty, so just delete whatever is in the script, and replace with the gist [NetFramework.Legacy.CI](https://gist.github.com/OsirisTerje/f8b5d2252dda2ceaed21787a078ae438). 
+The "empty" is not that empty, so just delete whatever is in the script, and replace with the gist [NetFramework.Legacy.CI](https://gist.github.com/OsirisTerje/f8b5d2252dda2ceaed21787a078ae438).
 
 Then give it a nice name, and replace YOUR_SOLUTION_NAME in the gist to the correct name and path for your solution.
 
@@ -104,4 +104,3 @@ And running this build gives:
 *Credit:  This gist uses actions provided by [Warren Buckley](https://github.com/warrenbuckley)*
 
 Building .Net Framework projects are easy with Github actions, but if you're using the legacy project format, you should first try to [migrate to the new SDK format](http://hermit.no/moving-to-sdk-style-projects-and-package-references-in-visual-studio-part-2/).
-

@@ -4,10 +4,6 @@ title: 'GitIgnore&ndash;How to exclude Nuget packages at any level, and make re-
 date: 2014-07-04T00:06:15+01:00
 author: terje
 layout: post
-guid: http://terje.wpengine.com/?p=157276
-permalink: /gitignore-ndash-how-to-exclude-nuget-packages-at-any-level-and-make-re-include-work/
-dsq_thread_id:
-  - "4153885136"
 categories:
   - Git
   - NuGet
@@ -40,7 +36,7 @@ Normally you want to exclude everything in the packages folder, but there are tw
 
 To demonstrate how this works, I have set up a project with package folders at both top level and a sublevel, and with build folder and a repositories.config file to be re-included.
 
-[![image](http://hermit.no/wp-content/uploads/2015/08/GWB-Windows-Live-Writer-GitIgnore_14795-image_thumb_1.png "image")](https://gwb.blob.core.windows.net/terje/Windows-Live-Writer/GitIgnore_14795/image_4.png)
+[![image](/images/2015/08/GWB-Windows-Live-Writer-GitIgnore_14795-image_thumb_1.png "image")](https://gwb.blob.core.windows.net/terje/Windows-Live-Writer/GitIgnore_14795/image_4.png)
 
 1 and 2 are the packages folders.  3 is a nuget package we want to be excluded, 4 is some text files that we also want to be excluded, whereas the build folders and their content and the repositories.config files are to be included.
 
@@ -53,6 +49,7 @@ The section looks like this:
 
 \# NuGet Packages Directory
 ## TODO: If you have NuGet Package Restore enabled, uncomment the next line
+
 #packages/
 
 As mentioned above, you must uncomment the last line here. 
@@ -63,7 +60,7 @@ This exclusion will work for a package folder at any level, but it will not acce
 
 If we add a re-inclusion for the build folder, the result will be as shown below (I use VS to show this, but the “git status” command will show the same) :
 
-[![image](http://hermit.no/wp-content/uploads/2015/08/GWB-Windows-Live-Writer-GitIgnore_14795-image_thumb.png "image")](https://gwb.blob.core.windows.net/terje/Windows-Live-Writer/GitIgnore_14795/image_2.png)
+[![image](/images/2015/08/GWB-Windows-Live-Writer-GitIgnore_14795-image_thumb.png "image")](https://gwb.blob.core.windows.net/terje/Windows-Live-Writer/GitIgnore_14795/image_2.png)
 
 The packages folders are excluded, blue arrow, the build folders are reincluded, red arrow, and thus should appear, but they don’t. 
 
@@ -77,18 +74,24 @@ The pattern looks like this, with re-includes:
 packages/\*
 \*.nupkg
 ## TODO: If the tool you use requires repositories.config
+
 ## uncomment the next line
+
 !packages/repositories.config
 
 # Enable "build/" folder in the NuGet Packages folder since
+
 # NuGet packages use it for MSBuild targets.
+
 # This line needs to be after the ignore of the build folder
+
 # (and the packages folder if the lines above for that has been uncommented)
+
 !/packages/build/
 
 What happens now is this:
 
-[![image](http://hermit.no/wp-content/uploads/2015/08/GWB-Windows-Live-Writer-GitIgnore_14795-image_thumb_2.png "image")](https://gwb.blob.core.windows.net/terje/Windows-Live-Writer/GitIgnore_14795/image_6.png)
+[![image](/images/2015/08/GWB-Windows-Live-Writer-GitIgnore_14795-image_thumb_2.png "image")](https://gwb.blob.core.windows.net/terje/Windows-Live-Writer/GitIgnore_14795/image_6.png)
 
 The exclusion and re-includes are as shown by the blue arrows.  The root level package folder is fine, green arrow, the build folder stays, the repositories.config stays, and the text files we had there are excluded.  BUT – the sub level folder – red arrow – is not fine at all, the build folder is ignored (because there are an exclusion for build higher up in the gitignore file), the NUnit package lib are present, and should have been excluded.
 
@@ -104,7 +107,7 @@ it will cover any sub folders like option 1, and will accept re-includes, like o
 
 However, alone, this will NOT cover any top level folders, if you have version 1.9.4 of Git or lower.
 
-[![image](http://hermit.no/wp-content/uploads/2015/08/GWB-Windows-Live-Writer-GitIgnore_14795-image_thumb_3.png "image")](https://gwb.blob.core.windows.net/terje/Windows-Live-Writer/GitIgnore_14795/image_8.png)
+[![image](/images/2015/08/GWB-Windows-Live-Writer-GitIgnore_14795-image_thumb_3.png "image")](https://gwb.blob.core.windows.net/terje/Windows-Live-Writer/GitIgnore_14795/image_8.png)
 
 We add the \*\*/ to the three clauses, and we see that the sub folders are ok, green arrow, but the top level is now wrong.
 
@@ -123,20 +126,26 @@ If we combine Option 2 and Option 3 we will cover all options here, the resultin
 packages/\*
 \*.nupkg
 ## TODO: If the tool you use requires repositories.config
+
 ## uncomment the next line
+
 !\*\*/packages/repositories.config
 !packages/repositories.config
 
 # Enable "build/" folder in the NuGet Packages folder since
+
 # NuGet packages use it for MSBuild targets.
+
 # This line needs to be after the ignore of the build folder
+
 # (and the packages folder if the lines above for that has been uncommented)
+
 !\*\*/packages/build/
 !packages/build/
 
 And the results are:
 
-[![image](http://hermit.no/wp-content/uploads/2015/08/GWB-Windows-Live-Writer-GitIgnore_14795-image_thumb_4.png "image")](https://gwb.blob.core.windows.net/terje/Windows-Live-Writer/GitIgnore_14795/image_10.png)
+[![image](/images/2015/08/GWB-Windows-Live-Writer-GitIgnore_14795-image_thumb_4.png "image")](https://gwb.blob.core.windows.net/terje/Windows-Live-Writer/GitIgnore_14795/image_10.png)
 
 All is green !
 
@@ -152,23 +161,19 @@ _Note 3: IFix will be updated to option 3/4 in version 1.1, it will choose corre
 
 A simple decision table:
 
- 
-
- 
-
 Git version >= 2.0.1
 
-<2.0.1  
+<2.0.1
 (Current for Windows is 1.9.4)
 
 Have top level package
 
 No reincludes
 
-a) \*\*/packages/\*  
-b) packages/  
+a) \*\*/packages/\*
+b) packages/
 
-packages/  
+packages/
 
 Have top level package
 
@@ -176,18 +181,18 @@ Have reincludes
 
 \*\*/packages/\*
 
-\*\*/packages/\*  
+\*\*/packages/\*
 packages/\*
 
 Have sub folder packages
 
 No reincludes
 
-a) \*\*/packages/\*  
+a) \*\*/packages/\*
 b) packages/
 
-a) \*\*/packages/\*  
-b) packages/  
+a) \*\*/packages/\*
+b) packages/
 
 Have sub folder packages
 
@@ -195,7 +200,7 @@ Have recincludes
 
 \*\*/packages/\*
 
-\*\*/packages/\*  
+\*\*/packages/\*
 
 a):  Preferred  b): Optional
 

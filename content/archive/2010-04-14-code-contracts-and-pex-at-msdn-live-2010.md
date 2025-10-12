@@ -4,8 +4,6 @@ title: Code Contracts and Pex at MSDN Live 2010
 date: 2010-04-14T04:58:48+01:00
 author: terje
 layout: post
-guid: http://terje.wpengine.com/?p=139250
-permalink: /code-contracts-and-pex-at-msdn-live-2010/
 categories:
   - none
 ---

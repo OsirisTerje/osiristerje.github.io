@@ -9,8 +9,7 @@ layout: post
 
 When moving between old and new csproj formats, and back again when it doesn't work, I have several times ended with a project.json error looking like this:
 
-[![project json error message](http://hermit.no/wp-content/uploads/2017/11/pjson.png)](http://hermit.no/wp-content/uploads/2017/11/pjson.png)
-
+[![project json error message](/images/2017/11/pjson.png)](/images/2017/11/pjson.png)
 
 The cause comes from left over files in your obj catalogues.  The file in question seems to named project.assets.json.
 
@@ -18,19 +17,19 @@ Deleting these in all subfolders seems to do the trick.
 
 Run, from the root of your repo:
 
-```cmd
+```
+
 del project.assets.json /s /q
 ```
 
-
 [The below didn't always work]
-
 
 And whatever I do to get rid of it, clearing caches and more, nothing seems to help  once it appears, until I stumbled over this cute little trick:
 
 For the project which are affected, add the following snippet into your csproj file.
 
-```xml
+```
+
 <PropertyGroup>
   <RuntimeIdentifiers>win</RuntimeIdentifiers>
 </PropertyGroup>

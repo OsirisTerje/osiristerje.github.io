@@ -10,19 +10,22 @@ categories:
 
 #### Check what is installed
 
-```cmd
+```
+
 pip list
 ```
 
 #### Downloading and installing numpy:
 
-```cmd
+```
+
 pip install numpy
 ```
 
 #### Downloading and installing matplotlib
 
-```cmd
+```
+
 pip install matplotlib
 ```
 
@@ -30,12 +33,14 @@ pip install matplotlib
 
 Array of 2D vectors, of length 'n'
 
-```python
+```
+
 vectorArray = np.zeros((n,2))
 ```
 
 Array of 3D vectors, of length 'n'
 
-```python
+```
+
 vectorArray = np.zeros((n,3))
 ```

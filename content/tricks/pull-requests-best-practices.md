@@ -16,4 +16,3 @@ A code review should not in any way be a code discussion, but be targeted to the
 In Github there is a separate discussion feature, which is a much better place to discuss coding principles in general.
 
 # Best Practices
-

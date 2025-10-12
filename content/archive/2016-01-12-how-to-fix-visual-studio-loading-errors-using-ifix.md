@@ -4,14 +4,6 @@ title: 'How to fix Visual studio loading errors,  using IFix'
 date: 2016-01-12T13:19:00+01:00
 author: terje
 layout: post
-guid: http://hermit.no/?p=160335
-permalink: /how-to-fix-visual-studio-loading-errors-using-ifix/
-dsq_thread_id:
-  - "4484190807"
-catchevolution-sidebarlayout:
-  - default
-categories:
-  - Visual Studio
 tags:
   - IFix
   - Visual Studio
@@ -20,7 +12,7 @@ Visual Studio is normally a very stable environment, but some times it might cra
 
 A “common” error message is the loading error, it says it can’t load some component correctly, like in the image below.
 
-<a href="http://hermit.no/wp-content/uploads/2016/01/image.png"><img style="background-image: none; padding-top: 0px; padding-left: 0px; display: inline; padding-right: 0px; border: 0px;" title="image" src="http://hermit.no/wp-content/uploads/2016/01/image_thumb.png" alt="image" width="375" height="212" border="0" /></a>
+[![image](/images/2016/01/image_thumb.png)](/images/2016/01/image.png)
 
 What component it is might vary, it doesn’t seem to be any pattern to it.  And some times it even give you multiple of these.
 
@@ -32,13 +24,13 @@ When you do install things, or do some updates to Visual Studio it happens that 
 
 The way to fix this is to delete the appropriate cache.
 
-You can either use the command line tool  <a href="http://visualstudiogallery.msdn.microsoft.com/b8ba97b0-bb89-4c21-a1e2-53ef335fd9cb" target="_blank">IFix</a> , using the command “ifix  mefcache –f     - - all” , which deletes all caches for all versions:
+You can either use the command line tool  [IFix](http://visualstudiogallery.msdn.microsoft.com/b8ba97b0-bb89-4c21-a1e2-53ef335fd9cb) , using the command “ifix  mefcache –f     - - all” , which deletes all caches for all versions:
 
-<a href="http://hermit.no/wp-content/uploads/2016/01/image-1.png"><img style="background-image: none; padding-top: 0px; padding-left: 0px; display: inline; padding-right: 0px; border: 0px;" title="image" src="http://hermit.no/wp-content/uploads/2016/01/image_thumb-1.png" alt="image" width="652" height="82" border="0" /></a>
+[![image](/images/2016/01/image_thumb-1.png)](/images/2016/01/image-1.png)
 
 or for a specific version, doing “ifix mefcache  -f    - -vs2015”
 
-<a href="http://hermit.no/wp-content/uploads/2016/01/image-2.png"><img style="background-image: none; padding-top: 0px; padding-left: 0px; display: inline; padding-right: 0px; border: 0px;" title="image" src="http://hermit.no/wp-content/uploads/2016/01/image_thumb-2.png" alt="image" width="673" height="44" border="0" /></a>
+[![image](/images/2016/01/image_thumb-2.png)](/images/2016/01/image-2.png)
 
 It doesn’t matter from where you run the IFix tool, it can be from anywhere.
 
@@ -48,8 +40,8 @@ The different versions have their cache at:
 <table border="1" width="368" cellspacing="0" cellpadding="2">
 <tbody>
 <tr>
-<td valign="top" width="57"><strong>Version</strong></td>
-<td valign="top" width="309"><strong>Location</strong></td>
+<td valign="top" width="57">**Version**</td>
+<td valign="top" width="309">**Location**</td>
 </tr>
 <tr>
 <td valign="top" width="57">VS 2012</td>

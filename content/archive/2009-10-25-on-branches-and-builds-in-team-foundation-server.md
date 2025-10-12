@@ -4,18 +4,14 @@ title: On branches and builds in Team Foundation Server
 date: 2009-10-25T16:49:19+01:00
 author: terje
 layout: post
-guid: http://terje.wpengine.com/?p=135706
-permalink: /on-branches-and-builds-in-team-foundation-server/
-dsq_thread_id:
-  - "4780186454"
 categories:
   - none
 ---
 On codeplex the VSTS Rangers have published the [Branching Guidance II](http://tfsbranchingguideii.codeplex.com/) (yes, a while ago, but still very true).  The basic idea there is the separation between 3 major branches,  the Main (or trunk), the Development and the Release branch.  One can elaborate on these and use multiple Development branches, and also a tree of release branches, but the basic principle can be summed up with these three.
 
-In Team Foundation Server 2008 we shipped a "branches" feature (some people call them "branches and merges"). The idea is that a developer who wants to develop a new feature can branch the main development line and work in the branch without affecting the main development line. 
+In Team Foundation Server 2008 we shipped a "branches" feature (some people call them "branches and merges"). The idea is that a developer who wants to develop a new feature can branch the main development line and work in the branch without affecting the main development line.
 
-[![Branches and builds diagram](http://hermit.no/wp-content/uploads/2015/08/GWB-WindowsLiveWriter-BranchesAndBuilds_5776-image_thumb.png)](http://gwb.blob.core.windows.net/terje/WindowsLiveWriter/BranchesAndBuilds_5776/image.png)
+[![Branches and builds diagram](/images/2015/08/GWB-WindowsLiveWriter-BranchesAndBuilds_5776-image_thumb.png)](http://gwb.blob.core.windows.net/terje/WindowsLiveWriter/BranchesAndBuilds_5776/image.png)
 
 When you're ready you merge the changes back into the development line and continue.
 
@@ -24,31 +20,31 @@ Now, if we look at the different sets of build types we have, see [http://geeksw
 <table border="0" cellspacing="0" cellpadding="2" width="610">
     <tbody>
         <tr>
-            <td valign="top" width="168"><strong>Builds    Branches</strong></td>
-            <td valign="top" width="162"><strong>Development</strong></td>
-            <td valign="top" width="144"><strong>Main</strong></td>
-            <td valign="top" width="134"><strong>Release</strong></td>
+            <td valign="top" width="168">**Builds    Branches**</td>
+            <td valign="top" width="162">**Development**</td>
+            <td valign="top" width="144">**Main**</td>
+            <td valign="top" width="134">**Release**</td>
         </tr>
         <tr>
-            <td valign="top" width="180"><strong>Developer (CI build)</strong></td>
+            <td valign="top" width="180">**Developer (CI build)**</td>
             <td valign="top" width="170">Mandatory</td>
             <td valign="top" width="150">Mandatory</td>
             <td valign="top" width="139">Mandatory</td>
         </tr>
         <tr>
-            <td valign="top" width="183"><strong>QA build</strong></td>
+            <td valign="top" width="183">**QA build**</td>
             <td valign="top" width="173">Mandatory</td>
             <td valign="top" width="151">Mandatory</td>
             <td valign="top" width="141">None/Optional</td>
         </tr>
         <tr>
-            <td valign="top" width="184"><strong>Deployment to Test</strong></td>
+            <td valign="top" width="184">**Deployment to Test**</td>
             <td valign="top" width="174">Optional</td>
             <td valign="top" width="151">None</td>
             <td valign="top" width="142">Mandatory</td>
         </tr>
         <tr>
-            <td valign="top" width="183"><strong>Deployment to Production</strong></td>
+            <td valign="top" width="183">**Deployment to Production**</td>
             <td valign="top" width="175">None</td>
             <td valign="top" width="150">None</td>
             <td valign="top" width="143">Mandatory</td>

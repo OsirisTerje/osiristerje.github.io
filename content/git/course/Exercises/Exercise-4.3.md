@@ -1,7 +1,5 @@
 # Cleaning up, take 1, Getting the history linear
 
-
-
 ## Rebasing with origin
 
 Clone down [this repo](https://github.com/OsirisTerje/exercise43)
@@ -19,6 +17,7 @@ As you can see, you now have a new merge commit.  We want to get rid of this and
 We can do that doing a rebase on origin/master, which points to the previous commit from the remote repo.
 
 ```
+
 git rebase origin/master
 ```
 
@@ -29,7 +28,3 @@ If you look at the comment for this commit, and the last one on the Whatever bra
 #### Note
 
 We did a rebase with origin/master in this case.  You can actually rebase on anything that might solve your problem with a non-linear history.
-
-
-
-

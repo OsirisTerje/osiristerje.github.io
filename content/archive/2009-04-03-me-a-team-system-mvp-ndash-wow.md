@@ -4,10 +4,6 @@ title: 'Me, a Team System MVP &ndash; Wow !'
 date: 2009-04-03T19:29:37+01:00
 author: terje
 layout: post
-guid: http://terje.wpengine.com/?p=130720
-permalink: /me-a-team-system-mvp-ndash-wow/
-dsq_thread_id:
-  - "4104012965"
 categories:
   - Uncategorized
 ---

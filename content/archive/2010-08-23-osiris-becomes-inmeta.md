@@ -4,10 +4,6 @@ title: Osiris becomes Inmeta
 date: 2010-08-23T07:17:32+01:00
 author: terje
 layout: post
-guid: http://terje.wpengine.com/?p=141446
-permalink: /osiris-becomes-inmeta/
-dsq_thread_id:
-  - "5544506498"
 categories:
   - Uncategorized
 ---

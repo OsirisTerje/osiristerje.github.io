@@ -8,6 +8,7 @@ layout: page
 
 First change something on the remote branch 'update' twice
 ```
+
 git pull
 ```
 ![1](bms-1.jpg)
@@ -32,9 +33,9 @@ So the server is proteced from the changes, and the developer does not have any 
 
 ![6](bms-6.jpg)
 
-Observe what happened!  
+Observe what happened!
 
-The 5e0d8ee is rebased into 6dbe74f.  
+The 5e0d8ee is rebased into 6dbe74f.
 
 Let's check the reflog
 

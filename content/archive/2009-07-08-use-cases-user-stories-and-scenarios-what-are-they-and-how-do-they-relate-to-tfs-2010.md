@@ -4,8 +4,6 @@ title: 'Use Cases, User Stories and Scenarios &#8211; what are they &#8211; and 
 date: 2009-07-08T07:07:09+01:00
 author: terje
 layout: post
-guid: http://terje.wpengine.com/?p=133347
-permalink: /use-cases-user-stories-and-scenarios-what-are-they-and-how-do-they-relate-to-tfs-2010/
 categories:
   - none
 ---

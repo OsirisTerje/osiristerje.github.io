@@ -4,10 +4,6 @@ title: Code coverage checkin policy
 date: 2009-03-04T21:36:04+01:00
 author: terje
 layout: post
-guid: http://terje.wpengine.com/?p=129841
-permalink: /code-coverage-checkin-policy/
-dsq_thread_id:
-  - "6474685532"
 categories:
   - Uncategorized
 ---

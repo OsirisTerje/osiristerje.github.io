@@ -23,7 +23,7 @@ You can achieve this by adding a standard command line task that **fails** given
 
 In the build shown below, there are seven tasks that may give rise to warnings (green checkmarks).  Note that some are ordinary unit tests, the tests are also split into pure L0 class based unit tests, and L1 integration tests, see these [two](https://blogs.msdn.microsoft.com/bharry/2017/06/28/testing-in-a-cloud-delivery-cadence/) [posts](https://www.visualstudio.com/learn/shift-left-make-testing-fast-reliable/).  There are also checks that verify that we have more than a set number of tests, and finally a[Resharper code quality check task](https://marketplace.visualstudio.com/items?itemName=alanwales.resharper-code-analysis).  They are checked using the red circled command line task below them.
 
-[![Build task setup for conditional fail](images/2018/02/conditionallyfails-1.jpg)](http://hermit.no/wp-content/uploads/2018/02/conditionallyfails-1.jpg)
+[![Build task setup for conditional fail](/images/2018/02/conditionallyfails-1.jpg)](/images/2018/02/conditionallyfails-1.jpg)
 <ol>
  	<li>Give it a good name like: "If above is partially succeeded, and we have a PR , then fail"</li>
  	<li>Use the command "echo"</li>

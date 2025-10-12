@@ -15,9 +15,12 @@ if (!File.Exists(path))
     Console.WriteLine($"File not found: {path}");
     return;
 }
-
+var sw = new System.Diagnostics.Stopwatch();
+sw.Start();
 string original = File.ReadAllText(path);
 string updated = original;
+
+Console.WriteLine($"Read file: {sw.Elapsed}");
 
 // Remove unwanted frontmatter keys that come from the old WP export (idempotent)
 updated = RemoveUnwantedFrontmatterEntries(updated);
@@ -81,6 +84,7 @@ updated = NormalizeBlankLinesAndHeaderSpacing(updated);
 // 9) Final whitespace fixes
 updated = FixTrailingWhitespaceAndNewline(updated);
 
+Console.WriteLine($"Processed : {sw.Elapsed}");
 if (updated != original)
 {
     File.WriteAllText(path, updated);
@@ -90,13 +94,13 @@ else
 {
     Console.WriteLine($"No changes for: {path}");
 }
-
+Console.WriteLine($"Finished : {sw.Elapsed}");
 
 // --- Methods ---
 
 static string ReplaceAnchorWrappedImagesWithPlaceholders(string text, Dictionary<string, string> placeholders, Func<string> tokenFactory)
 {
-    var regex = new Regex(@"<a\b[^>]*?href\s*=\s*""(?<href>[^""]+)""[^>]*>\s*<img\b(?<imgattrs>[^>]*)>\s*</a>", RegexOptions.IgnoreCase | RegexOptions.Singleline);
+    var regex = MyRegex8();
     return regex.Replace(text, m =>
     {
         var href = m.Groups["href"].Value.Trim();
@@ -112,7 +116,7 @@ static string ReplaceAnchorWrappedImagesWithPlaceholders(string text, Dictionary
 
 static string ReplaceImgTagsWithPlaceholders(string text, Dictionary<string, string> placeholders, Func<string> tokenFactory)
 {
-    var regex = new Regex(@"<img\b(?<imgattrs>[^>]*)>", RegexOptions.IgnoreCase | RegexOptions.Singleline);
+    var regex = MyRegex9();
     return regex.Replace(text, m =>
     {
         var imgattrs = m.Groups["imgattrs"].Value;
@@ -127,7 +131,7 @@ static string ReplaceImgTagsWithPlaceholders(string text, Dictionary<string, str
 
 static string ConvertAnchorsToMarkdown(string text)
 {
-    var regex = new Regex(@"<a\b[^>]*?href\s*=\s*""(?<href>[^""]+)""[^>]*>(?<text>.*?)</a>", RegexOptions.IgnoreCase | RegexOptions.Singleline);
+    var regex = MyRegex10();
     return regex.Replace(text, m =>
     {
         var href = m.Groups["href"].Value.Trim();
@@ -139,12 +143,12 @@ static string ConvertAnchorsToMarkdown(string text)
 
 static string StripTags(string html)
 {
-    return Regex.Replace(html, "<.*?>", string.Empty, RegexOptions.Singleline).Replace("\r\n", " ").Replace("\n", " ").Trim();
+    return MyRegex11().Replace(html, string.Empty).Replace("\r\n", " ").Replace("\n", " ").Trim();
 }
 
 static string ConvertParagraphTags(string text)
 {
-    var regex = new Regex(@"<p\b[^>]*>(?<inner>.*?)</p>", RegexOptions.IgnoreCase | RegexOptions.Singleline);
+    var regex = MyRegex12();
     return regex.Replace(text, m =>
     {
         var inner = m.Groups["inner"].Value.Trim();
@@ -154,8 +158,8 @@ static string ConvertParagraphTags(string text)
 
 static string ConvertStrongAndEmphasis(string text)
 {
-    text = Regex.Replace(text, @"<(?:strong|b)\b[^>]*>(.*?)</(?:strong|b)>", "**$1**", RegexOptions.IgnoreCase | RegexOptions.Singleline);
-    text = Regex.Replace(text, @"<(?:em|i)\b[^>]*>(.*?)</(?:em|i)>", "*$1*", RegexOptions.IgnoreCase | RegexOptions.Singleline);
+    text = MyRegex().Replace(text, "**$1**");
+    text = MyRegex1().Replace(text, "*$1*");
     return text;
 }
 
@@ -203,17 +207,14 @@ static string ConvertHtmlHeadingsToMarkdown(string text)
                 stripped = stripped.Substring(1, stripped.Length - 2).Trim();
             else if (stripped.StartsWith("_") && stripped.EndsWith("_") && stripped.Length > 2)
                 stripped = stripped.Substring(1, stripped.Length - 2).Trim();
-
-            string replacement;
-            switch (level)
+            string replacement = level switch
             {
-                case 1: replacement = $"## {stripped}\n\n"; break;
-                case 2: replacement = $"### {stripped}\n\n"; break;
-                case 3: replacement = $"#### {stripped}\n\n"; break;
-                default: replacement = $"**{stripped}**\n\n"; break;
-            }
-
-            text = text.Substring(0, start) + replacement + text.Substring(end + closeTag.Length);
+                1 => $"## {stripped}\n\n",
+                2 => $"### {stripped}\n\n",
+                3 => $"#### {stripped}\n\n",
+                _ => $"**{stripped}**\n\n",
+            };
+            text = string.Concat(text.AsSpan(0, start), replacement, text.AsSpan(end + closeTag.Length));
             searchPos = start + replacement.Length;
         }
     }
@@ -223,6 +224,9 @@ static string ConvertHtmlHeadingsToMarkdown(string text)
 
 static string NormalizeFencedCodeBlocks(string text)
 {
+    // Normalize shorthand label 'cs' -> 'csharp' (preserve other explicit labels).
+    text = Regex.Replace(text, @"(?im)^```[ \t]*cs[ \t]*\r?\n", "```csharp\n");
+
     // Add language to unlabeled fenced code blocks where we can infer one.
     var pattern = new Regex(@"(?m)^```[ \t]*\r?\n(?<body>.*?)(?=\r?\n```)", RegexOptions.Singleline);
     return pattern.Replace(text, m =>
@@ -438,17 +442,27 @@ static string RemoveWordpressBlockComments(string text)
 static string InferLanguageFromCode(string body)
 {
     var sample = body.Length > 1000 ? body.Substring(0, 1000) : body;
-    if (Regex.IsMatch(sample, @"^\s*(PS |PS>|C:\\|C:\s*>)", RegexOptions.IgnoreCase | RegexOptions.Multiline) ||
-        Regex.IsMatch(sample, @"\b(msbuild|nuget|dotnet|git|devenv)\b", RegexOptions.IgnoreCase))
+    // Heuristics to infer language for unlabeled fenced code blocks.
+    // Prefer C# when nothing else matches (project is a C# focused repo and requirement)
+    if (MyRegex4().IsMatch(sample))
+        return "csharp";
+
+    // PowerShell / command-line heuristics
+    if (MyRegex2().IsMatch(sample) ||
+        MyRegex3().IsMatch(sample))
         return "cmd";
+
+    // XML/HTML-like content
     if (sample.Contains("<") && sample.Contains(">"))
         return "xml";
-    return "text";
+
+    // Default language when nothing matches: C# (per repository convention / user preference)
+    return "csharp";
 }
 
 static string FixTrailingWhitespaceAndNewline(string text)
 {
-    text = Regex.Replace(text, @"[ \t]+(\r?$)", "$1", RegexOptions.Multiline);
+    text = MyRegex5().Replace(text, "$1");
     text = text.TrimEnd('\r', '\n') + Environment.NewLine;
     return text;
 }
@@ -528,7 +542,7 @@ static string? CaptureAttribute(string? attrs, string name)
 static string RemoveUnwantedFrontmatterEntries(string text)
 {
     // We operate only inside the top frontmatter block (between --- and ---)
-    var fmMatch = Regex.Match(text, "^(---\r?\n.*?\r?\n---\r?\n)", RegexOptions.Singleline);
+    var fmMatch = MyRegex6().Match(text);
     if (!fmMatch.Success) return text;
 
     var fm = fmMatch.Groups[1].Value;
@@ -542,7 +556,85 @@ static string RemoveUnwantedFrontmatterEntries(string text)
     }
 
     // Collapse multiple blank lines inside frontmatter to a single blank line
-    fm = Regex.Replace(fm, "\r?\n{2,}", "\r\n");
+    fm = MyRegex7().Replace(fm, "\r\n");
 
     return fmMatch.Result(fm) + text.Substring(fmMatch.Length);
+}
+
+partial class Program
+{
+    [GeneratedRegex(@"<(?:strong|b)\b[^>]*>(.*?)</(?:strong|b)>", RegexOptions.IgnoreCase | RegexOptions.Singleline, "en-US")]
+    private static partial Regex MyRegex();
+}
+
+partial class Program
+{
+    [GeneratedRegex(@"<(?:em|i)\b[^>]*>(.*?)</(?:em|i)>", RegexOptions.IgnoreCase | RegexOptions.Singleline, "en-US")]
+    private static partial Regex MyRegex1();
+}
+
+partial class Program
+{
+    [GeneratedRegex(@"^\s*(PS |PS>|C:\\|C:\s*>)", RegexOptions.IgnoreCase | RegexOptions.Multiline, "en-US")]
+    private static partial Regex MyRegex2();
+}
+
+partial class Program
+{
+    [GeneratedRegex("\\b(msbuild|nuget|dotnet|git|devenv)\\b", RegexOptions.IgnoreCase, "en-US")]
+    private static partial Regex MyRegex3();
+}
+
+partial class Program
+{
+    [GeneratedRegex(@"\b(using|namespace|class|struct|interface|public|private|protected|internal|void|int|string|bool|decimal|Task<|async|await|Console\.Write|var)\b", RegexOptions.IgnoreCase, "en-US")]
+    private static partial Regex MyRegex4();
+}
+
+partial class Program
+{
+    [GeneratedRegex(@"[ \t]+(\r?$)", RegexOptions.Multiline)]
+    private static partial Regex MyRegex5();
+}
+
+partial class Program
+{
+    [GeneratedRegex("^(---\r?\n.*?\r?\n---\r?\n)", RegexOptions.Singleline)]
+    private static partial Regex MyRegex6();
+}
+
+partial class Program
+{
+    [GeneratedRegex("\r?\n{2,}")]
+    private static partial Regex MyRegex7();
+}
+
+partial class Program
+{
+    [GeneratedRegex(@"<a\b[^>]*?href\s*=\s*""(?<href>[^""]+)""[^>]*>\s*<img\b(?<imgattrs>[^>]*)>\s*</a>", RegexOptions.IgnoreCase | RegexOptions.Singleline, "en-US")]
+    private static partial Regex MyRegex8();
+}
+
+partial class Program
+{
+    [GeneratedRegex(@"<img\b(?<imgattrs>[^>]*)>", RegexOptions.IgnoreCase | RegexOptions.Singleline, "en-US")]
+    private static partial Regex MyRegex9();
+}
+
+partial class Program
+{
+    [GeneratedRegex(@"<a\b[^>]*?href\s*=\s*""(?<href>[^""]+)""[^>]*>(?<text>.*?)</a>", RegexOptions.IgnoreCase | RegexOptions.Singleline, "en-US")]
+    private static partial Regex MyRegex10();
+}
+
+partial class Program
+{
+    [GeneratedRegex("<.*?>", RegexOptions.Singleline)]
+    private static partial Regex MyRegex11();
+}
+
+partial class Program
+{
+    [GeneratedRegex(@"<p\b[^>]*>(?<inner>.*?)</p>", RegexOptions.IgnoreCase | RegexOptions.Singleline, "en-US")]
+    private static partial Regex MyRegex12();
 }

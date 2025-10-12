@@ -4,10 +4,6 @@ title: 'Fixing up Visual Studio&rsquo;s gitignore , using IFix'
 date: 2014-06-13T17:59:29+01:00
 author: terje
 layout: post
-guid: http://terje.wpengine.com/?p=156924
-permalink: /fixing-up-visual-studio-rsquo-s-gitignore-using-ifix/
-dsq_thread_id:
-  - "4354276919"
 categories:
   - Extensions
   - Git
@@ -37,9 +33,13 @@ packages/\*
 \*\*/packages/\*
 \*.nupkg
 # Enable "build/" folder in the NuGet Packages folder since
+
 # NuGet packages use it for MSBuild targets.
+
 # These two line needs to be after the ignore of the build folder
+
 # (and the packages folder if the lines above has been uncommented)
+
 !packages/build/
 !\*\*/packages/build/
 
@@ -51,7 +51,7 @@ The next thing you learn, for example by reading this blog post, is that the “
 
 So, you think, all is well, Visual Studio will use this file …..    
 
-**I am very sorry, it won’t**. ![Surprised smile](http://hermit.no/wp-content/uploads/2015/08/GWB-Windows-Live-Writer-Fixing-up-Visual-Studios-gitignore_14D3E-wlEmoticon-surprisedsmile_2.png) 
+**I am very sorry, it won’t**. ![Surprised smile](/images/2015/08/GWB-Windows-Live-Writer-Fixing-up-Visual-Studios-gitignore_14D3E-wlEmoticon-surprisedsmile_2.png)
 
 Visual Studio comes with a gitignore file that is baked into the release, and that is by this time “very old”.  The one at github is the latest. 
 
@@ -76,7 +76,7 @@ To run it in check mode – which will not change anything, just do a check:
 
 What it will do is to check if the gitignore file is present, and if it is, check if the packages folder has been excluded.  If you want to see those that are ok, add the --verbose command too.  The result may look like this:
 
-[![SNAGHTMLd9e57a9](http://hermit.no/wp-content/uploads/2015/08/GWB-Windows-Live-Writer-Fixing-up-Visual-Studios-gitignore_14D3E-SNAGHTMLd9e57a9_thumb.png "SNAGHTMLd9e57a9")](https://gwb.blob.core.windows.net/terje/Windows-Live-Writer/Fixing-up-Visual-Studios-gitignore_14D3E/SNAGHTMLd9e57a9.png)
+[![SNAGHTMLd9e57a9](/images/2015/08/GWB-Windows-Live-Writer-Fixing-up-Visual-Studios-gitignore_14D3E-SNAGHTMLd9e57a9_thumb.png "SNAGHTMLd9e57a9")](https://gwb.blob.core.windows.net/terje/Windows-Live-Writer/Fixing-up-Visual-Studios-gitignore_14D3E/SNAGHTMLd9e57a9.png)
 
 **Fixing missing packages**
 
@@ -84,13 +84,13 @@ Let us fix a single repo by adding the missing packages structure,  using
 
 **IFix gitignore --fix**
 
-[![image](http://hermit.no/wp-content/uploads/2015/08/GWB-Windows-Live-Writer-Fixing-up-Visual-Studios-gitignore_14D3E-image_thumb_1.png "image")](https://gwb.blob.core.windows.net/terje/Windows-Live-Writer/Fixing-up-Visual-Studios-gitignore_14D3E/image_4.png)
+[![image](/images/2015/08/GWB-Windows-Live-Writer-Fixing-up-Visual-Studios-gitignore_14D3E-image_thumb_1.png "image")](https://gwb.blob.core.windows.net/terje/Windows-Live-Writer/Fixing-up-Visual-Studios-gitignore_14D3E/image_4.png)
 
 We first check, then fix, then check again to verify that the gitignore is correct, and that the “packages/” part has been added.
 
 If we open up the .gitignore, we see that the block shown below has been added to the end of the .gitignore file.
 
-[![image](http://hermit.no/wp-content/uploads/2015/08/GWB-Windows-Live-Writer-Fixing-up-Visual-Studios-gitignore_14D3E-image_thumb_2.png "image")](https://gwb.blob.core.windows.net/terje/Windows-Live-Writer/Fixing-up-Visual-Studios-gitignore_14D3E/image_6.png)
+[![image](/images/2015/08/GWB-Windows-Live-Writer-Fixing-up-Visual-Studios-gitignore_14D3E-image_thumb_2.png "image")](https://gwb.blob.core.windows.net/terje/Windows-Live-Writer/Fixing-up-Visual-Studios-gitignore_14D3E/image_6.png)
 
 **Comparing and fixing with latest standard Visual Studio gitignore (from github)**
 
@@ -104,7 +104,7 @@ IFix gitignore --check –merge
 
 The result may come out like this  (sorry no colors, not got that far yet here):
 
-[![image](http://hermit.no/wp-content/uploads/2015/08/GWB-Windows-Live-Writer-Fixing-up-Visual-Studios-gitignore_14D3E-image_thumb.png "image")](https://gwb.blob.core.windows.net/terje/Windows-Live-Writer/Fixing-up-Visual-Studios-gitignore_14D3E/image_2.png)
+[![image](/images/2015/08/GWB-Windows-Live-Writer-Fixing-up-Visual-Studios-gitignore_14D3E-image_thumb.png "image")](https://gwb.blob.core.windows.net/terje/Windows-Live-Writer/Fixing-up-Visual-Studios-gitignore_14D3E/image_2.png)
 
 As you can see, one repo has the latest gitignore (test1), the others are missing either 57 or 150 lines. 
 
@@ -142,7 +142,7 @@ IFix gitignore --add
 
 will add it in, as in the complete example below, where we set up a new git repo and add in the latest standard gitignore:
 
-[![image](http://hermit.no/wp-content/uploads/2015/08/GWB-Windows-Live-Writer-Fixing-up-Visual-Studios-gitignore_14D3E-image_thumb_3.png "image")](https://gwb.blob.core.windows.net/terje/Windows-Live-Writer/Fixing-up-Visual-Studios-gitignore_14D3E/image_8.png)
+[![image](/images/2015/08/GWB-Windows-Live-Writer-Fixing-up-Visual-Studios-gitignore_14D3E-image_thumb_3.png "image")](https://gwb.blob.core.windows.net/terje/Windows-Live-Writer/Fixing-up-Visual-Studios-gitignore_14D3E/image_8.png)
 
 **Notes**
 

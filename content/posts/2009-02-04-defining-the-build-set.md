@@ -4,10 +4,6 @@ title: Defining the build set
 date: 2009-02-04T00:54:12+01:00
 author: terje
 layout: post
-guid: http://terje.wpengine.com/?p=129178
-permalink: /defining-the-build-set/
-dsq_thread_id:
-  - "5169459059"
 categories:
   - none
 ---
@@ -27,8 +23,8 @@ The scheduling of the different aspects may vary, depending on the total build t
 <table border="1" cellspacing="0" cellpadding="2" width="708">
     <tbody>
         <tr>
-            <td valign="top" width="279"><strong><font size="3">Aspect</font></strong></td>
-            <td valign="top" width="427"><strong>Scheduling options</strong></td>
+            <td valign="top" width="279">**<font size="3">Aspect</font>**</td>
+            <td valign="top" width="427">**Scheduling options**</td>
         </tr>
         <tr>
             <td valign="top" width="304">Developer</td>
@@ -56,10 +52,10 @@ The content of each build also has a certain dependency on the total build time.
 <table border="1" cellspacing="0" cellpadding="2" width="710">
     <tbody>
         <tr>
-            <td valign="top" width="305"><strong>Task</strong></td>
-            <td valign="top" width="135" align="center"><strong>Developer</strong></td>
-            <td valign="top" width="120" align="center"><strong>Quality </strong></td>
-            <td valign="top" width="148" align="center"><strong>Deployment</strong></td>
+            <td valign="top" width="305">**Task**</td>
+            <td valign="top" width="135" align="center">**Developer**</td>
+            <td valign="top" width="120" align="center">**Quality **</td>
+            <td valign="top" width="148" align="center">**Deployment**</td>
         </tr>
         <tr>
             <td valign="top" width="300">Gets and compiles the source</td>
@@ -143,7 +139,6 @@ A Release Repository is a specialized storage for public releases, often also te
 Deployment onto a test server can be implemented either through a push or a pull strategy. Which to choose depends on the security models in effect at your site.
 
 Generation of version numbers should include both the assemblyinfo.cs files, and the msi files.  It should also include both the total version number and the version name of the release.
-
 
 **The build set**
 

@@ -294,16 +294,77 @@ static string ConvertHtmlHeadingsToMarkdown(string text)
 static string NormalizeFencedCodeBlocks(string text)
 {
     // Normalize shorthand label 'cs' -> 'csharp' (preserve other explicit labels).
-    text = Regex.Replace(text, @"(?im)^```[ \t]*cs[ \t]*\r?\n", "```csharp\n");
+    text = Regex.Replace(text, @"(?im)^```[ \t]*cs[ \t]*$", "```csharp", RegexOptions.Multiline);
 
-    // Add language to unlabeled fenced code blocks where we can infer one.
-    var pattern = new Regex(@"(?m)^```[ \t]*\r?\n(?<body>.*?)(?=\r?\n```)", RegexOptions.Singleline);
-    return pattern.Replace(text, m =>
+    // Line-based pass: find opening fences without a label and add an inferred language.
+    var lines = Regex.Split(text, @"\r?\n");
+    var sb = new System.Text.StringBuilder();
+    int i = 0;
+    int totalFences = 0;
+    int unlabeled = 0;
+    while (i < lines.Length)
     {
-        var body = m.Groups["body"].Value;
-        var lang = InferLanguageFromCode(body);
-        return $"```{lang}\n{body}";
-    });
+        var line = lines[i];
+        var trimmed = line.Trim();
+
+        // detect an opening fence that has no label (just ``` or ``` with whitespace)
+        if (trimmed.StartsWith("```") && Regex.IsMatch(trimmed, @"^```\s*$"))
+        {
+            totalFences++;
+            // find matching closing fence
+            int j = i + 1;
+            var bodySb = new System.Text.StringBuilder();
+            bool foundClose = false;
+            while (j < lines.Length)
+            {
+                var l = lines[j];
+                int fencePos = l.IndexOf("```");
+                if (fencePos >= 0)
+                {
+                    // If there's code/text before the inline fence, include it
+                    var before = l.Substring(0, fencePos);
+                    if (!string.IsNullOrEmpty(before)) bodySb.AppendLine(before);
+                    foundClose = true;
+                    break;
+                }
+                bodySb.AppendLine(l);
+                j++;
+            }
+
+            var body = bodySb.ToString();
+            var lang = InferLanguageFromCode(body);
+            unlabeled++;
+
+            sb.AppendLine("```" + lang);
+            // append body lines as-is
+            if (!string.IsNullOrEmpty(body))
+            {
+                // body already ends with newline from AppendLine
+                sb.Append(body);
+            }
+
+            // if we found a closing fence, append it and advance
+            if (foundClose)
+            {
+                sb.AppendLine("```");
+                i = j + 1;
+                continue;
+            }
+            else
+            {
+                // no closing fence found: just append rest and break
+                i = j;
+                continue;
+            }
+        }
+
+        // otherwise copy the line
+        sb.AppendLine(line);
+        i++;
+    }
+
+    Console.WriteLine($"NormalizeFencedCodeBlocks: found fences={totalFences}, unlabeled={unlabeled}");
+    return sb.ToString().TrimEnd('\r', '\n') + Environment.NewLine;
 }
 
 static string FixClosingFencedCodeBlockEndings(string text)

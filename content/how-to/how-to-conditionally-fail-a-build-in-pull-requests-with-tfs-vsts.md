@@ -4,6 +4,8 @@ title: How to conditionally fail a build in Pull Requests with TFS/VSTS
 date: 2019-05-28T09:37:03+01:00
 author: terje
 layout: post
+---
+
 When you have a build that is used for CI also covering pull requests (PR), you often want to enable more checks before you let this go into the master (or any target) branch. It can be extra tests you want to run, or, you might want to block the PR if you have warnings, e.g. from tests.
 
 Setting a single test task to fail could be done, but that only works well if you have a single step, with multiple you can have build stops for one and every step, so it also reduces the error reporting granularity.

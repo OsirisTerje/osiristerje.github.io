@@ -17,19 +17,19 @@ In June we ran a free 2,5 hour seminar at Microsoft on the Team System 2010.  I
 
 ## Testing
 
-  - No-repro bug. Automatisk lagring av testscenarier for reprodusering av feil
+- No-repro bug. Automatisk lagring av testscenarier for reprodusering av feil
 - Testing av brukergrensesnitt - ende til ende fra test bruker med full lagring av alle hendelseer, klikk og reproduksjon i utviklingsmiljøet
 - Økt effektivitet og sporbarhet i testing
 
 ## Source control
 
-  - Sporing og visualisering av endringer i branch.
+- Sporing og visualisering av endringer i branch.
 - Annotated across merges
 - Rollback
 
 ## Project control
 
-  - Hierarchical work items
+- Hierarchical work items
 - New work item controls
 - Field comparison queries
 - Ad-hoc Excel reports
@@ -37,11 +37,11 @@ In June we ran a free 2,5 hour seminar at Microsoft on the Team System 2010.  I
 
 ## Architect Edition
 
-  - Mange nye designer-elementer for bl. Use case, component, logical class, class, sequence m. fl
+- Mange nye designer-elementer for bl. Use case, component, logical class, class, sequence m. fl
 
 ## Build &amp; release
 
-  - Byggkøer
+- Byggkøer
 - Gated checking
 - Automatisk installering
 

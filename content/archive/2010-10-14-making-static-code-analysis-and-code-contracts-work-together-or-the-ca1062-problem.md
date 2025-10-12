@@ -343,10 +343,6 @@ The MessageId parameter states which of the parameters is to be suppressed in ca
 
 This workaround is more reactive than Workaround 1 and 2, which are more proactive.  When would I choose what?
 
-<ul>
-  <li>Workaround 1: When I have legacy code, and just want to add contracts. </li>
-
-  <li>Workaround 2: New code, including new methods on old code, where I want the code to be safe before I do more. </li>
-
-  <li>Workaround 3: Legacy code, when adding SCA and contracts, and where no existing guards exist. </li>
-</ul>
+- Workaround 1: When I have legacy code, and just want to add contracts.
+- Workaround 2: New code, including new methods on old code, where I want the code to be safe before I do more.
+- Workaround 3: Legacy code, when adding SCA and contracts, and where no existing guards exist.

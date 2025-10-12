@@ -6,6 +6,7 @@ author: terje
 layout: post
 ---
 The Visual Studio Test Explorer user interface have been nearly the same since 2012, with only a few minor updates.  One thing that have annoyed a few people are how the test names are displayed.   The Test Explorer have got a bit of critique on this, but it is not that hardcoded.  It can be tweaked!   With [NUnit3](https://www.nuget.org/packages/NUnit/) and the [NUnit3TestAdapter](https://www.nuget.org/packages/NUnit3TestAdapter/) version 3.8 you can configure this naming yourself, which makes for some interesting possibilities.
+
 ### Problem
 
 The default naming scheme is that the test name is equal to the test method.  You can then group them based on project, outcome, duration, namespace and even class.  The class grouping is pretty nice, and is close to what we want to see, but you can’t combine this with the others.  With only a few tests this is ok, but when the number of tests goes up over the 100’s and even 1000’s it starts to became harder to locate what you want.
@@ -25,6 +26,7 @@ It will come out like this:
 [![image](/images/2017/08/image_thumb-1.png)](/images/2017/08/image-1.png)
 
 Just imagine 500 tests like this -  it is not easy to separate them.
+
 ### Solution
 
 Now, NUnit3 has a concept of Test Names, which can be configured, either individually, or globally.  It is done by adding a [Test Name Template Pattern](https://github.com/nunit/docs/wiki/Template-Based-Test-Naming) to the test.
@@ -52,6 +54,7 @@ and voila!  You have proper test naming for all your tests!
 Having a runsettings file present is a good thing anyway, because that is also used to control code coverage and a lot of other settings.   Using it to set the test name pattern just solves one more issue, and makes your developer life a little bit easier!
 
 &nbsp;
+
 ### Traps
 
 Now every rose has it's thorn, and in this case even if there is really no big disadvantages, there are just a couple of things you would expect to work, but which unfortunately doesn’t.

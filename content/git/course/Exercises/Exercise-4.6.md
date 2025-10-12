@@ -81,7 +81,7 @@ Look the command up, and note the purpose of the options
 
 Verify it fixes the untracked files.
 
-** NOTE **
+## NOTE
 
 When you have both modified files (in the index) and untracked, you need to use both commands.
 

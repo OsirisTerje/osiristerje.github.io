@@ -17,28 +17,26 @@ UPDATED March 24th 2016:   Test Data Retention is now added to TFS 2015 Update 
 
 <span style="color: #ff0000;">UPDATED Jan 9th 2012:</span> Added link to SQL 2008 R2 SP1 CU4 for ghost file fix
 
-**<span style="font-size: medium;">Background</span>**
+## <span style="font-size: medium;">Background</span>
 
 Recently there has been several reports on TFS databases growing too fast and growing too big.  Notable this has been observed when one has started to use more features of the Testing system.  Also, the TFS 2010 handles test results differently from TFS 2008, and this leads to more data stored in the TFS databases. As a consequence of this there has been released some tools to remove unneeded data in the database, and also some fixes to correct for bugs which has been found and corrected during this process.  Further some preventive practices and maintenance rules should be adopted.
 
 Scenarios that trigger this is:
-<ul>
-	<li>You have started to run manual tests, and includes video’s, images and collects a lot of data during the runs.</li>
-	<li>You have automated your test runs, and includes code coverage information. This adds all the binaries to the TFS too.</li>
-	<li>You are running a version of Visual studio 2010 that haven’t been updated (as detailed below), and thus manual testing and automated testing during build pushes up binary files.</li>
-</ul>
-**VS 2012 Improvements**
+- You have started to run manual tests, and includes video’s, images and collects a lot of data during the runs.
+- You have automated your test runs, and includes code coverage information. This adds all the binaries to the TFS too.
+- You are running a version of Visual studio 2010 that haven’t been updated (as detailed below), and thus manual testing and automated testing during build pushes up binary files.
+
+## VS 2012 Improvements
 
 In VS 2012 the following changes have been done to improve the situation:
-<ul>
-	<li>Deployment items are no longer being uploaded, even for code coverage there is no upload, as the way it works have changed.</li>
-	<li>System information files are now uploaded once per test run.  If your testrun consists of multiple test cases, like when you use a test suite as basis for a test run, you will now only get one system information file, whereas in 2010 you got one per test case regardless of how it was run. As they are identical, this was just waste.</li>
-	<li>All test attachments are now compressed and decompressed on the client side, reducing both space on server and download time.</li>
-	<li>A trx file consists of multiple small tr_ files.  In VS 2012 a single trx file is uploaded, which consist of all test case results for that test run.</li>
-</ul>
+- Deployment items are no longer being uploaded, even for code coverage there is no upload, as the way it works have changed.
+- System information files are now uploaded once per test run.  If your testrun consists of multiple test cases, like when you use a test suite as basis for a test run, you will now only get one system information file, whereas in 2010 you got one per test case regardless of how it was run. As they are identical, this was just waste.
+- All test attachments are now compressed and decompressed on the client side, reducing both space on server and download time.
+- A trx file consists of multiple small tr_ files.  In VS 2012 a single trx file is uploaded, which consist of all test case results for that test run.
+
 See [this blogpost](http://blogs.msdn.com/b/shyam1/archive/2012/03/15/test-attachments-size-reduction-features-in-visual-studio-11-beta.aspx) for detailed information about this.
 
-**Links**
+## Links
 
 A lot of people have blogged about this, among these are:
 
@@ -52,13 +50,13 @@ Ravi Shanker’s blog post here describes best practices on solving this (TBP)
 
 [Grant Holidays blogpost here](http://blogs.msdn.com/b/granth/archive/2011/02/12/tfs2010-test-attachment-cleaner-and-why-you-should-be-using-it.aspx) describes strategies to use the Test Attachment Cleaner both to detect space problems and how to rectify them.
 
-**What features can cause the problem:**
-<ul>
-	<li>Publishing of test results from builds</li>
-	<li>Publishing of manual test results and their attachments in particular</li>
-	<li>Publishing of deployment binaries for use during a test run</li>
-	<li>Bugs in SQL server preventing total cleanup of data</li>
-</ul>
+## What features can cause the problem:
+
+- Publishing of test results from builds
+- Publishing of manual test results and their attachments in particular
+- Publishing of deployment binaries for use during a test run
+- Bugs in SQL server preventing total cleanup of data
+
 All the published data above is published into the TFS database as attachments.
 
 The test results will include all data being collected during the run.  Some of this data can grow rather large, like IntelliTrace logs and video recordings.
@@ -71,13 +69,15 @@ The goal of this post is to give you a step-by-step process to get a smaller dat
 	<li>Find out if you have a database space issue</li>
 	<li>If you have the “problem”, clean up the database and otherwise keep it clean</li>
 </ol>
-**<span style="font-size: medium;">Step 1: Ensure your Visual Studio (MTM) and SQL Server for TFS is properly set up</span>**
+
+## <span style="font-size: medium;">Step 1: Ensure your Visual Studio (MTM) and SQL Server for TFS is properly set up</span>
 
 Even if you have got the problem or if have yet not got the problem, you should ensure the Visual Studio MTM and SQL server is set up so that the risk of getting into this problem is minimized. To ensure this you should install the following set of updates and components.  Note that the TFS Server itself does not affect this, but you should also keep that up to the latest upgrade.
 
 See my [blog post here for the latest extensions](http://geekswithblogs.net/terje/archive/2010/12/05/visual-studio-amp-tfs-ndash-list-of-addins-extensions-patches.aspx), updates and patches or [Grant Holidays excellent post here](http://blogs.msdn.com/b/granth/archive/2012/01/03/tfs-2010-what-service-packs-and-hotfixes-should-i-install.aspx) for further details.
 
-**Visual Studio updates:**
+## Visual Studio updates:
+
 <ol>
 	<li>Visual Studio 2010 SP1 CU2 or Visual Studio 2012 (any version from RTM to Update 2)
 <ol>
@@ -91,72 +91,59 @@ See my [blog post here for the latest extensions](http://geekswithblogs.net/terj
 </li>
 </ol>
 The default settings (for both 1 and 2 above) will be to not upload deployed binaries, which are used in automated test runs, given the following conditions:
-<ul>
-	<li>However, note that binaries will still be uploaded if:
-<ul>
-	<li>Code coverage is enabled in the test settings.</li>
-	<li>You change the **UploadDeploymentItem** to true in the testsettings file.
-<ul>
-	<li>This has to be done by editing the testsettings file as <u>an XML file,</u> this is not in the UI.  Change it in the element named Deployment.
-<pre> &lt;Deployment enabled="false" uploadDeploymentItems="false"  /&gt;</pre>
+- However, note that binaries will still be uploaded if:
+
+	Code coverage is enabled in the test settings.
+- You change the **UploadDeploymentItem** to true in the testsettings file.
+
+	This has to be done by editing the testsettings file as an XML file, this is not in the UI.  Change it in the element named Deployment.
+ &lt;Deployment enabled="false" uploadDeploymentItems="false"  /&gt;
+
 </li>
 </ul>
 </li>
 </ul>
-</li>
-</ul>
-<ul>
-<ul>
-	<li>Be aware that this might be reset back to true by another user which haven't installed this QFE, or is running a non-CU2 VS/MTM.</li>
-</ul>
+- Be aware that this might be reset back to true by another user which haven't installed this QFE, or is running a non-CU2 VS/MTM.
+
 	<li>The CU2 or hotfix should be installed to
-<ul>
-	<li>The build servers (the build agents)</li>
-	<li>The machine hosting the Test Controller</li>
-	<li>Local development computers (Visual Studio)</li>
-	<li>Local test computers (MTM)</li>
-</ul>
-<ul>
-<ul>
-	<li>It is not required to install it to the TFS Server, test agents or the build controller – it has no effect on these programs. The hotfix is named as a TFS Server hotfix, but further down in small letters it is stated it doesn’t apply to the server itself.</li>
-</ul>
+- The build servers (the build agents)
+- The machine hosting the Test Controller
+- Local development computers (Visual Studio)
+- Local test computers (MTM)
+
+- It is not required to install it to the TFS Server, test agents or the build controller – it has no effect on these programs. The hotfix is named as a TFS Server hotfix, but further down in small letters it is stated it doesn’t apply to the server itself.
+
 </ul>
 </li>
 </ul>
-**SQL Server updates:**
-<ul>
-	<li>If you use the SQL Server 2008 R2 SP1 you should also install [the CU 4](http://support.microsoft.com/kb/973602) (or later) (for pre-SP1 it is the [the CU 10](http://support.microsoft.com/kb/2591746) ). This CU fixes a [potential problem](http://support.microsoft.com/kb/2622823) of hanging “ghost” files. This seems to happen only in certain trigger situations, but to ensure it doesn’t bite you, it is better to make sure this CU is installed.
-<ul>
-	<li>There is no such CU for SQL Server 2008 pre-R2
-<ul>
-	<li>**Work around**: If you suspect hanging ghost files, they can – with some mental effort, be deduced from the ghost counters using the following SQL query:
-<table border="0" width="400" cellspacing="0" cellpadding="2">
-<tbody>
-<tr>
-<td valign="top" width="400">
-<pre class="csharpcode"><span class="kwrd">use</span> master
-<span class="kwrd">SELECT</span> DB_NAME(database_id) <span class="kwrd">as</span> <span class="str">'database'</span>,OBJECT_NAME(object_id) <span class="kwrd">as</span> <span class="str">'objectname'</span>,
+
+## SQL Server updates:
+
+- If you use the SQL Server 2008 R2 SP1 you should also install [the CU 4](http://support.microsoft.com/kb/973602) (or later) (for pre-SP1 it is the [the CU 10](http://support.microsoft.com/kb/2591746) ). This CU fixes a [potential problem](http://support.microsoft.com/kb/2622823) of hanging “ghost” files. This seems to happen only in certain trigger situations, but to ensure it doesn’t bite you, it is better to make sure this CU is installed.
+
+	There is no such CU for SQL Server 2008 pre-R2
+
+	**Work around**: If you suspect hanging ghost files, they can – with some mental effort, be deduced from the ghost counters using the following SQL query:
+
+use master
+SELECT DB_NAME(database_id) as 'database',OBJECT_NAME(object_id) as 'objectname',
 index_type_desc,ghost_record_count,version_ghost_record_count,record_count,avg_record_size_in_bytes
-<span class="kwrd">FROM</span> sys.dm_db_index_physical_stats (DB_ID(N<span class="str">'&lt;DatabaseName&gt;'</span>), OBJECT_ID(N<span class="str">'&lt;TableName&gt;'</span>), <span class="kwrd">NULL</span>, <span class="kwrd">NULL</span> , <span class="str">'DETAILED'</span>)</pre>
-</td>
-</tr>
-</tbody>
-</table>
-</li>
-	<li>The problem is a stalled ghost cleanup process. Restarting the SQL server after having stopped all components that depends on it, like the TFS Server and SPS services – that is all applications that connect to the SQL server. Then restart the SQL server, and finally start up all dependent processes again. (I would guess a complete server reboot would do the trick too.) After this the ghost cleanup process will run properly again.</li>
-</ul>
+FROM sys.dm_db_index_physical_stats (DB_ID(N'&lt;DatabaseName&gt;'), OBJECT_ID(N'&lt;TableName&gt;'), NULL, NULL , 'DETAILED')
+- The problem is a stalled ghost cleanup process. Restarting the SQL server after having stopped all components that depends on it, like the TFS Server and SPS services – that is all applications that connect to the SQL server. Then restart the SQL server, and finally start up all dependent processes again. (I would guess a complete server reboot would do the trick too.) After this the ghost cleanup process will run properly again.
+
 </li>
 	<li>The "hanging ghost file” issue came up after one have run the TAC, and deleted enormous amount of data. The SQL Server can get into this hanging state (without the QFE) in certain cases due to this.</li>
 </ul>
 </li>
 </ul>
-**TFS Attachment cleaner:**
-<ul>
-	<li>For Visual Studio 2010:  Install and set up the Test Attachment Cleaner (TAC) on your own computer. It works through the client API, so you can run it from any client computer.</li>
-	<li>For Visual Studio/TFS 2010 download [Test Attachment Cleaner command line power tool](http://visualstudiogallery.msdn.microsoft.com/3d37ce86-05f1-4165-957c-26aaa5ea1010) from here or download the [TFS Power Tools December 2011 for TFS 2010](http://visualstudiogallery.msdn.microsoft.com/c255a1e4-04ba-4f68-8f4e-cd473d6b971f). The TAC is included with this.</li>
-	<li>For Visual Studio/TFS 2012 download  the TFS Power tools.  The TAC is included with this. See [this post](http://geekswithblogs.net/terje/archive/2013/04/02/visual-studio-amp-tfs-2012-ndash-list-of-extensions-and.aspx) for information for the different versions.</li>
-</ul>
-**<span style="font-size: medium;">Step 2:  Analyze the data</span>**
+
+## TFS Attachment cleaner:
+
+- For Visual Studio 2010:  Install and set up the Test Attachment Cleaner (TAC) on your own computer. It works through the client API, so you can run it from any client computer.
+- For Visual Studio/TFS 2010 download [Test Attachment Cleaner command line power tool](http://visualstudiogallery.msdn.microsoft.com/3d37ce86-05f1-4165-957c-26aaa5ea1010) from here or download the [TFS Power Tools December 2011 for TFS 2010](http://visualstudiogallery.msdn.microsoft.com/c255a1e4-04ba-4f68-8f4e-cd473d6b971f). The TAC is included with this.
+- For Visual Studio/TFS 2012 download  the TFS Power tools.  The TAC is included with this. See [this post](http://geekswithblogs.net/terje/archive/2013/04/02/visual-studio-amp-tfs-2012-ndash-list-of-extensions-and.aspx) for information for the different versions.
+
+## <span style="font-size: medium;">Step 2:  Analyze the data</span>
 
 Are your database(s) growing ?  Are unused test results growing out of proportion?
 
@@ -164,7 +151,7 @@ To find out about this you need to query your TFS database for some of the infor
 
 If you don’t have too many databases you can use the SQL Server reports from within the Management Studio to analyze the database and table sizes. Or, you can use a set of queries. I find queries often faster to use because I can tweak them the way I want them.  But be aware that these queries are non-documented and non-supported and may change when the product team wants to change them.
 
-**Step 1.1: If you have multiple Project Collections, find out which might have problems:**
+## Step 1.1: If you have multiple Project Collections, find out which might have problems:
 
 Open a SQL Management Studio session onto the SQL Server where you have your TFS Databases.
 
@@ -187,7 +174,7 @@ Doing this on one of our SQL servers gives the following results:
 
 It is pretty easy to see on which collection to start the work ![Smile](/images/2015/08/GWB-Windows-Live-Writer-9d5d9927ea0a_143E6-wlEmoticon-smile_2.png)
 
-**Step 1.2: Find out which tables are possibly too large**
+## Step 1.2: Find out which tables are possibly too large
 
 Keep a special watch out for the Tfs_Attachment table.
 
@@ -199,7 +186,7 @@ In our case we got this result:
 
 From Grant’s blog we learnt that the tbl_Content is in the Version Control category, so the major only big issue we have here is the tbl_AttachmentContent.
 
-**Step 1.3: Find out which team projects have possibly too large attachments**
+## Step 1.3: Find out which team projects have possibly too large attachments
 
 In order to use the TAC to find and eventually delete attachment data we need to find out which team projects have these attachments. The team project is a required parameter to the TAC.
 
@@ -242,7 +229,7 @@ As can be seen here it is pretty obvious the “Byggtjeneste – Projects” are
 
 &nbsp;
 
-**Step 1.4: Check which attachment types take up the most space**
+## Step 1.4: Check which attachment types take up the most space
 
 It can be nice to know which attachment types takes up the space, so run the following query:
 <table border="0" width="400" cellspacing="0" cellpadding="2">
@@ -281,7 +268,7 @@ We then got this result for a TFS 2010 database:
 
 From this it is pretty obvious that the problem here is the binary files, as also mentioned in Anu’s blog.
 
-**Step 1.5: Check which file types, by their extension, takes up the most space**
+## Step 1.5: Check which file types, by their extension, takes up the most space
 
 Run the following query
 <table border="0" width="400" cellspacing="0" cellpadding="2">
@@ -316,24 +303,22 @@ This gives a result like this:
 
 Now you should have collected enough information to tell you what to do – if you got to do something, and some of the information you need in order to set up your TAC settings file, both for a cleanup and for scheduled maintenance later.
 
-**<span style="font-size: medium;">Step 3: Cleaning out the attachments</span>**
+## <span style="font-size: medium;">Step 3: Cleaning out the attachments</span>
 
 The TAC is run from the command line using a set of parameters and controlled by a settingsfile.  The parameters point out a server uri including the team project collection and also point at a specific team project. So in order to run this for multiple team projects regularly one has to set up a script to run the TAC multiple times, once for each team project.  When you install the TAC there is a very useful readme file in the same directory.
 
 There  are some guidelines about running the TAC from Ravi Shanker:
-<ul>
-	<li>“*When you run TAC, ensure that you are deleting small chunks of data at regular intervals (say run TAC every night at 3AM to delete data that is between age 730 to 731 days) – this will ensure that small amounts of data are being deleted and SQL ghosted record cleanup can catch up with the number of deletes performed. “*
-<ul>
-	<li>This rule minimizes the risk of the ghosted hang problem to occur, and further makes it easier for the SQL server ghosting process to work smoothly.</li>
-</ul>
+- “*When you run TAC, ensure that you are deleting small chunks of data at regular intervals (say run TAC every night at 3AM to delete data that is between age 730 to 731 days) – this will ensure that small amounts of data are being deleted and SQL ghosted record cleanup can catch up with the number of deletes performed. “*
+
+	This rule minimizes the risk of the ghosted hang problem to occur, and further makes it easier for the SQL server ghosting process to work smoothly.
+
 </li>
 	<li>*“Run DBCC SHRINKDB post the ghosted records are cleaned up to physically reclaim the space on the file system”*
-<ul>
-	<li>This is the last step in a 3 step process of removing SQL server data. First they are logically deleted. Then they are cleaned out by the ghosting process, and finally removed using the shrinkdb command.</li>
-</ul>
+- This is the last step in a 3 step process of removing SQL server data. First they are logically deleted. Then they are cleaned out by the ghosting process, and finally removed using the shrinkdb command.
+
 </li>
 </ul>
-<ul><!--EndFragment--></ul>
+
 When the deployment binaries are published to the TFS server, ALL items are published up from the deployment folder. That often means much more files than you would assume are necessary. This is a brute force technique. It works, but you need to take care when cleaning up.
 
 Grant has shown how their settings file looks in his blog post, removing all attachments older than 180 days , as long as there are no active workitems connected to them. This setting can be useful to clean out all items, both in a clean-up once operation, and in a general cleanup.
@@ -343,7 +328,8 @@ There are two scenarios we need to consider:
 	<li>Cleaning up an existing overgrown database</li>
 	<li>Maintaining a server to avoid an overgrown database using scheduled TAC</li>
 </ol>
-**3.1: Cleaning up a database which has grown too big due to these attachments.**
+
+## 3.1: Cleaning up a database which has grown too big due to these attachments.
 
 This job is a “Once” job.  We do this once and then move on to make sure it won’t happen again, by taking the actions in 2) below.  In this scenario you should only consider the large files. Your goal should be to simply reduce the size, and don’t bother about  the smaller stuff. That can be left a scheduled TAC cleanup ( 2 below).
 
@@ -387,7 +373,7 @@ If you want only to remove dll’s and pdb’s about that size, add an Extension
 </table>
 Before you start up your scheduled maintenance, you should clear out all older items.
 
-**3.2: Scheduled maintenance using the TAC**
+## 3.2: Scheduled maintenance using the TAC
 
 If you run a schedule every night, and remove old items, and also remove them in small batches.  It is important to run this often, like every night, in order to keep the number of deleted items low. That way the SQL ghost process works better.
 
@@ -443,7 +429,8 @@ A approach which could work better here is to do a two-step approach, use the sc
 </table>
 The readme document for the TAC says that it recognizes “internal” extensions, but it does recognize any extension.
 
-**To run the tool, use the following command:**
+## To run the tool, use the following command:
+
 <table border="0" width="400" cellspacing="0" cellpadding="2">
 <tbody>
 <tr>
@@ -453,7 +440,8 @@ The readme document for the TAC says that it recognizes “internal” extension
 </tr>
 </tbody>
 </table>
-**3.3: Shrinking the database**
+
+## 3.3: Shrinking the database
 
 You could run a shrink database command after the TAC has run in cases where there are a lot of data being deleted.  In this case you SHOULD do it, to free up all that space.  But, after the shrink operation you should do a “rebuild indexes”, since the shrink operation will leave the database in a very fragmented state, which will reduce performance. Note that you need to rebuild indexes, reorganizing is not enough.
 

@@ -20,13 +20,17 @@ categories:
 
   We hope the book fills the gap between the different online guide sites and the more advanced books that are out.
 
-  **Book Description**
+## Book Description
 
   Your quick start guide to TFS 2012, top features, and best practices with hands on examples
 
-  **     <br />Overview**
+## <br />Overview
 
-  <ul>   <li>Install TFS 2012 from scratch </li>    <li>Get up and running with your first project </li>    <li>Streamline release cycles for maximum productivity </li> </ul>  **     <br />In Detail**
+  - Install TFS 2012 from scratch
+- Get up and running with your first project
+- Streamline release cycles for maximum productivity
+
+## <br />In Detail
 
   Team Foundation Server 2012 is Microsoft's leading ALM tool, integrating source control, work item and process handling, build automation, and testing.
 
@@ -38,12 +42,20 @@ categories:
 
   Learn to set up build automation, allowing your team to become faster, more streamlined, and ultimately more productive with this    <br />"Team Foundation Server 2012 Starter Guide".
 
-  **     <br />What you will learn from this book**
+## <br />What you will learn from this book
 
-  <ul>   <li>Install TFS 2012 on premise </li>    <li>Access TFS Services in the cloud </li>    <li>Quickly get started with a new project with product backlogs, source control, and build automation </li>    <li>Work efficiently with source control using the top features </li>    <li>Understand how the tools for branching and merging in TFS 2012 help you isolate work and teams </li>    <li>Learn about the existing process templates, such as Visual Studio Scrum 2.0 </li>    <li>Manage your product and sprint backlogs using the Agile planning tools </li> </ul>  **     <br />Approach**
+  - Install TFS 2012 on premise
+- Access TFS Services in the cloud
+- Quickly get started with a new project with product backlogs, source control, and build automation
+- Work efficiently with source control using the top features
+- Understand how the tools for branching and merging in TFS 2012 help you isolate work and teams
+- Learn about the existing process templates, such as Visual Studio Scrum 2.0
+- Manage your product and sprint backlogs using the Agile planning tools
+
+## <br />Approach
 
   This Starter guide is a short, sharp introduction to Team Foundation Server 2012, covering everything you need to get up and running.
 
-  **     <br />Who this book is written for**
+## <br />Who this book is written for
 
   If you are a developer, project lead, tester, or IT administrator working with Team Foundation Server 2012 this guide will get you up to speed quickly    <br />and with minimal effort.

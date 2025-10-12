@@ -45,8 +45,12 @@ updated = RemoveWordpressBlockComments(updated);
 // 2.6) Convert WordPress list blocks <!-- wp:list {..} --> ... <!-- /wp:list --> to markdown lists
 updated = ConvertWpListBlocks(updated);
 
+// 2.7) Convert generic HTML unordered lists (<ul><li>...) to markdown bullets
+updated = ConvertHtmlUnorderedListsToMarkdown(updated);
+
 // 5.1) HTML headings -> Markdown headings/bold
 updated = ConvertHtmlHeadingsToMarkdown(updated);
+
 
 // 3) Convert simple anchors to markdown (won't touch placeholders)
 updated = ConvertAnchorsToMarkdown(updated);
@@ -54,8 +58,15 @@ updated = ConvertAnchorsToMarkdown(updated);
 // 4) Paragraphs
 updated = ConvertParagraphTags(updated);
 
+// 5.15) Ensure headers are surrounded by a single blank line
+updated = EnsureBlankLinesAroundHeaders(updated);
+
+
 // 5) strong / emphasis
 updated = ConvertStrongAndEmphasis(updated);
+
+// 5.05) Convert lines that are only bold text (hidden headers) into Markdown headers
+updated = ConvertBoldLinesToHeaders(updated);
 
 // 4.5) Convert WordPress <!-- wp:code --> ... <!-- /wp:code --> blocks to fenced code blocks
 updated = ConvertWpCodeBlocksToFenced(updated);
@@ -163,6 +174,64 @@ static string ConvertStrongAndEmphasis(string text)
     return text;
 }
 
+static string EnsureBlankLinesAroundHeaders(string text)
+{
+    if (string.IsNullOrEmpty(text)) return text;
+
+    var lines = Regex.Split(text, @"\r?\n");
+    var sb = new System.Text.StringBuilder();
+    bool inFence = false;
+
+    for (int i = 0; i < lines.Length; i++)
+    {
+        var line = lines[i];
+        var trimmed = line ?? string.Empty;
+
+        // Toggle fence state
+        if (trimmed.TrimStart().StartsWith("```"))
+        {
+            inFence = !inFence;
+            sb.AppendLine(line);
+            continue;
+        }
+
+        if (inFence)
+        {
+            sb.AppendLine(line);
+            continue;
+        }
+
+        // Detect ATX markdown headers (#) or bold alternative headers (**text**)
+        if (Regex.IsMatch(trimmed, @"^\s*#{1,6}\s") || Regex.IsMatch(trimmed, @"^\s*\*\*.*\*\*\s*$"))
+        {
+            // Ensure previous line is blank
+            if (sb.Length > 0)
+            {
+                var outSoFar = sb.ToString();
+                if (!outSoFar.EndsWith(Environment.NewLine + Environment.NewLine))
+                {
+                    // ensure exactly one blank line before
+                    sb.AppendLine();
+                }
+            }
+
+            sb.AppendLine(trimmed);
+
+            // Ensure next line is blank (lookahead)
+            if (i + 1 < lines.Length && !string.IsNullOrWhiteSpace(lines[i + 1]))
+            {
+                sb.AppendLine();
+            }
+
+            continue;
+        }
+
+        sb.AppendLine(line);
+    }
+
+    return sb.ToString();
+}
+
 static string ConvertHtmlHeadingsToMarkdown(string text)
 {
     // We'll scan for literal opening tags <h1 ...> to </h1> without using complex regex.
@@ -209,10 +278,10 @@ static string ConvertHtmlHeadingsToMarkdown(string text)
                 stripped = stripped.Substring(1, stripped.Length - 2).Trim();
             string replacement = level switch
             {
-                1 => $"## {stripped}\n\n",
-                2 => $"### {stripped}\n\n",
-                3 => $"#### {stripped}\n\n",
-                _ => $"**{stripped}**\n\n",
+                1 => $"\n\n## {stripped}\n\n",
+                2 => $"\n\n### {stripped}\n\n",
+                3 => $"\n\n#### {stripped}\n\n",
+                _ => $"\n\n**{stripped}**\n\n",
             };
             text = string.Concat(text.AsSpan(0, start), replacement, text.AsSpan(end + closeTag.Length));
             searchPos = start + replacement.Length;
@@ -271,34 +340,6 @@ static string FixClosingFencedCodeBlockEndings(string text)
     return sb.ToString();
 }
 
-static string EnsureLeadingSlashForImagePaths(string text)
-{
-    if (string.IsNullOrEmpty(text)) return text;
-
-    // Markdown links/images: ](images/...  and ![alt](images/...
-    text = Regex.Replace(text, @"\]\(\s*images[\\/]", "](/images/", RegexOptions.IgnoreCase);
-    text = Regex.Replace(text, @"!\[([^\]]*)\]\(\s*images[\\/]", "![$1](/images/", RegexOptions.IgnoreCase);
-
-    // HTML img src attributes with double or single quotes
-    text = Regex.Replace(text, @"src\s*=\s*""\s*images[\\/]", "src=\"/images/", RegexOptions.IgnoreCase);
-    text = Regex.Replace(text, @"src\s*=\s*'\s*images[\\/]", "src='/images/", RegexOptions.IgnoreCase);
-
-    return text;
-}
-
-static string FixHermitImageUrls(string text)
-{
-    // Convert absolute hermit.no upload URLs to local images/ path
-    // e.g. http://hermit.no/wp-content/uploads/2019/10/1.jpg -> images/2019/10/1.jpg
-    // Match either direct hermit.no URLs or proxy-prefixed like i2.wp.com/hermit.no
-    var rx = new Regex(@"https?://(?:i\d+\.wp\.com/)?hermit\.no/wp-content/uploads/(?<rest>\S+)", RegexOptions.IgnoreCase);
-    return rx.Replace(text, m =>
-    {
-        var rest = m.Groups["rest"].Value.TrimStart('/');
-        return "/images/" + rest;
-    });
-}
-
 static string ConvertWpCodeBlocksToFenced(string text)
 {
     // Match <!-- wp:code --> (optionally with JSON attributes) then any content, then <!-- /wp:code -->
@@ -331,6 +372,36 @@ static string ConvertWpCodeBlocksToFenced(string text)
             return $"```\n{body}\n```\n\n";
     });
 }
+
+static string EnsureLeadingSlashForImagePaths(string text)
+{
+    if (string.IsNullOrEmpty(text)) return text;
+
+    // Markdown links/images: ](images/...  and ![alt](images/...)
+    text = Regex.Replace(text, @"\]\(\s*images[\\/]", "](/images/", RegexOptions.IgnoreCase);
+    text = Regex.Replace(text, @"!\[([^\]]*)\]\(\s*images[\\/]", "![$1](/images/", RegexOptions.IgnoreCase);
+
+    // HTML img src attributes with double or single quotes
+    text = Regex.Replace(text, @"src\s*=\s*""\s*images[\\/]", "src=\"/images/", RegexOptions.IgnoreCase);
+    text = Regex.Replace(text, @"src\s*=\s*'\s*images[\\/]", "src='/images/", RegexOptions.IgnoreCase);
+
+    return text;
+}
+
+static string FixHermitImageUrls(string text)
+{
+    // Convert absolute hermit.no upload URLs to local images/ path
+    // e.g. http://hermit.no/wp-content/uploads/2019/10/1.jpg -> /images/2019/10/1.jpg
+    // Match either direct hermit.no URLs or proxy-prefixed like i2.wp.com/hermit.no
+    var rx = new Regex(@"https?://(?:i\d+\.wp\.com/)?hermit\.no/wp-content/uploads/(?<rest>\S+)", RegexOptions.IgnoreCase);
+    return rx.Replace(text, m =>
+    {
+        var rest = m.Groups["rest"].Value.TrimStart('/');
+        return "/images/" + rest;
+    });
+}
+
+
 
 static string ConvertWpImageBlocks(string text, Dictionary<string, string> placeholders, Func<string> tokenFactory)
 {
@@ -428,6 +499,96 @@ static string ConvertWpListBlocks(string text)
         sb.AppendLine();
         return sb.ToString();
     });
+}
+
+static string ConvertHtmlUnorderedListsToMarkdown(string text)
+{
+    // Convert simple <ul>...</ul> blocks to markdown bullets. This is conservative and
+    // does not attempt to fully handle nested lists with different levels.
+    var rx = new Regex(@"<ul\b[^>]*>(?<body>.*?)</ul>", RegexOptions.IgnoreCase | RegexOptions.Singleline);
+    return rx.Replace(text, m =>
+    {
+        var body = m.Groups["body"].Value;
+        var lis = Regex.Matches(body, "<li\\b[^>]*>(?<inner>.*?)</li>", RegexOptions.IgnoreCase | RegexOptions.Singleline);
+        if (lis.Count == 0) return string.Empty;
+
+        var sb = new System.Text.StringBuilder();
+        foreach (Match li in lis)
+        {
+            var inner = li.Groups["inner"].Value;
+            // Strip any inner tags, but preserve basic inline formatting
+            var cleaned = Regex.Replace(inner, "<\\/?p\\b[^>]*>", "", RegexOptions.IgnoreCase);
+            cleaned = Regex.Replace(cleaned, "<.*?>", "", RegexOptions.Singleline).Trim();
+            if (string.IsNullOrEmpty(cleaned)) continue;
+            sb.AppendLine($"- {cleaned}");
+        }
+
+        sb.AppendLine();
+        return sb.ToString();
+    });
+}
+
+static string ConvertBoldLinesToHeaders(string text)
+{
+    if (string.IsNullOrEmpty(text)) return text;
+
+    var lines = Regex.Split(text, @"\r?\n");
+    var sb = new System.Text.StringBuilder();
+    for (int i = 0; i < lines.Length; i++)
+    {
+        var line = lines[i];
+        var trimmed = line?.Trim() ?? string.Empty;
+
+        if (string.IsNullOrEmpty(trimmed))
+        {
+            sb.AppendLine(line);
+            continue;
+        }
+
+        // Match pure bold lines: **text** or <strong>text</strong> or <b>text</b>
+        var m1 = Regex.Match(trimmed, @"^\*\*(?<t>.+?)\*\*$");
+        var m2 = Regex.Match(trimmed, @"^<strong\b[^>]*>(?<t>.*?)</strong>$", RegexOptions.IgnoreCase);
+        var m3 = Regex.Match(trimmed, @"^<b\b[^>]*>(?<t>.*?)</b>$", RegexOptions.IgnoreCase);
+
+    string? inner = null;
+        if (m1.Success) inner = m1.Groups["t"].Value.Trim();
+        else if (m2.Success) inner = Regex.Replace(m2.Groups["t"].Value, "<.*?>", "").Trim();
+        else if (m3.Success) inner = Regex.Replace(m3.Groups["t"].Value, "<.*?>", "").Trim();
+
+        if (!string.IsNullOrEmpty(inner))
+        {
+            // Determine header level based on nearest previous header in output (level+1)
+            int targetLevel = 2; // default
+            var outSoFar = sb.ToString();
+            if (!string.IsNullOrEmpty(outSoFar))
+            {
+                // Find last non-blank line
+                var outLines = Regex.Split(outSoFar, @"\r?\n");
+                for (int j = outLines.Length - 1; j >= 0; j--)
+                {
+                    var ol = outLines[j]?.Trim();
+                    if (string.IsNullOrEmpty(ol)) continue;
+                    var hm = Regex.Match(ol, @"^(#+)\s+");
+                    if (hm.Success)
+                    {
+                        int prevLevel = hm.Groups[1].Value.Length;
+                        targetLevel = Math.Min(prevLevel + 1, 6);
+                    }
+                    break;
+                }
+            }
+
+            // Ensure blank line before
+            sb.AppendLine();
+            sb.AppendLine(new string('#', targetLevel) + " " + inner);
+            sb.AppendLine();
+            continue;
+        }
+
+        sb.AppendLine(line);
+    }
+
+    return sb.ToString();
 }
 
 static string RemoveWordpressBlockComments(string text)

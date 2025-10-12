@@ -20,7 +20,7 @@ The major change in the adapter for support of VS 2019, is that the adapter and 
 
 Now, this is no problem with respect to the NUnit dll's themselves, but the adapter is also using the [Mono.Cecil](https://www.nuget.org/packages/Mono.Cecil/) library, version 0.9.6.4, which is lagging behind the latest version, 0.10.4.  This will not create any issues if you're not using Mono.Cecil for anything else.   If you are, please raise an issue for it, or - seriously - convert to V3.
 
-**Links**
+## Links
 
 [Nuget adapter](https://www.nuget.org/packages/NUnitTestAdapter/2.2.0)
 

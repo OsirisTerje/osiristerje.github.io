@@ -18,7 +18,8 @@ Updated 8.Jul. 2014:  _This file now has the option 3 below, which works for gi
 
 _Also updated this post with a  simple decision table, see bottom of the post_.
 
-**Where does VS place the packages folder** 
+## Where does VS place the packages folder
+
 ============================================
 
 VS (with nuget) will by default create a packages directory at the **first project directory level**, which is one down referred to the gitignore file (given you say no solutiondirectory when you create the project/solution).  Any subsequent projects created will use the packages folder of the first created project.
@@ -29,7 +30,8 @@ In no case is the packages folder placed at the root level of the repo, where th
 
 Some developers however, prefer to have the packages folder at the root level, and simply “move” it there, by editing the Repository path in the nuget.config file, see the [docs](http://docs.nuget.org/docs/reference/nuget-config-settings), sot he pattern need to cover that too. 
 
-**What is to be excluded and re-included**
+## What is to be excluded and re-included
+
 ==========================================
 
 Normally you want to exclude everything in the packages folder, but there are two typical re-includes, MSBuild build files - those are placed in a subfolder named “build” under the packages folder (you might need this if you do native C++ packages, otherwise probably not), and a file named repositories.config.  The latter is normally regenerated, so you shouldn’t really need to store it in source control, but some developers prefer to do so.
@@ -40,7 +42,8 @@ To demonstrate how this works, I have set up a project with package folders at b
 
 1 and 2 are the packages folders.  3 is a nuget package we want to be excluded, 4 is some text files that we also want to be excluded, whereas the build folders and their content and the repositories.config files are to be included.
 
-**The different possible patterns for exclusion**
+## The different possible patterns for exclusion
+
 =================================================
 
 ### **Option 1:  The VS included gitignore**
@@ -48,6 +51,7 @@ To demonstrate how this works, I have set up a project with package folders at b
 The section looks like this:
 
 \# NuGet Packages Directory
+
 ## TODO: If you have NuGet Package Restore enabled, uncomment the next line
 
 #packages/
@@ -64,7 +68,7 @@ If we add a re-inclusion for the build folder, the result will be as shown below
 
 The packages folders are excluded, blue arrow, the build folders are reincluded, red arrow, and thus should appear, but they don’t. 
 
-**Conclusion:  This pattern only works if you don’t want to re-include anything.**
+## Conclusion:  This pattern only works if you don’t want to re-include anything.
 
 ### **Option 2: The current github gitignore file, using “packages/\*” as pattern**
 
@@ -73,6 +77,7 @@ The pattern looks like this, with re-includes:
 \# NuGet Packages
 packages/\*
 \*.nupkg
+
 ## TODO: If the tool you use requires repositories.config
 
 ## uncomment the next line
@@ -95,7 +100,7 @@ What happens now is this:
 
 The exclusion and re-includes are as shown by the blue arrows.  The root level package folder is fine, green arrow, the build folder stays, the repositories.config stays, and the text files we had there are excluded.  BUT – the sub level folder – red arrow – is not fine at all, the build folder is ignored (because there are an exclusion for build higher up in the gitignore file), the NUnit package lib are present, and should have been excluded.
 
-**Conclusion:  This pattern only works for top level package folders, which are not a default of Visual Studio.**
+## Conclusion:  This pattern only works for top level package folders, which are not a default of Visual Studio.
 
 ### **Option 3:  A pattern for subfolders that accept re-includes**
 
@@ -113,9 +118,9 @@ We add the \*\*/ to the three clauses, and we see that the sub folders are ok, g
 
 However, note that if you use Visual Studio with the default locations of the package folder, this pattern will work.
 
-**Conclusion:  This pattern only works for sub level package folders, but will not work on a top level folder, which a developer may choose to use.**
+## Conclusion:  This pattern only works for sub level package folders, but will not work on a top level folder, which a developer may choose to use.
 
-**This has been fixed in version 2.0.1 of Git, but the current Windows version – which are always lagging – is 1.9.4, which still has this error.**
+### This has been fixed in version 2.0.1 of Git, but the current Windows version – which are always lagging – is 1.9.4, which still has this error.
 
 ### Option 4: A combined pattern to cover both top level and subfolders
 
@@ -125,6 +130,7 @@ If we combine Option 2 and Option 3 we will cover all options here, the resultin
 \*\*/packages/\*
 packages/\*
 \*.nupkg
+
 ## TODO: If the tool you use requires repositories.config
 
 ## uncomment the next line
@@ -149,7 +155,7 @@ And the results are:
 
 All is green !
 
-**Conclusion:  This pattern works at any level of package folders, and works with re-includes at any level  but will not work on a top level folder.**
+## Conclusion:  This pattern works at any level of package folders, and works with re-includes at any level  but will not work on a top level folder.
 
 _Note 1:  The “\*\*/” syntax is new from version 1.8.2 of git._
 

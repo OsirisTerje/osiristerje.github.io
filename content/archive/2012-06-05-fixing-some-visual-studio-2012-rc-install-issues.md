@@ -21,7 +21,7 @@ categories:
 
   <font size="2"></font>
 
-  **<font size="2">1. The Team Explorer Build node fails</font>**
+## <font size="2">1. The Team Explorer Build node fails</font>
 
   <font size="2">When you try to access the Team Explorer Build node, you get a System.TypeLoadException error like this:</font>
 
@@ -39,13 +39,13 @@ categories:
 
   [![clip_image002](/images/2015/08/GWB-Windows-Live-Writer-Fixing-some-Visual-Studio-RC-install-iss_A826-clip_image002_thumb.jpg)](http://gwb.blob.core.windows.net/terje/Windows-Live-Writer/Fixing-some-Visual-Studio-RC-install-iss_A826/clip_image002_2.jpg)
 
-  **<font size="2">2. Accessing the Process node on Edit Build Definition fails</font>**
+## <font size="2">2. Accessing the Process node on Edit Build Definition fails</font>
 
   <font size="2">When you Edit a build definition and open the Process tab, it starts to load the custom assemblies (if you have any), then it stops before displaying the process parameters, with the messagebox : *Team Foundation Error: Method not found: ‘System.String Microsoft.TeamFoundation.Build.Workflow.ProcessParameterError.get_ParameterValue()’*</font>
 
   [![image](/images/2015/08/GWB-Windows-Live-Writer-Fixing-some-Visual-Studio-RC-install-iss_A826-image_thumb_2.png)](http://gwb.blob.core.windows.net/terje/Windows-Live-Writer/Fixing-some-Visual-Studio-RC-install-iss_A826/image_6.png)
 
-  **<font size="2"></font>**
+## <font size="2"></font>
 
   <font size="2">To solve this do as follows:</font>
 
@@ -53,13 +53,13 @@ categories:
 
   <font size="2">2. Run gacutil /if Microsoft.TeamFoundation.Build.Workflow.dll</font>
 
-  **<font size="2"></font>**
+## <font size="2"></font>
 
-  **<font size="2"></font>**
+### <font size="2"></font>
 
-  **<font size="2"></font>**
+#### <font size="2"></font>
 
-  **<font size="2">3. The SQL Editor gives loading error</font>**
+##### <font size="2">3. The SQL Editor gives loading error</font>
 
   <font size="2">When you start up VS 2012 RC you get a loading error message.  The same happens if you try to go from the menu to  SQL/Transact-SQL Editor/New Query.</font>
 

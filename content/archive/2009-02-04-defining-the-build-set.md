@@ -17,7 +17,7 @@ The aspects can be divided into three major parts:
     <li>**Deployment aspect**.  This type of build is also called Public builds or release builds.  They build a complete installable package, and would normally also deploy and install the package onto a test system. They have at least two different parts, or paths. One is to run it against a test system, the other is to create the public release package, which we often call Production.  It would normally be dependent upon a correct Build Quality. If a build has not been given a correct build quality it should not be possible to run a Deployment build.</li>
 </ol>
 
-**Scheduling**
+## Scheduling
 
 The scheduling of the different aspects may vary, depending on the total build time, but given a reasonable size, a set can be as outlined in this table:
 
@@ -46,7 +46,7 @@ The scheduling of the different aspects may vary, depending on the total build t
     </tbody>
 </table>
 
-**Content of builds**
+## Content of builds
 
 The content of each build also has a certain dependency on the total build time. When the build time increases one must cut off some of the functionality. The table below shows the different tasks to be done for each aspect, the tasks marked with (x) is typically cut-off tasks.
 
@@ -127,7 +127,7 @@ The content of each build also has a certain dependency on the total build time.
     </tbody>
 </table>
 
-**Notes about some of the tasks**
+## Notes about some of the tasks
 
 The Unit testing framework in Team System can be used for both class based unit tests, by which I mean testing of one class at a time, possibly using a mocking system to isolate the class from its dependencies, and for functional automatic testing.  The latter comes by many names, but it means testing of a set of functionality, in some cases including a database round-trip.  This type of testing is much more complex than ordinary class based testing, but is more alike to end-user testing, and thus easier for testing groups to specify.
 
@@ -141,6 +141,6 @@ Deployment onto a test server can be implemented either through a push or a pull
 
 Generation of version numbers should include both the assemblyinfo.cs files, and the msi files.  It should also include both the total version number and the version name of the release.
 
-**The build set**
+## The build set
 
 Each build in a build set has a set of tasks, settings and properties in common, among them the solution (or code) to build. The TFS 2008 has no concept of build sets.  Having a folder to group a set of builds would be a way to organize these things. That is on my wish list for 2010.  The use of templates in the new build system for the 2010 may be a way of solving the commonality problem. The best would however be for the TFS to include the build set as a recognizable term in the build system.

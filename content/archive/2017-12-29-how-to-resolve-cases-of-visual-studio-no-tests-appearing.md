@@ -19,6 +19,7 @@ Also note that for many of the steps below, you might need to restart Visual Stu
 [![](/images/2017/12/UT-1-1024x633.jpg)](/images/2017/12/UT-1.jpg) [![](/images/2017/12/UT-2-1024x625.jpg)](/images/2017/12/UT-2.jpg) [![](/images/2017/12/UT-3-1024x396.jpg)](/images/2017/12/UT-3.jpg)
 
 &nbsp;
+
 #### User setup issues:
 
 0)  First of all, you need to have an adapter installed.  Visual Studio only comes with the old MSTest 1 adapter installed.  If you want to have any other adapter, either for MSTest, NUnit or XUnit, you must install them.
@@ -65,6 +66,7 @@ Note 1:  Most of the issues come from using x64,  as the deafault is x86
 Note 2: Using a runsettings file can be smart, as that makes it easier to make it work on your CI server.   You can install [runsettings templates from here](https://marketplace.visualstudio.com/items?itemName=OsirisTerje.Runsettings-19151).
 
 &nbsp;
+
 #### Crash fixing
 
 All the above settings are user setup issues.   If you’re still having issues, something in your system is not working properly, and preventing you from seeing your tests.   If you have arrived here, and it still doesn’t work, there is **one** thing that you can try before you start diagnosing your system.

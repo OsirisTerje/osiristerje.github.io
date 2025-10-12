@@ -32,7 +32,8 @@ I'll outline these options below:
 
 ### Solution 1: Multiple build workspacemappings
 
-**Choose this if:**
+#### Choose this if:
+
 Your projects are small,
 common is small,
 your teams are small,
@@ -54,7 +55,8 @@ Simple to do
 
 ### Solution 2.  Source code branching: 
 
-**Choose this if:**
+#### Choose this if:
+
 Your projects are a bit larger,
 a separate team is or has been working with Common
 you need isolation between projects, meaning Project2 will not be bothered by requests from Project1 to change something in Common.
@@ -82,7 +84,8 @@ Possible changes to the branched source could make them non-mergeable at a later
 
 ### Solution 3:  Binary deployment branching:
 
-**Choose this if:**
+#### Choose this if:
+
 You have (a/many) large project(s)
 Your common framework is rather stable,
 Your common framework is used in many other projects, and you would not take the risk that someone at those projects made changes to the source that would make them non-mergeable at a later time.

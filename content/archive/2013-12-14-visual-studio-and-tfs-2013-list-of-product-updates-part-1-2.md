@@ -30,33 +30,33 @@ categories:
 
   <div class="earlierUpdatesToggle">[Past Updates](javascript:toggleUpdates('Earlier'))</div>  <div id="Earlier" class="earlierUpdatesToggle" style="display: none"><font size="2"><font color="#ff0000"><font color="#000000"><font color="#ff0000">Updated March 5th 2014:   [Visual Studio 2013 Update 2 CTP 2](http://www.microsoft.com/en-us/download/details.aspx?id=42023)</font>           <br /><font size="2"><font size="2"></font> </font></font></font></font> <font size="2"><font color="#ff0000"><font color="#000000"><font color="#ff0000">Updated Feb 8th 2014:   </font><font size="2">[Visual Studio 2031 Update 1](http://www.microsoft.com/en-us/download/details.aspx?id=41650),  <font size="2">[Visual Studio 2013 Update 2 CTP 1](http://www.microsoft.com/en-us/download/details.aspx?id=41699)</font> </font></font></font></font>     <br />    <br />    <table cellspacing="0" cellpadding="2" width="1105" border="0"><tbody>       <tr>         <td valign="top" width="164">**<font size="2">Product</font>**</td>          <td valign="top" width="546">**<font size="2">Notes</font>**</td>          <td valign="top" width="122">**<font size="2">Version number</font>**</td>          <td valign="top" width="122">**<font size="2">Date</font>**</td>          <td valign="top" width="149">**<font size="2">Applicable to</font>**</td>       </tr>        <tr>         <td valign="top" width="164">[Visual Studio 2013 Update 2 CTP 2](http://www.microsoft.com/en-us/download/details.aspx?id=42023)</td>          <td valign="top" width="546"><font size="2">See Info:  </font>[KB 2927432](http://support.microsoft.com/kb/2927432)<font size="2">, and </font>[Brian Harry’s blogpost](http://blogs.msdn.com/b/bharry/archive/2014/03/05/vs-tfs-2013-2-ctp-2-available.aspx)<font size="2">.</font> </td>          <td valign="top" width="122"><font size="2">12.0.30219.0</font></td>          <td valign="top" width="122"><font size="2">Feb 24th, 2014</font></td>          <td valign="top" width="149"><font size="2">Visual Studio &amp; TFS</font></td>       </tr>        <tr>         <td valign="top" width="164"><font size="2">[Visual Studio 2013 Update 2 CTP 1](http://www.microsoft.com/en-us/download/details.aspx?id=41699)</font></td>          <td valign="top" width="546"><font size="2">See info: [KB 2927432](http://support.microsoft.com/kb/2927432)</font></td>          <td valign="top" width="122"><font size="2">12.0.30129.0</font></td>          <td valign="top" width="122"><font size="2">Feb 5th, 2014</font></td>          <td valign="top" width="149"><font size="2">Visual Studio &amp; TFS</font></td>       </tr>        <tr>         <td valign="top" width="164"><u>[Visual Studio 2013 Update 1 RC](http://www.microsoft.com/en-us/download/details.aspx?id=41204)</u></td>          <td valign="top" width="546"><font size="2">See info :  </font><u>[Brian Harry’s blog](http://blogs.msdn.com/b/bharry/archive/2013/12/09/visual-studio-2013-1-rc-is-available.aspx)</u><font size="2">, and  </font><u>[KB 2911573](http://support.microsoft.com/kb/2911573/en-gb)</u><font size="2">   (Note 2)</font></td>          <td valign="top" width="122"><font size="2">12.0.21126.0</font></td>          <td valign="top" width="122"><font size="2">Dec 9th 2013</font></td>          <td valign="top" width="149"><font size="2">Visual Studio</font></td>       </tr>        <tr>         <td valign="top" width="164"><u>[Visual Studio Patch](http://download.microsoft.com/download/6/C/D/6CD8507E-E11A-46DC-AE13-663ECAB66E18/VS12-KB2898341.exe)</u></td>          <td valign="top" width="546"><font size="2">A patch for fixing the Queue Build dialog, see </font><u>[KB 2898341](http://support.microsoft.com/kb/2898341/en-gb)</u><font size="2"> and </font><u>[Buck Hodges post](http://blogs.msdn.com/b/buckh/archive/2013/11/13/patch-for-issue-with-visual-studio-2013-queue-build-dialog.aspx)</u><font size="2">.</font></td>          <td valign="top" width="122"><font size="2">12.0.21031 (Note 1) </font></td>          <td valign="top" width="122"><font size="2">Nov 13th 2013</font></td>          <td valign="top" width="149"><font size="2">Visual Studio</font></td>       </tr>     </tbody></table> </div>  **<font size="3"></font>**
 
-  **<font size="3"></font>**
+## <font size="3"></font>
 
-  **<font size="3">Note 1</font>**
+### <font size="3">Note 1</font>
 
-  **<font size="3"></font>**
+#### <font size="3"></font>
 
   <font size="2">The version number of Visual Studio is not changed when installing this patch.  The only place you see it is in the Installed Updates list</font>
 
   [![image](/images/2015/08/GWB-WindowsLiveWriter-VisualStudioandTFS2013ListofProductUpdat_E10D-image_thumb1.png)](https://gwb.blob.core.windows.net/terje/WindowsLiveWriter/VisualStudioandTFS2013ListofProductUpdat_E10D/image_2.png)
 
-  **<font size="3">Note 2</font>**
+## <font size="3">Note 2</font>
 
   <font size="2">The Update 1 RC doesn’t include the Queue Build patch.</font>
 
   <font size="2"></font>
 
-  **<font size="3">Note 3</font>**
+## <font size="3">Note 3</font>
 
   <font size="2">There was a rerelease of TFS 2013.  The first release had a bug which appeared in the Web UI, Code section, History.  If you get a red cross there, you got the first release.  You then need to reinstall. </font>
 
   <font size="2"></font>
 
-  **<font size="3"></font>**
+## <font size="3"></font>
 
-  **<font size="3"></font>**
+### <font size="3"></font>
 
-  **<font size="3">Unsure which version and update you have  ?</font>**
+#### <font size="3">Unsure which version and update you have  ?</font>
 
   <font size="2">**Visual Studio:**</font>
 
@@ -86,6 +86,6 @@ categories:
 
   <font size="2">If you are connected to the  Team Foundation Service you will not find any version number.  It is also always updated to the latest version.  You could check the [service status page](http://tfs.visualstudio.com/en-us/support/current-service-status/) to see if all is working, and to see what has been done at </font><font size="2">the </font>[updates and release notes listed here](http://tfs.visualstudio.com/news/)<font size="2">.</font>
 
-  **<font size="2">Thanks</font>**
+## <font size="2">Thanks</font>
 
   <font size="2">Thanks to [Adam Cogan](http://www.adamcogan.com) for valuable help in structuring these posts</font>

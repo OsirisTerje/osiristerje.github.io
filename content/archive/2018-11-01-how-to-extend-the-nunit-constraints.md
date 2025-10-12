@@ -48,6 +48,7 @@ public void TestAddCustom()
     var res = sut.Add(42d, 42d);
     Assert.That(res, Is.Approx(84d));
 }</pre>
+
 ### Adding new constraints
 
 There are two ways we can extend this, one is a rather generic way of doing it, which is a bit more code, the other matches the requirement we have above, and possibly many others, but with less code.

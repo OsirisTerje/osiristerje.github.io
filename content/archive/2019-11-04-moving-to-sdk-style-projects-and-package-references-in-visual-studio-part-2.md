@@ -139,7 +139,7 @@ Figure 19
 7. No import needed anymore, just delete
 8. We don't have anything MSTest here, all is NUnit, so delete these two also.
 
-**Sidenote on the test.sdk package**
+## Sidenote on the test.sdk package
 
 The test.sdk package contains only a few properties.  We removed the properties for test above (point 4 above), and as can be seen the props file contain a property IsTestProject = true, so by including that package we ensure we have the right default properties for a Test project
 
@@ -151,7 +151,7 @@ Figure 20
 
 Figure 21
 
-**End result after cleaning**
+## End result after cleaning
 
 When we have done the appropriate cleaning, the final SDK style project for the test project will look like Fig. 22 below.
 

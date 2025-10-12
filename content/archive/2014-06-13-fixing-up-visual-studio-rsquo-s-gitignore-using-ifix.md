@@ -32,6 +32,7 @@ To add those few lines is a no-brainer, you just include this:
 packages/\*
 \*\*/packages/\*
 \*.nupkg
+
 # Enable "build/" folder in the NuGet Packages folder since
 
 # NuGet packages use it for MSBuild targets.
@@ -72,17 +73,17 @@ If you run it from a directory, it will check and optionally fix all gitignores 
 
 To run it in check mode – which will not change anything, just do a check:
 
-**IFix  gitignore --check**
+## IFix  gitignore --check
 
 What it will do is to check if the gitignore file is present, and if it is, check if the packages folder has been excluded.  If you want to see those that are ok, add the --verbose command too.  The result may look like this:
 
 [![SNAGHTMLd9e57a9](/images/2015/08/GWB-Windows-Live-Writer-Fixing-up-Visual-Studios-gitignore_14D3E-SNAGHTMLd9e57a9_thumb.png "SNAGHTMLd9e57a9")](https://gwb.blob.core.windows.net/terje/Windows-Live-Writer/Fixing-up-Visual-Studios-gitignore_14D3E/SNAGHTMLd9e57a9.png)
 
-**Fixing missing packages**
+## Fixing missing packages
 
 Let us fix a single repo by adding the missing packages structure,  using
 
-**IFix gitignore --fix**
+## IFix gitignore --fix
 
 [![image](/images/2015/08/GWB-Windows-Live-Writer-Fixing-up-Visual-Studios-gitignore_14D3E-image_thumb_1.png "image")](https://gwb.blob.core.windows.net/terje/Windows-Live-Writer/Fixing-up-Visual-Studios-gitignore_14D3E/image_4.png)
 
@@ -92,7 +93,7 @@ If we open up the .gitignore, we see that the block shown below has been added t
 
 [![image](/images/2015/08/GWB-Windows-Live-Writer-Fixing-up-Visual-Studios-gitignore_14D3E-image_thumb_2.png "image")](https://gwb.blob.core.windows.net/terje/Windows-Live-Writer/Fixing-up-Visual-Studios-gitignore_14D3E/image_6.png)
 
-**Comparing and fixing with latest standard Visual Studio gitignore (from github)**
+## Comparing and fixing with latest standard Visual Studio gitignore (from github)
 
 Now, this tells you if you miss the nuget packages folder, but what about the latest gitignore from github ?
 
@@ -132,7 +133,7 @@ When you do a Fix Merge it will combine the local gitignore with the standard, a
 
 It may mean some things may be doubled up if they are spelled a bit differently.  You might also see some extra comments added, but they do no harm.
 
-**Init new repo with standard gitignore**
+## Init new repo with standard gitignore
 
 One cool thing is that with a new repo, or a repo that is missing its gitignore, you can grab the latest standard just by using either the Add or the Replace command, both will in effect do the same in this case.
 
@@ -144,6 +145,6 @@ will add it in, as in the complete example below, where we set up a new git repo
 
 [![image](/images/2015/08/GWB-Windows-Live-Writer-Fixing-up-Visual-Studios-gitignore_14D3E-image_thumb_3.png "image")](https://gwb.blob.core.windows.net/terje/Windows-Live-Writer/Fixing-up-Visual-Studios-gitignore_14D3E/image_8.png)
 
-**Notes**
+## Notes
 
 The project is open sourced at [github](https://github.com/osiristerje/IFix), and you can also report issues there.

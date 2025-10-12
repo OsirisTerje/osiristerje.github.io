@@ -9,7 +9,8 @@ categories:
   - Extensions
   - Visual Studio
 ---
-**Introduction**
+
+## Introduction
 
 Recently I have been involved in some projects to improve the software quality of their code base.  These code bases have been rather large, and in some cases consisting of both managed code, C# and C++, and Native code in C++. The reasons for improving the code base comes from a realization of the relationship between non-optimal coding practices and runtime incidents.  Runtime incidents can be anything from exceptions, out of memory conditions to functionality simply not working at all – some times with no apparent reason or messages appearing.
 

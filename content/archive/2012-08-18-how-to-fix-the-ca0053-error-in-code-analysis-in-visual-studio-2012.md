@@ -7,6 +7,7 @@ layout: post
 categories:
   - none
 ---
+
 ## Background
 
   You are opening a solution made in Visual Studio 2010 with VS 2012.  When you run Code Analysis you get a series of CA0053 errors, saying it is unable to load the rule sets from the Visual Studio 2010 directory!
@@ -45,7 +46,7 @@ categories:
 
   They should all be in two fields, named &lt;CodeAnalysisRuleDirectories&gt; and &lt;CodeAnalysisRuleSetDirectories&gt;.
 
-  **Alternative 1:  The very safe way**
+## Alternative 1:  The very safe way
 
   Replace the content to be as follows:
 
@@ -53,7 +54,7 @@ categories:
 
   &lt;CodeAnalysisRuleSetDirectories&gt;$(DevEnvDir)....Team ToolsStatic Analysis ToolsRule Sets&lt;/CodeAnalysisRuleSetDirectories&gt;
 
-  **Alternative 2: Which seems to work**
+## Alternative 2: Which seems to work
 
   Simply delete the fields completely.
 

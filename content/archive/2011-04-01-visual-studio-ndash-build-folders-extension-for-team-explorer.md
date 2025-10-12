@@ -21,13 +21,17 @@ We have just released a free extension for Visual Studio which adds a Builds Exp
 
   The extension have now had 300 downloads in 4 days!  We’ve got very useful feedback, and fixed the issues that came in.
 
-  <ul>   <li>It had problems loading more than 100 builds – now it handles 1000 without any sign of stress.  </li>    <li>Some people noted it had problems when the separator token also existed in the team project name, also fixed. </li>    <li>And some others noted that they couldn’t use a whitespace as a separator!  Something we hadn’t even considered! We fixed that too. </li> </ul>  To us this just shows how useful it is to get community feedback like this.  It is very effective and really appreciated!
+  - It had problems loading more than 100 builds – now it handles 1000 without any sign of stress.
+- Some people noted it had problems when the separator token also existed in the team project name, also fixed.
+- And some others noted that they couldn’t use a whitespace as a separator!  Something we hadn’t even considered! We fixed that too.
+
+  To us this just shows how useful it is to get community feedback like this.  It is very effective and really appreciated!
 
   If you want to contribute, post us a message at the codeplex site, and we will add you.  There are always possibilities for improvement.  We’ve added a couple of discussions to get some feedback on things that we have seen.
 
   The source has also been posted up there, feel free to use it and do your own stuff based on it.  If you do, we would appreciate a comment back ![Smile](/images/2015/08/GWB-Windows-Live-Writer-Visual-StudioBuild-Folders-extension-for_1391E-wlEmoticon-smile_2.png).  Also, if you see issues in the code, tell us, or change it!
 
-  **Blogs:**
+## Blogs:
 
   Nice blog on [Coding4Fun  Channel 9](http://channel9.msdn.com/coding4fun/blog/Long-list-of-Team-Builds-getting-you-down-Wish-you-could-put-them-in-folders-Dont-want-to-wait-for-a) by Greg Duncan
 

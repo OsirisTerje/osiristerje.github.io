@@ -93,7 +93,7 @@ You have used Git before, so you are familiar with the basic commands:
 
 You know how to create repositories on GitHub, and you know how to clone it down.
 
-**DO 1**
+## DO 1
 
 Create a remote repository **on your own GitHub account**, named **GitCourseNotes**.
 
@@ -121,7 +121,7 @@ Add your team members to the organisation.
 
 Create a Notes repository here, and all team members should clone this repository down.
 
-**DO 3**
+## DO 3
 
 Ensure you have dotnet core , and the .net core 3.1 SDK installed.
 
@@ -203,7 +203,7 @@ What folders and files are not included ?
 
 When sure:  Stage and commit the code/files you have.
 
-**DO 4**
+## DO 4
 
 On your own Github account, create a repo, but don't initialize it !!
 

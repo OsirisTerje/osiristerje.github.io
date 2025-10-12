@@ -7,10 +7,12 @@ layout: post
 categories:
   - Uncategorized
 ---
+
 ## Background
 
 With the introduction of .NET core some time back, Visual Studio got two different project systems. Along with this, we also got two different formats for a 'csproj' file.
 The new format have a better way of including packages, called PackageReference. This also made its way into the old style format, and greatly simplifies the csproj file with respect to including nuget packages.
+
 ## **Naming**
 
 These formats have not really had any proper naming, but over time the following names have appeared:
@@ -22,6 +24,7 @@ The old format:
 *Traditional *format should be the correct naming, but some also just say old-style or legacy format.
 
 The project systems are called 'csproj' for the Traditional format, and CPS (Common Project System) for the new SDK-Style format. The use of the name 'csproj' for the project system is a bit unfortunate. It gets easily mixed up with the project file extension itself. Both the new and the old system uses the same extension naming.
+
 ## **Why you should migrate**
 
 The new CPS is an improved system, so if you start on new projects, you should use this. It will work with most, but not all project types. This seems to improve all the time though, so over time it should replace the old one.
@@ -34,6 +37,7 @@ If you have multiple developers, and you use branching and merging, the risk of 
 
 This is a simple test project, and the arrows show where the name and the version of the NUnit package are stated. When this file is being merged with merge conflicts, it can be very easy to forget to choose the correct merge.
 And, these kinds of errors are not easily resolved by the project or package system, in most cases you need to edit the project file manually to fix.
+
 ## **How to migrate to package references**
 
 Now the new format does not support all the project types that the old format does, nor is all old package features supported. Otherwise we could just have converted the files and be gone with that.
@@ -62,9 +66,11 @@ And a look into the migrated csproj file show that we have got rid of a lot of "
 [![](/images/2019/03/5b.jpg)](/images/2019/03/5b.jpg)
 
 This looks much better, right ?
+
 ## **Detailed process and possible issues**
 
 The [detailed instructions for the migration](https://docs.microsoft.com/en-us/nuget/reference/migrate-packages-config-to-package-reference) gives you a complete picture of what is going on here. It also contains [information on possible things](https://docs.microsoft.com/en-us/nuget/reference/migrate-packages-config-to-package-reference#package-compatibility-issues) that may cause problems in a nuget package. One such thing is the use of install.ps1 scripts, which were common some years ago. If you have such packages and they are of your own making, then you should convert the install.ps1 to a target or props file instead . If the package comes from https://nuget.org then you should reach out to the author and ask for an update.
+
 ## **Summary**
 
 Converting to use package references is a good first step to move your whole project over to the new SDK-Style format. I strongly advise you to take this step first, so that you can mitigate any issues that might arise here first.

@@ -11,6 +11,7 @@ categories:
 tags:
   - WrapThat.System
 ---
+
 ### Introduction
 
  You have all seen it, you have all done it: Written code using the static methods from the System.IO namespace for handling directories and files.&nbsp;&nbsp; Or, you are maintaining legacy code where that usage is common in certain places.&nbsp; And now the code is huge,&nbsp; you have no unit tests, because unit testing classes that directly access the file system is just pain,&nbsp; and the cost of a rewrite is too big.

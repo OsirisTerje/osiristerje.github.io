@@ -50,7 +50,7 @@ What happened was that the earlier commit is still there (1), but a new commit w
 
 So Amend Previous Commit is a perfect way to add files you have forgotten in an earlier commit. However, be aware of two things here:
 
-**TRAPS**
+## TRAPS
 
 1)   You can ONLY amend the last commit you did.
 
@@ -60,7 +60,7 @@ This second trap is an important principle.  As long as you work within your lo
 
 &nbsp;
 
-**TRICK:   Keep a comment or change it **
+## TRICK:   Keep a comment or change it
 
 Sometimes is it ok to add or change files and at the same time change the comment, but often one want to do only one of these.   If one has written a long comment, and have just forgotten to add a file, it is annoying to write that comment again.   Here is a little trick that fixes that:
 
@@ -72,7 +72,7 @@ This time just don’t write anything in the comment field, ignore it saying “
 
 [![image_thumb11](/images/2016/06/image_thumb11_thumb.png)](/images/2016/06/image_thumb11.png)
 
-**Changing comment only **
+## Changing comment only
 
 Other times it is not new files one need to add, but the comment that needs to be changed.   This is also doable, and can be changed using Commit Amend,  but in this case you must do it starting from the History view (1 in image below) . In the Commit Details  pane, you can change the comments (2) and then the Amend Message (3) lights up.
 
@@ -84,7 +84,7 @@ If you refresh the history view (1 below), you will see that the comment (2) has
 
 Notice that this also resulted in a new commit (see the changed SHA-key).
 
-**Usages**
+## Usages
 
 Amend Commit is of course nice to have when you need to change something,  and very often it is the comment that needs to be changed.  One thing one often forget is to add the related work item.  One easy way to do this is to Amend the message, adding the work item number as  #12345 (#work item number), to the comment, and TFS will automatically connect the commit and the work item.
 

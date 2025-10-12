@@ -38,7 +38,7 @@ Notice HEAD!
 
 ### Note:  What  is HEAD
 
-**HEAD is a special kind of pointer, indicating WHERE YOU ARE with respect to your workspace**
+#### HEAD is a special kind of pointer, indicating WHERE YOU ARE with respect to your workspace
 
 Head points to WHERE you are, by pointing to the commit that is the latest you pull'ed down to your workspace.
 
@@ -127,6 +127,7 @@ Now check in GitViz how the branch and tag behaved.
 Explain why tags are a good way of marking releases.
 
 -------
+
 #### Extra: Tip or trap
 
 See https://stackoverflow.com/questions/8762601/how-do-i-rename-my-git-master-branch-to-release

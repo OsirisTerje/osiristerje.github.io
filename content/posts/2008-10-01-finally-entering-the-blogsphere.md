@@ -10,7 +10,7 @@ categories:
 
 I'm just soooo slow.  I must be the last geek to get a blog up and running. Anyway, being last is better than never.
 
-**Where to find me:**
+## Where to find me:
 
 I'm often found at the Microsoft forums, [Forums.Microsoft.com/MSDN](http://forums.microsoft.com/MSDN/default.aspx?siteid=1) mostly under Visual Studio Team System, but occasionally also under any of the more programming forums, like Winform, WPF, ASP.Net., C# or SQL.  My nickname there is [OsirisTerje](http://social.msdn.microsoft.com/en-US/Profile/?user=OsirisTerje).
 

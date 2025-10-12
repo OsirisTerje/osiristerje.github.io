@@ -92,7 +92,8 @@ The reason for having this in a seperate branch is that we need to do a few chan
 The files we need to change is the **build.cake** file, and then either the NUnit3TestExecutor.cs - if you want to debug test execution - or NUnit3TestDiscoverer.cs
 
 In the build.cake file, go to Line 16, and add a useful modifer - it will be the preview version for the package, so something like '-d01' would go fine.
-**Ensure you have the dash there!**
+
+## Ensure you have the dash there!
 
 If you do changes in the adapter code, you can just increment this number, for each one.
 

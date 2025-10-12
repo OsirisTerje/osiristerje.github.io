@@ -13,7 +13,7 @@ The 1.0.1 version of the Build Folder Extension is now out and can be downloaded
 
   ****
 
-  **Context menu**
+## Context menu
 
   The context menu has been extended with the following commands, shown below:
 
@@ -29,9 +29,9 @@ The 1.0.1 version of the Build Folder Extension is now out and can be downloaded
 
   Goto Team Explorer Build Node:  Some functionality is still in the original build tree.  Use this to go directly to that node from the node in the Inmeta Build Folders.
 
-  ******************
+## **************
 
-  **Change in 1.0.1 regarding build folders named equal to a build.**
+### Change in 1.0.1 regarding build folders named equal to a build.
 
   In some cases one defines builds which has the same name as a folder, like the picture below shows:
 
@@ -39,9 +39,9 @@ The 1.0.1 version of the Build Folder Extension is now out and can be downloaded
 
   In those cases we add a “fake” node, named just ‘$’ to represent this build definition.  This also makes it easier to see these specially named build definitions.  In the earlier versions (pre 1.0) builds named like this was “lost”.
 
-  **************
+## **********
 
-  **Other**
+### Other
 
   Disabled builds are shown properly with the correct icon.
 
@@ -49,7 +49,7 @@ The 1.0.1 version of the Build Folder Extension is now out and can be downloaded
 
   ****
 
-  **Credentials problem**
+## Credentials problem
 
   The pre 1.0 version assumed that you were logged in to the domain, or had the credentials in the credentials manager.  The extension threw a TF30063 error if it could not authenticate properly.   This has been changed so that it pops up the login dialog.
 

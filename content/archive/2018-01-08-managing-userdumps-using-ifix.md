@@ -18,21 +18,22 @@ To learn more about it, read e.g.  [Analyzing a User-Mode Dump File with WinDbg
 User dumps have to be enabled and disabled using the registry, and a registry script is handy to do that.  I have posted the details on that [here](http://hermit.no/enabledisable-user-dumps/), including links to reg script files.
 
 However, it is much easier to do that using a tool, so I added it to [IFix](http://visualstudiogallery.msdn.microsoft.com/b8ba97b0-bb89-4c21-a1e2-53ef335fd9cb).   Download IFix to get both this and a lot of other sweet commands.
+
 ### Enabling/disabling  user dumps
 
-**Ifix diagnostics –d 1 -f**
+#### Ifix diagnostics –d 1 -f
 
 [![image](/images/2018/01/image_thumb.png)](/images/2018/01/image.png)
 
-**Disabling user dumps:**
+## Disabling user dumps:
 
-**Ifix diagnostics –d 0 -f**
+### Ifix diagnostics –d 0 -f
 
 [![image](/images/2018/01/image_thumb-1.png)](/images/2018/01/image-1.png)
 
-**Check the current settings:**
+## Check the current settings:
 
-**Ifix diagnostics –d 0 –c**
+### Ifix diagnostics –d 0 –c
 
 [![image](/images/2018/01/image_thumb-2.png)](/images/2018/01/image-2.png)
 
@@ -43,6 +44,7 @@ Ifix diagnostics –D C:\userdumps  -f
 [![image](/images/2018/01/image_thumb-3.png)](/images/2018/01/image-3.png)
 
 &nbsp;
+
 ### Dump files
 
 The user dumps can be mini dumps or full dumps (see [here for the difference](https://stackoverflow.com/questions/6903329/minidump-vs-fulldump)) , so they might be later large, and you might eat up your disk pretty fast.  A Visual Studio crash will give you a dump file in the order of 0.5 GB.   Smaller apps give you much smaller dumps of course.   So you should make it a habit of turning off the user dumps after you have done your diagnostics.
@@ -54,6 +56,7 @@ Now, looking at what I have collected over a couple of days:
 I have a couple of IFix dumps, which bugs I am pretty sure I managed to fix.  I have a couple of explorer crashes, interesting in itself – but I think I know how I provoked those, and then some weird crashes I really have no clue why happened.  That is of course interesting, and should be target for an upcoming investigation.
 
 If your machine is having random crashes, or is behaving strange, you can turn userdumps on for a while and see what it picks up.
+
 ### Looking inside a user dump file
 
 When you have a userdump file, you can open it directly in Visual Studio, either by loading it in, just by drag/dropping the file directly into Visual Studio:
@@ -79,6 +82,7 @@ And I now has as much information as I need, I might not even need the symbols/s
 However, if you have the source code, and want to drill down using that, you can add that to the debugger, see [this for all information on that](https://docs.microsoft.com/en-us/visualstudio/debugger/specify-symbol-dot-pdb-and-source-files-in-the-visual-studio-debugger).  One thing to be aware of is that you must have a 100% match between the code that crashes and the source/symbols that are to be loaded.  If you don’t have that, it will not accept the symbols.
 
 The easy way is to load the dump into Visual  Studio with your project open.  It should preferably be in debug mode, or you should enable full debug symbols with your release code.   But then, if you have the source, you could also just run it directly from your debugger, which is far simpler anyway.
+
 #### Tips
 
 1) If you want to enable/disable dumps for Windows itself, see this [post](http://blog.nirsoft.net/2010/07/27/how-to-configure-windows-to-create-minidump-files-on-bsod/).

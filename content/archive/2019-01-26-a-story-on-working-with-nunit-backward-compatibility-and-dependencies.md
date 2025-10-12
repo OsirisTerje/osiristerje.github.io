@@ -16,7 +16,7 @@ However, over time it has become harder and harder to verify the compatibility. 
 
 We could automate all the tests using a set of virtual machines and script up some test procedures to handle installs and process. Let us try to do it manually first.  What can possibly go wrong ?
 
-**Testing the extension**
+## Testing the extension
 
 When we were working on the 3.13 release, I added a [Pull Request](https://github.com/nunit/nunit3-vs-adapter/pull/591) with some changes to ensure the VSIX version of the adapter would work with the upcoming Visual Studio 2019. [Rob](https://github.com/rprouse)noticed that we had something in there that might affect earlier versions (and also found some automated updates that was wrong, so much fun with those things).  I then accessed a machine with VS 2013 to check out the VSIX version there.  Should be a 3 minute job, right?
 
@@ -56,7 +56,7 @@ After we do this update we can install the NUnit package as expected,  the tests
 
 Now.... wonder if it works on VS 2012....  VS 2015....,  Next update of VS2013....   Do I want to test that too?  Anyone volunteering ?
 
-**Dependencies and dependency management**
+## Dependencies and dependency management
 
 In the title I have also said "dependencies", and this is a case for some thinking about dependencies.  One often think about dependencies as references between components (dlls), but dependencies comes in many different forms.
 
@@ -73,7 +73,7 @@ Just to give you a feeling of the total complexity, you can think about how many
 
 In the same way, attempts to do "dependency management" will also likely be a waste of efforts here, there are too many variations to handle.
 
-**Conclusion**
+## Conclusion
 
 This is not an uncommon situation.  You go out to check for something simple, like the NUnit3TestAdapter, and just setting up a simple test project with NUnit - and it fails adding that simple package!  It fails before you can even start testing. On something that should just have worked. And in addition on something that is unrelated to the testing of the adapter itself.
 Now, I could have gone back a few versions of NUnit, since .net standard was added at some time. Obviously the NuGet Extension in Visual Studio cares about the content of that package.  Even if that content is not going to be used in the project, it causes it to fail.  Will this ever be fixed?   Seriously doubt it, we are 3-4 major versions back.

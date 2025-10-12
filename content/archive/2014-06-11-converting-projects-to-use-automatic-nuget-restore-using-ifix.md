@@ -27,7 +27,7 @@ So to fix this use the tool named IFix,  - all free of course, and the code is 
 IFix information
 ================
 
-**[DOWNLOAD HERE](http://visualstudiogallery.msdn.microsoft.com/b8ba97b0-bb89-4c21-a1e2-53ef335fd9cb)**
+## [DOWNLOAD HERE](http://visualstudiogallery.msdn.microsoft.com/b8ba97b0-bb89-4c21-a1e2-53ef335fd9cb)
 
 This command line tool installs using an MSI, and add itself to the system path. 
 
@@ -37,7 +37,7 @@ The IFix program can be run either in a  check mode, where it does not write an
 
 The IFix program is used like this:
 
-**IFix <command> \[-c/--check\] \[-f/--fix\]  \[-v/--verbose\]**
+## IFix <command> \[-c/--check\] \[-f/--fix\]  \[-v/--verbose\]
 
 The command in this case is “nugetrestore”. 
 
@@ -47,17 +47,17 @@ So  “IFix nugetrestore  --check” , will do the check ,  and “IFix nuget
 
 (Note that --check  can be replaced with only –c, and --fix with –f, and so on. )
 
-**BEWARE: When you run the fix option, all solutions to be affected must be closed in Visual Studio !**
+## BEWARE: When you run the fix option, all solutions to be affected must be closed in Visual Studio !
 
-**So, if you just want to DO it, then:**
+### So, if you just want to DO it, then:
 
-**IFix nugetrestore --check**
+#### IFix nugetrestore --check
 
 to see if you have issues
 
 then
 
-**IFix nugetrestore  --fix**
+## IFix nugetrestore  --fix
 
 to fix them.
 
@@ -82,7 +82,7 @@ So, better be prepared to run the IFix check from time to time.
 
 Or, even better, install IFix on your build servers, and add a call to IFix nugetrestore --check in the TFS Build script. 
 
-**How does it look**
+## How does it look
 
 As a first example I have run the IFix program from the top of a set of git repositories, so it spans multiple repositories with multiple solutions.
 

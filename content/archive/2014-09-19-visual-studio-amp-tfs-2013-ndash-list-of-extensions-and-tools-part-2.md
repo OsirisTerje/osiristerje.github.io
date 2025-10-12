@@ -41,7 +41,8 @@ categories:
 
 &nbsp;
 
-**<span style="font-size: medium;">Extensions ready for VS 2013, both upgrades and new ones </span>**
+## <span style="font-size: medium;">Extensions ready for VS 2013, both upgrades and new ones </span>
+
 <table border="0" width="1234" cellspacing="0" cellpadding="2">
 <tbody>
 <tr>
@@ -94,6 +95,7 @@ categories:
 </tr>
 <tr>
 <td valign="top" width="191">
+
 #### Unit Test Generator1
 
 </td>
@@ -274,7 +276,8 @@ See new [blog here](http://blogs.msdn.com/b/francesco/)</span></td>
 
 &nbsp;
 
-**<span style="font-size: medium;">Tools (outside Visual Studio)</span>**
+## <span style="font-size: medium;">Tools (outside Visual Studio)</span>
+
 <table border="0" width="1252" cellspacing="0" cellpadding="2">
 <tbody>
 <tr>
@@ -343,7 +346,7 @@ Version 2.2 works on 2013 but requires the [2012 Object model](http://visualstud
 
 &nbsp;
 
-**<span style="font-size: medium;">Extensions we wait for, not yet in a VS 2013 version</span>**
+## <span style="font-size: medium;">Extensions we wait for, not yet in a VS 2013 version</span>
 
 &nbsp;
 <table border="0" width="1234" cellspacing="0" cellpadding="2">

@@ -11,19 +11,39 @@ In June we ran a free 2,5 hour seminar at Microsoft on the Team System 2010.  I
 
   The agenda, which is more like a summary of the stuff we go through during the case study, is as follows (in Norwegian) :
 
-  **Introduksjon**
+## Introduksjon
 
-  <ul>   <li>Introduksjon til ny funksjonalitet for arkitekter, utviklere, testere og prosjektledere</li> </ul>  **Testing**
+  - Introduksjon til ny funksjonalitet for arkitekter, utviklere, testere og prosjektledere
 
-  <ul>   <li>No-repro bug. Automatisk lagring av testscenarier for reprodusering av feil</li>    <li>Testing av brukergrensesnitt - ende til ende fra test bruker med full lagring av alle hendelseer, klikk og reproduksjon i utviklingsmiljøet</li>    <li>Økt effektivitet og sporbarhet i testing</li> </ul>  **Source control**
+## Testing
 
-  <ul>   <li>Sporing og visualisering av endringer i branch.</li>    <li>Annotated across merges</li>    <li>Rollback</li> </ul>  **Project control**
+  - No-repro bug. Automatisk lagring av testscenarier for reprodusering av feil
+- Testing av brukergrensesnitt - ende til ende fra test bruker med full lagring av alle hendelseer, klikk og reproduksjon i utviklingsmiljøet
+- Økt effektivitet og sporbarhet i testing
 
-  <ul>   <li>Hierarchical work items</li>    <li>New work item controls</li>    <li>Field comparison queries</li>    <li>Ad-hoc Excel reports</li>    <li>Utvidet Project Server-integrasjon</li> </ul>  **Architect Edition**
+## Source control
 
-  <ul>   <li>Mange nye designer-elementer for bl. Use case, component, logical class, class, sequence m. fl</li> </ul>  **Build &amp; release**
+  - Sporing og visualisering av endringer i branch.
+- Annotated across merges
+- Rollback
 
-  <ul>   <li>Byggkøer</li>    <li>Gated checking</li>    <li>Automatisk installering</li> </ul>
+## Project control
+
+  - Hierarchical work items
+- New work item controls
+- Field comparison queries
+- Ad-hoc Excel reports
+- Utvidet Project Server-integrasjon
+
+## Architect Edition
+
+  - Mange nye designer-elementer for bl. Use case, component, logical class, class, sequence m. fl
+
+## Build &amp; release
+
+  - Byggkøer
+- Gated checking
+- Automatisk installering
 
   Register here : [http://msevents.microsoft.com/CUI/EventDetail.aspx?EventID=1032420915&amp;EventCategory=1&amp;culture=nb-NO&amp;CountryCode=NO](http://msevents.microsoft.com/CUI/EventDetail.aspx?EventID=1032420915&amp;EventCategory=1&amp;culture=nb-NO&amp;CountryCode=NO)
 

@@ -73,9 +73,9 @@ Do a git fetch to get it down, so that you can easily see how it looks in Gitviz
 
 Now, do a git pull --rebase
 
-**Did it go well ?**
+## Did it go well ?
 
-**What disappeared ?**
+### What disappeared ?
 
 A git pull rebase, rebases on top of **origin/master**, so we lost the merge commit(s).
 
@@ -106,7 +106,7 @@ git pull --rebase
 
 Run git status afterwards, and see if everything looks correct or not.
 
-**Did it go well ?**
+## Did it go well ?
 
 If you have a mess, suggest how to fix it.
 

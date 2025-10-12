@@ -69,6 +69,7 @@ It is time to reestablish my list of recommended VSIX extensions to Visual Studi
 </tr>
 <tr>
 <td valign="top" width="155">
+
 ### Tools (non VSIX)
 
 </td>

@@ -14,13 +14,13 @@ I have listed out the different namespaces, and linked the fields up to whatever
 
 The Process templates described are:
 
-**Microsoft CMMI 4.2   [CMMI Download](http://www.microsoft.com/Downloads/details.aspx?FamilyID=12a8d806-bb98-4eb4-bf6b-fb5b266171eb&amp;displaylang=en)**
+## Microsoft CMMI 4.2   [CMMI Download](http://www.microsoft.com/Downloads/details.aspx?FamilyID=12a8d806-bb98-4eb4-bf6b-fb5b266171eb&amp;displaylang=en)
 
-**Microsoft Agile 4.2  [Agile Download](http://www.microsoft.com/DOWNLOADS/details.aspx?FamilyID=ea75784e-3a3f-48fb-824e-828bf593c34d&amp;displaylang=en)**
+### Microsoft Agile 4.2  [Agile Download](http://www.microsoft.com/DOWNLOADS/details.aspx?FamilyID=ea75784e-3a3f-48fb-824e-828bf593c34d&amp;displaylang=en)
 
-**Microsoft eScrum 1.1 [eScrum Download](http://www.microsoft.com/downloads/details.aspx?familyid=55a4bde6-10a7-4c41-9938-f388c1ed15e9&amp;displaylang=en)**
+#### Microsoft eScrum 1.1 [eScrum Download](http://www.microsoft.com/downloads/details.aspx?familyid=55a4bde6-10a7-4c41-9938-f388c1ed15e9&amp;displaylang=en)
 
-**Codeplex VSTS Scrum 2.1  [VSTS Scrum Download](http://www.codeplex.com/VSTSScrum)**
+##### Codeplex VSTS Scrum 2.1  [VSTS Scrum Download](http://www.codeplex.com/VSTSScrum)
 
 Even if a workitem type has the field defined, it doesn't mean it really uses the field, that is, fills it with useful information.
 
@@ -101,7 +101,9 @@ The different namespaces used in these processes are listed below, and their det
     </tbody>
 </table>
 
-**System Namespace:**  (This is the only namespace which is also documented on MSDN)
+## System Namespace:
+
+(This is the only namespace which is also documented on MSDN)
 
 <div style="direction: ltr">
 <table border="1" cellspacing="0" cellpadding="0" valign="top" style="border-bottom: #a3a3a3 1pt solid; border-left: #a3a3a3 1pt solid; border-collapse: collapse; direction: ltr; border-top: #a3a3a3 1pt solid; border-right: #a3a3a3 1pt solid">
@@ -666,7 +668,7 @@ For CMMI:  CR = Change Request, QoS = QualityOfService requirement, Req = Requi
 
 For eScrum: PD = ProductDetails, SD = SprintDetails, SR = SprintRetrospective, Task = SprintTask, PBI = ProductBacklogItem
 
-**Microsoft.VSTS.Common namespace**
+## Microsoft.VSTS.Common namespace
 
 <div style="direction: ltr">
 <table border="1" cellspacing="0" cellpadding="0" valign="top" style="border-bottom: #a3a3a3 1pt solid; border-left: #a3a3a3 1pt solid; border-collapse: collapse; direction: ltr; border-top: #a3a3a3 1pt solid; border-right: #a3a3a3 1pt solid">
@@ -1092,7 +1094,7 @@ For eScrum: PD = ProductDetails, SD = SprintDetails, SR = SprintRetrospective, T
 </table>
 </div>
 
-**Microsoft.VSTS.Build namespace**
+## Microsoft.VSTS.Build namespace
 
 <div style="direction: ltr">
 <table border="1" cellspacing="0" cellpadding="0" valign="top" style="border-bottom: #a3a3a3 1pt solid; border-left: #a3a3a3 1pt solid; border-collapse: collapse; direction: ltr; border-top: #a3a3a3 1pt solid; border-right: #a3a3a3 1pt solid">
@@ -1103,19 +1105,23 @@ For eScrum: PD = ProductDetails, SD = SprintDetails, SR = SprintRetrospective, T
 
             </td>
             <td style="border-bottom: #a3a3a3 1pt solid; border-left: #a3a3a3 1pt solid; padding-bottom: 4pt; padding-left: 4pt; width: 1.957in; padding-right: 4pt; vertical-align: top; border-top: #a3a3a3 1pt solid; border-right: #a3a3a3 1pt solid; padding-top: 4pt">
-            **Used in CMMI :**
+
+## Used in CMMI :
 
             </td>
             <td style="border-bottom: #a3a3a3 1pt solid; border-left: #a3a3a3 1pt solid; padding-bottom: 4pt; padding-left: 4pt; width: 1.611in; padding-right: 4pt; vertical-align: top; border-top: #a3a3a3 1pt solid; border-right: #a3a3a3 1pt solid; padding-top: 4pt">
-            **Used in Agile :**
+
+## Used in Agile :
 
             </td>
             <td style="border-bottom: #a3a3a3 1pt solid; border-left: #a3a3a3 1pt solid; padding-bottom: 4pt; padding-left: 4pt; width: 1.115in; padding-right: 4pt; vertical-align: top; border-top: #a3a3a3 1pt solid; border-right: #a3a3a3 1pt solid; padding-top: 4pt">
-            **Used in eScrum **
+
+## Used in eScrum
 
             </td>
             <td style="border-bottom: #a3a3a3 1pt solid; border-left: #a3a3a3 1pt solid; padding-bottom: 4pt; padding-left: 4pt; width: 2.927in; padding-right: 4pt; vertical-align: top; border-top: #a3a3a3 1pt solid; border-right: #a3a3a3 1pt solid; padding-top: 4pt">
-            **Used in VSTS Scrum:**
+
+## Used in VSTS Scrum:
 
             </td>
         </tr>
@@ -1168,7 +1174,7 @@ For eScrum: PD = ProductDetails, SD = SprintDetails, SR = SprintRetrospective, T
 </div>
 CR = Change Request, QoS = QualityOfService requirement, Req = Requirement
 
-**Microsoft.VSTS.Scheduling namespace**
+## Microsoft.VSTS.Scheduling namespace
 
 <div style="direction: ltr">
 <table border="1" cellspacing="0" cellpadding="0" valign="top" style="border-bottom: #a3a3a3 1pt solid; border-left: #a3a3a3 1pt solid; border-collapse: collapse; direction: ltr; border-top: #a3a3a3 1pt solid; border-right: #a3a3a3 1pt solid">
@@ -1179,19 +1185,23 @@ CR = Change Request, QoS = QualityOfService requirement, Req = Requirement
 
             </td>
             <td style="border-bottom: #a3a3a3 1pt solid; border-left: #a3a3a3 1pt solid; padding-bottom: 4pt; padding-left: 4pt; width: 1.527in; padding-right: 4pt; vertical-align: top; border-top: #a3a3a3 1pt solid; border-right: #a3a3a3 1pt solid; padding-top: 4pt">
-            **Used in CMMI**
+
+## Used in CMMI
 
             </td>
             <td style="border-bottom: #a3a3a3 1pt solid; border-left: #a3a3a3 1pt solid; padding-bottom: 4pt; padding-left: 4pt; width: 1.352in; padding-right: 4pt; vertical-align: top; border-top: #a3a3a3 1pt solid; border-right: #a3a3a3 1pt solid; padding-top: 4pt">
-            **Used in Agile**
+
+## Used in Agile
 
             </td>
             <td style="border-bottom: #a3a3a3 1pt solid; border-left: #a3a3a3 1pt solid; padding-bottom: 4pt; padding-left: 4pt; width: 1.227in; padding-right: 4pt; vertical-align: top; border-top: #a3a3a3 1pt solid; border-right: #a3a3a3 1pt solid; padding-top: 4pt">
-            **Used in eScrum**
+
+## Used in eScrum
 
             </td>
             <td style="border-bottom: #a3a3a3 1pt solid; border-left: #a3a3a3 1pt solid; padding-bottom: 4pt; padding-left: 4pt; width: 1.895in; padding-right: 4pt; vertical-align: top; border-top: #a3a3a3 1pt solid; border-right: #a3a3a3 1pt solid; padding-top: 4pt">
-            **Used in VSTS Scrum**
+
+## Used in VSTS Scrum
 
             </td>
         </tr>
@@ -1331,30 +1341,35 @@ CR = Change Request, QoS = QualityOfService requirement, Req = Requirement
 <div style="direction: ltr"> </div>
 <div style="direction: ltr">CR = Change Request, QoS = QualityOfService requirement, Req = Requirement</div>
 
-**Microsoft.VSTS.Test namespace**
+## Microsoft.VSTS.Test namespace
 
 <div style="direction: ltr">
 <table border="1" cellspacing="0" cellpadding="0" valign="top" style="border-bottom: #a3a3a3 1pt solid; border-left: #a3a3a3 1pt solid; border-collapse: collapse; direction: ltr; border-top: #a3a3a3 1pt solid; border-right: #a3a3a3 1pt solid">
     <tbody>
         <tr>
             <td style="border-bottom: #a3a3a3 1pt solid; border-left: #a3a3a3 1pt solid; padding-bottom: 4pt; padding-left: 4pt; width: 0.843in; padding-right: 4pt; vertical-align: top; border-top: #a3a3a3 1pt solid; border-right: #a3a3a3 1pt solid; padding-top: 4pt">
-            **Name**
+
+## Name
 
             </td>
             <td style="border-bottom: #a3a3a3 1pt solid; border-left: #a3a3a3 1pt solid; padding-bottom: 4pt; padding-left: 4pt; width: 1.101in; padding-right: 4pt; vertical-align: top; border-top: #a3a3a3 1pt solid; border-right: #a3a3a3 1pt solid; padding-top: 4pt">
-            **Used in CMMI**
+
+## Used in CMMI
 
             </td>
             <td style="border-bottom: #a3a3a3 1pt solid; border-left: #a3a3a3 1pt solid; padding-bottom: 4pt; padding-left: 4pt; width: 1.026in; padding-right: 4pt; vertical-align: top; border-top: #a3a3a3 1pt solid; border-right: #a3a3a3 1pt solid; padding-top: 4pt">
-            **Used in Agile**
+
+## Used in Agile
 
             </td>
             <td style="border-bottom: #a3a3a3 1pt solid; border-left: #a3a3a3 1pt solid; padding-bottom: 4pt; padding-left: 4pt; width: 1.597in; padding-right: 4pt; vertical-align: top; border-top: #a3a3a3 1pt solid; border-right: #a3a3a3 1pt solid; padding-top: 4pt">
-            **Used in eScrum types**
+
+## Used in eScrum types
 
             </td>
             <td style="border-bottom: #a3a3a3 1pt solid; border-left: #a3a3a3 1pt solid; padding-bottom: 4pt; padding-left: 4pt; width: 1.454in; padding-right: 4pt; vertical-align: top; border-top: #a3a3a3 1pt solid; border-right: #a3a3a3 1pt solid; padding-top: 4pt">
-            **Used in VSTS Scrum**
+
+## Used in VSTS Scrum
 
             </td>
         </tr>
@@ -1732,20 +1747,22 @@ CR = Change Request, QoS = QualityOfService requirement, Req = Requirement
     </tbody>
 </table>
 
-**And then some special namespaces which are only used by one process**
+## And then some special namespaces which are only used by one process
 
-**Microsoft.eScrum.Common namespace**
+### Microsoft.eScrum.Common namespace
 
 <div style="direction: ltr">
 <table border="1" cellspacing="0" cellpadding="0" valign="top" style="border-bottom: #a3a3a3 1pt solid; border-left: #a3a3a3 1pt solid; border-collapse: collapse; direction: ltr; border-top: #a3a3a3 1pt solid; border-right: #a3a3a3 1pt solid">
     <tbody>
         <tr>
             <td style="border-bottom: #a3a3a3 1pt solid; border-left: #a3a3a3 1pt solid; padding-bottom: 4pt; padding-left: 4pt; width: 0.769in; padding-right: 4pt; vertical-align: top; border-top: #a3a3a3 1pt solid; border-right: #a3a3a3 1pt solid; padding-top: 4pt">
-            **Name**
+
+## Name
 
             </td>
             <td style="border-bottom: #a3a3a3 1pt solid; border-left: #a3a3a3 1pt solid; padding-bottom: 4pt; padding-left: 4pt; width: 1.226in; padding-right: 4pt; vertical-align: top; border-top: #a3a3a3 1pt solid; border-right: #a3a3a3 1pt solid; padding-top: 4pt">
-            **Used in eScrum**
+
+## Used in eScrum
 
             </td>
         </tr>
@@ -1793,18 +1810,20 @@ CR = Change Request, QoS = QualityOfService requirement, Req = Requirement
 </table>
 </div>
 
-**Microsoft.eScrum.Product namespace**
+## Microsoft.eScrum.Product namespace
 
 <div style="direction: ltr">
 <table border="1" cellspacing="0" cellpadding="0" valign="top" style="border-bottom: #a3a3a3 1pt solid; border-left: #a3a3a3 1pt solid; border-collapse: collapse; direction: ltr; border-top: #a3a3a3 1pt solid; border-right: #a3a3a3 1pt solid">
     <tbody>
         <tr>
             <td style="border-bottom: #a3a3a3 1pt solid; border-left: #a3a3a3 1pt solid; padding-bottom: 4pt; padding-left: 4pt; width: 1.323in; padding-right: 4pt; vertical-align: top; border-top: #a3a3a3 1pt solid; border-right: #a3a3a3 1pt solid; padding-top: 4pt">
-            **Name**
+
+## Name
 
             </td>
             <td style="border-bottom: #a3a3a3 1pt solid; border-left: #a3a3a3 1pt solid; padding-bottom: 4pt; padding-left: 4pt; width: 1.226in; padding-right: 4pt; vertical-align: top; border-top: #a3a3a3 1pt solid; border-right: #a3a3a3 1pt solid; padding-top: 4pt">
-            **Used in eScrum**
+
+## Used in eScrum
 
             </td>
         </tr>
@@ -1831,424 +1850,6 @@ CR = Change Request, QoS = QualityOfService requirement, Req = Requirement
     </tbody>
 </table>
 </div>
-
-<ul style="margin-top: 0in; unicode-bidi: embed; direction: ltr; margin-bottom: 0in; margin-left: 0.074in">
-
-    **Microsoft.eScrum.Sprint namespace**
-
-    <div style="direction: ltr">
-    <table border="1" cellspacing="0" cellpadding="0" valign="top" style="border-bottom: #a3a3a3 1pt solid; border-left: #a3a3a3 1pt solid; border-collapse: collapse; direction: ltr; border-top: #a3a3a3 1pt solid; border-right: #a3a3a3 1pt solid">
-        <tbody>
-            <tr>
-                <td style="border-bottom: #a3a3a3 1pt solid; border-left: #a3a3a3 1pt solid; padding-bottom: 4pt; padding-left: 4pt; width: 1.042in; padding-right: 4pt; vertical-align: top; border-top: #a3a3a3 1pt solid; border-right: #a3a3a3 1pt solid; padding-top: 4pt">
-                Name
-
-                </td>
-                <td style="border-bottom: #a3a3a3 1pt solid; border-left: #a3a3a3 1pt solid; padding-bottom: 4pt; padding-left: 4pt; width: 1.243in; padding-right: 4pt; vertical-align: top; border-top: #a3a3a3 1pt solid; border-right: #a3a3a3 1pt solid; padding-top: 4pt">
-                Used in eScrum
-
-                </td>
-            </tr>
-            <tr>
-                <td style="border-bottom: #a3a3a3 1pt solid; border-left: #a3a3a3 1pt solid; padding-bottom: 4pt; padding-left: 4pt; width: 1.042in; padding-right: 4pt; vertical-align: top; border-top: #a3a3a3 1pt solid; border-right: #a3a3a3 1pt solid; padding-top: 4pt">
-                StartDate
-
-                </td>
-                <td style="border-bottom: #a3a3a3 1pt solid; border-left: #a3a3a3 1pt solid; padding-bottom: 4pt; padding-left: 4pt; width: 1.243in; padding-right: 4pt; vertical-align: top; border-top: #a3a3a3 1pt solid; border-right: #a3a3a3 1pt solid; padding-top: 4pt">
-                SprintDetails
-
-                </td>
-            </tr>
-            <tr>
-                <td style="border-bottom: #a3a3a3 1pt solid; border-left: #a3a3a3 1pt solid; padding-bottom: 4pt; padding-left: 4pt; width: 1.042in; padding-right: 4pt; vertical-align: top; border-top: #a3a3a3 1pt solid; border-right: #a3a3a3 1pt solid; padding-top: 4pt">
-                EndDate
-
-                </td>
-                <td style="border-bottom: #a3a3a3 1pt solid; border-left: #a3a3a3 1pt solid; padding-bottom: 4pt; padding-left: 4pt; width: 1.243in; padding-right: 4pt; vertical-align: top; border-top: #a3a3a3 1pt solid; border-right: #a3a3a3 1pt solid; padding-top: 4pt">
-                SprintDetails
-
-                </td>
-            </tr>
-            <tr>
-                <td style="border-bottom: #a3a3a3 1pt solid; border-left: #a3a3a3 1pt solid; padding-bottom: 4pt; padding-left: 4pt; width: 1.042in; padding-right: 4pt; vertical-align: top; border-top: #a3a3a3 1pt solid; border-right: #a3a3a3 1pt solid; padding-top: 4pt">
-                MembersXml
-
-                </td>
-                <td style="border-bottom: #a3a3a3 1pt solid; border-left: #a3a3a3 1pt solid; padding-bottom: 4pt; padding-left: 4pt; width: 1.243in; padding-right: 4pt; vertical-align: top; border-top: #a3a3a3 1pt solid; border-right: #a3a3a3 1pt solid; padding-top: 4pt">
-
-                </td>
-            </tr>
-        </tbody>
-    </table>
-    </div>
-    <div style="direction: ltr"> </div>
-    <ul style="margin-top: 0in; unicode-bidi: embed; direction: ltr; margin-bottom: 0in; margin-left: 0.074in">
-
-        **Microsoft.eScrum.SprintRetrospective**
-
-        <div style="direction: ltr">
-        <table border="1" cellspacing="0" cellpadding="0" valign="top" style="border-bottom: #a3a3a3 1pt solid; border-left: #a3a3a3 1pt solid; border-collapse: collapse; direction: ltr; border-top: #a3a3a3 1pt solid; border-right: #a3a3a3 1pt solid">
-            <tbody>
-                <tr>
-                    <td style="border-bottom: #a3a3a3 1pt solid; border-left: #a3a3a3 1pt solid; padding-bottom: 4pt; padding-left: 4pt; width: 1.448in; padding-right: 4pt; vertical-align: top; border-top: #a3a3a3 1pt solid; border-right: #a3a3a3 1pt solid; padding-top: 4pt">
-                    **Name**
-
-                    </td>
-                    <td style="border-bottom: #a3a3a3 1pt solid; border-left: #a3a3a3 1pt solid; padding-bottom: 4pt; padding-left: 4pt; width: 1.487in; padding-right: 4pt; vertical-align: top; border-top: #a3a3a3 1pt solid; border-right: #a3a3a3 1pt solid; padding-top: 4pt">
-                    **Used in eScrum**
-
-                    </td>
-                </tr>
-                <tr>
-                    <td style="border-bottom: #a3a3a3 1pt solid; border-left: #a3a3a3 1pt solid; padding-bottom: 4pt; padding-left: 4pt; width: 1.448in; padding-right: 4pt; vertical-align: top; border-top: #a3a3a3 1pt solid; border-right: #a3a3a3 1pt solid; padding-top: 4pt">
-                    Date
-
-                    </td>
-                    <td style="border-bottom: #a3a3a3 1pt solid; border-left: #a3a3a3 1pt solid; padding-bottom: 4pt; padding-left: 4pt; width: 1.487in; padding-right: 4pt; vertical-align: top; border-top: #a3a3a3 1pt solid; border-right: #a3a3a3 1pt solid; padding-top: 4pt">
-                    SprintRetrospective
-
-                    </td>
-                </tr>
-                <tr>
-                    <td style="border-bottom: #a3a3a3 1pt solid; border-left: #a3a3a3 1pt solid; padding-bottom: 4pt; padding-left: 4pt; width: 1.448in; padding-right: 4pt; vertical-align: top; border-top: #a3a3a3 1pt solid; border-right: #a3a3a3 1pt solid; padding-top: 4pt">
-                    WhatWentWell
-
-                    </td>
-                    <td style="border-bottom: #a3a3a3 1pt solid; border-left: #a3a3a3 1pt solid; padding-bottom: 4pt; padding-left: 4pt; width: 1.487in; padding-right: 4pt; vertical-align: top; border-top: #a3a3a3 1pt solid; border-right: #a3a3a3 1pt solid; padding-top: 4pt">
-                    SprintRetrospective
-
-                    </td>
-                </tr>
-                <tr>
-                    <td style="border-bottom: #a3a3a3 1pt solid; border-left: #a3a3a3 1pt solid; padding-bottom: 4pt; padding-left: 4pt; width: 1.448in; padding-right: 4pt; vertical-align: top; border-top: #a3a3a3 1pt solid; border-right: #a3a3a3 1pt solid; padding-top: 4pt">
-                    WhatDidNotGoWell
-
-                    </td>
-                    <td style="border-bottom: #a3a3a3 1pt solid; border-left: #a3a3a3 1pt solid; padding-bottom: 4pt; padding-left: 4pt; width: 1.487in; padding-right: 4pt; vertical-align: top; border-top: #a3a3a3 1pt solid; border-right: #a3a3a3 1pt solid; padding-top: 4pt">
-                    SprintRetrospective
-
-                    </td>
-                </tr>
-                <tr>
-                    <td style="border-bottom: #a3a3a3 1pt solid; border-left: #a3a3a3 1pt solid; padding-bottom: 4pt; padding-left: 4pt; width: 1.448in; padding-right: 4pt; vertical-align: top; border-top: #a3a3a3 1pt solid; border-right: #a3a3a3 1pt solid; padding-top: 4pt">
-                    Improvements
-
-                    </td>
-                    <td style="border-bottom: #a3a3a3 1pt solid; border-left: #a3a3a3 1pt solid; padding-bottom: 4pt; padding-left: 4pt; width: 1.487in; padding-right: 4pt; vertical-align: top; border-top: #a3a3a3 1pt solid; border-right: #a3a3a3 1pt solid; padding-top: 4pt">
-                    SprintRetrospective
-
-                    </td>
-                </tr>
-            </tbody>
-        </table>
-        </div>
-
-    </ul>
-    <ul style="margin-top: 0in; unicode-bidi: embed; direction: ltr; margin-bottom: 0in; margin-left: 0.074in">
-
-        **Microsoft.eTools.Bug namespace**
-
-        <div style="direction: ltr">
-        <table border="1" cellspacing="0" cellpadding="0" valign="top" style="border-bottom: #a3a3a3 1pt solid; border-left: #a3a3a3 1pt solid; border-collapse: collapse; direction: ltr; border-top: #a3a3a3 1pt solid; border-right: #a3a3a3 1pt solid">
-            <tbody>
-                <tr>
-                    <td style="border-bottom: #a3a3a3 1pt solid; border-left: #a3a3a3 1pt solid; padding-bottom: 4pt; padding-left: 4pt; width: 1.016in; padding-right: 4pt; vertical-align: top; border-top: #a3a3a3 1pt solid; border-right: #a3a3a3 1pt solid; padding-top: 4pt">
-                    **Name**
-
-                    </td>
-                    <td style="border-bottom: #a3a3a3 1pt solid; border-left: #a3a3a3 1pt solid; padding-bottom: 4pt; padding-left: 4pt; width: 1.226in; padding-right: 4pt; vertical-align: top; border-top: #a3a3a3 1pt solid; border-right: #a3a3a3 1pt solid; padding-top: 4pt">
-                    **Used in eScrum**
-
-                    </td>
-                </tr>
-                <tr>
-                    <td style="border-bottom: #a3a3a3 1pt solid; border-left: #a3a3a3 1pt solid; padding-bottom: 4pt; padding-left: 4pt; width: 1.016in; padding-right: 4pt; vertical-align: top; border-top: #a3a3a3 1pt solid; border-right: #a3a3a3 1pt solid; padding-top: 4pt">
-                    ReproSteps
-
-                    </td>
-                    <td style="border-bottom: #a3a3a3 1pt solid; border-left: #a3a3a3 1pt solid; padding-bottom: 4pt; padding-left: 4pt; width: 1.226in; padding-right: 4pt; vertical-align: top; border-top: #a3a3a3 1pt solid; border-right: #a3a3a3 1pt solid; padding-top: 4pt">
-                    Bug
-
-                    </td>
-                </tr>
-                <tr>
-                    <td style="border-bottom: #a3a3a3 1pt solid; border-left: #a3a3a3 1pt solid; padding-bottom: 4pt; padding-left: 4pt; width: 1.016in; padding-right: 4pt; vertical-align: top; border-top: #a3a3a3 1pt solid; border-right: #a3a3a3 1pt solid; padding-top: 4pt">
-                    DevEstimate
-
-                    </td>
-                    <td style="border-bottom: #a3a3a3 1pt solid; border-left: #a3a3a3 1pt solid; padding-bottom: 4pt; padding-left: 4pt; width: 1.226in; padding-right: 4pt; vertical-align: top; border-top: #a3a3a3 1pt solid; border-right: #a3a3a3 1pt solid; padding-top: 4pt">
-                    Bug
-
-                    </td>
-                </tr>
-                <tr>
-                    <td style="border-bottom: #a3a3a3 1pt solid; border-left: #a3a3a3 1pt solid; padding-bottom: 4pt; padding-left: 4pt; width: 1.016in; padding-right: 4pt; vertical-align: top; border-top: #a3a3a3 1pt solid; border-right: #a3a3a3 1pt solid; padding-top: 4pt">
-                    TestEstimate
-
-                    </td>
-                    <td style="border-bottom: #a3a3a3 1pt solid; border-left: #a3a3a3 1pt solid; padding-bottom: 4pt; padding-left: 4pt; width: 1.226in; padding-right: 4pt; vertical-align: top; border-top: #a3a3a3 1pt solid; border-right: #a3a3a3 1pt solid; padding-top: 4pt">
-                    Bug
-
-                    </td>
-                </tr>
-                <tr>
-                    <td style="border-bottom: #a3a3a3 1pt solid; border-left: #a3a3a3 1pt solid; padding-bottom: 4pt; padding-left: 4pt; width: 1.016in; padding-right: 4pt; vertical-align: top; border-top: #a3a3a3 1pt solid; border-right: #a3a3a3 1pt solid; padding-top: 4pt">
-                    PMEstimate
-
-                    </td>
-                    <td style="border-bottom: #a3a3a3 1pt solid; border-left: #a3a3a3 1pt solid; padding-bottom: 4pt; padding-left: 4pt; width: 1.226in; padding-right: 4pt; vertical-align: top; border-top: #a3a3a3 1pt solid; border-right: #a3a3a3 1pt solid; padding-top: 4pt">
-                    Bug
-
-                    </td>
-                </tr>
-                <tr>
-                    <td style="border-bottom: #a3a3a3 1pt solid; border-left: #a3a3a3 1pt solid; padding-bottom: 4pt; padding-left: 4pt; width: 1.016in; padding-right: 4pt; vertical-align: top; border-top: #a3a3a3 1pt solid; border-right: #a3a3a3 1pt solid; padding-top: 4pt">
-                    Environment
-
-                    </td>
-                    <td style="border-bottom: #a3a3a3 1pt solid; border-left: #a3a3a3 1pt solid; padding-bottom: 4pt; padding-left: 4pt; width: 1.226in; padding-right: 4pt; vertical-align: top; border-top: #a3a3a3 1pt solid; border-right: #a3a3a3 1pt solid; padding-top: 4pt">
-                    Bug
-
-                    </td>
-                </tr>
-                <tr>
-                    <td style="border-bottom: #a3a3a3 1pt solid; border-left: #a3a3a3 1pt solid; padding-bottom: 4pt; padding-left: 4pt; width: 1.016in; padding-right: 4pt; vertical-align: top; border-top: #a3a3a3 1pt solid; border-right: #a3a3a3 1pt solid; padding-top: 4pt">
-                    Accessibility
-
-                    </td>
-                    <td style="border-bottom: #a3a3a3 1pt solid; border-left: #a3a3a3 1pt solid; padding-bottom: 4pt; padding-left: 4pt; width: 1.226in; padding-right: 4pt; vertical-align: top; border-top: #a3a3a3 1pt solid; border-right: #a3a3a3 1pt solid; padding-top: 4pt">
-                    Bug
-
-                    </td>
-                </tr>
-                <tr>
-                    <td style="border-bottom: #a3a3a3 1pt solid; border-left: #a3a3a3 1pt solid; padding-bottom: 4pt; padding-left: 4pt; width: 1.016in; padding-right: 4pt; vertical-align: top; border-top: #a3a3a3 1pt solid; border-right: #a3a3a3 1pt solid; padding-top: 4pt">
-                    Source
-
-                    </td>
-                    <td style="border-bottom: #a3a3a3 1pt solid; border-left: #a3a3a3 1pt solid; padding-bottom: 4pt; padding-left: 4pt; width: 1.226in; padding-right: 4pt; vertical-align: top; border-top: #a3a3a3 1pt solid; border-right: #a3a3a3 1pt solid; padding-top: 4pt">
-                    Bug
-
-                    </td>
-                </tr>
-                <tr>
-                    <td style="border-bottom: #a3a3a3 1pt solid; border-left: #a3a3a3 1pt solid; padding-bottom: 4pt; padding-left: 4pt; width: 1.016in; padding-right: 4pt; vertical-align: top; border-top: #a3a3a3 1pt solid; border-right: #a3a3a3 1pt solid; padding-top: 4pt">
-                    HowFound
-
-                    </td>
-                    <td style="border-bottom: #a3a3a3 1pt solid; border-left: #a3a3a3 1pt solid; padding-bottom: 4pt; padding-left: 4pt; width: 1.226in; padding-right: 4pt; vertical-align: top; border-top: #a3a3a3 1pt solid; border-right: #a3a3a3 1pt solid; padding-top: 4pt">
-                    Bug
-
-                    </td>
-                </tr>
-                <tr>
-                    <td style="border-bottom: #a3a3a3 1pt solid; border-left: #a3a3a3 1pt solid; padding-bottom: 4pt; padding-left: 4pt; width: 1.016in; padding-right: 4pt; vertical-align: top; border-top: #a3a3a3 1pt solid; border-right: #a3a3a3 1pt solid; padding-top: 4pt">
-                    Market
-
-                    </td>
-                    <td style="border-bottom: #a3a3a3 1pt solid; border-left: #a3a3a3 1pt solid; padding-bottom: 4pt; padding-left: 4pt; width: 1.226in; padding-right: 4pt; vertical-align: top; border-top: #a3a3a3 1pt solid; border-right: #a3a3a3 1pt solid; padding-top: 4pt">
-                    Bug
-
-                    </td>
-                </tr>
-                <tr>
-                    <td style="border-bottom: #a3a3a3 1pt solid; border-left: #a3a3a3 1pt solid; padding-bottom: 4pt; padding-left: 4pt; width: 1.016in; padding-right: 4pt; vertical-align: top; border-top: #a3a3a3 1pt solid; border-right: #a3a3a3 1pt solid; padding-top: 4pt">
-                    OSPlatform
-
-                    </td>
-                    <td style="border-bottom: #a3a3a3 1pt solid; border-left: #a3a3a3 1pt solid; padding-bottom: 4pt; padding-left: 4pt; width: 1.226in; padding-right: 4pt; vertical-align: top; border-top: #a3a3a3 1pt solid; border-right: #a3a3a3 1pt solid; padding-top: 4pt">
-                    Bug
-
-                    </td>
-                </tr>
-                <tr>
-                    <td style="border-bottom: #a3a3a3 1pt solid; border-left: #a3a3a3 1pt solid; padding-bottom: 4pt; padding-left: 4pt; width: 1.016in; padding-right: 4pt; vertical-align: top; border-top: #a3a3a3 1pt solid; border-right: #a3a3a3 1pt solid; padding-top: 4pt">
-                    Browsers
-
-                    </td>
-                    <td style="border-bottom: #a3a3a3 1pt solid; border-left: #a3a3a3 1pt solid; padding-bottom: 4pt; padding-left: 4pt; width: 1.226in; padding-right: 4pt; vertical-align: top; border-top: #a3a3a3 1pt solid; border-right: #a3a3a3 1pt solid; padding-top: 4pt">
-                    Bug
-
-                    </td>
-                </tr>
-                <tr>
-                    <td style="border-bottom: #a3a3a3 1pt solid; border-left: #a3a3a3 1pt solid; padding-bottom: 4pt; padding-left: 4pt; width: 1.016in; padding-right: 4pt; vertical-align: top; border-top: #a3a3a3 1pt solid; border-right: #a3a3a3 1pt solid; padding-top: 4pt">
-                    SourceID
-
-                    </td>
-                    <td style="border-bottom: #a3a3a3 1pt solid; border-left: #a3a3a3 1pt solid; padding-bottom: 4pt; padding-left: 4pt; width: 1.226in; padding-right: 4pt; vertical-align: top; border-top: #a3a3a3 1pt solid; border-right: #a3a3a3 1pt solid; padding-top: 4pt">
-                    Bug
-
-                    </td>
-                </tr>
-                <tr>
-                    <td style="border-bottom: #a3a3a3 1pt solid; border-left: #a3a3a3 1pt solid; padding-bottom: 4pt; padding-left: 4pt; width: 1.016in; padding-right: 4pt; vertical-align: top; border-top: #a3a3a3 1pt solid; border-right: #a3a3a3 1pt solid; padding-top: 4pt">
-                    Cause
-
-                    </td>
-                    <td style="border-bottom: #a3a3a3 1pt solid; border-left: #a3a3a3 1pt solid; padding-bottom: 4pt; padding-left: 4pt; width: 1.226in; padding-right: 4pt; vertical-align: top; border-top: #a3a3a3 1pt solid; border-right: #a3a3a3 1pt solid; padding-top: 4pt">
-                    Bug
-
-                    </td>
-                </tr>
-                <tr>
-                    <td style="border-bottom: #a3a3a3 1pt solid; border-left: #a3a3a3 1pt solid; padding-bottom: 4pt; padding-left: 4pt; width: 1.016in; padding-right: 4pt; vertical-align: top; border-top: #a3a3a3 1pt solid; border-right: #a3a3a3 1pt solid; padding-top: 4pt">
-                    Change
-
-                    </td>
-                    <td style="border-bottom: #a3a3a3 1pt solid; border-left: #a3a3a3 1pt solid; padding-bottom: 4pt; padding-left: 4pt; width: 1.226in; padding-right: 4pt; vertical-align: top; border-top: #a3a3a3 1pt solid; border-right: #a3a3a3 1pt solid; padding-top: 4pt">
-                    Bug
-
-                    </td>
-                </tr>
-                <tr>
-                    <td style="border-bottom: #a3a3a3 1pt solid; border-left: #a3a3a3 1pt solid; padding-bottom: 4pt; padding-left: 4pt; width: 1.016in; padding-right: 4pt; vertical-align: top; border-top: #a3a3a3 1pt solid; border-right: #a3a3a3 1pt solid; padding-top: 4pt">
-                    KBNeeded
-
-                    </td>
-                    <td style="border-bottom: #a3a3a3 1pt solid; border-left: #a3a3a3 1pt solid; padding-bottom: 4pt; padding-left: 4pt; width: 1.226in; padding-right: 4pt; vertical-align: top; border-top: #a3a3a3 1pt solid; border-right: #a3a3a3 1pt solid; padding-top: 4pt">
-                    Bug
-
-                    </td>
-                </tr>
-                <tr>
-                    <td style="border-bottom: #a3a3a3 1pt solid; border-left: #a3a3a3 1pt solid; padding-bottom: 4pt; padding-left: 4pt; width: 1.016in; padding-right: 4pt; vertical-align: top; border-top: #a3a3a3 1pt solid; border-right: #a3a3a3 1pt solid; padding-top: 4pt">
-                    Product
-
-                    </td>
-                    <td style="border-bottom: #a3a3a3 1pt solid; border-left: #a3a3a3 1pt solid; padding-bottom: 4pt; padding-left: 4pt; width: 1.226in; padding-right: 4pt; vertical-align: top; border-top: #a3a3a3 1pt solid; border-right: #a3a3a3 1pt solid; padding-top: 4pt">
-                    Bug
-
-                    </td>
-                </tr>
-                <tr>
-                    <td style="border-bottom: #a3a3a3 1pt solid; border-left: #a3a3a3 1pt solid; padding-bottom: 4pt; padding-left: 4pt; width: 1.016in; padding-right: 4pt; vertical-align: top; border-top: #a3a3a3 1pt solid; border-right: #a3a3a3 1pt solid; padding-top: 4pt">
-                    Release
-
-                    </td>
-                    <td style="border-bottom: #a3a3a3 1pt solid; border-left: #a3a3a3 1pt solid; padding-bottom: 4pt; padding-left: 4pt; width: 1.226in; padding-right: 4pt; vertical-align: top; border-top: #a3a3a3 1pt solid; border-right: #a3a3a3 1pt solid; padding-top: 4pt">
-                    Bug
-
-                    </td>
-                </tr>
-                <tr>
-                    <td style="border-bottom: #a3a3a3 1pt solid; border-left: #a3a3a3 1pt solid; padding-bottom: 4pt; padding-left: 4pt; width: 1.016in; padding-right: 4pt; vertical-align: top; border-top: #a3a3a3 1pt solid; border-right: #a3a3a3 1pt solid; padding-top: 4pt">
-                    Milestone
-
-                    </td>
-                    <td style="border-bottom: #a3a3a3 1pt solid; border-left: #a3a3a3 1pt solid; padding-bottom: 4pt; padding-left: 4pt; width: 1.226in; padding-right: 4pt; vertical-align: top; border-top: #a3a3a3 1pt solid; border-right: #a3a3a3 1pt solid; padding-top: 4pt">
-                    Bug
-
-                    </td>
-                </tr>
-            </tbody>
-        </table>
-        </div>
-        <div style="direction: ltr"> </div>
-        <ul style="margin-top: 0in; unicode-bidi: embed; direction: ltr; margin-bottom: 0in; margin-left: 0.074in">
-
-            **Microsoft.eScrum.Task namespace**
-
-            <div style="direction: ltr">
-            <table border="1" cellspacing="0" cellpadding="0" valign="top" style="border-bottom: #a3a3a3 1pt solid; border-left: #a3a3a3 1pt solid; border-collapse: collapse; direction: ltr; border-top: #a3a3a3 1pt solid; border-right: #a3a3a3 1pt solid">
-                <tbody>
-                    <tr>
-                        <td style="border-bottom: #a3a3a3 1pt solid; border-left: #a3a3a3 1pt solid; padding-bottom: 4pt; padding-left: 4pt; width: 1.584in; padding-right: 4pt; vertical-align: top; border-top: #a3a3a3 1pt solid; border-right: #a3a3a3 1pt solid; padding-top: 4pt">
-                        **Name**
-
-                        </td>
-                        <td style="border-bottom: #a3a3a3 1pt solid; border-left: #a3a3a3 1pt solid; padding-bottom: 4pt; padding-left: 4pt; width: 1.226in; padding-right: 4pt; vertical-align: top; border-top: #a3a3a3 1pt solid; border-right: #a3a3a3 1pt solid; padding-top: 4pt">
-                        **Used in eScrum**
-
-                        </td>
-                    </tr>
-                    <tr>
-                        <td style="border-bottom: #a3a3a3 1pt solid; border-left: #a3a3a3 1pt solid; padding-bottom: 4pt; padding-left: 4pt; width: 1.584in; padding-right: 4pt; vertical-align: top; border-top: #a3a3a3 1pt solid; border-right: #a3a3a3 1pt solid; padding-top: 4pt">
-                        ProductBacklogItemId
-
-                        </td>
-                        <td style="border-bottom: #a3a3a3 1pt solid; border-left: #a3a3a3 1pt solid; padding-bottom: 4pt; padding-left: 4pt; width: 1.226in; padding-right: 4pt; vertical-align: top; border-top: #a3a3a3 1pt solid; border-right: #a3a3a3 1pt solid; padding-top: 4pt">
-                        Task
-
-                        </td>
-                    </tr>
-                    <tr>
-                        <td style="border-bottom: #a3a3a3 1pt solid; border-left: #a3a3a3 1pt solid; padding-bottom: 4pt; padding-left: 4pt; width: 1.584in; padding-right: 4pt; vertical-align: top; border-top: #a3a3a3 1pt solid; border-right: #a3a3a3 1pt solid; padding-top: 4pt">
-                        Discovered
-
-                        </td>
-                        <td style="border-bottom: #a3a3a3 1pt solid; border-left: #a3a3a3 1pt solid; padding-bottom: 4pt; padding-left: 4pt; width: 1.226in; padding-right: 4pt; vertical-align: top; border-top: #a3a3a3 1pt solid; border-right: #a3a3a3 1pt solid; padding-top: 4pt">
-                        Task
-
-                        </td>
-                    </tr>
-                </tbody>
-            </table>
-            </div>
-            <div style="direction: ltr"> </div>
-            <div style="direction: ltr"> </div>
-        </ul>
-        <ul style="margin-top: 0in; unicode-bidi: embed; direction: ltr; margin-bottom: 0in; margin-left: 0.074in">
-
-            **Scrum namespace**
-
-            <div style="direction: ltr">
-            <table border="1" cellspacing="0" cellpadding="0" valign="top" style="border-bottom: #a3a3a3 1pt solid; border-left: #a3a3a3 1pt solid; border-collapse: collapse; direction: ltr; border-top: #a3a3a3 1pt solid; border-right: #a3a3a3 1pt solid">
-                <tbody>
-                    <tr>
-                        <td style="border-bottom: #a3a3a3 1pt solid; border-left: #a3a3a3 1pt solid; padding-bottom: 4pt; padding-left: 4pt; width: 1.261in; padding-right: 4pt; vertical-align: top; border-top: #a3a3a3 1pt solid; border-right: #a3a3a3 1pt solid; padding-top: 4pt">
-                        **Name**
-
-                        </td>
-                        <td style="border-bottom: #a3a3a3 1pt solid; border-left: #a3a3a3 1pt solid; padding-bottom: 4pt; padding-left: 4pt; width: 1.904in; padding-right: 4pt; vertical-align: top; border-top: #a3a3a3 1pt solid; border-right: #a3a3a3 1pt solid; padding-top: 4pt">
-                        **Used in VSTS Scrum**
-
-                        </td>
-                    </tr>
-                    <tr>
-                        <td style="border-bottom: #a3a3a3 1pt solid; border-left: #a3a3a3 1pt solid; padding-bottom: 4pt; padding-left: 4pt; width: 1.261in; padding-right: 4pt; vertical-align: top; border-top: #a3a3a3 1pt solid; border-right: #a3a3a3 1pt solid; padding-top: 4pt">
-                        Complexity
-
-                        </td>
-                        <td style="border-bottom: #a3a3a3 1pt solid; border-left: #a3a3a3 1pt solid; padding-bottom: 4pt; padding-left: 4pt; width: 1.904in; padding-right: 4pt; vertical-align: top; border-top: #a3a3a3 1pt solid; border-right: #a3a3a3 1pt solid; padding-top: 4pt">
-                        Backlog,UserStory,Release
-
-                        </td>
-                    </tr>
-                    <tr>
-                        <td style="border-bottom: #a3a3a3 1pt solid; border-left: #a3a3a3 1pt solid; padding-bottom: 4pt; padding-left: 4pt; width: 1.261in; padding-right: 4pt; vertical-align: top; border-top: #a3a3a3 1pt solid; border-right: #a3a3a3 1pt solid; padding-top: 4pt">
-                        Acceptance
-
-                        </td>
-                        <td style="border-bottom: #a3a3a3 1pt solid; border-left: #a3a3a3 1pt solid; padding-bottom: 4pt; padding-left: 4pt; width: 1.904in; padding-right: 4pt; vertical-align: top; border-top: #a3a3a3 1pt solid; border-right: #a3a3a3 1pt solid; padding-top: 4pt">
-                        UserStory
-
-                        </td>
-                    </tr>
-                    <tr>
-                        <td style="border-bottom: #a3a3a3 1pt solid; border-left: #a3a3a3 1pt solid; padding-bottom: 4pt; padding-left: 4pt; width: 1.261in; padding-right: 4pt; vertical-align: top; border-top: #a3a3a3 1pt solid; border-right: #a3a3a3 1pt solid; padding-top: 4pt">
-                        Owner
-
-                        </td>
-                        <td style="border-bottom: #a3a3a3 1pt solid; border-left: #a3a3a3 1pt solid; padding-bottom: 4pt; padding-left: 4pt; width: 1.904in; padding-right: 4pt; vertical-align: top; border-top: #a3a3a3 1pt solid; border-right: #a3a3a3 1pt solid; padding-top: 4pt">
-                        UserStory
-
-                        </td>
-                    </tr>
-                    <tr>
-                        <td style="border-bottom: #a3a3a3 1pt solid; border-left: #a3a3a3 1pt solid; padding-bottom: 4pt; padding-left: 4pt; width: 1.261in; padding-right: 4pt; vertical-align: top; border-top: #a3a3a3 1pt solid; border-right: #a3a3a3 1pt solid; padding-top: 4pt">
-                        BuildInstructions
-
-                        </td>
-                        <td style="border-bottom: #a3a3a3 1pt solid; border-left: #a3a3a3 1pt solid; padding-bottom: 4pt; padding-left: 4pt; width: 1.904in; padding-right: 4pt; vertical-align: top; border-top: #a3a3a3 1pt solid; border-right: #a3a3a3 1pt solid; padding-top: 4pt">
-                        Release
-
-                        </td>
-                    </tr>
-                </tbody>
-            </table>
-            </div>
-        </ul>
 
     </ul>
 </ul>

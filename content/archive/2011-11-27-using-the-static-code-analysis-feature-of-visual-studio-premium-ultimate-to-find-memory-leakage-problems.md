@@ -11,7 +11,7 @@ categories:
 
   When you suspect a memory leak, the immediate impulse would be to start up a memory profiler and start digging into that.   However, before you follow that impulse, do a Static Code Analysis run with a ruleset tuned to finding possible memory leaks in your code.  If you get any warnings from this, fix them before you go on with the profiling.
 
-  **How to use a ruleset**
+## How to use a ruleset
 
   In Visual Studio 2010 (Premium and Ultimate editions) you can define your own rulesets containing a list of Static Code Analysis checks.   I have defined the memory checks as shown in the lists below as ruleset files, which can be <font color="#ff0000">**downloaded** – **see bottom of this post**</font>.  When you get them, you can easily attach them to every project in your solution using the Solution Properties dialog. Right click the solution, and choose Properties at the bottom, or use the Analyze menu and choose “Configure Code Analysis for Solution”:
 
@@ -41,7 +41,7 @@ categories:
 
   It can also be wise to add the ruleset to your solution as a solution item. That way it’s there if you want to enable Code Analysis in some of your TFS builds.
 
-  **Running the code analysis**
+## Running the code analysis
 
   In Visual Studio 2010 you can either do your code analysis project by project using the context menu in the solution explorer and choose “Run Code Analysis”, you can define a new solution configuration, call it for example Debug (Code Analysis), in for each project here enable the Enable Code Analysis on Build
 
@@ -49,7 +49,7 @@ categories:
 
   In Visual Studio Dev-11 it is all much simpler, just go to the Solution root in the Solution explorer, right click and choose “Run code analysis on solution”.
 
-  **The ruleset checks**
+## The ruleset checks
 
   The following list is the essential and critical memory checks.
 
@@ -61,13 +61,13 @@ categories:
 
   <table border="0" cellspacing="0" cellpadding="2" width="1134"><tbody>     <tr>       <td valign="top" width="81">**ID**</td>        <td valign="top" width="173">**Message**</td>        <td valign="top" width="220">**Type of fault**</td>        <td valign="top" width="258">**Can be ignored ?**</td>        <td valign="top" width="400">**Link to description with fix suggestions**</td>     </tr>      <tr>       <td valign="top" width="81">CA1060</td>        <td valign="top" width="173">Move P/invokes to NativeMethods class</td>        <td valign="top" width="220">Security</td>        <td valign="top" width="258">No</td>        <td valign="top" width="400">[http://msdn.microsoft.com/en-us/library/ms182161.aspx](http://msdn.microsoft.com/en-us/library/ms182161.aspx)</td>     </tr>      <tr>       <td valign="top" width="81">CA1816</td>        <td valign="top" width="173">Call GC.SuppressFinalize correctly</td>        <td valign="top" width="220">Performance</td>        <td valign="top" width="258">Sometimes, see description</td>        <td valign="top" width="400">[http://msdn.microsoft.com/en-us/library/ms182269.aspx](http://msdn.microsoft.com/en-us/library/ms182269.aspx)</td>     </tr>      <tr>       <td valign="top" width="81">CA1821</td>        <td valign="top" width="173">Remove empty finalizers</td>        <td valign="top" width="220">Performance</td>        <td valign="top" width="258">No</td>        <td valign="top" width="400">[http://msdn.microsoft.com/en-us/library/bb264476.aspx](http://msdn.microsoft.com/en-us/library/bb264476.aspx)</td>     </tr>      <tr>       <td valign="top" width="81">CA2004</td>        <td valign="top" width="173">Remove calls to GC.KeepAlive</td>        <td valign="top" width="220">Performance and maintainability</td>        <td valign="top" width="258">Only if not technically correct to convert to SafeHandle</td>        <td valign="top" width="400">[http://msdn.microsoft.com/en-us/library/ms182293.aspx](http://msdn.microsoft.com/en-us/library/ms182293.aspx)</td>     </tr>      <tr>       <td valign="top" width="81">CA2006</td>        <td valign="top" width="173">Use SafeHandle to encapsulate native resources</td>        <td valign="top" width="220">Security</td>        <td valign="top" width="258">No</td>        <td valign="top" width="400">[http://msdn.microsoft.com/en-us/library/ms182294.aspx](http://msdn.microsoft.com/en-us/library/ms182294.aspx)</td>     </tr>      <tr>       <td valign="top" width="81">CA2202</td>        <td valign="top" width="173">Do not dispose of objects multiple times</td>        <td valign="top" width="220">Exception (System.ObjectDisposedException)</td>        <td valign="top" width="258">No</td>        <td valign="top" width="400">[http://msdn.microsoft.com/en-us/library/ms182334.aspx](http://msdn.microsoft.com/en-us/library/ms182334.aspx)</td>     </tr>      <tr>       <td valign="top" width="81">CA2205</td>        <td valign="top" width="173">Use managed equivalents of Win32 API</td>        <td valign="top" width="220">Maintainability and complexity</td>        <td valign="top" width="258">Only if the replace doesn’t provide needed functionality</td>        <td valign="top" width="400">[http://msdn.microsoft.com/en-us/library/ms182365.aspx](http://msdn.microsoft.com/en-us/library/ms182365.aspx)</td>     </tr>      <tr>       <td valign="top" width="81">CA2221</td>        <td valign="top" width="173">Finalizers should be protected</td>        <td valign="top" width="220">Incorrect implementation, only possible in MSIL coding</td>        <td valign="top" width="258">No</td>        <td valign="top" width="400">[http://msdn.microsoft.com/en-us/library/ms182340.aspx](http://msdn.microsoft.com/en-us/library/ms182340.aspx)</td>     </tr>   </tbody></table>
 
-  **Downloadable ruleset definitions**
+## Downloadable ruleset definitions
 
   I have defined three rulesets, one called Inmeta.Memorycheck with the rules in the first list above, and Inmeta.Memorycheck.Optionals containing the rules in the second list, and the last one called Inmeta.Memorycheck.All containing the sum of the two first ones.
 
   All three rulesets can be found in the <u> [zip archive  “Inmeta.Memorycheck” downloadable from here](http://www.hermit.no/Documents/Inmeta.Memorycheck.zip).</u>
 
-  **Links to some other resources relevant to Static Code Analysis**
+## Links to some other resources relevant to Static Code Analysis
 
   [MSDN Magazine Article by Mickey Gousset on Static Code Analysis in VS2010](http://visualstudiomagazine.com/articles/2010/03/25/working-with-static-code-analysis.aspx)
 

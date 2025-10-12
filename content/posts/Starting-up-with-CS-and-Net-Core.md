@@ -93,7 +93,7 @@ You can also add yet another sibling folder MyLib, and then run `dotnet new clas
 
 *Notice, some of the classnames and namespaces are in lower case only.  In C# the convention is Pascal convention,  first letter Uppercase, the rest lower case.*
 
-**Notice:  Arrange each project you have as a SUBFOLDER under your root solution folder**
+## Notice:  Arrange each project you have as a SUBFOLDER under your root solution folder
 
 [More info on dotnet new](https://docs.microsoft.com/en-us/dotnet/core/tools/dotnet-new)
 

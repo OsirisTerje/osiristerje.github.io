@@ -59,7 +59,7 @@ Run Exercise-3b.1.cmd again, or reuse the same repo where you installed that ear
 
 Go to branch Experiments
 
-**Note down the SHA of the current HEAD**
+## Note down the SHA of the current HEAD
 
 Add/commit  a new file.
 

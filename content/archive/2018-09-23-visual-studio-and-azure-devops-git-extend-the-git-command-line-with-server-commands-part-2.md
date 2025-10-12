@@ -16,6 +16,7 @@ The [former post](http://hermit.no/visual-studio-and-vsts-git-extend-the-git-com
 This post show how you can extend that to work more actively with the [Azure DevOps (formerly known as VSTS)](https://visualstudio.microsoft.com/team-services/) server hosting your repository. (If you don't have an account here, please consider doing that, it is free for modest individual use!)
 
 You can do all of this from the combination of Visual Studio, and the web browser, but going through all those UI's is like a good friend said: "and after 56 more clicks.....".   Using the command line is just so much faster - but in order to be effective the number of parameters must be cut down to something manageable.  And that is what this is about!
+
 ### Background
 
 When working in a team, it is a good practice to establish a system where each individual developer works in their own task branch. They each push their changes to the server, and then raises a pull request to have this merged in to the master.  I have described the practice in [this post](http://terjesandstrom.github.io/PullRequestsInGit), and you can also read about it [here](https://docs.microsoft.com/en-us/azure/devops/repos/git/pull-requests?view=vsts&amp;tabs=new-nav).
@@ -39,6 +40,7 @@ there
 7. Go back to the master branch and prepare for the next task to do.
 
 The points 1-3 + 7 can be done quickly with the aliases made in the last post. But step 4-6 need some extra, and here it comes !
+
 ### Setting up VSTS CLI
 
 The first thing you need is the VSTS Client command line interface, and you can [read and download it from here](https://docs.microsoft.com/en-us/cli/vsts/overview?view=vsts-cli-latest).   ([Direct download link](https://aka.ms/vsts-cli-windows-installer))
@@ -48,6 +50,7 @@ You then need a Personal Access Token (PAT) for access to the remote server.  L
 Note:  If you work with multiple different Azure DevOps accounts, then you need to add that instance to this command like this:
 <pre><span style="font-family: Courier New;">vsts login --token xxxxxxxxxx --instance [https://dev.azure.com/{myorg](https://dev.azure.com/{myorg)}</span></pre>
 Having done this, we’re ready to start working with the VSTS CLI.
+
 ### Adding VSTS commands to the git alias
 
 Of course you can use the vsts cli directly, but that means writing a lot of stuff which you really don’t need.
@@ -63,6 +66,7 @@ git repo :    Wraps the vsts code repo command, which controls repository
 These commands are not normally used alone, but used as building bricks for more streamlined commands, as shown below.
 
 You can read up on the VSTS CLI command set on the [VSTS CLI documentation site](https://docs.microsoft.com/en-us/cli/vsts/overview?view=vsts-cli-latest).
+
 ### Expanding the Git aliases with VSTS CLI commands
 
 Based on the git aliases commands above, we add the following shorter alias commands listed below, and also a couple more to make things even more easy:
@@ -80,7 +84,8 @@ Based on the git aliases commands above, we add the following shorter alias comm
 Add these to your .gitconfig files as shown in [the former post](http://hermit.no/visual-studio-and-vsts-git-extend-the-git-command-line-to-speed-up-your-workflow-part-1/).
 
 The commands are based on each other, and in the bottom of that "chain" is the vsts aliases.
-**Example of use: Initial**
+
+## Example of use: Initial
 
 Let us now see how they work, based on the work flow described above:
 
@@ -93,7 +98,8 @@ Then we code a bit , (4), and see that we indeed have a change (5).  In step 6 
 [![](/images/2018/09/8.jpg)](/images/2018/09/8.jpg)
 
 Then we push the change to the remote origin, and set the branch up to track (8).
-**Example of use: Creating the pull request**
+
+## Example of use: Creating the pull request
 
 Now, we're on the new stuff.  We want to create a pull request to merge this on to the master branch.
 
@@ -134,9 +140,11 @@ We can again check the status on the command line, and see it is indeed reported
 I have shown this for the most common case where you merge to master.  If you need to set up your PR to another branch you can use the base command:
 <pre>git prb  someotherbranch</pre>
 If you do that regularly you can just add another alias of your own choice.
+
 ### Gist for the aliases
 
 I have added a [gist here](https://gist.github.com/OsirisTerje/e9d06c627405f576e6ebf85e2c09f3c4), which contains the aliases I use, included the ones above, and a few more I find useful.  The gist may change :-)
+
 ### Creating pull requests for GitHub
 
 If you're using GitHub, and want the same, or similar, set of commands for that one, you can use [Hub](https://github.com/github/hub).  It is written in Go, whereas VSTS Client is written in Python - no need to care about that, just fun facts!   [Here is a great blogpost](https://andrewlock.net/creating-github-pull-requests-from-the-command-line-with-hub/) about setting it up and how it works.

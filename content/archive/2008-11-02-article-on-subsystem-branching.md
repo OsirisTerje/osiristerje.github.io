@@ -26,7 +26,7 @@ There is guidelines for this on codeplex, see [TFS Guide release](http://www.cod
 
 ##### Solution 1: Multiple build workspacemappings
 
-**Choose this if:**
+###### Choose this if:
 
 Your projects are small,
 common is small,
@@ -34,7 +34,7 @@ your teams are small,
 or the same team works on all projects including common,
 and/or 'common' is not very stable, meaning it's as likely to change as your projects.
 
-**Setup:**
+## Setup:
 
 Keep your source structure exactly as you have outlined. Move (if they are not already there, by default they should) your solution files (sln) down to each project, this is essential. Use project references between each project and common, exactly as you have outlined. Ignore the warning from Visual Studio you may get above referring above your root. You know what you're doing.
 
@@ -45,14 +45,14 @@ In the workspacemapping of your build (See Edit Build, 'Workspace'), make two ma
 
 ##### Solution 2: Source code branching
 
-**Choose this if:**
+###### Choose this if:
 
 Your projects are a bit larger,
 a separate team is or has been working with Common
 you need isolation between projects, meaning Project2 will not be bothered by requests from Project1 to change something in Common.
 You have a more complex source code structure.
 
-**Setup:**
+## Setup:
 
 Change your source code structure below Project1 and Project2 to include a branch FROM Common. that is, make it look like:
 
@@ -66,24 +66,25 @@ Source
 
 Then of course create the branches from Common to the two respective CommonBranched. It is probably wise in this setup to have a separate solution for Common alone, and its own CI build to make sure it is correct before merging changes over to the Branches. The solutions for Project1 and Project2 should be as described in solution 1, no changes there. Note that one would normally not do any changes in the source in the CommonBranches, one could of course, but that would create a merging issue later when one merges new or updated code from the Common trunk.
 
-**Advantages:**
+## Advantages:
 
 Provides better separation between the projects and common
 A developer will always get a buildable solution if he takes get latest from the Project node.
-**Disadvantages:**
+
+## Disadvantages:
 
 Every change in Common must be merged over to the branches. This will give an extra step in the process. For a small 'enterprise' this overhead may not be justified, for a lager one, it may be an advantage - due to the fact that this provides isolation and awareness of changes.
 Possible changes to the branched source could make them non-mergeable at a later time.
 
 ##### Solution 3: Binary deployment branching:
 
-**Choose this if:**
+###### Choose this if:
 
 You have (a/many) large project(s)
 Your common framework is rather stable,
 Your common framework is used in many other projects, and you would not take the risk that someone at those projects made changes to the source that would make them non-mergeable at a later time.
 
-**Setup:**
+## Setup:
 
 Change the source code structure as follows:
 
@@ -99,19 +100,19 @@ Source
 In addition to the CI build for Common, you should make what I would call a public build, which you build every time you want a new "release". This build should have an extra step, f.e. using the AfterEndToEndIteration target, that it should check in the resulting 'dll' and 'pdb' file into the Deploy folder. (Use the ***NO_CI*** trick on that checkin to avoid triggering the CI build again.) This build btw, should not be triggered nor scheduled. You trigger this build manually whenever you need a  new release of the Common library.
 Now, when that is done, branch the Deploy folders, which mean that you in fact branch the binaries, into the CommonBranched folders.
 
-**Advantages:**
+## Advantages:
 
 The teams working on Project1 and Project2 can't mess up the source code. IF they want a change they must post a workitem to the Common team, and wait for a new release. . This is a good thing!
 Good isolation (as in Solution 2), and the framework is very nicely controlled, but in addition, no possibility for a source code problem with the Common source code branched into the projects.
 
-**Disadvantages:**
+## Disadvantages:
 
 The build scripts must be modified
 Binaries must be checked in (not a problem IMHO).
 
 Versioning should be introduced in the build process (not described in this post), may further complicate the build script
 
-**Advantage in disadvantage:**
+## Advantage in disadvantage:
 
 When the build script changes have been done, the process is smooooottth .
 

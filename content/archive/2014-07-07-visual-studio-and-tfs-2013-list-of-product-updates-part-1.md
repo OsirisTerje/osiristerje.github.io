@@ -22,15 +22,15 @@ The information contains the download links to all versions and updates where ap
 
 This is the major [download link](http://www.visualstudio.com/downloads/download-visual-studio-vs) for all official Visual Studio products.
 
-**Product**
+## Product
 
-**Notes**
+### Notes
 
-**Version number**
+#### Version number
 
-**Date**
+##### Date
 
-**Applicable to**
+###### Applicable to
 
 [Visual Studio and TFS 2013 Update 4 RC](http://go.microsoft.com/fwlink/?LinkId=510314)
 
@@ -112,15 +112,15 @@ Updated April 12th 2014:  [Visual Studio 2013 Update 2 RC](http://www.visualstu
 
 Updated March 5th 2014:   [Visual Studio 2013 Update 2 CTP 2](http://www.microsoft.com/en-us/download/details.aspx?id=42023) Updated Feb 8th 2014:   [Visual Studio 2013 Update 1](http://www.microsoft.com/en-us/download/details.aspx?id=41650),  [Visual Studio 2013 Update 2 CTP 1](http://www.microsoft.com/en-us/download/details.aspx?id=41699) 
 
-**Product**
+## Product
 
-**Notes**
+### Notes
 
-**Version number**
+#### Version number
 
-**Date**
+##### Date
 
-**Applicable to**
+###### Applicable to
 
 [Visual Studio](http://www.microsoft.com/en-us/download/details.aspx?id=43398)
 
@@ -186,23 +186,23 @@ Nov 13th 2013
 
 Visual Studio
 
-**Note 1**
+## Note 1
 
 The version number of Visual Studio is not changed when installing this patch.  The only place you see it is in the Installed Updates list
 
 [![image](/images/2015/08/GWB-WindowsLiveWriter-VisualStudioandTFS2013ListofProductUpdat_E10D-image_thumb.png "image")](https://gwb.blob.core.windows.net/terje/WindowsLiveWriter/VisualStudioandTFS2013ListofProductUpdat_E10D/image_2.png)
 
-**Note 2**
+## Note 2
 
 The Update 1 RC doesn’t include the Queue Build patch.
 
-**Note 3**
+## Note 3
 
 There was a rerelease of TFS 2013.  The first release had a bug which appeared in the Web UI, Code section, History.  If you get a red cross there, you got the first release.  You then need to reinstall.
 
-**Unsure which version and update you have  ?**
+## Unsure which version and update you have  ?
 
-**Visual Studio:**
+### Visual Studio:
 
 Go to the top menu, choose Help | About
 
@@ -218,7 +218,7 @@ Go to the top menu, select Tools | Extensions and Updates. Under the Updates | P
 
 To the far right you see the version number you have, and what version to update to.  Since the updates are cumulative, you don’t need to worry about those in between.
 
-**Team Foundation Server (on premise):**
+## Team Foundation Server (on premise):
 
 Use the web access for the TFS. Go to the Help Icon to the far right, and choose “About” from the menu:
 
@@ -226,10 +226,10 @@ Use the web access for the TFS. Go to the Help Icon to the far right, and choose
 
 In this case I have a TFS 2013 preview server.
 
-**Team Foundation Service:**
+## Team Foundation Service:
 
 If you are connected to the  Team Foundation Service you will not find any version number.  It is also always updated to the latest version.  You could check the [service status page](http://tfs.visualstudio.com/en-us/support/current-service-status/) to see if all is working, and to see what has been done at the [updates and release notes listed here](http://tfs.visualstudio.com/news/).
 
-**Thanks**
+## Thanks
 
 Thanks to [Adam Cogan](http://www.adamcogan.com) for valuable help in structuring these posts

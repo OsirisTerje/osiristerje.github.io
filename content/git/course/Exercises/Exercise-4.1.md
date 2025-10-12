@@ -95,11 +95,11 @@ git gc --prune=now
 
 Rerun the checks above, and also check Gitviz
 
-**Trap 1**
+## Trap 1
 
 If you have remote branches that have not been pruned, and they point to commits, they will be **ref'ed** and then not be regarded as dangling.  So prune your remotes first.
 
-**Trap 2**
+## Trap 2
 
 Tags are easy to forget.
 If you have any tags that references the commits, then they will not be regarded as dangling.  Remove the tags first.

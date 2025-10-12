@@ -62,6 +62,6 @@ Note that you can give the path both as a server path – which works well with 
 
 &nbsp;
 
-**Trap:**
+## Trap:
 
 When you upgrade your Visual Studio, the item templates may disappear.&nbsp; They are still there, but to get them visible again you must delete your MEF cache.&nbsp; For executables you get a loading error, but for item templates – they just go missing:&nbsp; Easy way to fix that:&nbsp; See [http://hermit.no/how-to-fix-visual-studio-loading-errors-using-ifix/](http://hermit.no/how-to-fix-visual-studio-loading-errors-using-ifix/)

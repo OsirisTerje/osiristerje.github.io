@@ -5,6 +5,7 @@ categories:
  - nunit
 
 ---
+
 # Debugging the NUnit3TestAdapter Take 2
 
 ## Background
@@ -97,7 +98,8 @@ However, if you plan to change something in the adapter, then you can follow the
 The only file you may want to change is the **build.cake** file.
 
 In the build.cake file, go to Line 16, and add a useful modifer - it will be the preview version for the package, so something like '-d01' would go fine.
-**Ensure you have the dash there!**
+
+## Ensure you have the dash there!
 
 If you do changes in the adapter code, you can just increment this number, for each one.
 

@@ -84,6 +84,18 @@ After installation the primary command is `agent`. The older `cursor-agent` alia
 npm update -g @anthropic-ai/claude-code
 ```
 
+> **Note:** Claude Code's updater often needs to run an install script as part of the update. If you hit a prompt or failure related to that, use the full form instead:
+>
+> ```bash
+> npm install -g @anthropic-ai/claude-code@latest --allow-scripts=@anthropic-ai/claude-code
+> ```
+>
+> To avoid typing this every time, allow the script once and go back to the short form:
+>
+> ```bash
+> npm config set allow-scripts=@anthropic-ai/claude-code --location=user
+> ```
+
 ### GitHub Copilot CLI
 
 ```bash

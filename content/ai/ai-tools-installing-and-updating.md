@@ -13,6 +13,16 @@ All npm-based tools require **Node.js 22 or later**.
 
 ---
 
+## Current Version
+
+```cmd
+claude --version
+copilot --version
+agent --version
+```
+
+---
+
 ## Installing
 
 ### Claude Code

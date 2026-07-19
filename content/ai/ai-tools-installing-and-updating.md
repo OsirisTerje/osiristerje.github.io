@@ -7,7 +7,7 @@ layout: post
 
 # AI Tools — Installing and Updating
 
-This page covers how to install and update the AI coding tools Claude Code, GitHub Copilot CLI, and Cursor CLI (Agent).
+This page covers how to install and update the AI coding tools Claude Code, GitHub Copilot CLI, OpenAI Codex CLI, and Cursor CLI (Agent).
 
 All npm-based tools require **Node.js 22 or later**.
 

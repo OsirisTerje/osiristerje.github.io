@@ -11,6 +11,8 @@ This page covers how to install and update the AI coding tools Claude Code, GitH
 
 All npm-based tools require **Node.js 22 or later**.
 
+**Quick links:** [Current Version](#current-version) · [Installing](#installing) · [Updating](#updating) · [Checking Usage](#checking-usage)
+
 ---
 
 ## Current Version
@@ -115,3 +117,18 @@ Re-run the install script — it will replace the existing installation with the
 ```bash
 curl https://cursor.com/install -fsSL | bash
 ```
+
+---
+
+## Checking Usage
+
+Each tool has both a web dashboard and an in-CLI command for checking how much of your monthly quota remains.
+
+| Tool                 | Web dashboard                                                              | In-CLI check                                                    |
+| --------------------- | --------------------------------------------------------------------------- | ------------------------------------------------------------------ |
+| Claude Code           | [claude.ai/settings/usage](https://claude.ai/settings/usage)               | `/usage` (plan limits, 5-hour + weekly rate-limit status), `/status` |
+| GitHub Copilot CLI     | [github.com/settings/copilot](https://github.com/settings/copilot) → Billing & Licensing → Usage by product → Copilot | `/usage` (current session's consumption)                        |
+| OpenAI Codex CLI       | [chatgpt.com/codex/pricing](https://chatgpt.com/codex/pricing/)            | `/status` (remaining tokens for the 5-hour and weekly windows)   |
+| Cursor CLI (Agent)     | [cursor.com/settings](https://cursor.com/settings)                        | —                                                                 |
+
+> **Note:** For Claude Code and Codex CLI, the in-CLI `/status` (or `/usage`) command is more reliable than the web dashboard for seeing where you stand right now — the dashboards tend to show historical totals and can lag by a few minutes. GitHub Copilot's premium request usage resets on the 1st of each month at 00:00 UTC. Cursor's usage dashboard has been reported to render blank for some users — a known issue, not misconfiguration on your end.

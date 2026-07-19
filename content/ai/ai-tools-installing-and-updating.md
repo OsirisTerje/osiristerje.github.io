@@ -18,6 +18,7 @@ All npm-based tools require **Node.js 22 or later**.
 ```cmd
 claude --version
 copilot --version
+codex --version
 agent --version
 ```
 
@@ -51,6 +52,16 @@ As an alternative, if you have the GitHub CLI (`gh`) installed, you can also ins
 gh copilot
 ```
 
+### OpenAI Codex CLI
+
+OpenAI Codex CLI is a terminal-native coding agent. Install it globally via npm:
+
+```bash
+npm install -g @openai/codex
+```
+
+> **Note:** Use `@openai/codex`, not `codex` — the unscoped `codex` package on npm is an unrelated 2012 project.
+
 ### Cursor CLI (Agent)
 
 Cursor CLI runs the Cursor agent headlessly from the terminal. It is installed via a shell script, not npm:
@@ -77,6 +88,12 @@ npm update -g @anthropic-ai/claude-code
 
 ```bash
 npm update -g @github/copilot
+```
+
+### OpenAI Codex CLI
+
+```bash
+npm update -g @openai/codex
 ```
 
 ### Cursor CLI (Agent)

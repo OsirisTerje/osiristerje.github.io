@@ -34,6 +34,16 @@ SectionPagesMenu = ""
     weight = 4
     parent = "git"
   [[menu.main]]
+    name = "AI"
+    identifier = "ai"
+    url = "/ai/"
+    weight = 25
+  [[menu.main]]
+    name = "AI Tools Installing and Updating"
+    url = "/ai/ai-tools-installing-and-updating/"
+    weight = 1
+    parent = "ai"
+  [[menu.main]]
     name = "Blogposts"
     url = "/posts/"
     weight = 50
@@ -106,3 +116,9 @@ SectionPagesMenu = ""
     path = "content/archive/**"
   [cascade.frontmatter]
     categories = ["archive"]
+
+[[cascade]]
+  [cascade.scope]
+    path = "content/ai/**"
+  [cascade.frontmatter]
+    categories = ["ai"]

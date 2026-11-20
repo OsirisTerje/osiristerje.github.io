@@ -80,10 +80,25 @@ After installation the primary command is `agent`. The older `cursor-agent` alia
 
 ## Updating
 
+> **Note:** `npm update -g <package>` rebuilds the whole global package tree, not only the package you name. Since npm 12, `allow-remote` defaults to `none`, so if any other global package depends on a remote tarball (for example `xlsx-cli`, which pulls `xlsx` from `cdn.sheetjs.com`), the update fails for everything:
+>
+> ```text
+> npm error code EALLOWREMOTE
+> npm error Fetching packages of type "remote" have been disabled
+> ```
+>
+> Use `npm install -g <package>@latest` instead. It touches only the named package:
+>
+> ```bash
+> npm install -g @github/copilot@latest
+> ```
+>
+> Alternatively, remove the offending global package (`npm rm -g xlsx-cli`). Avoid `npm config set allow-remote all`; it disables a supply-chain safeguard for every package.
+
 ### Claude Code
 
 ```bash
-npm update -g @anthropic-ai/claude-code
+npm install -g @anthropic-ai/claude-code@latest
 ```
 
 > **Note:** Claude Code's updater often needs to run an install script as part of the update. If you hit a prompt or failure related to that, use the full form instead:
@@ -101,13 +116,13 @@ npm update -g @anthropic-ai/claude-code
 ### GitHub Copilot CLI
 
 ```bash
-npm update -g @github/copilot
+npm install -g @github/copilot@latest
 ```
 
 ### OpenAI Codex CLI
 
 ```bash
-npm update -g @openai/codex
+npm install -g @openai/codex@latest
 ```
 
 ### Cursor CLI (Agent)
